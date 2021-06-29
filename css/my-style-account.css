@@ -1,0 +1,13 @@
+.breadcrumb_bg {
+    background-image: url(../img/background-banner-nome.png) !important;
+    
+}
+
+.avatar{
+    width: 200px;
+    height: 200px;
+}
+.my-order-item>div img{
+    width: 200px;
+    height: 200px;
+}
