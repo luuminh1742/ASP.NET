@@ -1,4 +1,4 @@
 .my-menu:hover{
     border-bottom: 1px solid rgba(252, 208, 16, 0.933);
-    transition-delay:0.1s;
+    transition:0.1s;
 }
