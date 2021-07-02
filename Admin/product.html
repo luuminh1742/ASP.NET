@@ -30,6 +30,8 @@
     <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
@@ -82,6 +84,18 @@
                             <a href="news.html">
                                 <i class="fas fa-newspaper"></i>Tin Tức</a>
                         </li>
+                        <li>
+                            <a href="about-us.html">
+                                <i class="fas fa-info"></i>Giới Thiệu</a>
+                        </li>
+                        <li>
+                            <a href="feedback.html">
+                                <i class="fas fa-comments"></i>Đánh Giá</a>
+                        </li>
+                        <li>
+                            <a href="role.html">
+                                <i class="fas fa-user-tag"></i>Loại Tài Khoản</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -121,6 +135,18 @@
                         <li>
                             <a href="news.html">
                                 <i class="fas fa-newspaper"></i>Tin Tức</a>
+                        </li>
+                        <li>
+                            <a href="about-us.html">
+                                <i class="fas fa-info"></i>Giới Thiệu</a>
+                        </li>
+                        <li>
+                            <a href="feedback.html">
+                                <i class="fas fa-comments"></i>Đánh Giá</a>
+                        </li>
+                        <li>
+                            <a href="role.html">
+                                <i class="fas fa-user-tag"></i>Loại Tài Khoản</a>
                         </li>
                     </ul>
                 </nav>
@@ -194,25 +220,21 @@
                                         <div class="account-dropdown js-dropdown rounded mt-2">
                                             <div class="info clearfix">
                                                 <div class="image rounded-circle">
-                                                    <a href="#">
+                                                    <a href="user-account.html">
                                                         <img src="images/icon/avatar-01.jpg" alt="Vạn Xuân" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">Vạn Xuân</a>
+                                                        <a href="user-account.html">Vạn Xuân</a>
                                                     </h5>
                                                     <span class="email">xuan.van.techshop@example.com</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
+                                                    <a href="user-account.html">
                                                         <i class="zmdi zmdi-account"></i>Tài Khoản</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Cài Đặt</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
@@ -240,13 +262,13 @@
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="rs-select2--light rs-select2--md">
-                                            <select class="js-select2" name="categories">
-                                                <option selected="selected">Tất Cả</option>
-                                                <option value="">Điều Hòa Nhiệt Độ</option>
+                                            <select class="js-select2" name="property">
+                                                <option selected="selected">Danh mục</option>
+                                                <option value="">Điều hòa hiệt độ</option>
                                                 <option value="">Tivi, Loa - Âm Thanh</option>
-                                                <option value="">Máy Giặt</option>
-                                                <option value="">Tủ Lạnh</option>
-                                                <option value="">Quạt Mát</option>
+                                                <option value="">Máy giặt</option>
+                                                <option value="">Tủ lạnh</option>
+                                                <option value="">Quạt máy</option>
                                             </select>
                                             <div class="dropDownSelect2"></div>
                                         </div>
@@ -277,6 +299,7 @@
                                                 <th>Giá</th>
                                                 <th>Giảm giá</th>
                                                 <th>trạng thái</th>
+                                                <th>phản hồi</th>
                                                 <th>Hành động</th>
                                             </tr>
                                         </thead>
@@ -300,6 +323,9 @@
                                                 </td>
                                                 <td>
                                                     <span class="status--process">Hiển Thị</span>
+                                                </td>
+                                                <td>
+                                                    <a href="feedback.html"><span class="text-primary font-weight-bold">10</span></a>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
@@ -334,6 +360,9 @@
                                                     <span class="status--process">Hiển Thị</span>
                                                 </td>
                                                 <td>
+                                                    <a href="feedback.html"><span class="text-primary font-weight-bold">990</span></a>
+                                                </td>
+                                                <td>
                                                     <div class="table-data-feature">
                                                         <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
                                                             <i class="fas fa-pencil-alt"></i>
@@ -364,6 +393,9 @@
                                                 </td>
                                                 <td>
                                                     <span class="status--process">Hiển Thị</span>
+                                                </td>
+                                                <td>
+                                                    <a href="feedback.html"><span class="text-primary font-weight-bold">120</span></a>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
@@ -398,6 +430,9 @@
                                                     <span class="status--process">Hiển Thị</span>
                                                 </td>
                                                 <td>
+                                                    <a href="feedback.html"><span class="text-primary font-weight-bold">100</span></a>
+                                                </td>
+                                                <td>
                                                     <div class="table-data-feature">
                                                         <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
                                                             <i class="fas fa-pencil-alt"></i>
@@ -430,6 +465,9 @@
                                                     <span class="status--denied">Ẩn</span>
                                                 </td>
                                                 <td>
+                                                    <a href="feedback.html"><span class="text-primary font-weight-bold">170</span></a>
+                                                </td>
+                                                <td>
                                                     <div class="table-data-feature">
                                                         <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
                                                             <i class="fas fa-pencil-alt"></i>
@@ -460,6 +498,9 @@
                                                 </td>
                                                 <td>
                                                     <span class="status--process">Hiển Thị</span>
+                                                </td>
+                                                <td>
+                                                    <a href="feedback.html"><span class="text-primary font-weight-bold">1000</span></a>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">

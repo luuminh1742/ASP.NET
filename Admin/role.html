@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Tài khoản | Admin Electronic Device</title>
+    <title>Phản hồi | Admin Electronic Device</title>
     <link rel="icon" href="images/logo-asp.net.png">
 
     <!-- Fontfaces CSS-->
@@ -31,7 +31,6 @@
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
@@ -116,7 +115,7 @@
                             <a href="index.html">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
-                        <li class="active has-sub">
+                        <li>
                             <a href="account.html">
                                 <i class="far fa-user-circle"></i>Tài Khoản</a>
                         </li>
@@ -144,7 +143,7 @@
                             <a href="feedback.html">
                                 <i class="fas fa-comments"></i>Đánh Giá</a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="role.html">
                                 <i class="fas fa-user-tag"></i>Loại Tài Khoản</a>
                         </li>
@@ -257,26 +256,18 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
-                                <h3 class="title-5 m-b-35">danh sách tài khoản</h3>
+                                <h3 class="title-5 m-b-35">danh sách loại tài khoản</h3>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="rs-select2--light rs-select2--md">
-                                            <select class="js-select2" name="property">
-                                                <option selected="selected">Tất cả</option>
-                                                <option value="">Admin</option>
-                                                <option value="">Thành viên</option>
-                                            </select>
-                                            <div class="dropDownSelect2"></div>
-                                        </div>
-                                        <div class="rs-select2--light rs-select2--md">
                                             <select class="js-select2" name="status">
-                                                <option selected="selected">Hoạt động</option>
-                                                <option value="">Vô hiệu hóa</option>
-                                            </select>
+                                                    <option selected="selected">Hiển thị</option>
+                                                    <option value="">Ẩn</option>
+                                                </select>
                                             <div class="dropDownSelect2"></div>
                                         </div>
                                         <button class="au-btn-filter">
-                                            <i class="zmdi zmdi-filter-list"></i>Lọc</button>
+                                                <i class="zmdi zmdi-filter-list"></i>Lọc</button>
                                     </div>
                                     <div class="table-data__tool-right">
                                         <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#modal-create">
@@ -288,13 +279,9 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Tài khoản</th>
-                                                <th>Ảnh</th>
-                                                <th>họ tên</th>
-                                                <th>Điện thoại</th>
-                                                <th>email</th>
+                                                <th>Tên</th>
+                                                <th>Mã code</th>
                                                 <th>trạng thái</th>
-                                                <th>vai trò</th>
                                                 <th>hành động</th>
                                             </tr>
                                         </thead>
@@ -302,33 +289,22 @@
                                             <tr class="tr-shadow">
                                                 <td class="number_order">1</td>
                                                 <td>
-                                                    <span class="block-name">Admin123</span>
-                                                </td>
-                                                <td class="block-image">
-                                                    <img src="images/avatar/avatar0.png" alt="Ảnh đại diện" />
+                                                    <span class="block-name">Admin</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-fullname">Nguyễn Quỳnh Huỳnh Nga</span>
-
+                                                    <span class="">624</span>
                                                 </td>
                                                 <td>
-                                                    <span>038456789</span>
-                                                </td>
-                                                <td><span>quynhNga@gmail.com</span></td>
-                                                <td>
-                                                    <span class="status--process">Hoạt động</span>
-                                                </td>
-                                                <td>
-                                                    <span>Admin</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -336,33 +312,22 @@
                                             <tr class="tr-shadow">
                                                 <td class="number_order">2</td>
                                                 <td>
-                                                    <span class="block-name">Admin123</span>
-                                                </td>
-                                                <td class="block-image">
-                                                    <img src="images/avatar/avatar1.png" alt="Ảnh đại diện" />
+                                                    <span class="block-name">Nhân viên quản lý sản phẩm</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-fullname">Nguyễn Quỳnh Huỳnh Nga</span>
-
+                                                    <span class="">651</span>
                                                 </td>
                                                 <td>
-                                                    <span>038456789</span>
-                                                </td>
-                                                <td><span>quynhNga@gmail.com</span></td>
-                                                <td>
-                                                    <span class="status--process">Hoạt động</span>
-                                                </td>
-                                                <td>
-                                                    <span>Admin</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -370,33 +335,22 @@
                                             <tr class="tr-shadow">
                                                 <td class="number_order">3</td>
                                                 <td>
-                                                    <span class="block-name">Admin123</span>
-                                                </td>
-                                                <td class="block-image">
-                                                    <img src="images/avatar/avatar2.png" alt="Ảnh đại diện" />
+                                                    <span class="block-name">Nhân viên quản lý tin tức</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-fullname">Nguyễn Quỳnh Huỳnh Nga</span>
-
+                                                    <span class="">615</span>
                                                 </td>
                                                 <td>
-                                                    <span>038456789</span>
-                                                </td>
-                                                <td><span>quynhNga@gmail.com</span></td>
-                                                <td>
-                                                    <span class="status--denied">Vô hiệu hóa</span>
-                                                </td>
-                                                <td>
-                                                    <span>Admin</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -404,33 +358,22 @@
                                             <tr class="tr-shadow">
                                                 <td class="number_order">4</td>
                                                 <td>
-                                                    <span class="block-name">Admin123</span>
-                                                </td>
-                                                <td class="block-image">
-                                                    <img src="images/avatar/avatar3.png" alt="Ảnh đại diện" />
+                                                    <span class="block-name">Nhân viên quản lý khuyến mãi</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-fullname">Nguyễn Quỳnh Huỳnh Nga</span>
-
+                                                    <span class="">5651</span>
                                                 </td>
                                                 <td>
-                                                    <span>038456789</span>
-                                                </td>
-                                                <td><span>quynhNga@gmail.com</span></td>
-                                                <td>
-                                                    <span class="status--process">Hoạt động</span>
-                                                </td>
-                                                <td>
-                                                    <span>Admin</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -438,33 +381,22 @@
                                             <tr class="tr-shadow">
                                                 <td class="number_order">5</td>
                                                 <td>
-                                                    <span class="block-name">Admin123</span>
-                                                </td>
-                                                <td class="block-image">
-                                                    <img src="images/avatar/avatar3.png" alt="Ảnh đại diện" />
+                                                    <span class="block-name">Nhân viên quản lý phản hồi</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-fullname">Nguyễn Quỳnh Huỳnh Nga</span>
-
+                                                    <span class="">584</span>
                                                 </td>
                                                 <td>
-                                                    <span>038456789</span>
-                                                </td>
-                                                <td><span>quynhNga@gmail.com</span></td>
-                                                <td>
-                                                    <span class="status--process">Hoạt động</span>
-                                                </td>
-                                                <td>
-                                                    <span>Admin</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -507,7 +439,8 @@
                 </div>
             </div>
         </div>
-        <!-- END PAGE CONTAINER-->
+    </div>
+    <!-- END PAGE CONTAINER-->
 
     </div>
 
@@ -524,39 +457,12 @@
                 <div class="modal-body">
                     <form action="" method="post">
                         <div class="form-group">
-                            <label>Họ Tên</label>
-                            <input class="au-input au-input--full" type="text" name="fullname" placeholder="Nguyễn Văn A">
-                        </div>
-                        <div class="form-group">
-                            <label>Tài Khoản</label>
-                            <input class="au-input au-input--full" type="text" name="username" placeholder="vana123">
-                        </div>
-                        <div class="form-group">
-                            <label>Mật Khẩu</label>
-                            <input class="au-input au-input--full" type="password" name="password" placeholder="Mật Khẩu">
-                        </div>
-                        <div class="form-group">
-                            <label>Số Điện Thoại</label>
-                            <input class="au-input au-input--full" type="text" name="phone" placeholder="0123456789">
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label>Địa Chỉ</label>
-                            <input class="au-input au-input--full" type="text" name="address" placeholder="Thanh Xuân - Hà Nội">
-                        </div>
-                        <div class="form-group">
                             <label>Loại Tài Khoản</label>
-                            <select name="select" id="select" class="form-control">
-                                    <option value="0">Quản Trị Viên</option>
-                                    <option value="1">Quản Lý Tài Khoản</option>
-                                    <option value="2">Quản Lý Sản Phẩm</option>
-                                    <option value="3">Quản Lý Danh Mục</option>
-                                    <option value="4">Quản Lý Khuyến Mãi</option>
-                                    <option value="5">Quản Lý Tin Tức</option>
-                             </select>
+                            <input class="au-input au-input--full" type="text" name="fullname" placeholder="Nhân viên quản lý...">
+                        </div>
+                        <div class="form-group">
+                            <label>Mã code</label>
+                            <input class="au-input au-input--full" type="text" name="username" placeholder="vana123">
                         </div>
                     </form>
                 </div>
@@ -569,78 +475,6 @@
     </div>
     <!-- end modal create -->
 
-    <!-- modal delete -->
-    <div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticModalLabel">Xác Nhận Xóa</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                           <span aria-hidden="true">&times;</span>
-                       </button>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        Bạn Chắc Chắn Muốn Xóa Tài Khoản abcsscs?
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Xóa</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end modal delete -->
-
-    <!-- modal edit -->
-    <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="scrollmodalLabel">Cập Nhật Sản Phẩm</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <label>Họ Tên</label>
-                            <input class="au-input au-input--full" readonly type="text" name="fullname" placeholder="Nguyễn Văn A">
-                        </div>
-                        <div class="form-group">
-                            <label>Tài Khoản</label>
-                            <input class="au-input au-input--full" readonly type="text" name="username" placeholder="vana123">
-                        </div>
-                        <div class="form-group">
-                            <label>Loại Tài Khoản</label>
-                            <select name="select" id="select" class="form-control">
-                                    <option value="0">Quản Trị Viên</option>
-                                    <option value="1">Quản Lý Tài Khoản</option>
-                                    <option value="2">Quản Lý Sản Phẩm</option>
-                                    <option value="3">Quản Lý Danh Mục</option>
-                                    <option value="4">Quản Lý Khuyến Mãi</option>
-                                    <option value="5">Quản Lý Tin Tức</option>
-                             </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Trạng Thái</label>
-                            <select name="select" id="select" class="form-control">
-                                    <option value="0">Kích hoạt</option>
-                                    <option value="1">Vô hiệu hóa</option>
-                             </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    <button type="button" class="btn btn-primary">Cập Nhật</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end modal edit -->
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>

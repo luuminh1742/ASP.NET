@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Thông tin tài khoản</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <div class="page-content--bge5 page-content-register">
+            <div class="container">
+                <div class="login-wrap">
+                    <div class="login-content">
+                        <div class="col-md-12">
+                            <aside class="profile-nav alt">
+                                <section class="card">
+                                    <div class="card-header user-header alt bg-dark">
+                                        <div class="media">
+                                            <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="images/icon/avatar-01.jpg">
+                                            <div class="media-body">
+                                                <h2 class="text-light display-6">JimDoe123</h2>
+                                                <p>Quản trị viên</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item text-info">
+                                            <i class="fas fa-info mr-2 "></i> Jim Doe
+                                        </li>
+                                        <li class="list-group-item text-info">
+                                            <i class="fas fa-mobile-alt mr-2"></i> 0123456789
+                                        </li>
+                                        <li class="list-group-item text-info">
+                                            <i class="fas fa-map-marker-alt mr-2"></i> Thanh Xuân - Hà Nội
+                                        </li>
+                                        <li class="list-group-item text-info">
+                                            <i class="fas fa-envelope-open-text mr-2"></i> xuan.van.techshop@example.com
+                                        </li>
+                                    </ul>
+                                </section>
+                            </aside>
+                        </div>
+                        <button class="au-btn au-btn--block au-btn--green m-b-20" data-toggle="modal" data-target="#modal-edit">Cập Nhật Thông Tin Cá Nhân</button>
+                        <hr/>
+                        <button class="au-btn au-btn--block au-btn--blue m-b-20" data-toggle="modal" data-target="#modal-resetpassword">Đổi Mật Khẩu</button>
+                        <hr/>
+                        <a href="index.html" class="au-btn--block au-btn--blue2 au-btn m-b-20 text-center">Quay Lại</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- modal edit -->
+    <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mediumModalLabel">Cập Nhật Thông Tin Cá Nhân</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label>Tên Đăng Nhập</label>
+                            <input class="au-input au-input--full" type="text" name="username" placeholder="user123">
+                        </div>
+                        <div class="form-group">
+                            <label>Họ & Tên</label>
+                            <input class="au-input au-input--full" type="text" name="fullname" placeholder="Nguyễn Văn A">
+                        </div>
+                        <div class="form-group">
+                            <label>Địa chỉ</label>
+                            <input class="au-input au-input--full" type="text" name="address" placeholder="Hà Nội">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input class="au-input au-input--full" type="text" name="email" placeholder="abc@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Số Điện Thoại</label>
+                            <input class="au-input au-input--full" type="text" name="phone" placeholder="0123456789">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary">Cập Nhật</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal create -->
+
+    <!-- modal edit -->
+    <div class="modal fade" id="modal-resetpassword" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mediumModalLabel">Đổi Mật Khẩu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times; 
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label>Mật Khẩu Cũ</label>
+                            <input class="au-input au-input--full" type="password" name="old-pass" placeholder="Mật khẩu cũ">
+                        </div>
+                        <div class="form-group">
+                            <label>Mật Khẩu Mới</label>
+                            <input class="au-input au-input--full" type="password" name="new-pass" placeholder="Mật khẩu mới">
+                        </div>
+                        <div class="form-group">
+                            <label>Nhập Lại Mật Khẩu</label>
+                            <input class="au-input au-input--full" type="password" name="re-enter-pass" placeholder="Nhập lại mật khẩu">
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="show-pass" name="show-pass"> <label for="show-pass">Hiển thị mật khẩu</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary">Đổi Mật Khẩu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal create -->
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->

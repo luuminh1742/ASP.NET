@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Khuyến mãi | Admin Electronic Device</title>
+    <title>Phản hồi | Admin Electronic Device</title>
     <link rel="icon" href="images/logo-asp.net.png">
 
     <!-- Fontfaces CSS-->
@@ -35,12 +35,8 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-</head>
 
-<!-- animsition overrides all click events on clickable things like a,
-      since calendar doesn't add href's be default,
-      it leads to odd behaviors like loading 'undefined'
-      moving the class to menus lead to only the menu having the effect -->
+</head>
 
 <body class="animsition">
     <div class="page-wrapper">
@@ -50,7 +46,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="images/logo_admin.png" alt="CoolAdmin" />
+                            <img src="images/logo_admin.png" alt="Admin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -68,7 +64,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="account.html">
                                 <i class="far fa-user-circle"></i>Tài Khoản</a>
                         </li>
@@ -89,10 +85,6 @@
                                 <i class="fas fa-newspaper"></i>Tin Tức</a>
                         </li>
                         <li>
-                            <a href="about-us.html">
-                                <i class="fas fa-info"></i>Giới Thiệu</a>
-                        </li>
-                        <li>
                             <a href="feedback.html">
                                 <i class="fas fa-comments"></i>Đánh Giá</a>
                         </li>
@@ -110,7 +102,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/logo_admin.png" alt="Cool Admin" />
+                    <img src="images/logo_admin.png" alt="Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -132,7 +124,7 @@
                             <a href="product.html">
                                 <i class="fas fa-sitemap"></i>Sản Phẩm</a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="promotion.html">
                                 <i class="fab fa-adversal"></i></i>Khuyến Mãi</a>
                         </li>
@@ -144,7 +136,7 @@
                             <a href="about-us.html">
                                 <i class="fas fa-info"></i>Giới Thiệu</a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="feedback.html">
                                 <i class="fas fa-comments"></i>Đánh Giá</a>
                         </li>
@@ -224,7 +216,7 @@
                                         <div class="account-dropdown js-dropdown rounded mt-2">
                                             <div class="info clearfix">
                                                 <div class="image rounded-circle">
-                                                    <a href="user-account.html">
+                                                    <a href="#">
                                                         <img src="images/icon/avatar-01.jpg" alt="Vạn Xuân" />
                                                     </a>
                                                 </div>
@@ -253,8 +245,7 @@
                     </div>
                 </div>
             </header>
-            <!-- END HEADER DESKTOP-->
-
+            <!-- HEADER DESKTOP-->
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">
@@ -262,17 +253,17 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
-                                <h3 class="title-5 m-b-35">danh sách khuyến mãi</h3>
+                                <h3 class="title-5 m-b-35">danh sách sản phẩm</h3>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="rs-select2--light rs-select2--md">
-                                            <select class="js-select2" name="categories">
-                                                <option selected="selected">Tất Cả</option>
-                                                <option value="">Điều Hòa Nhiệt Độ</option>
+                                            <select class="js-select2" name="property">
+                                                <option selected="selected">Danh mục</option>
+                                                <option value="">Điều hòa hiệt độ</option>
                                                 <option value="">Tivi, Loa - Âm Thanh</option>
-                                                <option value="">Máy Giặt</option>
-                                                <option value="">Tủ Lạnh</option>
-                                                <option value="">Quạt Mát</option>
+                                                <option value="">Máy giặt</option>
+                                                <option value="">Tủ lạnh</option>
+                                                <option value="">Quạt máy</option>
                                             </select>
                                             <div class="dropDownSelect2"></div>
                                         </div>
@@ -288,8 +279,14 @@
                                             <i class="zmdi zmdi-filter-list"></i>Lọc</button>
                                     </div>
                                     <div class="table-data__tool-right">
-                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#modal-create">
-                                            <i class="fas fa-plus"></i>Thêm mới</button>
+                                        <div class="input-group">
+                                            <div class="form-outline">
+                                                <input type="search" id="form1" class="form-control" placeholder="Tìm kiếm sản phẩm..." />
+                                            </div>
+                                            <button type="button" class="btn btn-primary">
+                                              <i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="table-responsive table-data">
@@ -298,11 +295,8 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>ID</th>
-                                                <th>Tiêu Đề</th>
-                                                <th>Ngày Tạo</th>
-                                                <th>Ngày Sửa</th>
-                                                <th>trạng thái</th>
-                                                <th>Hành động</th>
+                                                <th>Ảnh</th>
+                                                <th>Tên</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -311,26 +305,179 @@
                                                 <td>
                                                     <span class="block-name">1</span>
                                                 </td>
-                                                <td>
-                                                    <span class="block-name-product">RƯỚC QUÀ XỊN – CHILL HÈ ĐỈNH cùng Samsung Galaxy A22 2021</span>
+                                                <td class="block-image">
+                                                    <img src="images/product/thumb_tu-dong-sanaky-inverter-400-lit-vh5699w3-6ydR8O.png" alt="Hình Ảnh Sản Phẩm" />
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">26/06/2021</span>
+                                                    <span class="block-name-product">TỦ ĐÔNG SANAKY 260L INVERTER VH-3699W3</span>
+                                                </td>
+
+                                            </tr>
+                                            <tr class="spacer"></tr>
+                                            <tr class="tr-shadow">
+                                                <td class="number_order">2</td>
+                                                <td>
+                                                    <span class="block-name">15</span>
+                                                </td>
+                                                <td class="block-image">
+                                                    <img src="images/product/dieu-hoa-panasonic-1-chieu-9000btu-csn9wkh8m-wH2k4X.png" alt="Hình Ảnh Sản Phẩm" />
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">null</span>
+                                                    <span class="block-name-product">Điều hòa Panasonic 1 chiều 9000BTU CS-N9WKH-8M</span>
+                                                </td>
+
+                                            </tr>
+                                            <tr class="spacer"></tr>
+                                            <tr class="tr-shadow">
+                                                <td class="number_order">3</td>
+                                                <td>
+                                                    <span class="block-name">16</span>
+                                                </td>
+                                                <td class="block-image">
+                                                    <img src="images/product/quat-treo-tuong-coex-cw7210-17XRkL.png" alt="Hình Ảnh Sản Phẩm" />
                                                 </td>
                                                 <td>
-                                                    <span class="status--process">Hiển Thị</span>
+                                                    <span class="block-name-product">QUẠT TRẦN 5 CÁNH MITSUBISHI C56-RW5 SF XÁM NHẠT</span>
+                                                </td>
+
+                                            </tr>
+                                            <tr class="spacer"></tr>
+                                            <tr class="tr-shadow">
+                                                <td class="number_order">4</td>
+                                                <td>
+                                                    <span class="block-name">18</span>
+                                                </td>
+                                                <td class="block-image">
+                                                    <img src="images/product/thumb_-00BMt7 (1).jpg" alt="Hình Ảnh Sản Phẩm" />
+                                                </td>
+                                                <td>
+                                                    <span class="block-name-product">LOA SOUNDBAR SAMSUNG HW-T550/XV 2.1CH</span>
+                                                </td>
+
+                                            </tr>
+                                            <tr class="spacer"></tr>
+                                            <tr class="tr-shadow">
+                                                <td class="number_order">5</td>
+                                                <td>
+                                                    <span class="block-name">20</span>
+                                                </td>
+                                                <td class="block-image">
+                                                    <img src="images/product/thumb_tu-dong-sanaky-inverter-400-lit-vh5699w3-6ydR8O.png" alt="Hình Ảnh Sản Phẩm" />
+                                                </td>
+                                                <td>
+                                                    <span class="block-name-product">TỦ ĐÔNG SANAKY 260L INVERTER VH-3699W3</span>
+                                                </td>
+
+                                            </tr>
+                                            <tr class="spacer"></tr>
+                                            <tr class="tr-shadow">
+                                                <td class="number_order">6</td>
+                                                <td>
+                                                    <span class="block-name">1</span>
+                                                </td>
+                                                <td class="block-image">
+                                                    <img src="images/product/thumb_tu-dong-sanaky-inverter-400-lit-vh5699w3-6ydR8O.png" alt="Hình Ảnh Sản Phẩm" />
+                                                </td>
+                                                <td>
+                                                    <span class="block-name-product">TỦ ĐÔNG SANAKY 260L INVERTER VH-3699W3</span>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <!-- END DATA TABLE -->
+                                <div class="my-3">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- DATA TABLE -->
+                                <h3 class="title-5 m-b-35">danh sách các đánh giá cho sản phẩm ABC</h3>
+                                <div class="table-data__tool">
+                                    <div class="table-data__tool-left">
+                                        <div class="rs-select2--light rs-select2--md">
+                                            <select class="js-select2" name="property">
+                                                    <option selected="selected">Tất cả</option>
+                                                    <option value="">1 sao</option>
+                                                    <option value="">2 sao</option>
+                                                    <option value="">3 sao</option>
+                                                    <option value="">4 sao</option>
+                                                    <option value="">5 sao</option>
+                                                </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                        <div class="rs-select2--light rs-select2--md">
+                                            <select class="js-select2" name="status">
+                                                    <option selected="selected">Hiển thị</option>
+                                                    <option value="">Ẩn</option>
+                                                </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                        <button class="au-btn-filter">
+                                                <i class="zmdi zmdi-filter-list"></i>Lọc</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive table-data">
+                                    <table class="table table-data2">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Tài khoản</th>
+                                                <th>Số sao</th>
+                                                <th>Nội dung</th>
+                                                <th>Ngày tạo</th>
+                                                <th>trạng thái</th>
+                                                <th>hành động</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tr-shadow">
+                                                <td class="number_order">1</td>
+                                                <td>
+                                                    <span class="block-name">User123</span>
+                                                </td>
+                                                <td>
+                                                    <span class="">5</span>
+                                                </td>
+                                                <td>
+                                                    <span class="">Sản phẩm tốt. Giao hàng nhanh</span>
+                                                </td>
+                                                <td>
+                                                    <span>12/05/2021</span>
+                                                </td>
+                                                <td>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -338,28 +485,28 @@
                                             <tr class="tr-shadow">
                                                 <td class="number_order">2</td>
                                                 <td>
-                                                    <span class="block-name">2</span>
+                                                    <span class="block-name">Quang123</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-name-product">Deal rực rỡ, giá như mơ trong 03 ngày cuối tuần (25, 26 & 27/06)</span>
+                                                    <span class="">5</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">23/06/2021</span>
+                                                    <span class="">Sản phẩm tốt. Giao hàng nhanh</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">null</span>
+                                                    <span>12/05/2021</span>
                                                 </td>
                                                 <td>
-                                                    <span class="status--process">Hiển Thị</span>
+                                                    <span class="status--process">Ẩn</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -367,28 +514,28 @@
                                             <tr class="tr-shadow">
                                                 <td class="number_order">3</td>
                                                 <td>
-                                                    <span class="block-name">3</span>
+                                                    <span class="block-name">Nam123</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-name-product">Tưng bừng chương trình "Hè rực rỡ - Khuyến mại hết cỡ" (26.06 - 02.07)</span>
+                                                    <span class="">5</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">26/06/2021</span>
+                                                    <span class="">Sản phẩm tốt. Giao hàng nhanh</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">null</span>
+                                                    <span>12/05/2021</span>
                                                 </td>
                                                 <td>
-                                                    <span class="status--process">Hiển Thị</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -396,28 +543,28 @@
                                             <tr class="tr-shadow">
                                                 <td class="number_order">4</td>
                                                 <td>
-                                                    <span class="block-name">4</span>
+                                                    <span class="block-name">Trung123</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-name-product">Tưng bừng khuyến mãi cho chủ thẻ VietinBank</span>
+                                                    <span class="">5</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">26/06/2021</span>
+                                                    <span class="">Sản phẩm tốt. Giao hàng nhanh</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">null</span>
+                                                    <span>12/05/2021</span>
                                                 </td>
                                                 <td>
-                                                    <span class="status--denied">Ẩn</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -425,202 +572,202 @@
                                             <tr class="tr-shadow">
                                                 <td class="number_order">5</td>
                                                 <td>
-                                                    <span class="block-name">5</span>
+                                                    <span class="block-name">user123</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-name-product">Chương trình khuyến mại Gia dụng Sharp 6/2021</span>
+                                                    <span class="">5</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">26/06/2021</span>
+                                                    <span class="">Sản phẩm tốt. Giao hàng nhanh</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">null</span>
+                                                    <span>12/05/2021</span>
                                                 </td>
                                                 <td>
-                                                    <span class="status--process">Hiển Thị</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr class="spacer"></tr>
                                             <tr class="tr-shadow">
-                                                <td class="number_order">5</td>
+                                                <td class="number_order">6</td>
                                                 <td>
-                                                    <span class="block-name">5</span>
+                                                    <span class="block-name">user123</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-name-product">Chương trình khuyến mại Gia dụng Sharp 6/2021</span>
+                                                    <span class="">5</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">26/06/2021</span>
+                                                    <span class="">Sản phẩm tốt. Giao hàng nhanh</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">null</span>
+                                                    <span>12/05/2021</span>
                                                 </td>
                                                 <td>
-                                                    <span class="status--denied">Ẩn</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr class="spacer"></tr>
                                             <tr class="tr-shadow">
-                                                <td class="number_order">5</td>
+                                                <td class="number_order">7</td>
                                                 <td>
-                                                    <span class="block-name">5</span>
+                                                    <span class="block-name">user123</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-name-product">Chương trình khuyến mại Gia dụng Sharp 6/2021</span>
+                                                    <span class="">5</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">26/06/2021</span>
+                                                    <span class="">Sản phẩm tốt. Giao hàng nhanh</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">null</span>
+                                                    <span>12/05/2021</span>
                                                 </td>
                                                 <td>
-                                                    <span class="status--process">Hiển Thị</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr class="spacer"></tr>
                                             <tr class="tr-shadow">
-                                                <td class="number_order">5</td>
+                                                <td class="number_order">8</td>
                                                 <td>
-                                                    <span class="block-name">5</span>
+                                                    <span class="block-name">user123</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-name-product">Chương trình khuyến mại Gia dụng Sharp 6/2021</span>
+                                                    <span class="">5</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">26/06/2021</span>
+                                                    <span class="">Sản phẩm tốt. Giao hàng nhanh</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">null</span>
+                                                    <span>12/05/2021</span>
                                                 </td>
                                                 <td>
-                                                    <span class="status--denied">Ẩn</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr class="spacer"></tr>
                                             <tr class="tr-shadow">
-                                                <td class="number_order">5</td>
+                                                <td class="number_order">9</td>
                                                 <td>
-                                                    <span class="block-name">5</span>
+                                                    <span class="block-name">user123</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-name-product">Chương trình khuyến mại Gia dụng Sharp 6/2021</span>
+                                                    <span class="">5</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">26/06/2021</span>
+                                                    <span class="">Sản phẩm tốt. Giao hàng nhanh</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">null</span>
+                                                    <span>12/05/2021</span>
                                                 </td>
                                                 <td>
-                                                    <span class="status--process">Hiển Thị</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr class="spacer"></tr>
                                             <tr class="tr-shadow">
-                                                <td class="number_order">5</td>
+                                                <td class="number_order">10</td>
                                                 <td>
-                                                    <span class="block-name">5</span>
+                                                    <span class="block-name">user123</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-name-product">Chương trình khuyến mại Gia dụng Sharp 6/2021</span>
+                                                    <span class="">5</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">26/06/2021</span>
+                                                    <span class="">Sản phẩm tốt. Giao hàng nhanh</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">null</span>
+                                                    <span>12/05/2021</span>
                                                 </td>
                                                 <td>
-                                                    <span class="status--process">Hiển Thị</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr class="spacer"></tr>
                                             <tr class="tr-shadow">
-                                                <td class="number_order">5</td>
+                                                <td class="number_order">11</td>
                                                 <td>
-                                                    <span class="block-name">5</span>
+                                                    <span class="block-name">user123</span>
                                                 </td>
                                                 <td>
-                                                    <span class="block-name-product">Chương trình khuyến mại Gia dụng Sharp 6/2021</span>
+                                                    <span class="">5</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">26/06/2021</span>
+                                                    <span class="">Sản phẩm tốt. Giao hàng nhanh</span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-primary font-weight-bold">null</span>
+                                                    <span>12/05/2021</span>
                                                 </td>
                                                 <td>
-                                                    <span class="status--denied">Ẩn</span>
+                                                    <span class="status--process">Hiển thị</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </button>
-                                                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Ẩn">
+                                                                <i class="fas fa-ban"></i>
+                                                            </button>
+                                                        <button class="item" title="Hiển thị" data-toggle="tooltip" data-placement="top">
+                                                                <i class="far fa-check-circle"></i>
+                                                            </button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -664,129 +811,9 @@
             </div>
         </div>
     </div>
+    <!-- END PAGE CONTAINER-->
 
-
-    <!-- modal create -->
-    <div class="modal fade" id="modal-create" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="scrollmodalLabel">Thêm Mới Sản Phẩm</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <label>Tiêu Đề Khuyến Mãi</label>
-                            <input class="au-input au-input--full" type="text" name="fullname" placeholder="Tủ Lạnh">
-                        </div>
-                        <div class="form-group">
-                            <label>Sản Phẩm Khuyến Mãi</label>
-                            <select name="categories" id="selected_category" class="form-control">
-                                <option value="0">TỦ ĐÔNG SANAKY 260L INVERTER VH-3699W3</option>
-                                <option value="1">Điều hòa Gree 1 chiều Inverter 9000BTU GWC09PB-K3D0P4</option>
-                                <option value="2">QUẠT LỬNG MIDEA FTS40-17VD</option>
-                                <option value="3">LOA SOUNDBAR SAMSUNG HW-T550/XV 2.1CH</option>
-                                <option value="4">DÀN ÂM THANH SOUNDBAR SONY HT-S500RF 5.1</option>
-                         </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Nội Dung</label>
-                            <textarea name="detail-promotion" id="detail-propmotion" rows="9" placeholder="Nội dung chi tiết khuyến mãi...." class="form-control"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Trạng Thái</label>
-                            <select name="select" id="select" class="form-control">
-                                <option value="0">Hiển Thị</option>
-                                <option value="1">Ẩn</option>
-                         </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    <button type="button" class="btn btn-primary">Thêm</button>
-                </div>
-            </div>
-        </div>
     </div>
-    <!-- end modal create -->
-
-
-    <!-- modal edit -->
-    <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="scrollmodalLabel">Cập Nhật Sản Phẩm</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <label>Tiêu Đề Khuyến Mãi</label>
-                            <input class="au-input au-input--full" type="text" name="fullname" placeholder="Tủ Lạnh">
-                        </div>
-                        <div class="form-group">
-                            <label>Sản Phẩm Khuyến Mãi</label>
-                            <select name="categories" id="selected_category" class="form-control">
-                                <option value="0">TỦ ĐÔNG SANAKY 260L INVERTER VH-3699W3</option>
-                                <option value="1">Điều hòa Gree 1 chiều Inverter 9000BTU GWC09PB-K3D0P4</option>
-                                <option value="2">QUẠT LỬNG MIDEA FTS40-17VD</option>
-                                <option value="3">LOA SOUNDBAR SAMSUNG HW-T550/XV 2.1CH</option>
-                                <option value="4">DÀN ÂM THANH SOUNDBAR SONY HT-S500RF 5.1</option>
-                         </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Nội Dung</label>
-                            <textarea name="detail-promotion" id="detail-propmotion" rows="9" placeholder="Nội dung chi tiết khuyến mãi...." class="form-control"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Trạng Thái</label>
-                            <select name="select" id="select" class="form-control">
-                                <option value="0">Hiển Thị</option>
-                                <option value="1">Ẩn</option>
-                         </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    <button type="button" class="btn btn-primary">Cập Nhật</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end modal edit -->
-
-    <!-- modal delete -->
-    <div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticModalLabel">Xác Nhận Xóa</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                       <span aria-hidden="true">&times;</span>
-                   </button>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        Bạn Chắc Chắn Muốn Xóa Khuyến Mãi abcsscs?
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Xóa</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end modal delete -->
-
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
@@ -806,7 +833,8 @@
     <script src="vendor/circle-progress/circle-progress.min.js"></script>
     <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
