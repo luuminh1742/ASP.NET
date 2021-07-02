@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Đơn hàng | Admin Electronic Device</title>
+    <link rel="icon" href="images/logo-asp.net.png">
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="images/logo_admin.png" alt="Admin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="account.html">
+                                <i class="far fa-user-circle"></i>Tài Khoản</a>
+                        </li>
+                        <li>
+                            <a href="category.html">
+                                <i class="fas fa-th-large"></i>Danh Mục</a>
+                        </li>
+                        <li>
+                            <a href="product.html">
+                                <i class="fas fa-sitemap"></i>Sản Phẩm</a>
+                        </li>
+                        <li>
+                            <a href="promotion.html">
+                                <i class="fab fa-adversal"></i>Khuyến Mãi</a>
+                        </li>
+                        <li>
+                            <a href="news.html">
+                                <i class="fas fa-newspaper"></i>Tin Tức</a>
+                        </li>
+
+                        <li>
+                            <a href="orders.html">
+                                <i class="fas fa-money-check-alt"></i>Đơn hàng</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="images/logo_admin.png" alt="Admin" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="account.html">
+                                <i class="far fa-user-circle"></i>Tài Khoản</a>
+                        </li>
+                        <li>
+                            <a href="category.html">
+                                <i class="fas fa-th-large"></i>Danh Mục</a>
+                        </li>
+                        <li>
+                            <a href="product.html">
+                                <i class="fas fa-sitemap"></i>Sản Phẩm</a>
+                        </li>
+                        <li>
+                            <a href="promotion.html">
+                                <i class="fab fa-adversal"></i></i>Khuyến Mãi</a>
+                        </li>
+                        <li>
+                            <a href="news.html">
+                                <i class="fas fa-newspaper"></i>Tin Tức</a>
+                        </li>
+                        <li class="active has-sub">
+                            <a href="orders.html">
+                                <i class="	fas fa-money-bill-alt"></i>Đơn hàng</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header" action="" method="POST">
+                                <input class="au-input au-input--xl" type="text" name="search"
+                                    placeholder="Tìm kiếm...." />
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+                            </form>
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-notifications"></i>
+                                        <span class="quantity">3</span>
+                                        <div class="notifi-dropdown js-dropdown rounded mt-2">
+                                            <div class="notifi__title">
+                                                <p>Bạn có 3 thông báo mới</p>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c1 img-cir img-40">
+                                                    <i class="zmdi zmdi-email-open"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>Bạn có 3 thông báo mới</p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c2 img-cir img-40">
+                                                    <i class="zmdi zmdi-account-box"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>Khách hàng abc đã đánh giá sản phẩm <b>Máy giặt lồng ngang
+                                                            Toshiba Inverter</b></p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c3 img-cir img-40">
+                                                    <i class="zmdi zmdi-file-text"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>Khách hàng abc đã đánh giá sản phẩm <b>Máy giặt lồng ngang
+                                                            Toshiba Inverter</b></p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__footer">
+                                                <a href="#">Tất cả thông báo</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image rounded-circle">
+                                            <img src="images/icon/avatar-01.jpg" alt="Vạn Xuân" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">Admin123</a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown rounded mt-2">
+                                            <div class="info clearfix">
+                                                <div class="image rounded-circle">
+                                                    <a href="#">
+                                                        <img src="images/icon/avatar-01.jpg" alt="Vạn Xuân" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">Vạn Xuân</a>
+                                                    </h5>
+                                                    <span class="email">xuan.van.techshop@example.com</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Tài Khoản</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Cài Đặt</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="login.html">
+                                                    <i class="zmdi zmdi-power"></i>Đăng Xuất</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- DATA TABLE -->
+                                <h3 class="title-5 m-b-35">Danh sách đơn hàng</h3>
+                                
+
+
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" id="new-orders-tab" data-toggle="pill"
+                                            href="#pills-home" role="tab" aria-controls="pills-home"
+                                            aria-selected="true">Đơn hàng mới</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" id="pills-processing-tab" data-toggle="pill"
+                                            href="#pills-profile" role="tab" aria-controls="pills-profile"
+                                            aria-selected="false">Đơn hàng đang xử lý</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" id="pills-successful-tab" data-toggle="pill"
+                                            href="#pills-contact" role="tab" aria-controls="pills-contact"
+                                            aria-selected="false">Đơn hàng gửi thành công</a>
+                                    </li>
+
+
+                                </ul>
+
+                                
+
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                        aria-labelledby="new-orders-tab">
+
+                                        <div class="table-responsive table-data">
+                                            <table class="table table-data2">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>MÃ đơn hàng</th>
+                                                        <th>Họ tên người nhận</th>
+                                                        <th>Địa chỉ</th>
+                                                        <th>Tổng tiền</th>
+                                                        <th>Số lượng sản phẩm</th>
+                                                        <th>Ngày đặt</th>
+                                                        <th>Hành động</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="tr-shadow">
+                                                        <td class="number_order">1</td>
+                                                        <td>
+                                                            <span class="block-name">1</span>
+                                                        </td>
+                                                        <td>
+                                                            <span>Nguyễn Văn A</span>
+                                                        </td>
+                                                        <td>
+                                                            <span>Đại học công nghiệp hà nội</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">14.000.000 VNĐ</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">2</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
+                                                        </td>
+                                                        <td>
+
+                                                            <input type="button" class="btn btn-outline-info"
+                                                                onclick="confirmOrders()" value="Xem"
+                                                                data-toggle="modal" data-target="#modal-confirm-orders">
+
+                                                            <input type="button" class="btn btn-outline-success"
+                                                                value="Nhận đơn">
+                                                            <input type="button" class="btn btn-outline-danger"
+                                                                value="Hủy đơn">
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr class="spacer"></tr>
+                                                    <tr class="tr-shadow">
+                                                        <td class="number_order">2</td>
+                                                        <td>
+                                                            <span class="block-name">2</span>
+                                                        </td>
+                                                        <td>
+                                                            <span>Nguyễn Văn B</span>
+                                                        </td>
+                                                        <td>
+                                                            <span>Đại học công nghiệp hà nội</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">4.000.000 VNĐ</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">6</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">30/5/2021 - 11:12:10</span>
+                                                        </td>
+                                                        <td>
+                                                            <input type="button" class="btn btn-outline-info"
+                                                                onclick="confirmOrders()" value="Xem"
+                                                                data-toggle="modal" data-target="#modal-confirm-orders">
+                                                            <input type="button" class="btn btn-outline-success"
+                                                                value="Nhận đơn">
+                                                            <input type="button" class="btn btn-outline-danger"
+                                                                value="Hủy đơn">
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr class="spacer"></tr>
+                                                    <tr class="tr-shadow">
+                                                        <td class="number_order">3</td>
+                                                        <td>
+                                                            <span class="block-name">3</span>
+                                                        </td>
+                                                        <td>
+                                                            <span>Nguyễn Văn C</span>
+                                                        </td>
+                                                        <td>
+                                                            <span>Đại học công nghiệp hà nội</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">1.000.000 VNĐ</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">3</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">22/5/2021 - 11:12:10</span>
+                                                        </td>
+                                                        <td>
+                                                            <input type="button" class="btn btn-outline-info"
+                                                                onclick="confirmOrders()" value="Xem"
+                                                                data-toggle="modal" data-target="#modal-confirm-orders">
+                                                            <input type="button" class="btn btn-outline-success"
+                                                                value="Nhận đơn">
+                                                            <input type="button" class="btn btn-outline-danger"
+                                                                value="Hủy đơn">
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr class="spacer"></tr>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                        <!-- END DATA TABLE -->
+                                        <div class="my-3">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination justify-content-center">
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true">&laquo;</span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true">&raquo;</span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                        aria-labelledby="pills-processing-tab">
+
+
+                                        <div class="table-responsive table-data">
+                                            <table class="table table-data2">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>MÃ đơn hàng</th>
+                                                        <th>Họ tên người nhận</th>
+                                                        <th>Địa chỉ</th>
+                                                        <th>Tổng tiền</th>
+                                                        <th>Số lượng sản phẩm</th>
+                                                        <th>Ngày đặt</th>
+                                                        <th>Ngày cập nhật</th>
+                                                        <th>Cập nhật trạng thái</th>
+                                                        <th>Hành động</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="tr-shadow">
+                                                        <td class="number_order">1</td>
+                                                        <td>
+                                                            <span class="block-name">4</span>
+                                                        </td>
+                                                        <td>
+                                                            <span>Nguyễn Văn D</span>
+                                                        </td>
+                                                        <td>
+                                                            <span>Đại học công nghiệp hà nội</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">14.000.000 VNĐ</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">2</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="rs-select2--light rs-select2--md ">
+                                                                <select class="js-select2 " name="status">
+                                                                    <option selected="selected">Đã nhận đơn</option>
+                                                                    <option value="">Đã giao cho ĐVVC</option>
+                                                                    <option value="">Đơn hàng đã nhận</option>
+                                                                </select>
+                                                                <div class="dropDownSelect2"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <!-- <input type="button" class="btn btn-outline-info"
+                                                            value="Xem"  data-toggle="modal" data-target="#modal-confirm-orders"
+                                                            onclick="clickProcessOrders('Shop đã tiếp nhận đơn hàng','1/7/2021 - 10:20;12');"> -->
+
+                                                            <div class="table-data-feature">
+                                                                <button class="item" title="Xem thông tin đơn hàng"
+                                                                    data-toggle="modal"
+                                                                    data-target="#modal-confirm-orders"
+                                                                    onclick="clickProcessOrders('Shop đã tiếp nhận đơn hàng','1/7/2021 - 10:20;12');">
+                                                                    <i class="	fas fa-eye"></i>
+                                                                </button>
+
+                                                            </div>
+
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr class="spacer"></tr>
+
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                        <!-- END DATA TABLE -->
+                                        <div class="my-3">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination justify-content-center">
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true">&laquo;</span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true">&raquo;</span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                        aria-labelledby="pills-successful-tab">
+
+
+
+                                        <div class="table-responsive table-data">
+                                            <table class="table table-data2">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>MÃ đơn hàng</th>
+                                                        <th>Họ tên người nhận</th>
+                                                        <th>Địa chỉ</th>
+                                                        <th>Tổng tiền</th>
+                                                        <th>Số lượng sản phẩm</th>
+                                                        <th>Ngày đặt</th>
+                                                        <th>Ngày cập nhật</th>
+                                                        <th>Hành động</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="tr-shadow">
+                                                        <td class="number_order">1</td>
+                                                        <td>
+                                                            <span class="block-name">5</span>
+                                                        </td>
+                                                        <td>
+                                                            <span>Nguyễn Văn E</span>
+                                                        </td>
+                                                        <td>
+                                                            <span>Đại học công nghiệp hà nội</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">14.000.000 VNĐ</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">2</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
+                                                        </td>
+                                                        <td>
+
+                                                            <div class="table-data-feature">
+                                                                <button class="item" title="Xem thông tin đơn hàng"
+                                                                    data-toggle="modal"
+                                                                    data-target="#modal-confirm-orders"
+                                                                    onclick="clickSuccessfulOrders('Giao hàng thành công','1/7/2021 - 10:20;12');">
+                                                                    <i class="	fas fa-eye"></i>
+                                                                </button>
+
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr class="spacer"></tr>
+                                                    <tr class="tr-shadow">
+                                                        <td class="number_order">2</td>
+                                                        <td>
+                                                            <span class="block-name">6</span>
+                                                        </td>
+                                                        <td>
+                                                            <span>Nguyễn Văn F</span>
+                                                        </td>
+                                                        <td>
+                                                            <span>Đại học công nghiệp hà nội</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">4.000.000 VNĐ</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">6</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">30/5/2021 - 11:12:10</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="block-name-product">30/5/2021 - 11:12:10</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="table-data-feature">
+                                                                <button class="item" title="Xem thông tin đơn hàng"
+                                                                    data-toggle="modal"
+                                                                    data-target="#modal-confirm-orders"
+                                                                    onclick="clickSuccessfulOrders('Giao hàng thành công','1/7/2021 - 10:20;12');">
+                                                                    <i class="	fas fa-eye"></i>
+                                                                </button>
+
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+                                                    
+                                                    <tr class="spacer"></tr>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                        <!-- END DATA TABLE -->
+                                        <div class="my-3">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination justify-content-center">
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true">&laquo;</span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true">&raquo;</span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Copyright © 2021. All rights reserved. Template by <b>Nhóm 6 - CNTT01 - K13 -
+                                            HaUI</b>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTAINER-->
+    </div>
+
+
+
+    <!-- modal orders -->
+    <div class="modal fade" id="modal-confirm-orders" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mediumModalLabel">Đơn hàng : #1 - <span id="status-orders">Chưa xác
+                            nhận</span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div id="infor-time" class="p-4"></div>
+                        <h4>Thông tin người nhận</h4>
+                        <br>
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>Họ tên người nhận</td>
+                                <td>Nguyễn Văn A</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>adf@sdf.com</td>
+                            </tr>
+                            <tr>
+                                <td>Số điện thoại</td>
+                                <td>0988777665</td>
+                            </tr>
+                            <tr>
+                                <td>Địa chỉ</td>
+                                <td>Nhổn - Đại học Công Nghiệp Hà Nội</td>
+                            </tr>
+                            <tr>
+                                <td>Hình thức thanh toán</td>
+                                <td>Thanh toán khi nhân hàng</td>
+                            </tr>
+                            <tr>
+                                <td>Tổng tiền thanh toán</td>
+                                <td>14.000.000 VNĐ</td>
+                            </tr>
+                        </table>
+                        <hr>
+                        <h4>Chi tiết sản phẩm</h4>
+                        <br>
+                        <div class="d-flex flex-row">
+                            <img class="border" src="https://cdn.mediamart.vn/Product/thumb_-9ZWE58.jpg" alt=""
+                                width="100" height="100">
+                            <div class="ml-2">
+                                <h5>Điều Hòa Gree 1 Chiều 9000BTU GWC09KB-K6N0C4</h5>
+                                <p>Giá: 10.000.000đ</p>
+                                <p>Số lượng: 1</p>
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="d-flex flex-row">
+                            <img class="border" src="https://cdn.mediamart.vn/Product/thumb_-QKs992.png" alt=""
+                                width="100" height="100">
+                            <div class="ml-2">
+                                <h5>Tủ Lạnh Sharp SJ-X281E-SL - 271 Lít (Bạc Thép Không Gỉ)</h5>
+                                <p>Giá: 4.000.000đ</p>
+                                <p>Số lượng: 1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning">In thông tin đơn hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal orders -->
+
+
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+
+    <script>
+
+        $("#infor-time").hide();
+
+        function clickProcessOrders(status, time) {
+            $('#status-orders').text(status + ' _ ' + time);
+            $('#status-orders').css("color", "green");
+            $("#infor-time").show();
+            $("#infor-time").html(
+                '<h4 style="margin-left: -25px;">Trạng thái đơn hàng</h4><br>'+
+                '<ul>'+
+                    '<li class="text-success"> '+time+' '+status+'</li>'+
+                    '<li> 1/1/2021 10:10:10 Người gửi chuẩn bị hàng</li>'+
+                '</ul>'+
+                '<hr>'
+
+            );
+        }
+        function clickSuccessfulOrders(status, time){
+            $('#status-orders').text(status + ' _ ' + time);
+            $('#status-orders').css("color", "green");
+            $("#infor-time").show();
+            $("#infor-time").html(
+                '<h4 style="margin-left: -25px;">Trạng thái đơn hàng</h4><br>'+
+                '<ul>'+
+                    '<li class="text-success"> '+time+' '+status+'</li>'+
+                    '<li> 1/2/2021 10:10:10 Đang giao hàng</li>'+
+                    '<li> 1/1/2021 10:10:10 Người gửi chuẩn bị hàng</li>'+
+                '</ul>'+
+                '<hr>'
+
+            );
+        }
+
+        function confirmOrders() {
+            $('#status-orders').text("Chưa xác nhận");
+            $('#status-orders').css("color", "red");
+            $("#infor-time").hide();
+        }
+    </script>
+</body>
+
+</html>
+<!-- end document-->
