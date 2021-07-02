@@ -1247,15 +1247,15 @@
     $(".animsition").animsition({
         inClass: 'fade-in',
         outClass: 'fade-out',
-        inDuration: 900,
-        outDuration: 900,
+        inDuration: 0,
+        outDuration: 0,
         linkElement: linkElement,
         loading: true,
         loadingParentElement: 'html',
         loadingClass: 'page-loader',
         loadingInner: '<div class="page-loader__spin"></div>',
         timeout: false,
-        timeoutCountdown: 5000,
+        timeoutCountdown: 0,
         onLoadEvent: true,
         browser: ['animation-duration', '-webkit-animation-duration'],
         overlay: false,
@@ -1265,9 +1265,8 @@
             window.location.href = url;
         }
     });
-
-
 })(jQuery);
+
 (function($) {
     // USE STRICT
     "use strict";
@@ -1429,36 +1428,36 @@
         console.log(error);
     }
 })(jQuery);
-(function($) {
-    // Use Strict
-    "use strict";
-    try {
-        var progressbarSimple = $('.js-progressbar-simple');
-        progressbarSimple.each(function() {
-            var that = $(this);
-            var executed = false;
-            $(window).on('load', function() {
+// (function($) {
+//     // Use Strict
+//     "use strict";
+//     try {
+//         var progressbarSimple = $('.js-progressbar-simple');
+//         progressbarSimple.each(function() {
+//             var that = $(this);
+//             var executed = false;
+//             $(window).on('load', function() {
 
-                that.waypoint(function() {
-                    if (!executed) {
-                        executed = true;
-                        /*progress bar*/
-                        that.progressbar({
-                            update: function(current_percentage, $this) {
-                                $this.find('.js-value').html(current_percentage + '%');
-                            }
-                        });
-                    }
-                }, {
-                    offset: 'bottom-in-view'
-                });
+//                 that.waypoint(function() {
+//                     if (!executed) {
+//                         executed = true;
+//                         /*progress bar*/
+//                         that.progressbar({
+//                             update: function(current_percentage, $this) {
+//                                 $this.find('.js-value').html(current_percentage + '%');
+//                             }
+//                         });
+//                     }
+//                 }, {
+//                     offset: 'bottom-in-view'
+//                 });
 
-            });
-        });
-    } catch (err) {
-        console.log(err);
-    }
-})(jQuery);
+//             });
+//         });
+//     } catch (err) {
+//         console.log(err);
+//     }
+// })(jQuery);
 (function($) {
     // USE STRICT
     "use strict";
@@ -1599,33 +1598,33 @@
         console.log(error);
     }
 })(jQuery);
-(function($) {
-    // USE STRICT
-    "use strict";
+// (function($) {
+//     // USE STRICT
+//     "use strict";
 
-    // Load more
-    try {
-        var list_load = $('.js-list-load');
-        if (list_load[0]) {
-            list_load.each(function() {
-                var that = $(this);
-                that.find('.js-load-item').hide();
-                var load_btn = that.find('.js-load-btn');
-                load_btn.on('click', function(e) {
-                    $(this).text("Loading...").delay(1500).queue(function(next) {
-                        $(this).hide();
-                        that.find(".js-load-item").fadeToggle("slow", 'swing');
-                    });
-                    e.preventDefault();
-                });
-            })
+//     // Load more
+//     try {
+//         var list_load = $('.js-list-load');
+//         if (list_load[0]) {
+//             list_load.each(function() {
+//                 var that = $(this);
+//                 that.find('.js-load-item').hide();
+//                 var load_btn = that.find('.js-load-btn');
+//                 load_btn.on('click', function(e) {
+//                     $(this).text("Loading...").delay(1500).queue(function(next) {
+//                         $(this).hide();
+//                         that.find(".js-load-item").fadeToggle("slow", 'swing');
+//                     });
+//                     e.preventDefault();
+//                 });
+//             })
 
-        }
-    } catch (error) {
-        console.log(error);
-    }
+//         }
+//     } catch (error) {
+//         console.log(error);
+//     }
 
-})(jQuery);
+// })(jQuery);
 (function($) {
     // USE STRICT
     "use strict";
