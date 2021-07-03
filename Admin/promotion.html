@@ -35,6 +35,8 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+
+    <script src="ckeditor/ckeditor.js"></script>
 </head>
 
 <!-- animsition overrides all click events on clickable things like a,
@@ -818,7 +820,13 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-
+    <script>
+        var editor = "";
+        $(document).ready(function () {
+            editor = CKEDITOR.replace('detail-propmotion');
+            //CKFinder.setupCKEditor(detail, '/ckfinder/')
+        });
+    </script>
 </body>
 
 </html>

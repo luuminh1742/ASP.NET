@@ -35,7 +35,7 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-
+    <script src="ckeditor/ckeditor.js"></script>
 </head>
 
 <body class="">
@@ -480,7 +480,13 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-
+    <script>
+        var editor = "";
+        $(document).ready(function () {
+            editor = CKEDITOR.replace('detail');
+            //CKFinder.setupCKEditor(detail, '/ckfinder/')
+        });
+    </script>
 </body>
 
 </html>
