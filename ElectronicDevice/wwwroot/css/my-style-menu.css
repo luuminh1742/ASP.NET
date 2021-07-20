@@ -1,0 +1,95 @@
+/* .my-menu:hover{
+    border-bottom: 1px solid rgba(252, 208, 16, 0.933);
+    transition:0.1s;
+    cursor: pointer;
+} */
+/* 
+.my-menu a:after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+}
+.my-menu a:hover:after{
+    width:100%;
+} */
+
+
+/* #mainNav {
+    list-style: none;
+    margin:0;
+  
+  }
+  #mainNav li {
+    display: inline-block;
+      display:inline;
+      margin: 20px;
+  }
+  #mainNav li a {
+    padding-bottom: 10px;
+    text-decoration: none;
+    
+  } */
+
+  #mainNav .my-menu-active a{
+    color:#E34F25 !important;
+    border-bottom-color: #E34F25 !important;
+  }
+  #mainNav li a,
+  #mainNav li a:after,
+  #mainNav li a:before {
+    transition: all .5s;
+  }
+  #mainNav li a:hover {
+    color:#E34F25;
+  }
+  
+  /* stroke */
+  #mainNav.stroke li a
+  {
+    position: relative;
+    font-weight: bold;
+  }
+  #mainNav.stroke li a:after,
+  #mainNav li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #E34F25;
+    height: 1px;
+  }
+  #mainNav.stroke li a:hover:after {
+    width: 100%;
+  }
+  
+  #mainNav li a {
+    transition: all 1s;
+  }
+  
+  #mainNav li a:after {
+    text-align: left;
+    content: '.';
+    margin: 0;
+    opacity: 0;
+  }
+  #mainNav li a:hover {
+    color: #E34F25;
+    z-index: 1;
+  }
+  #mainNav li a:hover:after {
+    z-index: -10;
+    animation: fill 1s forwards;
+    opacity: 1;
+  }
+  

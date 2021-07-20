@@ -1,0 +1,24 @@
+.my-cart{
+    width: 50px;
+    height: 50px;
+}
+
+.my-cart>i{
+    color: darkorange !important;
+    font-size: 20px !important;
+    margin: 13px;
+}
+
+.my-cart:hover{
+    background-color: darkorange !important;
+}
+
+.my-cart:hover i{
+    color: white !important;
+}
+
+
+.img-product{
+    
+    height: 280px !important;
+}

@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BFCB972B-7333-4C58-A18D-F7891D1B55A4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ElectronicDevice</RootNamespace>
+    <AssemblyName>ElectronicDevice</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44384</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="wwwroot\image\-5j4I36.png" />
+    <Content Include="wwwroot\image\-64I884.png" />
+    <Content Include="wwwroot\image\-964Enf.png" />
+    <Content Include="wwwroot\image\-aOQu7x.png" />
+    <Content Include="wwwroot\image\-eQYu64.png" />
+    <Content Include="wwwroot\image\-hpnO94.png" />
+    <Content Include="wwwroot\image\-OWra1B.jpg" />
+    <Content Include="wwwroot\image\-p49Nq6.png" />
+    <Content Include="wwwroot\image\-pRq7fY.png" />
+    <Content Include="wwwroot\image\-soXWB4.png" />
+    <Content Include="wwwroot\image\-tV3G1K.png" />
+    <Content Include="wwwroot\image\dieu-hoa-casper-1-chieu-12000btu-sc12tl32-210d6q.png" />
+    <Content Include="wwwroot\image\dieu-hoa-gree-1-chieu-inverter-9000btu-gwc09pbk3d0p4-huR772.png" />
+    <Content Include="wwwroot\image\dieu-hoa-midea-1-chieu-9000btu-msma310crn1-291nZR.png" />
+    <Content Include="wwwroot\image\dieu-hoa-panasonic-1-chieu-9000btu-csn9wkh8m-wH2k4X.png" />
+    <Content Include="wwwroot\image\dieu-hoa-samsung-windfree-1-chieu-inverter-12000btu-ar13tygcdwknsv-8CN26y.png" />
+    <Content Include="wwwroot\image\icon-may-giat-may-say.png" />
+    <Content Include="wwwroot\image\icon-quat-mat-cac-loai.png" />
+    <Content Include="wwwroot\image\icon-tivi-loa-am-thanh.png" />
+    <Content Include="wwwroot\image\icon-tu-lanh-tu-dong-tu-mat.png" />
+    <Content Include="wwwroot\image\icon_dieu_hoa.png" />
+    <Content Include="wwwroot\image\may-giat-8-kg-samsung-addwash-ww80j52g0kw-hoi-nuoc-2DxQK2.jpg" />
+    <Content Include="wwwroot\image\may-giat-aqua-inverter-105kg-aqdd1050ew-9gTcUY.png" />
+    <Content Include="wwwroot\image\may-giat-inverter-9kg-say-5kg-lg-fv1409g4v-93DNFk.png" />
+    <Content Include="wwwroot\image\may-giat-long-ngang-aqua-inverter-9kg-aqdd900fs-H4zXRf.png" />
+    <Content Include="wwwroot\image\may-giat-long-ngang-inverter-9kg-lg-fv1409s2v-NAAdZv.png" />
+    <Content Include="wwwroot\image\may-giat-long-ngang-midea-mfk851401sk-inverter-85kg-3KZ62G.png" />
+    <Content Include="wwwroot\image\may-giat-long-ngang-samsung-ai-inverter-10kg-ww10tp44dsbsv-v9V8UI.png" />
+    <Content Include="wwwroot\image\may-giat-long-ngang-samsung-inverterter-95kg-ww95ta046axsv-kE73V2.png" />
+    <Content Include="wwwroot\image\may-say-samsung-9kg-dv90m5200qwsv-394Ji6.png" />
+    <Content Include="wwwroot\image\quat-cay-midea-fs4011v-l3j80T.jpg" />
+    <Content Include="wwwroot\image\quat-treo-tuong-coex-cw7210-17XRkL.png" />
+    <Content Include="wwwroot\image\thumb_-00BMt7 %281%29.jpg" />
+    <Content Include="wwwroot\image\thumb_-00BMt7.jpg" />
+    <Content Include="wwwroot\image\thumb_-04u1Al.jpg" />
+    <Content Include="wwwroot\image\thumb_-1UOnLR.jpg" />
+    <Content Include="wwwroot\image\thumb_-3jG8zm.jpg" />
+    <Content Include="wwwroot\image\thumb_-42IrR0.png" />
+    <Content Include="wwwroot\image\thumb_-49a9Ze.jpg" />
+    <Content Include="wwwroot\image\thumb_-6VZiTQ.png" />
+    <Content Include="wwwroot\image\thumb_-8JeXeX.jpg" />
+    <Content Include="wwwroot\image\thumb_-9ZWE58.jpg" />
+    <Content Include="wwwroot\image\thumb_-a1T949.jpg" />
+    <Content Include="wwwroot\image\thumb_-B1q8rx.jpg" />
+    <Content Include="wwwroot\image\thumb_-CmM1Q6.jpg" />
+    <Content Include="wwwroot\image\thumb_-h67RZw.jpg" />
+    <Content Include="wwwroot\image\thumb_-I8oqP1.jpg" />
+    <Content Include="wwwroot\image\thumb_-K2pI20.png" />
+    <Content Include="wwwroot\image\thumb_-kB8V82.png" />
+    <Content Include="wwwroot\image\thumb_-nkkXJe.png" />
+    <Content Include="wwwroot\image\thumb_-pFble3.jpg" />
+    <Content Include="wwwroot\image\thumb_-QUp216.jpg" />
+    <Content Include="wwwroot\image\thumb_-R54947.jpg" />
+    <Content Include="wwwroot\image\thumb_-RbIWBJ.png" />
+    <Content Include="wwwroot\image\thumb_-TqoFl4.png" />
+    <Content Include="wwwroot\image\thumb_-w89YJA.png" />
+    <Content Include="wwwroot\image\thumb_-wsqGqV.jpg" />
+    <Content Include="wwwroot\image\thumb_-XtUa1n.jpg" />
+    <Content Include="wwwroot\image\thumb_-XugLI6.png" />
+    <Content Include="wwwroot\image\thumb_-Y2bJtY.jpg" />
+    <Content Include="wwwroot\image\thumb_-Y47VKb.jpg" />
+    <Content Include="wwwroot\image\thumb_-Zo3bjN.jpg" />
+    <Content Include="wwwroot\image\thumb_17914_13767_quat-tich-dien-sunhouse-sh722.jpg" />
+    <Content Include="wwwroot\image\thumb_24591_3643_quat-cay-panasonic-f-409kbe.jpg" />
+    <Content Include="wwwroot\image\thumb_26623_9064_quat-cay-mitsubishi-lv16rqrp.jpg" />
+    <Content Include="wwwroot\image\thumb_7e570a45-802b-4ce5-86f5-d5f781776a2e_senko-quat-hop---quat-tan-quat-hop-tan-gio-40w-bd850-quat-hop-senko-bd850.jpg" />
+    <Content Include="wwwroot\image\thumb_dieu-hoa-1-chieu-inverter-9000btu-panasonic-cspu9wkh8m-N2V8VF.png" />
+    <Content Include="wwwroot\image\thumb_dieu-hoa-daikin-1-chieu-9000btu-atf25uv1v-ohoi11.png" />
+    <Content Include="wwwroot\image\thumb_dieu-hoa-gree-1-chieu-inverter-12000btu-gwc12pbk3d0p4-58H561.png" />
+    <Content Include="wwwroot\image\thumb_dieu-hoa-gree-1-chieu-inverter-9000btu-gwc09pbk3d0p4-huR772.png" />
+    <Content Include="wwwroot\image\thumb_dieu-hoa-midea-1-chieu-9000btu-msafc10crn8-mxj6Qb.jpg" />
+    <Content Include="wwwroot\image\thumb_dieu-hoa-samsung-1-chieu-inverter-12000btu-ar13tyhycwknsv-T2nNcL.png" />
+    <Content Include="wwwroot\image\thumb_dieu-hoa-samsung-1-chieu-inverter-9400btu-ar10tyhycwknsv-49j2lo.png" />
+    <Content Include="wwwroot\image\thumb_dieu-hoa-samsung-windfree-1-chieu-inverter-9400btu-ar10tygcdwknsv-J2o7n5.png" />
+    <Content Include="wwwroot\image\thumb_loa-sound-bar-fenda-t160x-iS4DbQ.png" />
+    <Content Include="wwwroot\image\thumb_loa-soundbar-tcl-ts7000-9EvVo0.jpg" />
+    <Content Include="wwwroot\image\thumb_quat-cay-dien-co-qd450dm-QCkB0K.jpg" />
+    <Content Include="wwwroot\image\thumb_quat-cay-midea-fs4011v-l3j80T.jpg" />
+    <Content Include="wwwroot\image\thumb_quat-cay-midea-fs4015qr-co-dieu-khien-T5nX9b.jpg" />
+    <Content Include="wwwroot\image\thumb_quat-cay-toshiba-inverter-dc-flsd10h-co-dieu-khien-7f6pI3.png" />
+    <Content Include="wwwroot\image\thumb_quat-dung-cong-nghiep-senko-dcn1806-5lpx5s.jpg" />
+    <Content Include="wwwroot\image\thumb_quat-dung-dien-co-qd400xms-co-dk-99YTtV.jpg" />
+    <Content Include="wwwroot\image\thumb_quat-dung-midea-fs4015q-35DkLq.jpg" />
+    <Content Include="wwwroot\image\thumb_quat-hop-dien-co-tn-qh-300lp-h2wdIz.jpg" />
+    <Content Include="wwwroot\image\thumb_quat-lung-dien-co-qdm400-co-dk-5976WK.jpg" />
+    <Content Include="wwwroot\image\thumb_quat-lung-dien-co-qdm400-dbk-0RQ981.png" />
+    <Content Include="wwwroot\image\thumb_quat-lung-midea-fts4017vd-5XUrrb.jpg" />
+    <Content Include="wwwroot\image\thumb_quat-tran-5-canh-mitsubishi-c56rw5-sf-xam-nhat-unaBcO.png" />
+    <Content Include="wwwroot\image\thumb_quat-treo-tuong-coex-cw7210-17XRkL.png" />
+    <Content Include="wwwroot\image\thumb_quat-treo-tuong-dien-co-qtt400xhd-co-dk-h5W1QP.jpg" />
+    <Content Include="wwwroot\image\thumb_quat-treo-tuong-midea-fw406h-9calXg.jpg" />
+    <Content Include="wwwroot\image\thumb_tu-dong-280l-inverter-sanaky-1-ngan-vh-2899a3-hgzJo1.jpg" />
+    <Content Include="wwwroot\image\thumb_tu-dong-280l-inverter-sanaky-2-ngan-vh2899w3-jZ0Oyj.jpg" />
+    <Content Include="wwwroot\image\thumb_tu-dong-360l-inverter-sanaky-2-ngan-vh3699w3-88H1X9.jpg" />
+    <Content Include="wwwroot\image\thumb_tu-dong-400l-inverter-sanaky-1-ngan-vh4099a3-FN98Hh.jpg" />
+    <Content Include="wwwroot\image\thumb_tu-dong-400l-inverter-sanaky-2-ngan-vh-4099w3-GJ3JzX.jpg" />
+    <Content Include="wwwroot\image\thumb_tu-dong-kangaroo-809l-kg809c1-Brg96I.jpg" />
+    <Content Include="wwwroot\image\thumb_tu-dong-kangaroo-90l-kg168nc1-595087.jpg" />
+    <Content Include="wwwroot\image\thumb_tu-dong-mem-kangaroo-192l-kg268dm2-x7l1NO.png" />
+    <Content Include="wwwroot\image\thumb_tu-dong-sanaky-208l-vh2599a2k-ZiWD4Y.jpg" />
+    <Content Include="wwwroot\image\thumb_tu-dong-sanaky-208l-vh2599a2kd-w2TNFY.png" />
+    <Content Include="wwwroot\image\thumb_tu-dong-sanaky-inverter-360l-vh3699a4k-2o6yOe.png" />
+    <Content Include="wwwroot\image\thumb_tu-dong-sanaky-inverter-360l-vh3699w4k-7mI68J.png" />
+    <Content Include="wwwroot\image\thumb_tu-dong-sanaky-inverter-400-lit-vh5699w3-6ydR8O.png" />
+    <Content Include="wwwroot\image\thumb_tu-dong-sanaky-inverter-400l-vh4099a4k-1wF0F4.png" />
+    <Content Include="wwwroot\image\thumb_tu-dong-sanaky-inverter-400l-vh4099w4k-zYF1Hw.png" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Models\" />
+    <Folder Include="wwwroot\admin\" />
+    <Folder Include="wwwroot\client\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58385</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44384/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
