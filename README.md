@@ -1,2 +1,2 @@
 # ElectronicDevice
-Bài tập lớn ASP.NET - Nhóm 6
+Bài tập lớn ASP.NET - Nhóm 6 - HaUI
