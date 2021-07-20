@@ -77,3 +77,11 @@ D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\obj\Debug\Electronic
 D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
 D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.dll
 D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
+D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\EntityFramework.dll
+D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.dll
+D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\PagedList.dll
+D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.dll
+D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\EntityFramework.xml
+D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.xml
+D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\PagedList.xml
+D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.xml

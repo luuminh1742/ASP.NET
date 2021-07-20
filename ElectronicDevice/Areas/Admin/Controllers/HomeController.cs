@@ -4,23 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ElectronicDevice.Controllers
+namespace ElectronicDevice.Areas.Admin.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: Admin/Home
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-
             return View();
         }
     }
