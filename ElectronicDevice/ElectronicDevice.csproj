@@ -1080,6 +1080,7 @@
     <Content Include="wwwroot\js\aos.js" />
     <Content Include="wwwroot\js\bootstrap.min.js" />
     <Content Include="wwwroot\js\contact.js" />
+    <Content Include="wwwroot\js\custom-header.js" />
     <Content Include="wwwroot\js\custom.js" />
     <Content Include="wwwroot\js\gmaps.min.js" />
     <Content Include="wwwroot\js\jquery-1.12.1.min.js" />

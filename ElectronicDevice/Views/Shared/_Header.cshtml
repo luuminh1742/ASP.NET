@@ -1,4 +1,4 @@
-﻿<header class="main_menu home_menu">
+﻿<header class="main_menu home_menu" id="my_header">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12">
@@ -15,22 +15,29 @@
 
                     <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                         <ul class="navbar-nav stroke" id="mainNav">
-                            <li class="nav-item my-menu-active" >
+                            <li class="nav-item @(
+                                ViewContext.RouteData.Values["Controller"].ToString() != "Home" ?"":
+                                ViewContext.RouteData.Values["Action"].ToString()== "Index" ?"my-menu-active" : ""
+                                )">
                                 <a class="nav-link" href="@Url.Action("Index","Home")">Trang chủ</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item @(ViewContext.RouteData.Values["Controller"].ToString() == "Product" ?"my-menu-active" : "")">
                                 <a class="nav-link" href="@Url.Action("Index","Product")">Sản phẩm</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item ">
                                 <a class="nav-link" href="#">Tin tức</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Khuyến mãi</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item @(
+                            ViewContext.RouteData.Values["Controller"].ToString()!= "Home"?"":
+                            ViewContext.RouteData.Values["Action"].ToString()== "Contact" ? "my-menu-active" : "")">
                                 <a class="nav-link" href="@Url.Action("Contact","Home")">Liên hệ</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item @(
+                            ViewContext.RouteData.Values["Controller"].ToString()!= "Home"?"":
+                            ViewContext.RouteData.Values["Action"].ToString()== "Introduce" ? "my-menu-active" : "")">
                                 <a class="nav-link" href="@Url.Action("Introduce","Home")">Giới thiệu</a>
                             </li>
 
