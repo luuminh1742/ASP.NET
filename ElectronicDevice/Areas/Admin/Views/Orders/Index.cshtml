@@ -1,0 +1,412 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<!-- DATA TABLE -->
+<h3 class="title-5 m-b-35">Danh sách đơn hàng</h3>
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="new-orders-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Đơn hàng mới</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="pills-processing-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Đơn hàng đang xử lý</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="pills-successful-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Đơn hàng gửi thành công</a>
+    </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="new-orders-tab">
+        <div class="table-responsive table-data">
+            <table class="table table-data2">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>MÃ đơn hàng</th>
+                        <th>Họ tên người nhận</th>
+                        <th>Địa chỉ</th>
+                        <th>Tổng tiền</th>
+                        <th>Số lượng sản phẩm</th>
+                        <th>Ngày đặt</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr-shadow">
+                        <td class="number_order">1</td>
+                        <td>
+                            <span class="block-name">1</span>
+                        </td>
+                        <td>
+                            <span>Nguyễn Văn A</span>
+                        </td>
+                        <td>
+                            <span>Đại học công nghiệp hà nội</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">14.000.000 VNĐ</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">2</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
+                        </td>
+                        <td>
+
+                            <input type="button" class="btn btn-outline-info" onclick="confirmOrders()" value="Xem" data-toggle="modal" data-target="#modal-confirm-orders">
+
+                            <input type="button" class="btn btn-outline-success" value="Nhận đơn">
+                            <input type="button" class="btn btn-outline-danger" value="Hủy đơn">
+                        </td>
+
+                    </tr>
+                    <tr class="spacer"></tr>
+                    <tr class="tr-shadow">
+                        <td class="number_order">2</td>
+                        <td>
+                            <span class="block-name">2</span>
+                        </td>
+                        <td>
+                            <span>Nguyễn Văn B</span>
+                        </td>
+                        <td>
+                            <span>Đại học công nghiệp hà nội</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">4.000.000 VNĐ</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">6</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">30/5/2021 - 11:12:10</span>
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-outline-info" onclick="confirmOrders()" value="Xem" data-toggle="modal" data-target="#modal-confirm-orders">
+                            <input type="button" class="btn btn-outline-success" value="Nhận đơn">
+                            <input type="button" class="btn btn-outline-danger" value="Hủy đơn">
+                        </td>
+
+                    </tr>
+                    <tr class="spacer"></tr>
+                    <tr class="tr-shadow">
+                        <td class="number_order">3</td>
+                        <td>
+                            <span class="block-name">3</span>
+                        </td>
+                        <td>
+                            <span>Nguyễn Văn C</span>
+                        </td>
+                        <td>
+                            <span>Đại học công nghiệp hà nội</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">1.000.000 VNĐ</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">3</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">22/5/2021 - 11:12:10</span>
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-outline-info" onclick="confirmOrders()" value="Xem" data-toggle="modal" data-target="#modal-confirm-orders">
+                            <input type="button" class="btn btn-outline-success" value="Nhận đơn">
+                            <input type="button" class="btn btn-outline-danger" value="Hủy đơn">
+                        </td>
+
+                    </tr>
+                    <tr class="spacer"></tr>
+
+                </tbody>
+            </table>
+
+        </div>
+        <!-- END DATA TABLE -->
+        <div class="my-3">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-processing-tab">
+        <div class="table-responsive table-data">
+            <table class="table table-data2">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>MÃ đơn hàng</th>
+                        <th>Họ tên người nhận</th>
+                        <th>Địa chỉ</th>
+                        <th>Tổng tiền</th>
+                        <th>Số lượng sản phẩm</th>
+                        <th>Ngày đặt</th>
+                        <th>Ngày cập nhật</th>
+                        <th>Cập nhật trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr-shadow">
+                        <td class="number_order">1</td>
+                        <td>
+                            <span class="block-name">4</span>
+                        </td>
+                        <td>
+                            <span>Nguyễn Văn D</span>
+                        </td>
+                        <td>
+                            <span>Đại học công nghiệp hà nội</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">14.000.000 VNĐ</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">2</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
+                        </td>
+                        <td>
+                            <div class="rs-select2--light rs-select2--md ">
+                                <select class="js-select2 " name="status">
+                                    <option selected="selected">Đã nhận đơn</option>
+                                    <option value="">Đã giao cho ĐVVC</option>
+                                    <option value="">Đơn hàng đã nhận</option>
+                                </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <!-- <input type="button" class="btn btn-outline-info"
+                            value="Xem"  data-toggle="modal" data-target="#modal-confirm-orders"
+                            onclick="clickProcessOrders('Shop đã tiếp nhận đơn hàng','1/7/2021 - 10:20;12');"> -->
+
+                            <div class="table-data-feature">
+                                <button class="item" title="Xem thông tin đơn hàng" data-toggle="modal" data-target="#modal-confirm-orders" onclick="clickProcessOrders('Shop đã tiếp nhận đơn hàng','1/7/2021 - 10:20;12');">
+                                    <i class="	fas fa-eye"></i>
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+                    <tr class="spacer"></tr>
+
+
+                </tbody>
+            </table>
+
+        </div>
+        <!-- END DATA TABLE -->
+        <div class="my-3">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+    </div>
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-successful-tab">
+
+
+
+        <div class="table-responsive table-data">
+            <table class="table table-data2">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>MÃ đơn hàng</th>
+                        <th>Họ tên người nhận</th>
+                        <th>Địa chỉ</th>
+                        <th>Tổng tiền</th>
+                        <th>Số lượng sản phẩm</th>
+                        <th>Ngày đặt</th>
+                        <th>Ngày cập nhật</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr-shadow">
+                        <td class="number_order">1</td>
+                        <td>
+                            <span class="block-name">5</span>
+                        </td>
+                        <td>
+                            <span>Nguyễn Văn E</span>
+                        </td>
+                        <td>
+                            <span>Đại học công nghiệp hà nội</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">14.000.000 VNĐ</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">2</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
+                        </td>
+                        <td>
+
+                            <div class="table-data-feature">
+                                <button class="item" title="Xem thông tin đơn hàng" data-toggle="modal" data-target="#modal-confirm-orders" onclick="clickSuccessfulOrders('Giao hàng thành công','1/7/2021 - 10:20;12');">
+                                    <i class="	fas fa-eye"></i>
+                                </button>
+
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr class="spacer"></tr>
+                    <tr class="tr-shadow">
+                        <td class="number_order">2</td>
+                        <td>
+                            <span class="block-name">6</span>
+                        </td>
+                        <td>
+                            <span>Nguyễn Văn F</span>
+                        </td>
+                        <td>
+                            <span>Đại học công nghiệp hà nội</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">4.000.000 VNĐ</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">6</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">30/5/2021 - 11:12:10</span>
+                        </td>
+                        <td>
+                            <span class="block-name-product">30/5/2021 - 11:12:10</span>
+                        </td>
+                        <td>
+                            <div class="table-data-feature">
+                                <button class="item" title="Xem thông tin đơn hàng" data-toggle="modal" data-target="#modal-confirm-orders" onclick="clickSuccessfulOrders('Giao hàng thành công','1/7/2021 - 10:20;12');">
+                                    <i class="	fas fa-eye"></i>
+                                </button>
+
+                            </div>
+                        </td>
+
+                    </tr>
+
+                    <tr class="spacer"></tr>
+
+                </tbody>
+            </table>
+
+        </div>
+        <!-- END DATA TABLE -->
+        <div class="my-3">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</div>
+@section modal{
+    @Html.Partial("Orders");
+}
+@section Script{
+<script>
+    $("#infor-time").hide();
+
+    function clickProcessOrders(status, time) {
+        $('#status-orders').text(status + ' _ ' + time);
+        $('#status-orders').css("color", "green");
+        $("#infor-time").show();
+        $("#infor-time").html(
+            '<h4 style="margin-left: -25px;">Trạng thái đơn hàng</h4><br>' +
+            '<ul>' +
+            '<li class="text-success"> ' + time + ' ' + status + '</li>' +
+            '<li> 1/1/2021 10:10:10 Người gửi chuẩn bị hàng</li>' +
+            '</ul>' +
+            '<hr>'
+
+        );
+    }
+
+    function clickSuccessfulOrders(status, time) {
+        $('#status-orders').text(status + ' _ ' + time);
+        $('#status-orders').css("color", "green");
+        $("#infor-time").show();
+        $("#infor-time").html(
+            '<h4 style="margin-left: -25px;">Trạng thái đơn hàng</h4><br>' +
+            '<ul>' +
+            '<li class="text-success"> ' + time + ' ' + status + '</li>' +
+            '<li> 1/2/2021 10:10:10 Đang giao hàng</li>' +
+            '<li> 1/1/2021 10:10:10 Người gửi chuẩn bị hàng</li>' +
+            '</ul>' +
+            '<hr>'
+
+        );
+    }
+
+    function confirmOrders() {
+        $('#status-orders').text("Chưa xác nhận");
+        $('#status-orders').css("color", "red");
+        $("#infor-time").hide();
+    }
+</script>
+}

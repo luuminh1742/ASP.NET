@@ -1,0 +1,353 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<!-- DATA TABLE -->
+<h3 class="title-5 m-b-35">danh sách sản phẩm</h3>
+<div class="table-data__tool">
+    <div class="table-data__tool-left">
+        <div class="rs-select2--light rs-select2--md">
+            <select class="js-select2" name="property">
+                <option selected="selected">Danh mục</option>
+                <option value="">Điều hòa hiệt độ</option>
+                <option value="">Tivi, Loa - Âm Thanh</option>
+                <option value="">Máy giặt</option>
+                <option value="">Tủ lạnh</option>
+                <option value="">Quạt máy</option>
+            </select>
+            <div class="dropDownSelect2"></div>
+        </div>
+        <div class="rs-select2--light rs-select2--md">
+            <select class="js-select2" name="status">
+                <option selected="selected">Trạng Thái</option>
+                <option value="">Hiển Thị</option>
+                <option value="">Ẩn</option>
+            </select>
+            <div class="dropDownSelect2"></div>
+        </div>
+        <button class="au-btn-filter">
+            <i class="zmdi zmdi-filter-list"></i>Lọc
+        </button>
+    </div>
+    <div class="table-data__tool-right">
+        <button class="au-btn au-btn-icon au-btn--green au-btn--small"
+                data-toggle="modal" data-target="#modal-create">
+            <i class="fas fa-plus"></i>Thêm mới
+        </button>
+    </div>
+</div>
+<div class="table-responsive table-data">
+    <table class="table table-data2">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>ID</th>
+                <th>Ảnh</th>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>Giảm giá</th>
+                <th>trạng thái</th>
+                <th>phản hồi</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tr-shadow">
+                <td class="number_order">1</td>
+                <td>
+                    <span class="block-name">1</span>
+                </td>
+                <td class="block-image">
+                    <img src="~/Areas/Admin/Assets/images/product/thumb_tu-dong-sanaky-inverter-400-lit-vh5699w3-6ydR8O.png"
+                         alt="Hình Ảnh Sản Phẩm" />
+                </td>
+                <td>
+                    <span class="block-name-product">
+                        TỦ ĐÔNG SANAKY 260L INVERTER
+                        VH-3699W3
+                    </span>
+                </td>
+                <td>
+                    <span class="text-primary font-weight-bold">6.990.000&#8363;</span>
+                </td>
+                <td>
+                    <span class="text-primary font-weight-bold">0&#37;</span>
+                </td>
+                <td>
+                    <span class="status--process">Hiển Thị</span>
+                </td>
+                <td>
+                    <a href="feedback.html">
+                        <span class="text-primary font-weight-bold">10</span>
+                    </a>
+                </td>
+                <td>
+                    <div class="table-data-feature">
+                        <button class="item" title="Sửa" data-toggle="modal"
+                                data-target="#modal-edit">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button class="item" title="Xóa" data-toggle="modal"
+                                data-target="#modal-delete">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr class="tr-shadow">
+                <td class="number_order">2</td>
+                <td>
+                    <span class="block-name">15</span>
+                </td>
+                <td class="block-image">
+                    <img src="~/Areas/Admin/Assets/images/product/dieu-hoa-panasonic-1-chieu-9000btu-csn9wkh8m-wH2k4X.png"
+                         alt="Hình Ảnh Sản Phẩm" />
+                </td>
+                <td>
+                    <span class="block-name-product">
+                        Điều hòa Panasonic 1 chiều 9000BTU
+                        CS-N9WKH-8M
+                    </span>
+                </td>
+                <td>
+                    <span class="text-primary font-weight-bold">8.890.000&#8363;</span>
+                </td>
+                <td>
+                    <span class="text-primary font-weight-bold">0&#37;</span>
+                </td>
+                <td>
+                    <span class="status--process">Hiển Thị</span>
+                </td>
+                <td>
+                    <a href="feedback.html">
+                        <span class="text-primary font-weight-bold">990</span>
+                    </a>
+                </td>
+                <td>
+                    <div class="table-data-feature">
+                        <button class="item" title="Sửa" data-toggle="modal"
+                                data-target="#modal-edit">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button class="item" title="Xóa" data-toggle="modal"
+                                data-target="#modal-delete">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr class="tr-shadow">
+                <td class="number_order">3</td>
+                <td>
+                    <span class="block-name">16</span>
+                </td>
+                <td class="block-image">
+                    <img src="~/Areas/Admin/Assets/images/product/quat-treo-tuong-coex-cw7210-17XRkL.png"
+                         alt="Hình Ảnh Sản Phẩm" />
+                </td>
+                <td>
+                    <span class="block-name-product">
+                        QUẠT TRẦN 5 CÁNH MITSUBISHI C56-RW5
+                        SF XÁM NHẠT
+                    </span>
+                </td>
+                <td>
+                    <span class="text-primary font-weight-bold">7.000.000&#8363;</span>
+                </td>
+                <td>
+                    <span class="text-primary font-weight-bold">0&#37;</span>
+                </td>
+                <td>
+                    <span class="status--process">Hiển Thị</span>
+                </td>
+                <td>
+                    <a href="feedback.html">
+                        <span class="text-primary font-weight-bold">120</span>
+                    </a>
+                </td>
+                <td>
+                    <div class="table-data-feature">
+                        <button class="item" title="Sửa" data-toggle="modal"
+                                data-target="#modal-edit">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button class="item" title="Xóa" data-toggle="modal"
+                                data-target="#modal-delete">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr class="tr-shadow">
+                <td class="number_order">4</td>
+                <td>
+                    <span class="block-name">18</span>
+                </td>
+                <td class="block-image">
+                    <img src="~/Areas/Admin/Assets/images/product/thumb_-00BMt7 (1).jpg"
+                         alt="Hình Ảnh Sản Phẩm" />
+                </td>
+                <td>
+                    <span class="block-name-product">
+                        LOA SOUNDBAR SAMSUNG HW-T550/XV
+                        2.1CH
+                    </span>
+                </td>
+                <td>
+                    <span class="text-primary font-weight-bold">4.000.000&#8363;</span>
+                </td>
+                <td>
+                    <span class="text-primary font-weight-bold">0&#37;</span>
+                </td>
+                <td>
+                    <span class="status--process">Hiển Thị</span>
+                </td>
+                <td>
+                    <a href="feedback.html">
+                        <span class="text-primary font-weight-bold">100</span>
+                    </a>
+                </td>
+                <td>
+                    <div class="table-data-feature">
+                        <button class="item" title="Sửa" data-toggle="modal"
+                                data-target="#modal-edit">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button class="item" title="Xóa" data-toggle="modal"
+                                data-target="#modal-delete">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr class="tr-shadow">
+                <td class="number_order">5</td>
+                <td>
+                    <span class="block-name">20</span>
+                </td>
+                <td class="block-image">
+                    <img src="~/Areas/Admin/Assets/images/product/thumb_tu-dong-sanaky-inverter-400-lit-vh5699w3-6ydR8O.png"
+                         alt="Hình Ảnh Sản Phẩm" />
+                </td>
+                <td>
+                    <span class="block-name-product">
+                        TỦ ĐÔNG SANAKY 260L INVERTER
+                        VH-3699W3
+                    </span>
+                </td>
+                <td>
+                    <span class="text-primary font-weight-bold">6.990.000&#8363;</span>
+                </td>
+                <td>
+                    <span class="text-primary font-weight-bold">0&#37;</span>
+                </td>
+                <td>
+                    <span class="status--denied">Ẩn</span>
+                </td>
+                <td>
+                    <a href="feedback.html">
+                        <span class="text-primary font-weight-bold">170</span>
+                    </a>
+                </td>
+                <td>
+                    <div class="table-data-feature">
+                        <button class="item" title="Sửa" data-toggle="modal"
+                                data-target="#modal-edit">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button class="item" title="Xóa" data-toggle="modal"
+                                data-target="#modal-delete">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr class="tr-shadow">
+                <td class="number_order">6</td>
+                <td>
+                    <span class="block-name">1</span>
+                </td>
+                <td class="block-image">
+                    <img src="~/Areas/Admin/Assets/images/product/thumb_tu-dong-sanaky-inverter-400-lit-vh5699w3-6ydR8O.png"
+                         alt="Hình Ảnh Sản Phẩm" />
+                </td>
+                <td>
+                    <span class="block-name-product">
+                        TỦ ĐÔNG SANAKY 260L INVERTER
+                        VH-3699W3
+                    </span>
+                </td>
+                <td>
+                    <span class="text-primary font-weight-bold">6.990.000&#8363;</span>
+                </td>
+                <td>
+                    <span class="text-primary font-weight-bold">0&#37;</span>
+                </td>
+                <td>
+                    <span class="status--process">Hiển Thị</span>
+                </td>
+                <td>
+                    <a href="feedback.html">
+                        <span class="text-primary font-weight-bold">1000</span>
+                    </a>
+                </td>
+                <td>
+                    <div class="table-data-feature">
+                        <button class="item" title="Sửa" data-toggle="modal"
+                                data-target="#modal-edit">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button class="item" title="Xóa" data-toggle="modal"
+                                data-target="#modal-delete">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<!-- END DATA TABLE -->
+<div class="my-3">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div> 
+@section modal{
+    @Html.Partial("Create");
+    @Html.Partial("Edit");
+    @Html.Partial("Delete");
+    }
+@section Script {
+<script>
+    var detail = "";
+    $(document).ready(function () {
+        detail = CKEDITOR.replace('detail');
+        //CKFinder.setupCKEditor(detail, '/ckfinder/')
+    });</script>
+    }
+

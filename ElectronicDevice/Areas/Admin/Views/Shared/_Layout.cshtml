@@ -1,40 +1,295 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Dashboard | Admin Electronic Device</title>
+    <link rel="icon" href="~/Areas/Admin/Assets/images/logo-asp.net.png">
+
+    <!-- Fontfaces CSS-->
+    <link href="~/Areas/Admin/Assets/css/font-face.css" rel="stylesheet" media="all">
+    <link href="~/Areas/Admin/Assets/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="~/Areas/Admin/Assets/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="~/Areas/Admin/Assets/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="~/Areas/Admin/Assets/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all" />
+
+    <!-- Vendor CSS-->
+    <link href="~/Areas/Admin/Assets/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="~/Areas/Admin/Assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="~/Areas/Admin/Assets/vendor/wow/animate.css" rel="stylesheet" media="all"/>
+    <link href="~/Areas/Admin/Assets/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="~/Areas/Admin/Assets/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="~/Areas/Admin/Assets/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="~/Areas/Admin/Assets/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <!-- Main CSS-->
+    <link href="~/Areas/Admin/Assets/css/theme.css" rel="stylesheet" media="all">
+
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+<body class="">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="~/Areas/Admin/Assets/images/logo_admin.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="@Url.Action("Index","Home")">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Account")">
+                                <i class="far fa-user-circle"></i>Tài Khoản
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Category")">
+                                <i class="fas fa-th-large"></i>Danh Mục
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Product")">
+                                <i class="fas fa-sitemap"></i>Sản Phẩm
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index","FeedBack")">
+                                <i class="fas fa-comments"></i>Đánh Giá
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Role")">
+                                <i class="fas fa-user-tag"></i>Loại Tài Khoản
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Orders")">
+                                <i class="fas fa-money-check-alt"></i>Đơn hàng
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="@Url.Action("Index","Home")">
+                    <img src="~/Areas/Admin/Assets/images/logo_admin.png" alt="Admin" />
+                </a>
             </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a href="@Url.Action("Index","Home")">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Account")">
+                                <i class="far fa-user-circle"></i>Tài Khoản
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Category")">
+                                <i class="fas fa-th-large"></i>Danh Mục
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Product")">
+                                <i class="fas fa-sitemap"></i>Sản Phẩm
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index","FeedBack")">
+                                <i class="fas fa-comments"></i>Đánh Giá
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Role")">
+                                <i class="fas fa-user-tag"></i>Loại Tài Khoản
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Orders")">
+                                <i class="fas fa-money-check-alt"></i>Đơn hàng
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header" action="" method="POST">
+                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Tìm kiếm...." />
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+                            </form>
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-notifications"></i>
+                                        <span class="quantity">3</span>
+                                        <div class="notifi-dropdown js-dropdown rounded mt-2">
+                                            <div class="notifi__title">
+                                                <p>Bạn có 3 thông báo mới</p>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c1 img-cir img-40">
+                                                    <i class="zmdi zmdi-email-open"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>Bạn có 3 thông báo mới</p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c2 img-cir img-40">
+                                                    <i class="zmdi zmdi-account-box"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>Khách hàng abc đã đánh giá sản phẩm <b>Máy giặt lồng ngang Toshiba Inverter</b></p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c3 img-cir img-40">
+                                                    <i class="zmdi zmdi-file-text"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>Khách hàng abc đã đánh giá sản phẩm <b>Máy giặt lồng ngang Toshiba Inverter</b></p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__footer">
+                                                <a href="#">Tất cả thông báo</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image rounded-circle">
+                                            <img src="~/Areas/Admin/Assets/images/icon/avatar-01.jpg" alt="Vạn Xuân" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">Admin123</a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown rounded mt-2">
+                                            <div class="info clearfix">
+                                                <div class="image rounded-circle">
+                                                    <a href="@Url.Action("UserAccount","Account")">
+                                                        <img src="~/Areas/Admin/Assets/images/icon/avatar-01.jpg" alt="Vạn Xuân" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="@Url.Action("UserAccount","Account")">Vạn Xuân</a>
+                                                    </h5>
+                                                    <span class="email">xuan.van.techshop@example.com</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="@Url.Action("UserAccount","Account")">
+                                                        <i class="zmdi zmdi-account"></i>Tài Khoản
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="login.html">
+                                                    <i class="zmdi zmdi-power"></i>Đăng Xuất
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        @RenderBody()
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Copyright © 2021. All rights reserved. Template by <b>Nhóm 6 - CNTT01 - K13 - HaUI</b>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
         </div>
-    </div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
+    @RenderSection("modal",required:false)
+    <!-- Jquery JS-->
+    <script src="~/Areas/Admin/Assets/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="~/Areas/Admin/Assets/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="~/Areas/Admin/Assets/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="~/Areas/Admin/Assets/vendor/bootstrap-5.0.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="~/Areas/Admin/Assets/vendor/slick/slick.min.js"></script>
+    <script src="~/Areas/Admin/Assets/vendor/wow/wow.min.js"></script>
+    <script src="~/Areas/Admin/Assets/vendor/animsition/animsition.min.js"></script>
+    <script src="~/Areas/Admin/Assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="~/Areas/Admin/Assets/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="~/Areas/Admin/Assets/vendor/counter-up/jquery.counterup.min.js"></script>
+    <script src="~/Areas/Admin/Assets/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="~/Areas/Admin/Assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/Areas/Admin/Assets/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="~/Areas/Admin/Assets/vendor/select2/select2.min.js"></script>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <!-- Main JS-->
+    <script src="~/Areas/Admin/Assets/js/main.js"></script>
+    @RenderSection("Script", required: false);
 </body>
+
 </html>
+<!-- end document-->

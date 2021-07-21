@@ -1,0 +1,48 @@
+﻿<!-- modal edit -->
+<div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="scrollmodalLabel">Cập Nhật Sản Phẩm</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label>Họ Tên</label>
+                        <input class="au-input au-input--full" readonly type="text" name="fullname" placeholder="Nguyễn Văn A">
+                    </div>
+                    <div class="form-group">
+                        <label>Tài Khoản</label>
+                        <input class="au-input au-input--full" readonly type="text" name="username" placeholder="vana123">
+                    </div>
+                    <div class="form-group">
+                        <label>Loại Tài Khoản</label>
+                        <select name="select" id="select" class="form-control">
+                            <option value="0">Quản Trị Viên</option>
+                            <option value="1">Quản Lý Tài Khoản</option>
+                            <option value="2">Quản Lý Sản Phẩm</option>
+                            <option value="3">Quản Lý Danh Mục</option>
+                            <option value="4">Quản Lý Khuyến Mãi</option>
+                            <option value="5">Quản Lý Tin Tức</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Trạng Thái</label>
+                        <select name="select" id="select" class="form-control">
+                            <option value="0">Kích hoạt</option>
+                            <option value="1">Vô hiệu hóa</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary">Cập Nhật</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end modal edit -->
