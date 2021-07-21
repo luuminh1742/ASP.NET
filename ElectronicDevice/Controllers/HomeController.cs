@@ -13,7 +13,7 @@ namespace ElectronicDevice.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Introduce()
         {
             return View();
         }

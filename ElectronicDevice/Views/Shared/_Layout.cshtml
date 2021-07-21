@@ -1,12 +1,183 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@*@{
+    ViewBag.Title = "Home Page";
+}*@
+<!doctype html>
+<html lang="zxx">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Electronuc Device</title>
-    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Trang chủ | Electronic Device</title>
+    <link rel="icon" href="~/wwwroot/img/my-logo/logo-asp.net.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/owl.carousel.min.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/all.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/flaticon.css">
+    <link rel="stylesheet" href="~/wwwroot/css/themify-icons.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- My style -->
+    <link rel="stylesheet" href="~/wwwroot/css/my-style-menu.css">
+    <link rel="stylesheet" href="~/wwwroot/css/my-style-list-product.css">
+    <link rel="stylesheet" href="~/wwwroot/css/my-style-home.css">
+    <link rel="stylesheet" href="~/wwwroot/css/my-style.css">
+
 </head>
+
 <body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                            <img class="logo" src="~/wwwroot/img/my-logo/logo-asp.net.png" alt="logo"
+                                 width="150">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="menu_icon"><i class="fas fa-bars"></i></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
+                            <ul class="navbar-nav stroke" id="mainNav">
+                                <li class="nav-item my-menu-active">
+                                    <a class="nav-link" href="@Url.Action("Index","Home")">Trang chủ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Index","Product")">Sản phẩm</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Tin tức</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Khuyến mãi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Contact","Home")">Liên hệ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Introduce","Home")">Giới thiệu</a>
+                                </li>
+
+                            </ul>
+
+
+
+                        </div>
+                        <div class="hearer_icon d-flex">
+                            <a class="align-self-center" id="search_1" href="javascript:void(0)"><i class="align-self-center ti-search"></i></a>
+
+                            <div class="align-self-center cart">
+                                <a class="text-center" href="@Url.Action("Index","Cart")">
+                                    <i class="fas fa-cart-plus"></i>
+                                </a>
+                            </div>
+
+                            <div class="dropdown ml-4">
+                                <a class="dropdown-toggle" href="" id="navbarDropdown3" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img width="35" height="35" class="rounded-circle" src="https://aphoto.vn/wp-content/uploads/2019/02/hinh10-4.jpg" alt="">
+                                    <!-- <i class="fas fa-user-circle"></i> -->
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                                     style="background-color: white !important;">
+                                    <div class="single_product p-2">
+
+                                        <div class="p-1">
+                                            <a href="@Url.Action("Index","Account")"><i class="fas fa-user-alt ml-0">  Quản lý tài khoản</i></a>
+                                        </div>
+                                        <div class="p-1">
+                                            <a href="@Url.Action("Index","Login")">
+                                                <i class="fas fa-sign-in-alt ml-0">  Đăng nhập</i>
+                                            </a>
+                                        </div>
+                                        <div class="p-1">
+                                            <a href="@Url.Action("Register","Account")">
+                                                <i class="	fas fa-meteor ml-0">  Đăng ký</i>
+                                            </a>
+                                        </div>
+
+                                        <div class="p-1">
+                                            <a href="@Url.Action("Index","Home")">
+                                                <i class="fas fa-sign-out-alt ml-0">  Đăng xuất</i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="search_input" id="search_input_box">
+            <div class="container ">
+                <form class="d-flex justify-content-between search-inner">
+                    <input type="text" class="form-control" id="search_input" placeholder="Tìm kiếm sản phẩm">
+                    <button type="submit" class="btn"></button>
+                    <span class="ti-close" id="close_search" title="Close Search"></span>
+                </form>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
     @RenderBody()
+    <!--::footer_part start::-->
+    @{ 
+        Html.RenderPartial("_Footer");
+    }
+    <!--::footer_part end::-->
+    <!-- jquery plugins here-->
+    <script src="~/wwwroot/js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="~/wwwroot/js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="~/wwwroot/js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="~/wwwroot/js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="~/wwwroot/js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="~/wwwroot/js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="~/wwwroot/js/owl.carousel.min.js"></script>
+    <script src="~/wwwroot/js/jquery.nice-select.min.js"></script>
+    <!-- slick js -->
+    <script src="~/wwwroot/js/slick.min.js"></script>
+    <script src="~/wwwroot/js/jquery.counterup.min.js"></script>
+    <script src="~/wwwroot/js/waypoints.min.js"></script>
+    <script src="~/wwwroot/js/contact.js"></script>
+    <script src="~/wwwroot/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/wwwroot/js/jquery.form.js"></script>
+    <script src="~/wwwroot/js/jquery.validate.min.js"></script>
+    <script src="~/wwwroot/js/mail-script.js"></script>
+    <!-- custom js -->
+    <script src="~/wwwroot/js/custom.js"></script>
+
+    <script>
+    function detealProduct(url) {
+            window.location = url;
+        }</script>
 </body>
+
 </html>

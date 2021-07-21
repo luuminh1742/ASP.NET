@@ -1,0 +1,328 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sản phẩm | Electronic Device</title>
+    <link rel="icon" href="~/wwwroot/img/my-logo/logo-asp.net.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/owl.carousel.min.css">
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/nice-select.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/all.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/flaticon.css">
+    <link rel="stylesheet" href="~/wwwroot/css/themify-icons.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/slick.css">
+    <link rel="stylesheet" href="~/wwwroot/css/price_rangs.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/style.css">
+    <!-- My style -->
+    <link rel="stylesheet" href="~/wwwroot/css/my-style-menu.css">
+    <link rel="stylesheet" href="~/wwwroot/css/my-style-list-product.css">
+    <link rel="stylesheet" href="~/wwwroot/css/my-style.css">
+    <link rel="stylesheet" href="~/wwwroot/css/my-style-product.css">
+</head>
+
+<body>
+    <!--================Home Banner Area =================-->
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Tất cả sản phẩm</h2>
+                            <p>Trang chủ <span>></span> Sản phẩm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <img src="~/wwwroot/img/my-image/banner/product1.png" alt="" width="560">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+    <!--================Category Product Area =================-->
+    <section class="cat_product_area mt-3">
+        <div class="container bg-white p-4">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="left_sidebar_area">
+                        <aside class="left_widgets p_filter_widgets">
+                            <div class="l_w_title bg-warning">
+                                <h3>Danh mục sản phẩm</h3>
+                            </div>
+                            <div class="widgets_inner">
+                                <ul class="list">
+                                    <li>
+                                        <a href="#">Điều hòa nhiệt độ</a>
+                                        <span>(250)</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tivi, Loa - Âm thanh</a>
+                                        <span>(250)</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Máy giặt, Máy sấy quần áo</a>
+                                        <span>(250)</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tủ lạnh, Tủ đông, Tủ mát</a>
+                                        <span>(250)</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Quạt mát các loại</a>
+                                        <span>(250)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </aside>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="product_top_bar d-flex justify-content-between align-items-center">
+                                <div class="single_product_menu">
+                                    <p><span>10000 </span> sản phẩm</p>
+                                </div>
+                                <div class="single_product_menu d-flex">
+                                    <h5>Sắp xếp theo : </h5>
+                                    <select>
+                                        <option data-display="none">Không</option>
+                                        <option value="1">Giá</option>
+                                        <option value="2">Tên</option>
+                                    </select>
+                                </div>
+
+                                <div class="single_product_menu d-flex">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Tìm kiếm"
+                                               aria-describedby="inputGroupPrepend">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroupPrepend">
+                                                <i class="ti-search"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center latest_product_inner">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_product_item" onclick="detealProduct('@Url.Action("Detail","Product")')">
+                                <img class="img-product" src="https://cdn.mediamart.vn/Product/thumb_-42IrR0.png"
+                                     alt="">
+                                <div class="single_product_text">
+                                    <h4>ĐIỀU HÒA LG INVERTER 1 CHIỀU 9000BTU (1HP) V10ENW DUALCOOL</h4>
+                                    <h3>6.990.000đ</h3>
+                                    <a href="" class="my-cart border rounded-circle" title="Thêm sản phẩm vào giỏ">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_product_item" onclick="detealProduct('@Url.Action("Detail","Product")')">
+                                <img class="img-product" src="https://cdn.mediamart.vn/Product/thumb_-42IrR0.png"
+                                     alt="">
+                                <div class="single_product_text">
+                                    <h4>ĐIỀU HÒA DAIKIN 1 CHIỀU INVERTER 8.500BTU FTKA25VMVMV</h4>
+                                    <h3>10.590.000đ</h3>
+                                    <a href="" class="my-cart border rounded-circle" title="Thêm sản phẩm vào giỏ">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_product_item" onclick="detealProduct('@Url.Action("Detail","Product")')">
+                                <img class="img-product" src="https://cdn.mediamart.vn/Product/thumb_-42IrR0.png"
+                                     alt="">
+                                <div class="single_product_text">
+                                    <h4>ĐIỀU HÒA SAMSUNG 1 CHIỀU INVERTER 12000BTU</h4>
+                                    <h3>8.490.000đ</h3>
+                                    <a href="" class="my-cart border rounded-circle" title="Thêm sản phẩm vào giỏ">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_product_item" onclick="detealProduct('@Url.Action("Detail","Product")')">
+                                <img class="img-product" src="https://cdn.mediamart.vn/Product/thumb_-QKs992.png"
+                                     alt="">
+                                <div class="single_product_text">
+                                    <h4>Tủ Lạnh Sharp SJ-X281E-SL - 271 Lít (Bạc Thép Không Gỉ)</h4>
+                                    <h3>6.090.000đ</h3>
+                                    <a href="" class="my-cart border rounded-circle" title="Thêm sản phẩm vào giỏ">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_product_item" onclick="detealProduct('@Url.Action("Detail","Product")')">
+                                <img class="img-product" src="https://cdn.mediamart.vn/Product/thumb_-p3P4JB.png"
+                                     alt="">
+                                <div class="single_product_text">
+                                    <h4>Tủ Lạnh Panasonic Inverter 255L NR-BV280QSVN</h4>
+                                    <h3>9.490.000đ</h3>
+                                    <a href="" class="my-cart border rounded-circle" title="Thêm sản phẩm vào giỏ">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_product_item" onclick="detealProduct('@Url.Action("Detail","Product")')">
+                                <img class="img-product" src="https://cdn.mediamart.vn/Product/thumb_-mWd8Mn.png"
+                                     alt="">
+                                <div class="single_product_text">
+                                    <h4>Quạt Điều Hòa Coex CA-7113</h4>
+                                    <h3>3.990.000đ</h3>
+                                    <a href="" class="my-cart border rounded-circle" title="Thêm sản phẩm vào giỏ">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_product_item" onclick="detealProduct('@Url.Action("Detail","Product")')">
+                                <img class="img-product"
+                                     src="https://cdn.mediamart.vn/Product/thumb_quat-cay-cao-cap-coex-cf7115-MxIz14.png"
+                                     alt="">
+                                <div class="single_product_text">
+                                    <h4>Quạt Cây Cao Cấp 5 Cánh Coex CF-7315</h4>
+                                    <h3>890.000đ</h3>
+                                    <a href="" class="my-cart border rounded-circle" title="Thêm sản phẩm vào giỏ">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_product_item" onclick="detealProduct('@Url.Action("Detail","Product")')">
+                                <img class="img-product" src="https://cdn.mediamart.vn/Product/thumb_-7134mu.jpg"
+                                     alt="">
+                                <div class="single_product_text">
+                                    <h4>Tủ Lạnh Hitachi Inverter 510L FW650PGV8(GBK)</h4>
+                                    <h3>19.900.000đ</h3>
+                                    <a href="" class="my-cart border rounded-circle" title="Thêm sản phẩm vào giỏ">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_product_item" onclick="detealProduct('@Url.Action("Detail","Product")')">
+                                <img class="img-product" src="https://cdn.mediamart.vn/Product/thumb_-28yESO.png"
+                                     alt="">
+                                <div class="single_product_text">
+                                    <h4>Máy Giặt Lồng Ngang Samsung Inverter 9Kg WW90T634DLE/SV</h4>
+                                    <h3>9.990.000đ</h3>
+                                    <a href="" class="my-cart border rounded-circle" title="Thêm sản phẩm vào giỏ">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="pageination">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <i class="ti-angle-double-left"></i>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <i class="ti-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Category Product Area =================-->
+    <!-- product_list part start-->
+    @{ 
+        Html.RenderPartial("_SPMuaNhieu");
+    }
+    <!-- product_list part end-->
+    <!-- jquery plugins here-->
+    <script src="~/wwwroot/js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="~/wwwroot/js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="~/wwwroot/js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="~/wwwroot/js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="~/wwwroot/js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="~/wwwroot/js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="~/wwwroot/js/owl.carousel.min.js"></script>
+    <script src="~/wwwroot/js/jquery.nice-select.min.js"></script>
+    <!-- slick js -->
+    <script src="~/wwwroot/js/slick.min.js"></script>
+    <script src="~/wwwroot/js/jquery.counterup.min.js"></script>
+    <script src="~/wwwroot/js/waypoints.min.js"></script>
+    <script src="~/wwwroot/js/contact.js"></script>
+    <script src="~/wwwroot/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/wwwroot/js/jquery.form.js"></script>
+    <script src="~/wwwroot/js/jquery.validate.min.js"></script>
+    <script src="~/wwwroot/js/mail-script.js"></script>
+    <script src="~/wwwroot/js/stellar.js"></script>
+    <script src="~/wwwroot/js/price_rangs.js"></script>
+    <!-- custom js -->
+    <script src="~/wwwroot/js/custom.js"></script>
+
+
+
+
+    <script>function detealProduct(url) {
+            window.location = url;
+        }</script>
+</body>
+
+</html>
+
