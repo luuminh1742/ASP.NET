@@ -1462,9 +1462,9 @@
     <Content Include="wwwroot\webfonts\fa-solid-900.woff" />
     <Content Include="wwwroot\webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\Shared\_DanhMuc.cshtml" />
-    <Content Include="Views\Shared\_SanPhamMoi.cshtml" />
-    <Content Include="Views\Shared\_SPMuaNhieu.cshtml" />
+    <Content Include="Views\Shared\_Category.cshtml" />
+    <Content Include="Views\Shared\_NewProducts.cshtml" />
+    <Content Include="Views\Shared\_BestSell.cshtml" />
     <Content Include="Views\Home\Introduce.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
@@ -1506,6 +1506,7 @@
     <Content Include="Views\Login\ForgetPass.cshtml" />
     <Content Include="Views\Bill\Index.cshtml" />
     <Content Include="Views\Bill\Buy.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
