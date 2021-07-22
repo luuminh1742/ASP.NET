@@ -1,0 +1,59 @@
+﻿
+<header class="header-mobile d-block d-lg-none">
+    <div class="header-mobile__bar">
+        <div class="container-fluid">
+            <div class="header-mobile-inner">
+                <a class="logo" href="index.html">
+                    <img src="~/Areas/Admin/Assets/images/logo_admin.png" alt="CoolAdmin" />
+                </a>
+                <button class="hamburger hamburger--slider" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar-mobile">
+        <div class="container-fluid">
+            <ul class="navbar-mobile__list list-unstyled">
+                <li class="has-sub">
+                    <a class="js-arrow" href="@Url.Action("Index","Home")">
+                        <i class="fas fa-tachometer-alt"></i>Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Account")">
+                        <i class="far fa-user-circle"></i>Tài Khoản
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Category")">
+                        <i class="fas fa-th-large"></i>Danh Mục
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Product")">
+                        <i class="fas fa-sitemap"></i>Sản Phẩm
+                    </a>
+                </li>
+
+                @*<li>
+                    <a href="@Url.Action("Index","FeedBack")">
+                        <i class="fas fa-comments"></i>Đánh Giá
+                    </a>
+                </li>*@
+                <li>
+                    <a href="@Url.Action("Index","Role")">
+                        <i class="fas fa-user-tag"></i>Loại Tài Khoản
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Orders")">
+                        <i class="fas fa-money-check-alt"></i>Đơn hàng
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

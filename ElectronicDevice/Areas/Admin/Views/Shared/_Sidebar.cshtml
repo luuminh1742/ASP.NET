@@ -1,0 +1,51 @@
+﻿
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+        <a href="@Url.Action("Index","Home")">
+            <img src="~/Areas/Admin/Assets/images/logo_admin.png" alt="Admin" />
+        </a>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+            <ul class="list-unstyled navbar__list">
+                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ?"has-sub active" : "")">
+                    <a href="@Url.Action("Index","Home")">
+                        <i class="fas fa-tachometer-alt"></i>Dashboard
+                    </a>
+                </li>
+                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Category" ?"has-sub active" : "")">
+                    <a href="@Url.Action("Index","Category")">
+                        <i class="fas fa-th-large"></i>Danh Mục
+                    </a>
+                </li>
+                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Product" ?"has-sub active" : "")">
+                    <a href="@Url.Action("Index","Product")">
+                        <i class="fas fa-sitemap"></i>Sản Phẩm
+                    </a>
+                </li>
+
+                @*<li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "FeedBack" ?"has-sub active" : "")">
+                    <a href="@Url.Action("Index","FeedBack")">
+                        <i class="fas fa-comments"></i>Đánh Giá
+                    </a>
+                </li>*@
+                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Orders" ?"has-sub active" : "")">
+                    <a href="@Url.Action("Index","Orders")">
+                        <i class="fas fa-money-check-alt"></i>Đơn hàng
+                    </a>
+                </li>
+                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Account" ?"has-sub active" : "")">
+                    <a href="@Url.Action("Index","Account")">
+                        <i class="far fa-user-circle"></i>Tài Khoản
+                    </a>
+                </li>
+
+                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Role" ?"has-sub active" : "")">
+                    <a href="@Url.Action("Index","Role")">
+                        <i class="fas fa-user-tag"></i>Loại Tài Khoản
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>

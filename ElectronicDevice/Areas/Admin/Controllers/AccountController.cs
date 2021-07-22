@@ -13,9 +13,6 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         {
             return View();
         }
-        public ActionResult UserAccount()
-        {
-            return View();
-        }
+        
     }
 }

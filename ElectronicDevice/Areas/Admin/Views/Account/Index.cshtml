@@ -1,11 +1,196 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tài khoản";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
+<h3 class="title-5 m-b-35">Tài khoản của tôi</h3>
+
+<div class="row p-2">
+    <div class="col-md-4 bg-white p-4">
+        <aside class="profile-nav alt">
+            <section class="card">
+                <div class="card-header user-header alt bg-dark">
+                    <div class="" style="align-items:center;">
+                        <div style="text-align:center; ">
+                            <img class="align-self-center rounded-circle mr-3" style="width:150px; height:150px;" alt="" src="~/Areas/Admin/Assets/images/icon/avatar-01.jpg">
+                        </div>
+                        <div style="text-align:center; ">
+                            <h2 class="text-light display-6">JimDoe123</h2>
+                            <p>Quản trị viên</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </div>
+    <div class="col-md-8 bg-white  p-4">
+        <div class=" p-2">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       href="#inforuser" data-toggle="tab">Thông tin tài khoản</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#update-infor" data-toggle="tab">Thông tin cá nhân</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#change-password" data-toggle="tab">Mật khẩu</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.card-header -->
+
+        <div class="">
+            <div class="tab-content">
+                <!-- Thông tin tài khoản -->
+                <div class="active tab-pane" id="inforuser">
+                    <table class="table text-info">
+                        <tr>
+                            <td>
+                                <i class="fas fa-info mr-2 "></i>
+                            </td>
+                            <td>
+                                Họ tên
+                            </td>
+                            <td>
+                                Jim Doe
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fas fa-mobile-alt mr-2"></i>
+                            </td>
+                            <td>
+                                Số điện thoại
+                            </td>
+                            <td>
+                                0999888776
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                            </td>
+                            <td>
+                                Địa chỉ
+                            </td>
+                            <td>
+                                Thanh Xuân - Hà Nội
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fas fa-envelope-open-text mr-2"></i>
+                            </td>
+                            <td>
+                                Email
+                            </td>
+                            <td>
+                                xuan.van.techshop@example.com
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+                <!-- /.tab-pane -->
+
+                <div class="tab-pane" id="update-infor">
+
+                    <form class="form-horizontal" action="" method="post">
+                        <div class="space-10"></div>
+                        <div class="form-group">
+                            <label>Tên Đăng Nhập</label>
+                            <input class="au-input au-input--full" type="text" name="username" placeholder="user123">
+                        </div>
+                        <div class="form-group">
+                            <label>Họ & Tên</label>
+                            <input class="au-input au-input--full" type="text" name="fullname" placeholder="Nguyễn Văn A">
+                        </div>
+                        <div class="form-group">
+                            <label>Địa chỉ</label>
+                            <input class="au-input au-input--full" type="text" name="address" placeholder="Hà Nội">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input class="au-input au-input--full" type="text" name="email" placeholder="abc@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Số Điện Thoại</label>
+                            <input class="au-input au-input--full" type="text" name="phone" placeholder="0123456789">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-outline-secondary">Đặt lại</button>
+                            <button type="button" class="btn btn-outline-primary">Cập Nhật</button>
+                        </div>
+                        
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
+                <!-- Cập nhật mật khẩu -->
+                <div class="tab-pane" id="change-password">
+                    <form class="form-horizontal" id="formUpdatePassword">
+                        <div class="space-10"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"
+                                   for="oldPassword">Mật khẩu cũ</label>
+
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <input class="form-control" type="password" id="oldPassword" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"
+                                   for="password">Mật khẩu mới</label>
+
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <input class="form-control" type="password" id="password" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"
+                                   for="confirmPassword">Nhập lại mật khẩu</label>
+
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <input class="form-control" type="password"
+                                           id="confirmPassword" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button class="btn btn-outline-primary" type="submit">
+                                    <i class="ace-icon fa fa-check bigger-110"></i> Cập nhật
+                                </button>
+                                &nbsp; &nbsp;
+                                <button class="btn btn-outline-secondary" type="reset">
+                                    <i class="ace-icon fa fa-undo bigger-110"></i> Đặt lại
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+        </div>
+    </div>
+</div>
+<br />
+<hr />
+
 <!-- DATA TABLE -->
-<h3 class="title-5 m-b-35">danh sách tài khoản</h3>
+<h3 class="title-5 m-b-35">danh sách nhân viên</h3>
 <div class="table-data__tool">
     <div class="table-data__tool-left">
         <div class="rs-select2--light rs-select2--md">

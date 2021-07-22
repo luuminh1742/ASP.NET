@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -79,8 +79,12 @@
                     <span class="status--process">Hiển Thị</span>
                 </td>
                 <td>
-                    <a href="feedback.html">
-                        <span class="text-primary font-weight-bold">10</span>
+                    <span class="font-weight-bold">10</span> | 
+                    <a href="@Url.Action("Index","Feedback")"
+                       title="Xem đánh giá"
+                       >
+                        
+                        <i class="fas fa-arrow-right"></i>
                     </a>
                 </td>
                 <td>
@@ -122,8 +126,11 @@
                     <span class="status--process">Hiển Thị</span>
                 </td>
                 <td>
-                    <a href="feedback.html">
-                        <span class="text-primary font-weight-bold">990</span>
+                    <span class="font-weight-bold">10</span> |
+                    <a href="@Url.Action("Index","Feedback")"
+                       title="Xem đánh giá">
+
+                        <i class="fas fa-arrow-right"></i>
                     </a>
                 </td>
                 <td>
@@ -165,8 +172,11 @@
                     <span class="status--process">Hiển Thị</span>
                 </td>
                 <td>
-                    <a href="feedback.html">
-                        <span class="text-primary font-weight-bold">120</span>
+                    <span class="font-weight-bold">10</span> |
+                    <a href="@Url.Action("Index","Feedback")"
+                       title="Xem đánh giá">
+
+                        <i class="fas fa-arrow-right"></i>
                     </a>
                 </td>
                 <td>
@@ -208,8 +218,11 @@
                     <span class="status--process">Hiển Thị</span>
                 </td>
                 <td>
-                    <a href="feedback.html">
-                        <span class="text-primary font-weight-bold">100</span>
+                    <span class="font-weight-bold">10</span> |
+                    <a href="@Url.Action("Index","Feedback")"
+                       title="Xem đánh giá">
+
+                        <i class="fas fa-arrow-right"></i>
                     </a>
                 </td>
                 <td>
@@ -251,8 +264,11 @@
                     <span class="status--denied">Ẩn</span>
                 </td>
                 <td>
-                    <a href="feedback.html">
-                        <span class="text-primary font-weight-bold">170</span>
+                    <span class="font-weight-bold">10</span> |
+                    <a href="@Url.Action("Index","Feedback")"
+                       title="Xem đánh giá">
+
+                        <i class="fas fa-arrow-right"></i>
                     </a>
                 </td>
                 <td>
@@ -294,8 +310,11 @@
                     <span class="status--process">Hiển Thị</span>
                 </td>
                 <td>
-                    <a href="feedback.html">
-                        <span class="text-primary font-weight-bold">1000</span>
+                    <span class="font-weight-bold">10</span> |
+                    <a href="@Url.Action("Index","Feedback")"
+                       title="Xem đánh giá">
+
+                        <i class="fas fa-arrow-right"></i>
                     </a>
                 </td>
                 <td>
@@ -346,7 +365,7 @@
 <script>
     var detail = "";
     $(document).ready(function () {
-        detail = CKEDITOR.replace('detail');
+        detail = CKEDITOR.replace('detail_create');
         //CKFinder.setupCKEditor(detail, '/ckfinder/')
     });</script>
     }

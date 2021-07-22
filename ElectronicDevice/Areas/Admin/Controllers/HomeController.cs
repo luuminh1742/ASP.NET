@@ -13,5 +13,11 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         {
             return View();
         }
+
+        public ActionResult Logout()
+        {
+           // xử lý ...
+            return RedirectToAction("Index", "Login", new { area = "" });
+        }
     }
 }
