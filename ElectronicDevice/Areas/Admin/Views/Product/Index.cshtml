@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    <script src="~/Areas/Admin/Assets/ckeditor/ckeditor.js"></script>
 }
 
 <!-- DATA TABLE -->
@@ -79,11 +80,10 @@
                     <span class="status--process">Hiển Thị</span>
                 </td>
                 <td>
-                    <span class="font-weight-bold">10</span> | 
+                    <span class="font-weight-bold">10</span> |
                     <a href="@Url.Action("Index","Feedback")"
-                       title="Xem đánh giá"
-                       >
-                        
+                       title="Xem đánh giá">
+
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </td>
@@ -355,18 +355,18 @@
             </li>
         </ul>
     </nav>
-</div> 
+</div>
 @section modal{
     @Html.Partial("Create");
     @Html.Partial("Edit");
     @Html.Partial("Delete");
-    }
+}
 @section Script {
-<script>
-    var detail = "";
-    $(document).ready(function () {
-        detail = CKEDITOR.replace('detail_create');
-        //CKFinder.setupCKEditor(detail, '/ckfinder/')
-    });</script>
-    }
+    <script>
+        var detail = "";
+        $(document).ready(function () {
+            detail = CKEDITOR.replace('detail_create');
+            //CKFinder.setupCKEditor(detail, '/ckfinder/')
+        });</script>
+}
 
