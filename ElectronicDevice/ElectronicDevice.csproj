@@ -929,6 +929,11 @@
     <Content Include="wwwroot\imageUpload\-pRq7fY.png" />
     <Content Include="wwwroot\imageUpload\-soXWB4.png" />
     <Content Include="wwwroot\imageUpload\-tV3G1K.png" />
+    <Content Include="wwwroot\imageUpload\avatar0.png" />
+    <Content Include="wwwroot\imageUpload\avatar1.png" />
+    <Content Include="wwwroot\imageUpload\avatar2.png" />
+    <Content Include="wwwroot\imageUpload\avatar3.png" />
+    <Content Include="wwwroot\imageUpload\avatar4.png" />
     <Content Include="wwwroot\imageUpload\dieu-hoa-casper-1-chieu-12000btu-sc12tl32-210d6q.png" />
     <Content Include="wwwroot\imageUpload\dieu-hoa-gree-1-chieu-inverter-9000btu-gwc09pbk3d0p4-huR772.png" />
     <Content Include="wwwroot\imageUpload\dieu-hoa-midea-1-chieu-9000btu-msma310crn1-291nZR.png" />
@@ -1069,6 +1074,7 @@
     <Content Include="wwwroot\img\my-image\banner\buy.png" />
     <Content Include="wwwroot\img\my-image\banner\cart.png" />
     <Content Include="wwwroot\img\my-image\banner\contact.png" />
+    <Content Include="wwwroot\img\my-image\banner\forgot-password.png" />
     <Content Include="wwwroot\img\my-image\banner\login.png" />
     <Content Include="wwwroot\img\my-image\banner\news.png" />
     <Content Include="wwwroot\img\my-image\banner\product.png" />
@@ -1460,8 +1466,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="wwwroot\css\style.map" />
     <Content Include="wwwroot\fonts\Flaticon.eot" />
     <Content Include="wwwroot\fonts\Flaticon.ttf" />

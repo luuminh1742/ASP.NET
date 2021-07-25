@@ -15,14 +15,14 @@
 
                     <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                         <ul class="navbar-nav stroke" id="mainNav">
-                            <li class="nav-item @(
-                                ViewContext.RouteData.Values["Controller"].ToString() != "Home" ?"":
-                                ViewContext.RouteData.Values["Action"].ToString()== "Index" ?"my-menu-active" : ""
-                                )">
-                                <a class="nav-link" href="@Url.Action("Index","Home")">Trang chủ</a>
-                            </li>
+                            @*<li class="nav-item @(
+                                    ViewContext.RouteData.Values["Controller"].ToString() != "Home" ?"":
+                                    ViewContext.RouteData.Values["Action"].ToString()== "Index" ?"my-menu-active" : ""
+                                    )">
+                                    <a class="nav-link" href="@Url.Action("Index","Home")">Trang chủ</a>
+                                </li>*@
                             <li class="nav-item @(ViewContext.RouteData.Values["Controller"].ToString() == "Product" ?"my-menu-active" : "")">
-                                <a class="nav-link" href="@Url.Action("Index","Product")">Sản phẩm</a>
+                                <a class="nav-link" href="@Url.Action("Index","Product")">Trang chủ</a>
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link" href="#">Tin tức</a>
@@ -30,10 +30,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Khuyến mãi</a>
                             </li>
-                            <li class="nav-item @(
-                            ViewContext.RouteData.Values["Controller"].ToString()!= "Home"?"":
-                            ViewContext.RouteData.Values["Action"].ToString()== "Contact" ? "my-menu-active" : "")">
-                                <a class="nav-link" href="@Url.Action("Contact","Home")">Liên hệ</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Liên hệ</a>
                             </li>
                             <li class="nav-item @(
                             ViewContext.RouteData.Values["Controller"].ToString()!= "Home"?"":
@@ -47,7 +45,7 @@
 
                     </div>
                     <div class="hearer_icon d-flex">
-                        <a class="align-self-center" id="search_1" href="javascript:void(0)"><i class="align-self-center ti-search"></i></a>
+                        @*<a class="align-self-center" id="search_1" href="javascript:void(0)"><i class="align-self-center ti-search"></i></a>*@
 
                         <div class="align-self-center cart">
                             <a class="text-center" href="@Url.Action("Index","Cart")">
@@ -62,29 +60,26 @@
                                 <!-- <i class="fas fa-user-circle"></i> -->
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown"
-                                 style="background-color: white !important;">
-                                <div class="single_product p-2">
-
-                                    <div class="p-1">
+                                 style="background-color: #D1FDFF !important; ">
+                                <div class="p-2 rounded-5">
+                                    <div class="p-1 dropdown-menu-item">
                                         <a href="@Url.Action("Index","Account")"><i class="fas fa-user-alt ml-0">  Quản lý tài khoản</i></a>
                                     </div>
-                                    <div class="p-1">
+                                    <div class="p-1 dropdown-menu-item">
                                         <a href="@Url.Action("Index","Login")">
                                             <i class="fas fa-sign-in-alt ml-0">  Đăng nhập</i>
                                         </a>
                                     </div>
-                                    <div class="p-1">
+                                    <div class="p-1 dropdown-menu-item">
                                         <a href="@Url.Action("Register","Account")">
                                             <i class="	fas fa-meteor ml-0">  Đăng ký</i>
                                         </a>
                                     </div>
-
-                                    <div class="p-1">
+                                    <div class="p-1 dropdown-menu-item">
                                         <a href="@Url.Action("Index","Home")">
                                             <i class="fas fa-sign-out-alt ml-0">  Đăng xuất</i>
                                         </a>
                                     </div>
-
                                 </div>
                             </div>
 
@@ -96,7 +91,7 @@
             </div>
         </div>
     </div>
-    <div class="search_input" id="search_input_box">
+    @*<div class="search_input" id="search_input_box">
         <div class="container ">
             <form class="d-flex justify-content-between search-inner">
                 <input type="text" class="form-control" id="search_input" placeholder="Tìm kiếm sản phẩm">
@@ -104,5 +99,5 @@
                 <span class="ti-close" id="close_search" title="Close Search"></span>
             </form>
         </div>
-    </div>
+    </div>*@
 </header>

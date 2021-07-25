@@ -2300,9 +2300,15 @@ ul {
   transform: scale(1);
 }
 
+.dropdown .dropdown-menu .dropdown-menu-item:hover {
+    background-color: aqua;
+    border-radius: 5px;
+    width:100%;
+}
+
 @media (max-width: 991px) {
-  /* line 194, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_menu.scss */
-  .main_menu {
+    /* line 194, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_menu.scss */
+    .main_menu {
     padding: 26px 0px;
   }
   /* line 198, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_menu.scss */
@@ -7776,3 +7782,4 @@ h6 {
 }
 
 /*# sourceMappingURL=style.css.map */
+

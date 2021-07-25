@@ -2,242 +2,171 @@
 @{
     ViewBag.Title = "Tài khoản";
 }
-<!doctype html>
-<html lang="zxx">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Quản lý tài khoản | Electronic Device</title>
-    <link rel="icon" href="~/wwwroot/img/my-logo/logo-asp.net.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/bootstrap.min.css">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/owl.carousel.min.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/all.css">
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/flaticon.css">
-    <link rel="stylesheet" href="~/wwwroot/css/themify-icons.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/magnific-popup.css">
-    <!-- swiper CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/slick.css">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/style.css">
-
-    <!-- My style -->
-    <link rel="stylesheet" href="~/wwwroot/css/my-style-menu.css">
-    <link rel="stylesheet" href="~/wwwroot/css/my-style-account.css">
-    <link rel="stylesheet" href="~/wwwroot/css/my-style.css">
-
-</head>
-
-<body>
-    <!-- breadcrumb start-->
-
-
-    <section class="breadcrumb breadcrumb_bg"  id="my_banner">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 text-center">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item">
-                            <h2>Tài khoản của bạn</h2>
-                            <p>Trang chủ <span>></span> Tài khoản</p>
-                        </div>
+<section class="breadcrumb breadcrumb_bg" id="my_banner">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="breadcrumb_iner">
+                    <div class="breadcrumb_iner_item">
+                        <h2>Tài khoản của bạn</h2>
+                        <p>Trang chủ <span>></span> Tài khoản</p>
                     </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item">
-                            <img class="avatar rounded-circle"
-                                 src="https://aphoto.vn/wp-content/uploads/2019/02/hinh10-4.jpg" alt="">
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- breadcrumb start-->
-    <!-- Content -->
-
-    <div class="container mt-3 p-4 bg-white">
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#my-account">
-                            <i class="fas fa-user-alt">
-                                Tài
-                                khoản của tôi
-                            </i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#my-order">
-                            <i class="fas fa-clipboard-list">
-                                Đơn
-                                mua
-                            </i>
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div id="my-account" class="container tab-pane active">
-                        <br>
-                        <h3>Hồ sơ của tôi</h3>
-                        <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
-                        <br>
-                        <hr>
-                        <form>
-
-                            <div class="form-group row">
-                                <div class="col-md-3 ">
-                                    <img src="https://aphoto.vn/wp-content/uploads/2019/02/hinh10-4.jpg" alt=""
-                                         class="rounded-circle" width="100" height="100">
-                                </div>
-
-                                <input type="file" class="form-control col-md-9" id="avatar" accept="image/*">
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="fullname" class="col-md-3">Họ tên</label>
-                                <input type="text" class="form-control col-md-9" id="fullname" placeholder="Họ tên"
-                                       value="Nguyễn Văn A">
-                            </div>
-                            <div class="form-group row">
-                                <label for="email" class="col-md-3">Email</label>
-                                <input type="email" class="form-control col-md-9" id="email" placeholder="Họ tên"
-                                       value="abc@eee.com">
-                            </div>
-                            <div class="form-group row">
-                                <label for="phone" class="col-md-3">Số điện thoại</label>
-                                <input type="number" class="form-control col-md-9" id="phone"
-                                       placeholder="Số điện thoại" value="0999888777">
-                            </div>
-                            <div class="form-group row">
-                                <label for="password" class="col-md-3">Mật khẩu</label>
-                                <input type="password" class="form-control col-md-9" id="password"
-                                       placeholder="Mật khẩu" value="sdasfasdfa">
-                            </div>
-                            <div class="form-group row">
-                                <label for="address" class="col-md-3">Địa chỉ</label>
-                                <input type="text" class="form-control col-md-9" id="address" placeholder="Địa chỉ"
-                                       value="Nhổn - Đại học công nghiệp Hà Nội">
-                            </div>
-                            <br>
-                            <div class="form-group">
-                                <input type="submit" class="genric-btn danger circle" value="Lưu">
-
-                            </div>
-                        </form>
+            <div class="col-lg-6 text-center">
+                <div class="breadcrumb_iner">
+                    <div class="breadcrumb_iner_item">
+                        <img class="avatar rounded-circle"
+                             src="https://aphoto.vn/wp-content/uploads/2019/02/hinh10-4.jpg" alt="">
                     </div>
-                    <div id="my-order" class="container tab-pane fade">
-                        <br>
-                        <h3>Đơn hàng của tôi</h3>
-                        <br>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <ul class="blog-info-link">
-                                            <li><a href="#"><i class="far fa-clock"></i> 29/06/2021</a></li>
-                                            <li>
-                                                <a href="#" class="text-success">
-                                                    <i class="fas fa-shipping-fast"></i>
-                                                    Giao hàng thành công
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="single-product.html" class="text-danger">
-                                                    <i class="far fa-comment-alt"></i> Đã
-                                                    đánh giá
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-flex flex-row my-order-item">
-                                            <div>
-                                                <img class="border"
-                                                     src="https://cdn.mediamart.vn/Product/thumb_dieu-hoa-daikin-1-chieu-inverter-8500btu-ftka25vmvmv-d94QaV.png"
-                                                     alt="">
-                                            </div>
-                                            <div style="padding-left: 20px;">
-                                                <h2 class="font-weight-bold">
-                                                    Điều Hòa Gree 1 Chiều 9000BTU
-                                                    GWC09KB-K6N0C4
-                                                </h2>
-                                                <p class="text-danger">Giá: 5.290.000đ</p>
-                                                <p class="text-success">Số lượng: 1</p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="p-4">
-                                        <h4 class="text-danger float-right">Tổng tiền: 5.290.000đ</h4>
-                                        <br>
-                                        <hr>
-                                        <div class=" float-right">
-                                            <a href="@Url.Action("Detail","Product")" class="genric-btn danger circle">Mua lại</a>
-                                            &ensp;
-                                            <a href="@Url.Action("Index","Bill")" class="genric-btn danger circle">Hóa đơn</a>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
                 </div>
+
             </div>
         </div>
     </div>
-    <!-- Content End! -->
-    <!-- jquery plugins here-->
-    <!-- jquery -->
-    <script src="~/wwwroot/js/jquery-1.12.1.min.js"></script>
-    <!-- popper js -->
-    <script src="~/wwwroot/js/popper.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="~/wwwroot/js/bootstrap.min.js"></script>
-    <!-- easing js -->
-    <script src="~/wwwroot/js/jquery.magnific-popup.js"></script>
-    <!-- swiper js -->
-    <script src="~/wwwroot/js/swiper.min.js"></script>
-    <!-- swiper js -->
-    <script src="~/wwwroot/js/masonry.pkgd.js"></script>
-    <!-- particles js -->
-    <script src="~/wwwroot/js/owl.carousel.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <!-- slick js -->
-    <script src="~/wwwroot/js/slick.min.js"></script>
-    <script src="~/wwwroot/js/jquery.counterup.min.js"></script>
-    <script src="~/wwwroot/js/waypoints.min.js"></script>
-    <script src="~/wwwroot/js/contact.js"></script>
-    <script src="~/wwwroot/js/jquery.ajaxchimp.min.js"></script>
-    <script src="~/wwwroot/js/jquery.form.js"></script>
-    <script src="~/wwwroot/js/jquery.validate.min.js"></script>
-    <script src="~/wwwroot/js/mail-script.js"></script>
-    <script src="~/wwwroot/js/stellar.js"></script>
-    <script src="~/wwwroot/js/price_rangs.js"></script>
-    <!-- custom js -->
-    <script src="~/wwwroot/js/custom.js"></script>
-</body>
+</section>
 
-</html>
+<!-- breadcrumb start-->
+<!-- Content -->
 
+<div class="container mt-3 p-4 bg-white">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#my-account">
+                        <i class="fas fa-user-alt">
+                            Tài
+                            khoản của tôi
+                        </i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#my-order">
+                        <i class="fas fa-clipboard-list">
+                            Đơn
+                            mua
+                        </i>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="my-account" class="container tab-pane active">
+                    <br>
+                    <h3>Hồ sơ của tôi</h3>
+                    <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+                    <br>
+                    <hr>
+                    <form>
+
+                        <div class="form-group row">
+                            <div class="col-md-3 ">
+                                <img src="https://aphoto.vn/wp-content/uploads/2019/02/hinh10-4.jpg" alt=""
+                                     class="rounded-circle" width="100" height="100">
+                            </div>
+
+                            <input type="file" class="form-control col-md-9" id="avatar" accept="image/*">
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="fullname" class="col-md-3">Họ tên</label>
+                            <input type="text" class="form-control col-md-9" id="fullname" placeholder="Họ tên"
+                                   value="Nguyễn Văn A">
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-md-3">Email</label>
+                            <input type="email" class="form-control col-md-9" id="email" placeholder="Họ tên"
+                                   value="abc@eee.com">
+                        </div>
+                        <div class="form-group row">
+                            <label for="phone" class="col-md-3">Số điện thoại</label>
+                            <input type="number" class="form-control col-md-9" id="phone"
+                                   placeholder="Số điện thoại" value="0999888777">
+                        </div>
+                        <div class="form-group row">
+                            <label for="password" class="col-md-3">Mật khẩu</label>
+                            <input type="password" class="form-control col-md-9" id="password"
+                                   placeholder="Mật khẩu" value="sdasfasdfa">
+                        </div>
+                        <div class="form-group row">
+                            <label for="address" class="col-md-3">Địa chỉ</label>
+                            <input type="text" class="form-control col-md-9" id="address" placeholder="Địa chỉ"
+                                   value="Nhổn - Đại học công nghiệp Hà Nội">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="submit" class="genric-btn danger circle" value="Lưu">
+
+                        </div>
+                    </form>
+                </div>
+                <div id="my-order" class="container tab-pane fade">
+                    <br>
+                    <h3>Đơn hàng của tôi</h3>
+                    <br>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <ul class="blog-info-link">
+                                        <li><a href="#"><i class="far fa-clock"></i> 29/06/2021</a></li>
+                                        <li>
+                                            <a href="#" class="text-success">
+                                                <i class="fas fa-shipping-fast"></i>
+                                                Giao hàng thành công
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="single-product.html" class="text-danger">
+                                                <i class="far fa-comment-alt"></i> Đã
+                                                đánh giá
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex flex-row my-order-item">
+                                        <div>
+                                            <img class="border"
+                                                 src="https://cdn.mediamart.vn/Product/thumb_dieu-hoa-daikin-1-chieu-inverter-8500btu-ftka25vmvmv-d94QaV.png"
+                                                 alt="">
+                                        </div>
+                                        <div style="padding-left: 20px;">
+                                            <h2 class="font-weight-bold">
+                                                Điều Hòa Gree 1 Chiều 9000BTU
+                                                GWC09KB-K6N0C4
+                                            </h2>
+                                            <p class="text-danger">Giá: 5.290.000đ</p>
+                                            <p class="text-success">Số lượng: 1</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="p-4">
+                                    <h4 class="text-danger float-right">Tổng tiền: 5.290.000đ</h4>
+                                    <br>
+                                    <hr>
+                                    <div class=" float-right">
+                                        <a href="@Url.Action("Detail","Product")" class="genric-btn danger circle">Mua lại</a>
+                                        &ensp;
+                                        <a href="@Url.Action("Index","Bill")" class="genric-btn danger circle">Hóa đơn</a>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

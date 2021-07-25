@@ -2,154 +2,90 @@
 @{
     ViewBag.Title = "Hóa đơn";
 }
-<!doctype html>
-<html lang="zxx">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hóa đơn | Electronic Device</title>
-    <link rel="icon" href="~/wwwroot/img/my-logo/logo-asp.net.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/bootstrap.min.css">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/owl.carousel.min.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/all.css">
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/flaticon.css">
-    <link rel="stylesheet" href="~/wwwroot/css/themify-icons.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/magnific-popup.css">
-    <!-- swiper CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/slick.css">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="~/wwwroot/css/style.css">
-    <!-- My style -->
-    <link rel="stylesheet" href="~/wwwroot/css/my-style-menu.css">
-    <link rel="stylesheet" href="~/wwwroot/css/my-style.css">
-</head>
-
-<body>
-    <!-- breadcrumb start-->
-    <section class="breadcrumb breadcrumb_bg"  id="my_banner">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 text-center">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item">
-                            <h2>Hóa đơn</h2>
-                            <p>Trang chủ <span>></span> Hóa đơn</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item">
-                            <img src="~/wwwroot/img/my-image/banner/bill.png" alt="">
-                        </div>
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg" id="my_banner">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="breadcrumb_iner">
+                    <div class="breadcrumb_iner_item">
+                        <h2>Hóa đơn</h2>
+                        <p>Trang chủ <span>></span> Hóa đơn</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- breadcrumb start-->
-
-    <div class="container mt-3 p-4 bg-white">
-        <div class="row">
-
-
-            <div class="col-md-12">
-                <h3 class="text-center">Hóa đơn sản phẩm</h3>
-                <hr>
-                <h4>Thông tin người nhận</h4>
-                <br>
-                <table class="table table-bordered">
-                    <tr>
-                        <td>Họ tên người nhận</td>
-                        <td>Nguyễn Văn A</td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td>adf@sdf.com</td>
-                    </tr>
-                    <tr>
-                        <td>Số điện thoại</td>
-                        <td>0988777665</td>
-                    </tr>
-                    <tr>
-                        <td>Địa chỉ</td>
-                        <td>Nhổn - Đại học Công Nghiệp Hà Nội</td>
-                    </tr>
-                    <tr>
-                        <td>Hình thức thanh toán</td>
-                        <td>Thanh toán khi nhân hàng</td>
-                    </tr>
-                    <tr>
-                        <td>Tổng tiền thanh toán</td>
-                        <td>14.000.000 VNĐ</td>
-                    </tr>
-                </table>
-                <hr>
-                <h4>Chi tiết sản phẩm</h4>
-                <br>
-                <div class="d-flex flex-row">
-                    <img src="https://cdn.mediamart.vn/Product/thumb_-9ZWE58.jpg" alt="" width="100" height="100">
-                    <div class="ml-2">
-                        <h5>Điều Hòa Gree 1 Chiều 9000BTU GWC09KB-K6N0C4</h5>
-                        <p>Giá: 10.000.000đ</p>
-                        <p>Số lượng: 1</p>
-                    </div>
-
-                </div>
-                <br>
-                <div class="d-flex flex-row">
-                    <img src="https://cdn.mediamart.vn/Product/thumb_-QKs992.png" alt="" width="100" height="100">
-                    <div class="ml-2">
-                        <h5>Tủ Lạnh Sharp SJ-X281E-SL - 271 Lít (Bạc Thép Không Gỉ)</h5>
-                        <p>Giá: 4.000.000đ</p>
-                        <p>Số lượng: 1</p>
+            <div class="col-lg-6 text-center">
+                <div class="breadcrumb_iner">
+                    <div class="breadcrumb_iner_item">
+                        <img src="~/wwwroot/img/my-image/banner/bill.png" alt="">
                     </div>
                 </div>
-
-                <hr>
-                <input type="button" value="In hóa đơn" class="genric-btn danger circle">
             </div>
         </div>
     </div>
-    <!-- jquery plugins here-->
-    <!-- jquery -->
-    <script src="~/wwwroot/js/jquery-1.12.1.min.js"></script>
-    <!-- popper js -->
-    <script src="~/wwwroot/js/popper.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="~/wwwroot/js/bootstrap.min.js"></script>
-    <!-- easing js -->
-    <script src="~/wwwroot/js/jquery.magnific-popup.js"></script>
-    <!-- swiper js -->
-    <script src="~/wwwroot/js/swiper.min.js"></script>
-    <!-- swiper js -->
-    <script src="~/wwwroot/js/masonry.pkgd.js"></script>
-    <!-- particles js -->
-    <script src="~/wwwroot/js/owl.carousel.min.js"></script>
-    <script src="~/wwwroot/js/jquery.nice-select.min.js"></script>
-    <!-- slick js -->
-    <script src="~/wwwroot/js/slick.min.js"></script>
-    <script src="~/wwwroot/js/jquery.counterup.min.js"></script>
-    <script src="~/wwwroot/js/waypoints.min.js"></script>
-    <script src="~/wwwroot/js/contact.js"></script>
-    <script src="~/wwwroot/js/jquery.ajaxchimp.min.js"></script>
-    <script src="~/wwwroot/js/jquery.form.js"></script>
-    <script src="~/wwwroot/js/jquery.validate.min.js"></script>
-    <script src="~/wwwroot/js/mail-script.js"></script>
-    <script src="~/wwwroot/js/stellar.js"></script>
-    <script src="~/wwwroot/js/price_rangs.js"></script>
-    <!-- custom js -->
-    <script src="~/wwwroot/js/custom.js"></script>
-</body>
+</section>
+<!-- breadcrumb start-->
 
-</html>
+<div class="container mt-3 p-4 bg-white">
+    <div class="row">
 
+
+        <div class="col-md-12">
+            <h3 class="text-center">Hóa đơn sản phẩm</h3>
+            <hr>
+            <h4>Thông tin người nhận</h4>
+            <br>
+            <table class="table table-bordered">
+                <tr>
+                    <td>Họ tên người nhận</td>
+                    <td>Nguyễn Văn A</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>adf@sdf.com</td>
+                </tr>
+                <tr>
+                    <td>Số điện thoại</td>
+                    <td>0988777665</td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td>Nhổn - Đại học Công Nghiệp Hà Nội</td>
+                </tr>
+                <tr>
+                    <td>Hình thức thanh toán</td>
+                    <td>Thanh toán khi nhân hàng</td>
+                </tr>
+                <tr>
+                    <td>Tổng tiền thanh toán</td>
+                    <td>14.000.000 VNĐ</td>
+                </tr>
+            </table>
+            <hr>
+            <h4>Chi tiết sản phẩm</h4>
+            <br>
+            <div class="d-flex flex-row">
+                <img src="https://cdn.mediamart.vn/Product/thumb_-9ZWE58.jpg" alt="" width="100" height="100">
+                <div class="ml-2">
+                    <h5>Điều Hòa Gree 1 Chiều 9000BTU GWC09KB-K6N0C4</h5>
+                    <p>Giá: 10.000.000đ</p>
+                    <p>Số lượng: 1</p>
+                </div>
+
+            </div>
+            <br>
+            <div class="d-flex flex-row">
+                <img src="https://cdn.mediamart.vn/Product/thumb_-QKs992.png" alt="" width="100" height="100">
+                <div class="ml-2">
+                    <h5>Tủ Lạnh Sharp SJ-X281E-SL - 271 Lít (Bạc Thép Không Gỉ)</h5>
+                    <p>Giá: 4.000.000đ</p>
+                    <p>Số lượng: 1</p>
+                </div>
+            </div>
+
+            <hr>
+            <input type="button" value="In hóa đơn" class="genric-btn danger circle">
+        </div>
+    </div>
+</div>

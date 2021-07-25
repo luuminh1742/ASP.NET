@@ -1,6 +1,6 @@
-﻿@*@{
+﻿@{
     ViewBag.Title = "Home Page";
-}*@
+}
 <!doctype html>
 <html lang="zxx">
 
@@ -42,17 +42,18 @@
     <link href="~/wwwroot/css/my-style-news.css" rel="stylesheet" />
     <link href="~/wwwroot/css/my-style-product.css" rel="stylesheet" />
     <link href="~/wwwroot/css/my-style.css" rel="stylesheet" />
+    @RenderSection("style", required: false)
 </head>
 
 <body>
     <!--::header part start::-->
-    @{ 
+    @{
         Html.RenderPartial("_Header");
     }
     <!-- Header part end-->
     @RenderBody()
     <!--::footer_part start::-->
-    @{ 
+    @{
         Html.RenderPartial("_Footer");
     }
     <!--::footer_part end::-->
@@ -84,10 +85,12 @@
     <script src="~/wwwroot/js/custom.js"></script>
 
     <script>
-    function detealProduct(url) {
+        function detealProduct(url) {
             window.location = url;
-        }</script>
+        }
+    </script>
     <script src="~/wwwroot/js/custom-header.js"></script>
+    @RenderSection("script",required:false)
 </body>
 
 </html>
