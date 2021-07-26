@@ -37,7 +37,6 @@ namespace ElectronicDevice.Areas.Admin.Controllers
                 {
                     return null;
                 }
-
             }
             cate.Name = category.Name;
             cate.Icon = category.Icon;
@@ -50,7 +49,6 @@ namespace ElectronicDevice.Areas.Admin.Controllers
             {
                 cate.ID_Category = category.ID_Category;
                 db.Entry(cate).State = EntityState.Modified;
-                /*db.Categories.Attach(cate);*/
             }
             
             db.SaveChanges();
