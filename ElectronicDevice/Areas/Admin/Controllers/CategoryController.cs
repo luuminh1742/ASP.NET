@@ -15,7 +15,6 @@ namespace ElectronicDevice.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         private ElectronicDeviceDbContext db = new ElectronicDeviceDbContext();
-        private object imageBytes;
 
         // GET: Admin/Category
         public ActionResult Index()
@@ -31,18 +30,17 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         {
             
             Category cate = new Category();
-            cate.Icon = category.Icon;
             if (category.Base64 != null) {
                 string path = HttpContext.Server.MapPath("~/wwwroot/imageUpload/");
-                string filename = DateTime.Now.ToString("yyyyMMddTHHmmss") + ".jpg";
-                if(!UploadFileUtil.SaveFile(category.Base64, filename, path))
+                //string filename = DateTime.Now.ToString("yyyyMMddTHHmmss") + ".jpg";
+                if(!UploadFileUtil.SaveFile(category.Base64, category.Icon, path))
                 {
                     return null;
                 }
 
-                cate.Icon = filename;
             }
             cate.Name = category.Name;
+            cate.Icon = category.Icon;
             cate.Status = category.Status;
             if (category.ID_Category == 0)
             {

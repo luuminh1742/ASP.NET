@@ -116,7 +116,7 @@
             dataType: "json",
             success: (result) => {
                 alert("Cập nhật danh mục thành công.");
-                
+
                 editCategory(
                     result["ID_Category"],
                     result["Name"],
@@ -148,7 +148,7 @@
                 '<td>'+
                     '<div class="table-data-feature">'+
                         '<button class="item" title="Sửa" data-toggle="modal" data-target="#modal-create"'+
-                                'onclick="clickEditCategory('+id+',"'+ name+'","'+ icon+'","'+status+')">'+
+                                'onclick="clickEditCategory('+id+',\''+ name+'\',\''+ icon+'\','+status+')">'+
                             '<i class="fas fa-pencil-alt"></i>'+
                         '</button>'+
                         '<button class="item" title="Xóa" onclick="deleteCategory('+id+')">'+
@@ -157,7 +157,7 @@
                     '</div>'+
                ' </td>'+
             '</tr>'+
-           ' <tr class="spacer"></tr>'
+           ' <tr class="spacer" id="spacer-'+id+'"></tr>'
         );
     }
 
@@ -177,7 +177,7 @@
             '<td>' +
             '<div class="table-data-feature">' +
             '<button class="item" title="Sửa" data-toggle="modal" data-target="#modal-create"' +
-            'onclick="clickEditCategory(' + id + ',"' + name + '","' + icon + '","' + status + ')">' +
+            'onclick="clickEditCategory(' + id + ',\'' + name + '\',\'' + icon + '\',' + status + ')">' +
             '<i class="fas fa-pencil-alt"></i>' +
             '</button>' +
             '<button class="item" title="Xóa" onclick="deleteCategory(' + id + ')">' +

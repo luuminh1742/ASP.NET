@@ -21,8 +21,7 @@
     </div>
     <div class="table-data__tool-right">
         <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#modal-create"
-                onclick="clickAddCategory()"
-                >
+                onclick="clickAddCategory()">
             <i class="fas fa-plus"></i>Thêm mới
         </button>
     </div>
@@ -42,9 +41,9 @@
 
             {
                 <tr class="tr-shadow" id="@item.ID_Category">
-                    
+
                     <td class="block-icon">
-                        <img src="@Url.Content("~/wwwroot/imageUpload/" + item.Icon)" alt="Icon" style="max-width: 50px; max-height: 50px;"/>
+                        <img src="@Url.Content("~/wwwroot/imageUpload/" + item.Icon)" alt="Icon" style="max-width: 50px; max-height: 50px;" />
                     </td>
                     <td>
                         <span class="block-name-product" id="name-product">@item.Name</span>
@@ -64,8 +63,7 @@
                     <td>
                         <div class="table-data-feature">
                             <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-create"
-                                    onclick="clickEditCategory(@item.ID_Category, '@item.Name', '@item.Icon',@item.Status)"
-                                    >
+                                    onclick="clickEditCategory(@item.ID_Category, '@item.Name', '@item.Icon',@item.Status)">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
                             <button class="item" title="Xóa" onclick="deleteCategory(@item.ID_Category)">
@@ -81,11 +79,6 @@
 
 </div>
 
-@section modal{
-    @Html.Partial("Create");
-    @Html.Partial("Edit");
-    @Html.Partial("Delete");
-}
 <script>
     function clickAddCategory() {
         $('#mediumModalLabel').text("Thêm mới danh mục");
@@ -114,7 +107,7 @@
 
         $.ajax({
             url: '/Admin/Category/DeleteProductCategory',
-            data: {id:id},
+            data: { id: id },
             type: "GET",
             success: (result) => {
                 alert("Xóa danh mục thành công.");
@@ -129,3 +122,9 @@
     }
 </script>
 
+
+@section modal{
+    @Html.Partial("Create");
+    @Html.Partial("Edit");
+    @Html.Partial("Delete");
+}
