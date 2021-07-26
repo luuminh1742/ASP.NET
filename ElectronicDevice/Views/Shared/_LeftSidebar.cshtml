@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ElectronicDevice.Models.Category>
+
+
+<div class="left_sidebar_area">
+    <aside class="left_widgets p_filter_widgets">
+        <div class="l_w_title bg-warning">
+            <h3>Danh mục sản phẩm</h3>
+        </div>
+        <div class="widgets_inner" style="padding-right:5px;padding-left:5px">
+            <table class="table-categoty">
+                @foreach (var item in Model)
+
+                {
+                    <tr style="height:50px" class="rounded-5">
+                        <td width="50px"><img src="@Url.Content("~/wwwroot/imageUpload/"+item.Icon)" alt="@item.Name"/></td>
+                        <td> <a href="#">@item.Name</a></td>
+                        <td><span>(@item.Products.Count())</span></td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </aside>
+</div>

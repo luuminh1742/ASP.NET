@@ -13,3 +13,21 @@ body{
     left: -16px;
     border: 1px solid #ecfdff;
 }
+
+.main_menu .main-menu-item ul li .nav-link {
+    text-transform: none !important;
+}
+
+
+.table-categoty tr td a{
+    color:black !important;
+}
+
+.table-categoty tr:hover a,
+.table-categoty tr:hover span {
+    color: #ff3368 !important;
+}
+
+.box-single-product:hover{
+    cursor:pointer;
+}
