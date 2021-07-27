@@ -5,7 +5,6 @@ namespace ElectronicDevice.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    using System.Web;
 
     [Table("Category")]
     public partial class Category
@@ -26,7 +25,6 @@ namespace ElectronicDevice.Models
         [Required]
         [StringLength(255)]
         public string Icon { get; set; }
-        
 
         public bool Status { get; set; }
 

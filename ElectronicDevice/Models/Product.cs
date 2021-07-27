@@ -56,7 +56,14 @@ namespace ElectronicDevice.Models
 
         public bool Status { get; set; }
 
-        public DateTime CreateDate { get; set; }
+        [StringLength(100)]
+        public string CreatedBy { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? ModifiedDate { get; set; }
+
+        [StringLength(100)]
+        public string ModifiedBy { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BillDetail> BillDetails { get; set; }

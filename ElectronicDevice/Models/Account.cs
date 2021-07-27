@@ -1,7 +1,8 @@
-namespace ElectronicDevice.Models
+﻿namespace ElectronicDevice.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -21,11 +22,13 @@ namespace ElectronicDevice.Models
 
         public int ID_Role { get; set; }
 
-        [Required]
+        [DisplayName("Tên đăng nhập")]
+        [Required(ErrorMessage = "Tên đăng nhập không  được  để  trống!")]
         [StringLength(255)]
         public string UserName { get; set; }
 
-        [Required]
+        [DisplayName("Mật khẩu"), DataType(DataType.Password)]
+        [Required(ErrorMessage = "Mật khẩu không  được  để  trống!")]
         [StringLength(255)]
         public string Password { get; set; }
 

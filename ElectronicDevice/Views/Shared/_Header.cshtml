@@ -53,38 +53,50 @@
                             </a>
                         </div>
 
-                        <div class="dropdown ml-4">
-                            <a class="dropdown-toggle" href="" id="navbarDropdown3" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img width="35" height="35" class="rounded-circle" src="https://aphoto.vn/wp-content/uploads/2019/02/hinh10-4.jpg" alt="">
-                                <!-- <i class="fas fa-user-circle"></i> -->
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown"
-                                 style="background-color: #D1FDFF !important; ">
-                                <div class="p-2 rounded-5">
-                                    <div class="p-1 dropdown-menu-item">
-                                        <a href="@Url.Action("Index","Account")"><i class="fas fa-user-alt ml-0">  Quản lý tài khoản</i></a>
-                                    </div>
-                                    <div class="p-1 dropdown-menu-item">
-                                        <a href="@Url.Action("Index","Login")">
-                                            <i class="fas fa-sign-in-alt ml-0">  Đăng nhập</i>
-                                        </a>
-                                    </div>
-                                    <div class="p-1 dropdown-menu-item">
-                                        <a href="@Url.Action("Register","Account")">
-                                            <i class="	fas fa-meteor ml-0">  Đăng ký</i>
-                                        </a>
-                                    </div>
-                                    <div class="p-1 dropdown-menu-item">
-                                        <a href="@Url.Action("Index","Home")">
-                                            <i class="fas fa-sign-out-alt ml-0">  Đăng xuất</i>
-                                        </a>
+                        @if (Session["UserName"] != null)
+                        {
+                            <div class="dropdown ml-4">
+                                <a class="dropdown-toggle" href="" id="navbarDropdown3" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    @if (Session["Avatar"] != null)
+                                    {
+                                        <img width="35" height="35" class="rounded-circle"
+                                             src="@Url.Content("~/wwwroot/imageUpload/"+Session["Avatar"])" alt="">
+                                    }
+                                    else
+                                    {
+                                        <img width="35" height="35" class="rounded-circle"
+                                             src="http://m.myclip.vn/images/avatar.gif" alt="">
+                                    }
+                                    &nbsp;
+                                    @Session["FullName"]
+                                    <!-- <i class="fas fa-user-circle"></i> -->
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                                     style="background-color: #D1FDFF !important; ">
+                                    <div class="p-2 rounded-5">
+                                        <div class="p-1 dropdown-menu-item">
+                                            <a href="@Url.Action("Index", "Account")"><i class="fas fa-user-alt ml-0">  Quản lý tài khoản</i></a>
+                                        </div>
+
+                                        <div class="p-1 dropdown-menu-item">
+                                            <a href="@Url.Action("Logout", "Login")">
+                                                <i class="fas fa-sign-out-alt ml-0">  Đăng xuất</i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
-
-                        </div>
-
+                        }
+                        else
+                        {
+                            <div style="margin-left: 30px; background: #ff443a; border-radius: 30px; padding: 10px;">
+                                <a style=" color: #fff;" href="@Url.Action("Index", "Login")">
+                                    Đăng nhập
+                                </a>
+                            </div>
+                        }
 
                     </div>
                 </nav>
@@ -92,12 +104,12 @@
         </div>
     </div>
     @*<div class="search_input" id="search_input_box">
-        <div class="container ">
-            <form class="d-flex justify-content-between search-inner">
-                <input type="text" class="form-control" id="search_input" placeholder="Tìm kiếm sản phẩm">
-                <button type="submit" class="btn"></button>
-                <span class="ti-close" id="close_search" title="Close Search"></span>
-            </form>
-        </div>
-    </div>*@
+            <div class="container ">
+                <form class="d-flex justify-content-between search-inner">
+                    <input type="text" class="form-control" id="search_input" placeholder="Tìm kiếm sản phẩm">
+                    <button type="submit" class="btn"></button>
+                    <span class="ti-close" id="close_search" title="Close Search"></span>
+                </form>
+            </div>
+        </div>*@
 </header>

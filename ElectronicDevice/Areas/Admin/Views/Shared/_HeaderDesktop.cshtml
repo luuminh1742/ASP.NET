@@ -53,23 +53,40 @@
                     <div class="account-wrap">
                         <div class="account-item clearfix js-item-menu">
                             <div class="image rounded-circle">
-                                <img src="~/Areas/Admin/Assets/images/icon/avatar-01.jpg" alt="Vạn Xuân" />
+                                @if (Session["Avatar"] != null)
+                                {
+                                    <img width="45" height="45" class="rounded-circle"
+                                         src="@Url.Content("~/wwwroot/imageUpload/"+Session["Avatar"])" alt="">
+                                }
+                                else
+                                {
+                                    <img src="~/Areas/Admin/Assets/images/icon/avatar-01.jpg" alt="Vạn Xuân" />
+                                }
+
                             </div>
                             <div class="content">
-                                <a class="js-acc-btn" href="#">Admin123</a>
+                                <a class="js-acc-btn" href="#">@Session["UserName"]</a>
                             </div>
                             <div class="account-dropdown js-dropdown rounded mt-2">
                                 <div class="info clearfix">
                                     <div class="image rounded-circle">
                                         <a href="@Url.Action("Index","Account")">
-                                            <img src="~/Areas/Admin/Assets/images/icon/avatar-01.jpg" alt="Vạn Xuân" />
+                                            @if (Session["Avatar"] != null)
+                                            {
+                                                <img width="45" height="45" class="rounded-circle"
+                                                     src="@Url.Content("~/wwwroot/imageUpload/"+Session["Avatar"])" alt="">
+                                            }
+                                            else
+                                            {
+                                                <img src="~/Areas/Admin/Assets/images/icon/avatar-01.jpg" alt="Vạn Xuân" />
+                                            }
                                         </a>
                                     </div>
                                     <div class="content">
                                         <h5 class="name">
-                                            <a href="@Url.Action("Index","Account")">Vạn Xuân</a>
+                                            <a href="@Url.Action("Index","Account")">@Session["FullName"]</a>
                                         </h5>
-                                        <span class="email">xuan.van.techshop@example.com</span>
+                                        <span class="email">@Session["Email"]</span>
                                     </div>
                                 </div>
                                 <div class="account-dropdown__body">

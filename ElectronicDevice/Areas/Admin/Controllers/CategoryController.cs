@@ -12,6 +12,7 @@ using System.Web.Mvc;
 
 namespace ElectronicDevice.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class CategoryController : Controller
     {
         private ElectronicDeviceDbContext db = new ElectronicDeviceDbContext();

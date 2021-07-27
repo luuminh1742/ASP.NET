@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace ElectronicDevice.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class RoleController : Controller
     {
         // GET: Admin/Role

@@ -1,10 +1,10 @@
-﻿
+﻿@model ElectronicDevice.Models.Account
 @{
-    
+    ViewBag.Title = "Đăng nhập";
 }
 
 <!-- breadcrumb start-->
-<section class="breadcrumb breadcrumb_bg">
+<section class="breadcrumb breadcrumb_bg" id="my_banner">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
@@ -35,22 +35,34 @@
                     <div class="login_part_text_iner">
                         <h2>Bạn mới đến với cửa hàng của chúng tôi?</h2>
                         <p>Tạo một tài khoản để tham gia mua sắm được dễ dàng và thuận tiện hơn!</p>
-                        <a href="@Url.Action("Register","Account")" class="btn_3">Tạo một tài khoản</a>
+                        <a href="@Url.Action("Register", "Account")" class="btn_3">Tạo một tài khoản</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="login_part_form">
                     <div class="login_part_form_iner">
+                        @if (ViewBag.LoginError != null)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                @ViewBag.LoginError
+                            </div>
+                        }
+
                         <h3>Đăng nhập</h3>
-                        <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken();
+
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="name" name="name" value=""
-                                       placeholder="Tên đăng nhập">
+                                @*@Html.LabelFor(m => m.UserName)*@
+                                @Html.TextBoxFor(m => m.UserName, "", new { @class = "form-control", @placeholder = "Tên đăng nhập" })
+                                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <input type="password" class="form-control" id="password" name="password" value=""
-                                       placeholder="Mật khẩu">
+                                @*@Html.LabelFor(m => m.Password)*@
+                                @Html.TextBoxFor(m => m.Password, "", new { @class = "form-control", @placeholder = "Mật khẩu", Type = "password" })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                             </div>
                             <div class="col-md-12 form-group">
                                 <div class="creat_account d-flex align-items-center">
@@ -62,7 +74,9 @@
                                 </button>
                                 <a class="lost_pass" href="@Url.Action("ForgetPass","Login")">Quên mật khẩu?</a>
                             </div>
-                        </form>
+
+
+                        }
                     </div>
                 </div>
             </div>
