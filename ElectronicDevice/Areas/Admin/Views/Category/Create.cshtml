@@ -1,4 +1,5 @@
-﻿<!-- modal create -->
+﻿
+<!-- modal create -->
 <div class="modal fade" id="modal-create" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -13,6 +14,7 @@
                 <div class="form-group">
                     <label>Tên Danh Mục</label>
                     <input class="au-input au-input--full" type="text" name="Name" id="Name" placeholder="Tủ Lạnh">
+                    
                 </div>
 
                 <div class="form-group ">
@@ -52,7 +54,6 @@
 </div>
 <!-- end modal create -->
 
-
 <script>
     function clickSaveCategory() {
         var data = {};
@@ -60,6 +61,10 @@
         data["Status"] = $("#show").is(":checked") ? true : false;
         data["ID_Category"] = 0;
         data["ID_Category"] = Number($('#id').val());
+        if ($('#Name').val() == "") {
+            alert("Tên danh mục không được để trống!");
+            return;
+        }
         var file = $('#inputFile')[0].files[0];
         if (file != undefined) {
             var reader = new FileReader();
@@ -132,38 +137,38 @@
     }
 
     function setDataCategory(id, name, icon, status) {
-        var showStatus = status?"Hiển thị":"Ẩn";
+        var showStatus = status ? "Hiển thị" : "Ẩn";
         $('#data-category').append(
-            '<tr class="tr-shadow" id="'+id+'">'+
-                '<td class="block-icon">'+
-                    '<img src="/wwwroot/imageUpload/' + icon +
-                        '" alt="Icon" style="max-width: 50px; max-height: 50px;"/>' +
-                '</td>'+
-                '<td>'+
-                    '<span class="block-name-product" id="name-product">'+name+'</span>'+
-                '</td>'+
-                '<td>'+
-                '<span class="status--process" id="show-status">' + showStatus+'</span>'+
-                '</td>'+
-                '<td>'+
-                    '<div class="table-data-feature">'+
-                        '<button class="item" title="Sửa" data-toggle="modal" data-target="#modal-create"'+
-                                'onclick="clickEditCategory('+id+',\''+ name+'\',\''+ icon+'\','+status+')">'+
-                            '<i class="fas fa-pencil-alt"></i>'+
-                        '</button>'+
-                        '<button class="item" title="Xóa" onclick="deleteCategory('+id+')">'+
-                            '<i class="fas fa-trash-alt"></i>'+
-                        '</button>'+
-                    '</div>'+
-               ' </td>'+
-            '</tr>'+
-           ' <tr class="spacer" id="spacer-'+id+'"></tr>'
+            '<tr class="tr-shadow" id="' + id + '">' +
+            '<td class="block-icon">' +
+            '<img src="/wwwroot/imageUpload/' + icon +
+            '" alt="Icon" style="max-width: 50px; max-height: 50px;"/>' +
+            '</td>' +
+            '<td>' +
+            '<span class="block-name-product" id="name-product">' + name + '</span>' +
+            '</td>' +
+            '<td>' +
+            '<span class="status--process" id="show-status">' + showStatus + '</span>' +
+            '</td>' +
+            '<td>' +
+            '<div class="table-data-feature">' +
+            '<button class="item" title="Sửa" data-toggle="modal" data-target="#modal-create"' +
+            'onclick="clickEditCategory(' + id + ',\'' + name + '\',\'' + icon + '\',' + status + ')">' +
+            '<i class="fas fa-pencil-alt"></i>' +
+            '</button>' +
+            '<button class="item" title="Xóa" onclick="deleteCategory(' + id + ')">' +
+            '<i class="fas fa-trash-alt"></i>' +
+            '</button>' +
+            '</div>' +
+            ' </td>' +
+            '</tr>' +
+            ' <tr class="spacer" id="spacer-' + id + '"></tr>'
         );
     }
 
     function editCategory(id, name, icon, status) {
         var showStatus = status ? "Hiển thị" : "Ẩn";
-        $('#'+id).html(
+        $('#' + id).html(
             '<td class="block-icon">' +
             '<img src="/wwwroot/imageUpload/' + icon +
             '" alt="Icon" style="max-width: 50px; max-height: 50px;"/>' +

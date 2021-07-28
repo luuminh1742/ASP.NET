@@ -8,7 +8,7 @@ namespace ElectronicDevice.Models
     public partial class ElectronicDeviceDbContext : DbContext
     {
         public ElectronicDeviceDbContext()
-            : base("name=ElectronicDeviceDbContext1")
+            : base("name=ElectronicDeviceDbContext")
         {
         }
 
