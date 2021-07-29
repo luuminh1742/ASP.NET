@@ -1,4 +1,6 @@
 ﻿<!-- modal create -->
+
+
 <div class="modal fade" id="modal-create" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -13,78 +15,270 @@
                 <form action="" method="post">
                     <div class="form-group">
                         <label>Tên Sản Phẩm</label>
-                        <input class="au-input au-input--full" type="text" name="fullname" placeholder="Tủ Lạnh">
+                        <input class="au-input au-input--full" type="text" name="Name" id="Name" placeholder="Tủ Lạnh">
                     </div>
+
                     <div class="form-group">
                         <label>Danh Mục</label>
-                        <select name="categories" id="selected_category" class="form-control">
-                            <option value="0">Điều Hòa Nhiệt Độ</option>
-                            <option value="1">Tivi, Loa - Âm Thanh</option>
-                            <option value="2">Máy Giặt</option>
-                            <option value="3">Tủ Lạnh</option>
-                            <option value="4">Quạt Mát</option>
-                        </select>
+                        @Html.DropDownList("Category", null, htmlAttributes: new {  @class = "form-control" })
+
                     </div>
-                    <div class="form-group">
-                        <label>Hình Ảnh</label>
-                        <input type="file" name="img[]" class="file" accept="image/*">
-                        <div class="input-group my-3">
-                            <input type="text" class="form-control" disabled placeholder="Upload" id="file">
-                            <div class="input-group-append">
-                                <button type="button" class="browse btn btn-primary">Browse...</button>
-                            </div>
-                        </div>
-                        <img src="https://placehold.it/80x80" id="preview" class="img-thumbnail">
+
+                    <div class="form-group ">
+                        <label style="font-size:13px ">Hình Ảnh</label>
+                        <img id="preview" onclick="$('#inputFile').click()" class="img-thumbnail"
+                             style=" max-width: 50px; max-height: 50px;">
+                        <br />
+                        <label for="inputFile" class="au-input au-input--full font-weight-bold text-center"
+                               style="background-color: rgb(41, 167, 248);"><span style="color:white">Chọn Ảnh</span></label>
+                        <input type="file" id="inputFile" path="inputFile" multiple="multiple"
+                               name="Image" class="form-control" style="display:none" accept="image/*" />
                     </div>
+
+
                     <div class="form-group">
                         <label>Đơn Giá</label>
-                        <input class="au-input au-input--full" type="text" name="price" placeholder="0&#8363;">
+                        <input class="au-input au-input--full" type="text" name="Price" id="Price" placeholder="0&#8363;">
                     </div>
+
                     <div class="form-group">
                         <label>Model</label>
-                        <input class="au-input au-input--full" type="text" name="model" placeholder="A">
+                        <input class="au-input au-input--full" type="text" name="Model" id="Model" placeholder="A">
                     </div>
+
                     <div class="form-group">
                         <label>Số Lượng</label>
-                        <input class="au-input au-input--full" type="text" name="amount" placeholder="100">
+                        <input class="au-input au-input--full" type="text" name="Amount" id="Amount" placeholder="100">
                     </div>
+
                     <div class="form-group">
                         <label>Bảo Hành</label>
-                        <input class="au-input au-input--full" type="text" name="guarantee" placeholder="12">
+                        <input class="au-input au-input--full" type="text" name="Guarantee" id="Guarantee" placeholder="12">
                     </div>
+
                     <div class="form-group">
                         <label>Xuất Xứ</label>
-                        <input class="au-input au-input--full" type="text" name="origin" placeholder="Việt Nam">
+                        <input class="au-input au-input--full" type="text" name="Origin" id="Origin" placeholder="Việt Nam">
                     </div>
+
                     <div class="form-group">
                         <label>Giảm Giá</label>
-                        <input class="au-input au-input--full" type="text" name="discount" placeholder="0&#37;">
+                        <input class="au-input au-input--full" type="text" name="Discount" id="Discount" placeholder="0&#37;">
                     </div>
+
                     <div class="form-group">
                         <label>Mô Tả Ngắn</label>
-                        <textarea name="short-description" id="short-description" rows="3"
+                        <textarea name="ShortDescription" id="ShortDescription" rows="3"
                                   placeholder="Mô tả ngắn..." class="form-control"></textarea>
                     </div>
+
                     <div class="form-group">
                         <label>Chi Tiết</label>
-                        <textarea name="detail_create" id="detail_create" rows="9"
+                        <textarea name="Detail" id="Detail" rows="9"
                                   placeholder="Thông tin chi tiết về sản phẩm...." class="form-control"></textarea>
                     </div>
+
                     <div class="form-group">
                         <label>Trạng Thái</label>
-                        <select name="select" id="select" class="form-control">
-                            <option value="0">Hiển Thị</option>
-                            <option value="1">Ẩn</option>
-                        </select>
+                        <input type="radio" id="show" name="Status" checked />
+                        <label for="show">Hiển thị</label>
+                        &ensp;
+                        <input type="radio" id="hide" name="Status" />
+                        <label for="hide"> Ẩn</label>
                     </div>
                 </form>
             </div>
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                <button type="button" class="btn btn-primary">Thêm</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="clickSaveProduct()">Lưu</button>
             </div>
+
+            <input hidden id="id" name="id" />
+            <input hidden id="imagename" name="imagename" />
+
         </div>
     </div>
 </div>
 <!-- end modal create -->
+<script>
+    function clickSaveProduct() {
+        var data = {};
+        data["Name"] = $('#Name').val();
+        data["ID_Category"] = $('#ID_Category').val();
+        data["Price"] = $('#Price').val();
+        data["Model"] = $('#Model').val();
+        data["Amount"] = $('#Amount').val();
+        data["Guarantee"] = $('#Guarantee').val();
+        data["Origin"] = $('#Origin')();
+        data["Discount"] = $('#Discount').val();
+        data["ShortDescription"] = $('#ShortDescription').val();
+        data["Detail"] = $('#Detail').val();
+        data["Status"] = $("#show").is(":checked") ? true : false;
+        data["ID_Product"] = Number($('#id').val());
+        var file = $('#inputFile')[0].files[0];
+        if (file != undefined) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                data["Base64"] = e.target.result;
+                data["Image"] = file.name;
+                if (data["ID_Product"] == 0) {
+                    addData(data);
+                } else {
+                    editData(data);
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+        else {
+            data["Image"] = $('#imagename').val();
+            if (data["ID_Product"] == 0) {
+                addData(data);
+            } else {
+                editData(data);
+            }
+        }
+    }
+    function addData(data) {
+        $.ajax({
+            url: '/Admin/Product/AddProducts',
+            data: JSON.stringify(data),
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: (result) => {
 
+                setDataProduct(
+                    result["ID_Product"],
+                    result["ID_Category"],
+                    result["Name"],
+                    result["Image"],
+                    result["Price"],
+                    result["Model"],
+                    result["Amount"],
+                    result["Guarantee"],
+                    result["Origin"],
+                    result["Discount"],
+                    result["ShortDescription"],
+                    result["Detail"],
+                    result["Status"]
+                );
+                alert("Thêm sản phẩm thành công.");
+            },
+            error: (error) => {
+                alert("Thêm sản phẩm thất bại!");
+            }
+        });
+    }
+    function editData(data) {
+        $.ajax({
+            url: '/Admin/Product/AddProducts',
+            data: JSON.stringify(data),
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: (result) => {
+                alert("Cập nhật sản phẩm thành công.");
+
+                editProduct(
+                    result["ID_Product"],
+                    result["ID_Category"],
+                    result["Name"],
+                    result["Image"],
+                    result["Price"],
+                    result["Model"],
+                    result["Amount"],
+                    result["Guarantee"],
+                    result["Origin"],
+                    result["Discount"],
+                    result["ShortDescription"],
+                    result["Detail"],
+                    result["Status"]
+                );
+                //location.reload();
+            },
+            error: (error) => {
+                alert("Cập nhật sản phẩm thất bại!");
+            }
+        });
+    }
+    function setDataProduct(id, image, name, price, discount, status) {
+        var showStatus = status ? "Hiển thị" : "Ẩn";
+        $('#data-product').append(
+            '<tr class="tr-shadow" id="' + id + '">' +
+            '<td class="block-icon">' +
+            '<img src="/wwwroot/imageUpload/' + image +
+            '" alt="Icon" style="max-width: 50px; max-height: 50px;"/>' +
+            '</td>' +
+
+            '<td>' +
+            '<span class="block-name-product" id="name-product">' + name + '</span>' +
+            '</td>' +
+
+            '<td>' +
+            '<span class="block-price-product" id="price-product">' + price + '</span>' +
+            '</td>' +
+
+            '<td>' +
+            '<span class="block-discount-product" id="discount-product">' + discount + '</span>' +
+            '</td>' +
+
+            '<td>' +
+            '<span class="status--process" id="show-status">' + showStatus + '</span>' +
+            '</td>' +
+
+            '<td>' +
+            '<div class="table-data-feature">' +
+            '<button class="item" title="Sửa" data-toggle="modal" data-target="#modal-create"' +
+            'onclick="clickEditProduct(' + id + ',\'' + image + '\',\'' + name + '\',' + price + '\',' + discount + '\',' + status + ')">' +
+            '<i class="fas fa-pencil-alt"></i>' +
+            '</button>' +
+            '<button class="item" title="Xóa" onclick="deleteProduct(' + id + ')">' +
+            '<i class="fas fa-trash-alt"></i>' +
+            '</button>' +
+            '</div>' +
+            ' </td>' +
+
+            '</tr>' +
+            ' <tr class="spacer" id="spacer-' + id + '"></tr>'
+        );
+    }
+    function editProduct(id, image, name, price, discount, status) {
+        var showStatus = status ? "Hiển thị" : "Ẩn";
+        $('#' + id).html(
+            '<td class="block-icon">' +
+            '<img src="/wwwroot/imageUpload/' + image +
+            '" alt="Icon" style="max-width: 50px; max-height: 50px;"/>' +
+            '</td>' +
+
+            '<td>' +
+            '<span class="block-name-product" id="name-product">' + name + '</span>' +
+            '</td>' +
+
+            '<td>' +
+            '<span class="block-price-product" id="price-product">' + price + '</span>' +
+            '</td>' +
+
+            '<td>' +
+            '<span class="block-discount-product" id="discount-product">' + discount + '</span>' +
+            '</td>' +
+
+            '<td>' +
+            '<span class="status--process" id="show-status">' + showStatus + '</span>' +
+            '</td>' +
+
+            '<td>' +
+            '<div class="table-data-feature">' +
+            '<button class="item" title="Sửa" data-toggle="modal" data-target="#modal-create"' +
+            'onclick="clickEditProduct(' + id + ',\'' + image + '\',\'' + name + '\',' + price + '\',' + discount + '\',' + status + ')">' +
+            '<i class="fas fa-pencil-alt"></i>' +
+            '</button>' +
+            '<button class="item" title="Xóa" onclick="deleteProduct(' + id + ')">' +
+            '<i class="fas fa-trash-alt"></i>' +
+            '</button>' +
+            '</div>' +
+            ' </td>'
+        );
+    }
+
+</script>
