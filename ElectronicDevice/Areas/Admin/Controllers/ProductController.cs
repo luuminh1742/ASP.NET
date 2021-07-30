@@ -9,20 +9,27 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace ElectronicDevice.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "ADMIN")]
+    //[Authorize(Roles = "ADMIN")]
     public class ProductController : Controller
     {
         private ElectronicDeviceDbContext db = new ElectronicDeviceDbContext();
 
         // GET: Admin/Product
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            var listProduct = db.Products.Select(c => c);
+            var listProduct = db.Products.Select(p => p);
+            listProduct = listProduct.OrderBy(p => p.ID_Product);
+
             ViewBag.Category = new SelectList(db.Categories, "ID_Category", "Name");
-            return View(listProduct);
+
+            int pageSize = 8;  //Kích  thước  trang 
+            int pageNumber = (page ?? 1);
+
+            return View(listProduct.ToPagedList(pageNumber, pageSize));
         }
 
         [HttpPost]
@@ -69,6 +76,13 @@ namespace ElectronicDevice.Areas.Admin.Controllers
             db.SaveChanges();
 
             return Json(pro, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult DeleteProduct(int id)
+        {
+            Product product = db.Products.Find(id);
+            db.Products.Remove(product);
+            db.SaveChanges();
+            return Json(true, JsonRequestBehavior.AllowGet);
         }
     }
 }

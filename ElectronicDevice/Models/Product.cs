@@ -26,6 +26,7 @@ namespace ElectronicDevice.Models
         public string Name { get; set; }
 
         [Column(TypeName = "money")]
+        //[DisplayFormat(DataFormatString = "{0:#,###}")]
         public decimal Price { get; set; }
 
         [Required]
