@@ -1,89 +1,215 @@
-﻿<!-- modal edit -->
-<div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="scrollmodalLabel">Cập Nhật Sản Phẩm</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
+﻿@model ElectronicDevice.Models.Product
+
+@{
+    ViewBag.Title = ViewBag.MyTitle;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    <script src="~/Areas/Admin/Assets/ckeditor/ckeditor.js"></script>
+}
+
+<h3 class="title-5 m-b-35">@ViewBag.MyTitle</h3>
+<div class="">
+    <div class="bg-light p-4">
+        <div class="row">
+            <div class="col-md-12">
                 <form action="" method="post">
                     <div class="form-group">
                         <label>Tên Sản Phẩm</label>
-                        <input class="au-input au-input--full" type="text" name="fullname" placeholder="Tủ Lạnh">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @Placeholder = "Tủ Lạnh" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        @*<input class="au-input au-input--full" type="text" name="Name" id="Name" placeholder="Tủ Lạnh">*@
                     </div>
+
                     <div class="form-group">
                         <label>Danh Mục</label>
-                        <select name="categories" id="selected_category" class="form-control">
-                            <option value="0">Điều Hòa Nhiệt Độ</option>
-                            <option value="1">Tivi, Loa - Âm Thanh</option>
-                            <option value="2">Máy Giặt</option>
-                            <option value="3">Tủ Lạnh</option>
-                            <option value="4">Quạt Mát</option>
-                        </select>
+                        @Html.DropDownList("Category", null, htmlAttributes: new { @class = "form-control" })
+
                     </div>
-                    <div class="form-group">
-                        <label>Hình Ảnh</label>
-                        <input type="file" name="img[]" class="file" accept="image/*">
-                        <div class="input-group my-3">
-                            <input type="text" class="form-control" disabled placeholder="Upload" id="file">
-                            <div class="input-group-append">
-                                <button type="button" class="browse btn btn-primary">Browse...</button>
-                            </div>
-                        </div>
-                        <img src="https://placehold.it/80x80" id="preview" class="img-thumbnail">
+
+                    <div class="form-group ">
+                        @*@Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })*@
+
+                        @{ 
+                            string Img = "~/wwwroot/img/my-image/no-img.jpg";
+                            if (ViewBag.MyAction == "Update")
+                            {
+                                Img = "~/wwwroot/imageUpload/" + Model.Image;
+                            }
+
+                        }
+                        <label style="font-size:13px ">Hình Ảnh</label>
+                        <img src="@Url.Content(Img)" id="preview" onclick="$('#inputFile').click()" class="img-thumbnail"
+                             style=" max-width: 180px; max-height: 200px;">
+
+                        <br />
+                        <label for="inputFile" class="au-input au-input--full font-weight-bold text-center"
+                               style="background-color: rgb(41, 167, 248);"><span style="color:white">Chọn Ảnh</span></label>
+                        <input type="file" id="inputFile" path="inputFile"
+                               name="Image" class="form-control" style="display:none" accept="image/*" />
                     </div>
+
+
                     <div class="form-group">
                         <label>Đơn Giá</label>
-                        <input class="au-input au-input--full" type="text" name="price" placeholder="0&#8363;">
+                        @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control", @Placeholder = "đ" } })
+                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                        @*<input class="au-input au-input--full" type="text" name="Price" id="Price" placeholder="0&#8363;">*@
                     </div>
+
                     <div class="form-group">
                         <label>Model</label>
-                        <input class="au-input au-input--full" type="text" name="model" placeholder="A">
+                        @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @class = "form-control", @Placeholder = "A" } })
+                        @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
+                        @*<input class="au-input au-input--full" type="text" name="Model" id="Model" placeholder="A">*@
                     </div>
+
                     <div class="form-group">
                         <label>Số Lượng</label>
-                        <input class="au-input au-input--full" type="text" name="amount" placeholder="100">
+                        @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control", @Placeholder = "100" } })
+                        @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                        @*<input class="au-input au-input--full" type="text" name="Amount" id="Amount" placeholder="100">*@
                     </div>
+
                     <div class="form-group">
                         <label>Bảo Hành</label>
-                        <input class="au-input au-input--full" type="text" name="guarantee" placeholder="12">
+                        @Html.EditorFor(model => model.Guarantee, new { htmlAttributes = new { @class = "form-control", @Placeholder = "Tháng" } })
+                        @Html.ValidationMessageFor(model => model.Guarantee, "", new { @class = "text-danger" })
+                        @*<input class="au-input au-input--full" type="text" name="Guarantee" id="Guarantee" placeholder="12">*@
                     </div>
+
                     <div class="form-group">
                         <label>Xuất Xứ</label>
-                        <input class="au-input au-input--full" type="text" name="origin" placeholder="Việt Nam">
+                        @Html.EditorFor(model => model.Origin, new { htmlAttributes = new { @class = "form-control", @Placeholder = "Việt Nam" } })
+                        @Html.ValidationMessageFor(model => model.Origin, "", new { @class = "text-danger" })
+                        @*<input class="au-input au-input--full" type="text" name="Origin" id="Origin" placeholder="Việt Nam">*@
                     </div>
+
                     <div class="form-group">
                         <label>Giảm Giá</label>
-                        <input class="au-input au-input--full" type="text" name="discount" placeholder="0&#37;">
+                        @Html.EditorFor(model => model.Discount, new { htmlAttributes = new { @class = "form-control", @Placeholder = "%" } })
+                        @Html.ValidationMessageFor(model => model.Discount, "", new { @class = "text-danger" })
+                        @*<input class="au-input au-input--full" type="text" name="discount" id="discount" placeholder="0&#37;">*@
                     </div>
+
                     <div class="form-group">
                         <label>Mô Tả Ngắn</label>
-                        <textarea name="short-description" id="short-description" rows="3"
-                                  placeholder="Mô tả ngắn..." class="form-control"></textarea>
+                        @Html.EditorFor(model => model.ShortDescription, new { htmlAttributes = new { @class = "form-control", @Placeholder = "Mô tả ngắn..." } })
+                        @Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
+                        @*<textarea name="ShortDescription" id="ShortDescription" rows="3"
+                                  placeholder="Mô tả ngắn..." class="form-control"></textarea>*@
                     </div>
+
                     <div class="form-group">
                         <label>Chi Tiết</label>
-                        <textarea name="detail" id="detail" rows="9"
-                                  placeholder="Thông tin chi tiết về sản phẩm...." class="form-control"></textarea>
+                        @Html.EditorFor(model => model.Detail, new { htmlAttributes = new { @class = "form-control", @Placeholder = "Thông tin chi tiết về sản phẩm...." } })
+                        @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
+                        @*<textarea name="Detail" id="Detail" rows="9"
+                                  placeholder="Thông tin chi tiết về sản phẩm...." class="form-control"></textarea>*@
                     </div>
+
                     <div class="form-group">
                         <label>Trạng Thái</label>
-                        <select name="select" id="select" class="form-control">
-                            <option value="0">Hiển Thị</option>
-                            <option value="1">Ẩn</option>
-                        </select>
+                        <input type="radio" id="show" name="Status" checked />
+                        <label for="show">Hiển thị</label>
+                        &ensp;
+                        <input type="radio" id="hide" name="Status" />
+                        <label for="hide"> Ẩn</label>
                     </div>
                 </form>
+                @Html.EditorFor(model => model.ID_Product, new { htmlAttributes = new { @class = "form-control hide"}  })
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                <button type="button" class="btn btn-primary">Cập Nhật</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="clickSaveProduct()">Lưu</button>
             </div>
+
+            <input hidden id="imagename" name="imagename" />
         </div>
     </div>
 </div>
-<!-- end modal edit -->
+@section Script{
+<script>
+    $('#ID_Product').hide();
+    var detail = "";
+    $(document).ready(function () {
+        detail = CKEDITOR.replace('Detail');
+    });
+
+    function clickSaveProduct() {
+        var data = {};
+        data["Name"] = $('#Name').val();
+        data["ID_Category"] = Number($('#Category').val());
+        data["Price"] = Number($('#Price').val());
+        data["Model"] = $('#Model').val();
+        data["Amount"] = Number($('#Amount').val());
+        data["Guarantee"] = Number($('#Guarantee').val());
+        data["Origin"] = $('#Origin').val();
+        data["Discount"] = Number($('#Discount').val());
+        data["ShortDescription"] = $('#ShortDescription').val();
+        data["Detail"] = detail.getData();
+        data["Status"] = $("#show").is(":checked") ? true : false;
+        data["ID_Product"] = Number($('#ID_Product').val());
+        var file = $('#inputFile')[0].files[0];
+        if (file != undefined) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                data["Base64"] = e.target.result;
+                data["Image"] = file.name;
+                if (data["ID_Product"] == 0) {
+                    addData(data);
+                } else {
+                    editData(data);
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+        else {
+            data["Image"] = $('#imagename').val();
+            if (data["ID_Product"] == 0) {
+                addData(data);
+            } else {
+                editData(data);
+            }
+        }
+    }
+    function addData(data) {
+        $.ajax({
+            url: '/Admin/Product/AddProducts',
+            data: JSON.stringify(data),
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: (result) => {
+
+
+                alert("Thêm sản phẩm thành công.");
+                window.location = "/Admin/Product";
+            },
+            error: (error) => {
+                alert("Thêm sản phẩm thất bại!");
+            }
+        });
+    }
+    function editData(data) {
+        $.ajax({
+            url: '/Admin/Product/AddProducts',
+            data: JSON.stringify(data),
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: (result) => {
+                alert("Cập nhật sản phẩm thành công.");
+
+                window.location = "/Admin/Product";
+
+                //location.reload();
+            },
+            error: (error) => {
+                alert("Cập nhật sản phẩm thất bại!");
+            }
+        });
+    }
+
+</script>
+}

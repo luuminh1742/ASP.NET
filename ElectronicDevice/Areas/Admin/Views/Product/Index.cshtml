@@ -36,10 +36,14 @@
         </button>
     </div>
     <div class="table-data__tool-right">
-        <button class="au-btn au-btn-icon au-btn--green au-btn--small"
+        @*<button class="au-btn au-btn-icon au-btn--green au-btn--small"
                 data-toggle="modal" data-target="#modal-create">
             <i class="fas fa-plus"></i>Thêm mới
-        </button>
+        </button>*@
+        <a class="au-btn au-btn-icon au-btn--green au-btn--small"
+           href="@Url.Action("Edit","Product")">
+            <i class="fas fa-plus"></i>Thêm mới
+        </a>
     </div>
 </div>
 <div class="table-responsive table-data">
@@ -61,7 +65,7 @@
             @foreach (var item in Model)
             {
                 <tr class="tr-shadow" id="@item.ID_Product">
-                    <td class="number_order">@(index +(Model.PageNumber-1)*8)</td>
+                    <td class="number_order">@(index + (Model.PageNumber - 1) * 8)</td>
                     <td>
                         <span class="block-name">@item.ID_Product</span>
                     </td>
@@ -93,10 +97,9 @@
                     </td>
                     <td>
                         <div class="table-data-feature">
-                            <button class="item" title="Sửa" data-toggle="modal"
-                                    data-target="#modal-edit">
+                            <a class="item" title="Sửa" href="@Url.Action("Edit", "Product", new {ProductId=item.ID_Product })">
                                 <i class="fas fa-pencil-alt"></i>
-                            </button>
+                            </a>
                             <button class="item" title="Xóa" onclick="deleteProduct(@item.ID_Product)">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
@@ -117,18 +120,11 @@
 Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 
-@section modal{
+@*@section modal{
     @Html.Partial("Create");
-    @Html.Partial("Edit");
-    @Html.Partial("Delete");
-}
+}*@
 @section Script {
     <script>
-        var detail = "";
-        $(document).ready(function () {
-            detail = CKEDITOR.replace('detail_create');
-            //CKFinder.setupCKEditor(detail, '/ckfinder/')
-        });
         function deleteProduct(id) {
 
             let checkDelete = confirm("Xác nhận xóa sản phẩm này!");

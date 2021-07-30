@@ -7,7 +7,7 @@ using System.Web.Security;
 
 namespace ElectronicDevice.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "ADMIN")]
+    //[Authorize(Roles = "ADMIN")]
     public class HomeController : Controller
     {
         // GET: Admin/Home

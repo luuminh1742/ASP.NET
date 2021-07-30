@@ -21,7 +21,7 @@ namespace ElectronicDevice.Models
 
         public int ID_Category { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Demo")]
         [StringLength(255)]
         public string Name { get; set; }
 

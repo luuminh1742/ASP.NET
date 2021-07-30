@@ -20,7 +20,7 @@
 
                     <div class="form-group">
                         <label>Danh Mục</label>
-                        @Html.DropDownList("Category", null, htmlAttributes: new {  @class = "form-control" })
+                        @Html.DropDownList("Category", null, htmlAttributes: new { @class = "form-control" })
 
                     </div>
 
@@ -31,7 +31,7 @@
                         <br />
                         <label for="inputFile" class="au-input au-input--full font-weight-bold text-center"
                                style="background-color: rgb(41, 167, 248);"><span style="color:white">Chọn Ảnh</span></label>
-                        <input type="file" id="inputFile" path="inputFile" multiple="multiple"
+                        <input type="file" id="inputFile" path="inputFile"
                                name="Image" class="form-control" style="display:none" accept="image/*" />
                     </div>
 
@@ -87,6 +87,7 @@
                         <label for="hide"> Ẩn</label>
                     </div>
                 </form>
+                
             </div>
 
             <div class="modal-footer">
@@ -105,15 +106,15 @@
     function clickSaveProduct() {
         var data = {};
         data["Name"] = $('#Name').val();
-        data["ID_Category"] = $('#ID_Category').val();
-        data["Price"] = $('#Price').val();
+        data["ID_Category"] = Number( $('#Category').val());
+        data["Price"] = Number($('#Price').val());
         data["Model"] = $('#Model').val();
-        data["Amount"] = $('#Amount').val();
-        data["Guarantee"] = $('#Guarantee').val();
-        data["Origin"] = $('#Origin')();
-        data["Discount"] = $('#Discount').val();
+        data["Amount"] = Number($('#Amount').val());
+        data["Guarantee"] = Number($('#Guarantee').val());
+        data["Origin"] = $('#Origin').val();
+        data["Discount"] = Number($('#Discount').val());
         data["ShortDescription"] = $('#ShortDescription').val();
-        data["Detail"] = $('#Detail').val();
+        data["Detail"] = detail.getData();
         data["Status"] = $("#show").is(":checked") ? true : false;
         data["ID_Product"] = Number($('#id').val());
         var file = $('#inputFile')[0].files[0];

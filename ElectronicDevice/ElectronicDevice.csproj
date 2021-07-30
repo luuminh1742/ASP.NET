@@ -1095,6 +1095,7 @@
     <Content Include="wwwroot\img\my-image\banner\promotions.png" />
     <Content Include="wwwroot\img\my-image\banner\sign-up.png" />
     <Content Include="wwwroot\img\my-logo\logo-asp.net.png" />
+    <Content Include="wwwroot\img\my-image\no-img.jpg" />
     <Content Include="wwwroot\img\subscribe_area.png" />
     <Content Include="wwwroot\js\aos.js" />
     <Content Include="wwwroot\js\bootstrap.min.js" />

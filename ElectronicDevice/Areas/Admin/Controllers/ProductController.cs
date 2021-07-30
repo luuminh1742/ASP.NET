@@ -13,7 +13,7 @@ using PagedList;
 
 namespace ElectronicDevice.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "ADMIN")]
+    //[Authorize(Roles = "ADMIN")]
     public class ProductController : Controller
     {
         private ElectronicDeviceDbContext db = new ElectronicDeviceDbContext();
@@ -30,6 +30,24 @@ namespace ElectronicDevice.Areas.Admin.Controllers
             int pageNumber = (page ?? 1);
 
             return View(listProduct.ToPagedList(pageNumber, pageSize));
+        }
+
+        public ActionResult Edit(int? ProductId)
+        {
+            
+            if (ProductId != null)
+            {
+                ViewBag.MyAction = "Update";
+                ViewBag.MyTitle = "Cập nhật sản phẩm";
+                Product product = db.Products.Where(p => p.ID_Product == ProductId).SingleOrDefault();
+
+                ViewBag.Category = new SelectList(db.Categories, "ID_Category", "Name",product.ID_Category);
+                return View(product);
+            }
+            ViewBag.Category = new SelectList(db.Categories, "ID_Category", "Name");
+            ViewBag.MyTitle = "Thêm sản phẩm";
+            ViewBag.MyAction = "Create";
+            return View();
         }
 
         [HttpPost]
@@ -65,6 +83,7 @@ namespace ElectronicDevice.Areas.Admin.Controllers
             //pro.ModifiedBy = product.ModifiedBy;
             if (product.ID_Product == 0)
             {
+                product.CreatedDate = DateTime.Now;
                 db.Products.Add(pro);
             }
             else
