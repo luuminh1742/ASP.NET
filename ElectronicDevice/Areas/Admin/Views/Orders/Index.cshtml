@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<ElectronicDevice.DTO.BillDTO>
 @{
     ViewBag.Title = "Đơn hàng";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -27,99 +27,52 @@
                         <th>Họ tên người nhận</th>
                         <th>Địa chỉ</th>
                         <th>Tổng tiền</th>
-                        <th>Số lượng sản phẩm</th>
+                        @*<th>Số lượng sản phẩm</th>*@
                         <th>Ngày đặt</th>
                         <th>Hành động</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="tr-shadow">
-                        <td class="number_order">1</td>
-                        <td>
-                            <span class="block-name">1</span>
-                        </td>
-                        <td>
-                            <span>Nguyễn Văn A</span>
-                        </td>
-                        <td>
-                            <span>Đại học công nghiệp hà nội</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">14.000.000 VNĐ</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">2</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
-                        </td>
-                        <td>
+                    @{ 
+                        int stt1 = 0;
+                    }
+                    @foreach (var item in Model)
+                    {
+                        if (item.Status == 0)//đơng hàng mới.
+                        {
+                        stt1++;
+                        <tr class="tr-shadow">
+                            <td class="number_order">@stt1</td>
+                            <td>
+                                <span class="block-name">@item.ID_Bill</span>
+                            </td>
+                            <td>
+                                <span>@item.ReceiverName</span>
+                            </td>
+                            <td>
+                                <span>@item.ReceiverAddress</span>
+                            </td>
+                            <td>
+                                <span class="block-name-product">@item.SumPrice VNĐ</span>
+                            </td>
+                            @*<td>
+                                <span class="block-name-product">@item.Amount</span>
+                            </td>*@
+                            <td>
+                                <span class="block-name-product">@item.CreatedDate</span>
+                            </td>
+                            <td>
 
-                            <input type="button" class="btn btn-outline-info" onclick="confirmOrders()" value="Xem" data-toggle="modal" data-target="#modal-confirm-orders">
+                                <input type="button" class="btn btn-outline-info" onclick="viewOrders()" value="Xem" data-toggle="modal" data-target="#modal-confirm-orders">
 
-                            <input type="button" class="btn btn-outline-success" value="Nhận đơn">
-                            <input type="button" class="btn btn-outline-danger" value="Hủy đơn">
-                        </td>
+                                <input type="button" class="btn btn-outline-success" value="Nhận đơn">
+                                <input type="button" class="btn btn-outline-danger" value="Hủy đơn">
+                            </td>
 
-                    </tr>
-                    <tr class="spacer"></tr>
-                    <tr class="tr-shadow">
-                        <td class="number_order">2</td>
-                        <td>
-                            <span class="block-name">2</span>
-                        </td>
-                        <td>
-                            <span>Nguyễn Văn B</span>
-                        </td>
-                        <td>
-                            <span>Đại học công nghiệp hà nội</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">4.000.000 VNĐ</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">6</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">30/5/2021 - 11:12:10</span>
-                        </td>
-                        <td>
-                            <input type="button" class="btn btn-outline-info" onclick="confirmOrders()" value="Xem" data-toggle="modal" data-target="#modal-confirm-orders">
-                            <input type="button" class="btn btn-outline-success" value="Nhận đơn">
-                            <input type="button" class="btn btn-outline-danger" value="Hủy đơn">
-                        </td>
-
-                    </tr>
-                    <tr class="spacer"></tr>
-                    <tr class="tr-shadow">
-                        <td class="number_order">3</td>
-                        <td>
-                            <span class="block-name">3</span>
-                        </td>
-                        <td>
-                            <span>Nguyễn Văn C</span>
-                        </td>
-                        <td>
-                            <span>Đại học công nghiệp hà nội</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">1.000.000 VNĐ</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">3</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">22/5/2021 - 11:12:10</span>
-                        </td>
-                        <td>
-                            <input type="button" class="btn btn-outline-info" onclick="confirmOrders()" value="Xem" data-toggle="modal" data-target="#modal-confirm-orders">
-                            <input type="button" class="btn btn-outline-success" value="Nhận đơn">
-                            <input type="button" class="btn btn-outline-danger" value="Hủy đơn">
-                        </td>
-
-                    </tr>
-                    <tr class="spacer"></tr>
-
+                        </tr>
+                        <tr class="spacer"></tr>
+                        }
+                    }
                 </tbody>
             </table>
 
@@ -157,7 +110,7 @@
                         <th>Họ tên người nhận</th>
                         <th>Địa chỉ</th>
                         <th>Tổng tiền</th>
-                        <th>Số lượng sản phẩm</th>
+                        @*<th>Số lượng sản phẩm</th>*@
                         <th>Ngày đặt</th>
                         <th>Ngày cập nhật</th>
                         <th>Cập nhật trạng thái</th>
@@ -165,57 +118,65 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="tr-shadow">
-                        <td class="number_order">1</td>
-                        <td>
-                            <span class="block-name">4</span>
-                        </td>
-                        <td>
-                            <span>Nguyễn Văn D</span>
-                        </td>
-                        <td>
-                            <span>Đại học công nghiệp hà nội</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">14.000.000 VNĐ</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">2</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
-                        </td>
-                        <td>
-                            <div class="rs-select2--light rs-select2--md ">
-                                <select class="js-select2 " name="status">
-                                    <option selected="selected">Đã nhận đơn</option>
-                                    <option value="">Đã giao cho ĐVVC</option>
-                                    <option value="">Đơn hàng đã nhận</option>
-                                </select>
-                                <div class="dropDownSelect2"></div>
-                            </div>
-                        </td>
-                        <td>
-                            <!-- <input type="button" class="btn btn-outline-info"
-                            value="Xem"  data-toggle="modal" data-target="#modal-confirm-orders"
-                            onclick="clickProcessOrders('Shop đã tiếp nhận đơn hàng','1/7/2021 - 10:20;12');"> -->
+                    @{ 
+                        int stt2 = 0;
+                    }
+                    @foreach (var item in Model)
+                    {
+                        if (item.Status == 1)//đã nhận đơn
+                        {
+                            stt2++;
+                            <tr class="tr-shadow">
+                                <td class="number_order">@stt2</td>
+                                <td>
+                                    <span class="block-name">@item.ID_Bill</span>
+                                </td>
+                                <td>
+                                    <span>@item.ReceiverName</span>
+                                </td>
+                                <td>
+                                    <span>@item.ReceiverAddress</span>
+                                </td>
+                                <td>
+                                    <span class="block-name-product">@item.SumPrice VNĐ</span>
+                                </td>
+                                @*<td>
+                                    <span class="block-name-product">@item.Amount</span>
+                                </td>*@
+                                <td>
+                                    <span class="block-name-product">@item.CreatedDate</span>
+                                </td>
+                                <td>
+                                    <span class="block-name-product">@item.ModifiedDate</span>
+                                </td>
+                                <td>
+                                    <div class="rs-select2--light rs-select2--md ">
+                                        <select class="js-select2 " name="status">
+                                            <option selected="selected">Đã nhận đơn</option>
+                                            <option value="">Đã giao cho ĐVVC</option>
+                                            <option value="">Đơn hàng đã nhận</option>
+                                        </select>
+                                        <div class="dropDownSelect2"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <!-- <input type="button" class="btn btn-outline-info"
+                    value="Xem"  data-toggle="modal" data-target="#modal-confirm-orders"
+                    onclick="clickProcessOrders('Shop đã tiếp nhận đơn hàng','1/7/2021 - 10:20;12');"> -->
 
-                            <div class="table-data-feature">
-                                <button class="item" title="Xem thông tin đơn hàng" data-toggle="modal" data-target="#modal-confirm-orders" onclick="clickProcessOrders('Shop đã tiếp nhận đơn hàng','1/7/2021 - 10:20;12');">
-                                    <i class="	fas fa-eye"></i>
-                                </button>
+                                    <div class="table-data-feature">
+                                        <button class="item" title="Xem thông tin đơn hàng" data-toggle="modal" data-target="#modal-confirm-orders" onclick="clickProcessOrders('Shop đã tiếp nhận đơn hàng','1/7/2021 - 10:20;12');">
+                                            <i class="	fas fa-eye"></i>
+                                        </button>
 
-                            </div>
+                                    </div>
 
-                        </td>
+                                </td>
 
-                    </tr>
-                    <tr class="spacer"></tr>
-
-
+                            </tr>
+                            <tr class="spacer"></tr>
+                        }
+                    }
                 </tbody>
             </table>
 
@@ -369,44 +330,44 @@
     @Html.Partial("Orders");
 }
 @section Script{
-<script>
-    $("#infor-time").hide();
-
-    function clickProcessOrders(status, time) {
-        $('#status-orders').text(status + ' _ ' + time);
-        $('#status-orders').css("color", "green");
-        $("#infor-time").show();
-        $("#infor-time").html(
-            '<h4 style="margin-left: -25px;">Trạng thái đơn hàng</h4><br>' +
-            '<ul>' +
-            '<li class="text-success"> ' + time + ' ' + status + '</li>' +
-            '<li> 1/1/2021 10:10:10 Người gửi chuẩn bị hàng</li>' +
-            '</ul>' +
-            '<hr>'
-
-        );
-    }
-
-    function clickSuccessfulOrders(status, time) {
-        $('#status-orders').text(status + ' _ ' + time);
-        $('#status-orders').css("color", "green");
-        $("#infor-time").show();
-        $("#infor-time").html(
-            '<h4 style="margin-left: -25px;">Trạng thái đơn hàng</h4><br>' +
-            '<ul>' +
-            '<li class="text-success"> ' + time + ' ' + status + '</li>' +
-            '<li> 1/2/2021 10:10:10 Đang giao hàng</li>' +
-            '<li> 1/1/2021 10:10:10 Người gửi chuẩn bị hàng</li>' +
-            '</ul>' +
-            '<hr>'
-
-        );
-    }
-
-    function confirmOrders() {
-        $('#status-orders').text("Chưa xác nhận");
-        $('#status-orders').css("color", "red");
+    <script>
         $("#infor-time").hide();
-    }
-</script>
+
+        function clickProcessOrders(status, time) {
+            $('#status-orders').text(status + ' _ ' + time);
+            $('#status-orders').css("color", "green");
+            $("#infor-time").show();
+            $("#infor-time").html(
+                '<h4 style="margin-left: -25px;">Trạng thái đơn hàng</h4><br>' +
+                '<ul>' +
+                '<li class="text-success"> ' + time + ' ' + status + '</li>' +
+                '<li> 1/1/2021 10:10:10 Người gửi chuẩn bị hàng</li>' +
+                '</ul>' +
+                '<hr>'
+
+            );
+        }
+
+        function clickSuccessfulOrders(status, time) {
+            $('#status-orders').text(status + ' _ ' + time);
+            $('#status-orders').css("color", "green");
+            $("#infor-time").show();
+            $("#infor-time").html(
+                '<h4 style="margin-left: -25px;">Trạng thái đơn hàng</h4><br>' +
+                '<ul>' +
+                '<li class="text-success"> ' + time + ' ' + status + '</li>' +
+                '<li> 1/2/2021 10:10:10 Đang giao hàng</li>' +
+                '<li> 1/1/2021 10:10:10 Người gửi chuẩn bị hàng</li>' +
+                '</ul>' +
+                '<hr>'
+
+            );
+        }
+
+        function viewOrders() {
+            $('#status-orders').text("Chưa xác nhận");
+            $('#status-orders').css("color", "red");
+            $("#infor-time").hide();
+        }
+    </script>
 }

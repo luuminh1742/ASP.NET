@@ -149,6 +149,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\BillDTO.cs" />
     <Compile Include="DTO\CategoryDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1001,6 +1003,7 @@
     <Content Include="wwwroot\imageUpload\dieu-hoa-samsung-1-chieu-inverter-9400btu-ar10tyhycwknsv-x5p3EH.png" />
     <Content Include="wwwroot\imageUpload\dieu-hoa-samsung-windfree-1-chieu-inverter-12000btu-ar13tygcdwknsv-8CN26y.png" />
     <Content Include="wwwroot\imageUpload\dieu-hoa-samsung-windfree-1-chieu-inverter-9400btu-ar10tygcdwknsv-J2o7n5.png" />
+    <Content Include="wwwroot\imageUpload\do.jpg" />
     <Content Include="wwwroot\imageUpload\icon-may-giat-may-say.png" />
     <Content Include="wwwroot\imageUpload\icon-quat-mat-cac-loai.png" />
     <Content Include="wwwroot\imageUpload\icon-tivi-loa-am-thanh.png" />
@@ -1054,9 +1057,6 @@
     <Content Include="wwwroot\img\animate_icon\shape-7.png" />
     <Content Include="wwwroot\img\animate_icon\shape-8.png" />
     <Content Include="wwwroot\img\animate_icon\shape.png" />
-    <Content Include="wwwroot\img\author\author_1.png" />
-    <Content Include="wwwroot\img\author\author_2.png" />
-    <Content Include="wwwroot\img\author\author_3.png" />
     <Content Include="wwwroot\img\background-banner-news.png" />
     <Content Include="wwwroot\img\background-banner-nome.png" />
     <Content Include="wwwroot\img\background-banner.png" />
@@ -1553,6 +1553,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\CategoryController\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
