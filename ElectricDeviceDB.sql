@@ -98,7 +98,7 @@ Create table [Bill]
 	[ReceiverPhone] [char](20) NOT NULL,
 	[Note] [ntext] NULL,
 	[PayType] [nvarchar](255) NOT NULL,
-	[Status] [bit] NOT NULL,
+	[Status] [int] NOT NULL,
 	[CreatedDate] [date] NULL,
 	[ModifiedDate] [date] NULL,
 Primary Key ([ID_Bill])
@@ -267,6 +267,7 @@ SET IDENTITY_INSERT [dbo].[Account] ON
 
 INSERT [dbo].[Account] ([ID_Account], [ID_Role], [UserName], [Password], [FullName], [Phone], [Address], [Email], [Status], [Avatar]) VALUES (1, 2, N'admin', N'admin', N'Nguoi Quan Tri', N'0999888776          ', N'Dai hoc cong nghiep Ha Noi', N'nhom6.cntt01.k13@gmail.com', 1, NULL)
 INSERT [dbo].[Account] ([ID_Account], [ID_Role], [UserName], [Password], [FullName], [Phone], [Address], [Email], [Status], [Avatar]) VALUES (2, 1, N'nhom6', N'nhom6', N'Nguyen Van An', N'0987654321          ', N'Cau Giay - Ha Noi', N'an123@gmail.com', 1, NULL)
+INSERT [dbo].[Account] ([ID_Account], [ID_Role], [UserName], [Password], [FullName], [Phone], [Address], [Email], [Status], [Avatar]) VALUES (18, 1, N'con', N'con', N'Nguyen Van An', N'0987654321', N'Cau Giay - Ha Noi', N'andfgdf123@gmail.com', 1, 'do.jpg')
 SET IDENTITY_INSERT [dbo].[Account] OFF
 GO
 
@@ -279,3 +280,4 @@ select * from BillDetail
 select * from Cart
 select * from Category
 select * from [Role]
+

@@ -72,8 +72,6 @@
                                 </button>
                                 <a class="lost_pass" href="@Url.Action("ForgetPass","Login")">Quên mật khẩu?</a>
                             </div>
-
-
                         }
                     </div>
                 </div>
@@ -82,3 +80,9 @@
     </div>
 </section>
 <!--================login_part end =================-->
+@if (TempData["Success"] != null)
+{
+<script>
+        alert('@Html.Raw(@TempData["Success"])');
+</script>
+}

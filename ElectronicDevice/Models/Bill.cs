@@ -43,7 +43,7 @@ namespace ElectronicDevice.Models
         [StringLength(255)]
         public string PayType { get; set; }
 
-        public bool Status { get; set; }
+        public int Status { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? CreatedDate { get; set; }

@@ -1,4 +1,7 @@
-﻿@model IEnumerable< ElectronicDevice.Models.Product>
+﻿@model PagedList.IPagedList<ElectronicDevice.Models.Product>
+@using PagedList.Mvc;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "Sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -50,312 +53,70 @@
                 <th>Giá</th>
                 <th>Giảm giá</th>
                 <th>trạng thái</th>
-                <th>phản hồi</th>
                 <th>Hành động</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="tr-shadow">
-                <td class="number_order">1</td>
-                <td>
-                    <span class="block-name">1</span>
-                </td>
-                <td class="block-image">
-                    <img src="~/Areas/Admin/Assets/images/product/thumb_tu-dong-sanaky-inverter-400-lit-vh5699w3-6ydR8O.png"
-                         alt="Hình Ảnh Sản Phẩm" />
-                </td>
-                <td>
-                    <span class="block-name-product">
-                        TỦ ĐÔNG SANAKY 260L INVERTER
-                        VH-3699W3
-                    </span>
-                </td>
-                <td>
-                    <span class="text-primary font-weight-bold">6.990.000&#8363;</span>
-                </td>
-                <td>
-                    <span class="text-primary font-weight-bold">0&#37;</span>
-                </td>
-                <td>
-                    <span class="status--process">Hiển Thị</span>
-                </td>
-                <td>
-                    <span class="font-weight-bold">10</span> |
-                    <a href="@Url.Action("Index","Feedback")"
-                       title="Xem đánh giá">
+            @{var index = 1; }
+            @foreach (var item in Model)
+            {
+                <tr class="tr-shadow" id="@item.ID_Product">
+                    <td class="number_order">@(index +(Model.PageNumber-1)*8)</td>
+                    <td>
+                        <span class="block-name">@item.ID_Product</span>
+                    </td>
+                    <td class="block-image">
+                        <img src="@Url.Content("~/wwwroot/imageUpload/" + item.Image)" alt="Image" style="max-width: 100px; max-height: 100px;" />
+                    </td>
+                    <td>
+                        <span class="block-name-product">
+                            @item.Name
+                        </span>
+                    </td>
+                    <td>
+                        <span class="text-primary font-weight-bold">@item.Price&#8363;</span>
+                    </td>
+                    <td>
+                        <span class="text-primary font-weight-bold">@item.Discount&#37;</span>
+                    </td>
+                    <td>
+                        <span class="status--process">
+                            @if (item.Status)
+                            {
+                                <span>Hiển thị</span>
+                            }
+                            else
+                            {
+                                <span>Ẩn</span>
+                            }
+                        </span>
+                    </td>
+                    <td>
+                        <div class="table-data-feature">
+                            <button class="item" title="Sửa" data-toggle="modal"
+                                    data-target="#modal-edit">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button class="item" title="Xóa" onclick="deleteProduct(@item.ID_Product)">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="spacer" id="@item.ID_Product"></tr>
+                index++;
+            }
 
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item" title="Sửa" data-toggle="modal"
-                                data-target="#modal-edit">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button class="item" title="Xóa" data-toggle="modal"
-                                data-target="#modal-delete">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="spacer"></tr>
-            <tr class="tr-shadow">
-                <td class="number_order">2</td>
-                <td>
-                    <span class="block-name">15</span>
-                </td>
-                <td class="block-image">
-                    <img src="~/Areas/Admin/Assets/images/product/dieu-hoa-panasonic-1-chieu-9000btu-csn9wkh8m-wH2k4X.png"
-                         alt="Hình Ảnh Sản Phẩm" />
-                </td>
-                <td>
-                    <span class="block-name-product">
-                        Điều hòa Panasonic 1 chiều 9000BTU
-                        CS-N9WKH-8M
-                    </span>
-                </td>
-                <td>
-                    <span class="text-primary font-weight-bold">8.890.000&#8363;</span>
-                </td>
-                <td>
-                    <span class="text-primary font-weight-bold">0&#37;</span>
-                </td>
-                <td>
-                    <span class="status--process">Hiển Thị</span>
-                </td>
-                <td>
-                    <span class="font-weight-bold">10</span> |
-                    <a href="@Url.Action("Index","Feedback")"
-                       title="Xem đánh giá">
 
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item" title="Sửa" data-toggle="modal"
-                                data-target="#modal-edit">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button class="item" title="Xóa" data-toggle="modal"
-                                data-target="#modal-delete">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="spacer"></tr>
-            <tr class="tr-shadow">
-                <td class="number_order">3</td>
-                <td>
-                    <span class="block-name">16</span>
-                </td>
-                <td class="block-image">
-                    <img src="~/Areas/Admin/Assets/images/product/quat-treo-tuong-coex-cw7210-17XRkL.png"
-                         alt="Hình Ảnh Sản Phẩm" />
-                </td>
-                <td>
-                    <span class="block-name-product">
-                        QUẠT TRẦN 5 CÁNH MITSUBISHI C56-RW5
-                        SF XÁM NHẠT
-                    </span>
-                </td>
-                <td>
-                    <span class="text-primary font-weight-bold">7.000.000&#8363;</span>
-                </td>
-                <td>
-                    <span class="text-primary font-weight-bold">0&#37;</span>
-                </td>
-                <td>
-                    <span class="status--process">Hiển Thị</span>
-                </td>
-                <td>
-                    <span class="font-weight-bold">10</span> |
-                    <a href="@Url.Action("Index","Feedback")"
-                       title="Xem đánh giá">
-
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item" title="Sửa" data-toggle="modal"
-                                data-target="#modal-edit">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button class="item" title="Xóa" data-toggle="modal"
-                                data-target="#modal-delete">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="spacer"></tr>
-            <tr class="tr-shadow">
-                <td class="number_order">4</td>
-                <td>
-                    <span class="block-name">18</span>
-                </td>
-                <td class="block-image">
-                    <img src="~/Areas/Admin/Assets/images/product/thumb_-00BMt7 (1).jpg"
-                         alt="Hình Ảnh Sản Phẩm" />
-                </td>
-                <td>
-                    <span class="block-name-product">
-                        LOA SOUNDBAR SAMSUNG HW-T550/XV
-                        2.1CH
-                    </span>
-                </td>
-                <td>
-                    <span class="text-primary font-weight-bold">4.000.000&#8363;</span>
-                </td>
-                <td>
-                    <span class="text-primary font-weight-bold">0&#37;</span>
-                </td>
-                <td>
-                    <span class="status--process">Hiển Thị</span>
-                </td>
-                <td>
-                    <span class="font-weight-bold">10</span> |
-                    <a href="@Url.Action("Index","Feedback")"
-                       title="Xem đánh giá">
-
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item" title="Sửa" data-toggle="modal"
-                                data-target="#modal-edit">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button class="item" title="Xóa" data-toggle="modal"
-                                data-target="#modal-delete">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="spacer"></tr>
-            <tr class="tr-shadow">
-                <td class="number_order">5</td>
-                <td>
-                    <span class="block-name">20</span>
-                </td>
-                <td class="block-image">
-                    <img src="~/Areas/Admin/Assets/images/product/thumb_tu-dong-sanaky-inverter-400-lit-vh5699w3-6ydR8O.png"
-                         alt="Hình Ảnh Sản Phẩm" />
-                </td>
-                <td>
-                    <span class="block-name-product">
-                        TỦ ĐÔNG SANAKY 260L INVERTER
-                        VH-3699W3
-                    </span>
-                </td>
-                <td>
-                    <span class="text-primary font-weight-bold">6.990.000&#8363;</span>
-                </td>
-                <td>
-                    <span class="text-primary font-weight-bold">0&#37;</span>
-                </td>
-                <td>
-                    <span class="status--denied">Ẩn</span>
-                </td>
-                <td>
-                    <span class="font-weight-bold">10</span> |
-                    <a href="@Url.Action("Index","Feedback")"
-                       title="Xem đánh giá">
-
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item" title="Sửa" data-toggle="modal"
-                                data-target="#modal-edit">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button class="item" title="Xóa" data-toggle="modal"
-                                data-target="#modal-delete">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="spacer"></tr>
-            <tr class="tr-shadow">
-                <td class="number_order">6</td>
-                <td>
-                    <span class="block-name">1</span>
-                </td>
-                <td class="block-image">
-                    <img src="~/Areas/Admin/Assets/images/product/thumb_tu-dong-sanaky-inverter-400-lit-vh5699w3-6ydR8O.png"
-                         alt="Hình Ảnh Sản Phẩm" />
-                </td>
-                <td>
-                    <span class="block-name-product">
-                        TỦ ĐÔNG SANAKY 260L INVERTER
-                        VH-3699W3
-                    </span>
-                </td>
-                <td>
-                    <span class="text-primary font-weight-bold">6.990.000&#8363;</span>
-                </td>
-                <td>
-                    <span class="text-primary font-weight-bold">0&#37;</span>
-                </td>
-                <td>
-                    <span class="status--process">Hiển Thị</span>
-                </td>
-                <td>
-                    <span class="font-weight-bold">10</span> |
-                    <a href="@Url.Action("Index","Feedback")"
-                       title="Xem đánh giá">
-
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item" title="Sửa" data-toggle="modal"
-                                data-target="#modal-edit">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button class="item" title="Xóa" data-toggle="modal"
-                                data-target="#modal-delete">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
         </tbody>
     </table>
 
 </div>
 <!-- END DATA TABLE -->
-<div class="my-3">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</div>
+<br />
+Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
 @section modal{
     @Html.Partial("Create");
     @Html.Partial("Edit");
@@ -367,6 +128,27 @@
         $(document).ready(function () {
             detail = CKEDITOR.replace('detail_create');
             //CKFinder.setupCKEditor(detail, '/ckfinder/')
-        });</script>
+        });
+        function deleteProduct(id) {
+
+            let checkDelete = confirm("Xác nhận xóa sản phẩm này!");
+            if (checkDelete == false)
+                return;
+
+            $.ajax({
+                url: '/Admin/Product/DeleteProduct',
+                data: { id: id },
+                type: "GET",
+                success: (result) => {
+                    alert("Xóa sản phẩm thành công.");
+                    $('#' + id).remove();
+                    $('#spacer-' + id).remove();
+                },
+                error: (error) => {
+                    alert("Xóa sản phẩm thất bại!");
+                }
+            });
+        }
+    </script>
 }
 
