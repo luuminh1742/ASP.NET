@@ -281,7 +281,3 @@ select * from Cart
 select * from Category
 select * from [Role]
 
-insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate) values(19,N'Phạm Thị A',N'Bắc Ninh',N'trandobn@gmail.com','0385993661',N'Gửi nhanh',N'Chuyển khoản',0,N'2021-01-01')
-insert into BillDetail values(3,1,5,50000);
-
-select ID_Bill,ReceiverName from Bill,BillDetail where Bill.ID_Bill=BillDetail.ID_Bill 

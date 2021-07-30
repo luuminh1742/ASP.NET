@@ -48,12 +48,10 @@
                                 @ViewBag.LoginError
                             </div>
                         }
-
                         <h3>Đăng nhập</h3>
                         @using (Html.BeginForm("Login", "Login", FormMethod.Post))
                         {
                             @Html.AntiForgeryToken();
-
                             <div class="col-md-12 form-group p_star">
                                 @*@Html.LabelFor(m => m.UserName)*@
                                 @Html.TextBoxFor(m => m.UserName, "", new { @class = "form-control", @placeholder = "Tên đăng nhập" })

@@ -24,7 +24,8 @@ namespace ElectronicDevice.Controllers
             if (ModelState.IsValid)
             {
                 Account user = db.Accounts.Where(u => u.UserName.Equals(UserName)
-                && u.Password.Equals(Password)).SingleOrDefault();
+                                                        && u.Password.Equals(Password) 
+                                                        && u.Status).SingleOrDefault();
                 if (user != null)
                 {
                     Session["FullName"] = user.FullName;

@@ -152,6 +152,7 @@
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\BillDTO.cs" />
     <Compile Include="DTO\CategoryDTO.cs" />
+    <Compile Include="DTO\ProductDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -160,12 +161,12 @@
     <Compile Include="Models\BillDetail.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CategoryProduct.cs" />
     <Compile Include="Models\ElectronicDeviceDbContext.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\UploadFileUtil.cs" />
-    <Compile Include="Utilities\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Assets\ckeditor\adapters\jquery.js" />

@@ -519,6 +519,7 @@ E:\Electronic\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CoreCompileInpu
 E:\Electronic\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
 E:\Electronic\ElectronicDevice\obj\Debug\ElectronicDevice.dll
 E:\Electronic\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
+<<<<<<< HEAD
 C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll.config
 C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll
 C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.pdb
@@ -606,3 +607,180 @@ C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice
 C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.dll
 C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
 C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csprojAssemblyReference.cache
+=======
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll.config
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.pdb
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.exe
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.exe.config
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.rsp
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.exe
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.exe.config
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.rsp
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.AppContext.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Console.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.Compression.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Net.Http.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Net.Sockets.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.ValueTuple.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XPath.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.exe
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.exe.config
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.rsp
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\VBCSCompiler.exe
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Antlr3.Runtime.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\EntityFramework.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Newtonsoft.Json.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\PagedList.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Helpers.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Mvc.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Optimization.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Razor.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Deployment.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Razor.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\WebGrease.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\EntityFramework.xml
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.xml
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\PagedList.xml
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.xml
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Helpers.xml
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Mvc.xml
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Optimization.xml
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Razor.xml
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.xml
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Deployment.xml
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Razor.xml
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Newtonsoft.Json.xml
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Antlr3.Runtime.pdb
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csprojAssemblyReference.cache
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CoreCompileInputs.cache
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.dll
+C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
+D:\Desktop\BTL2\ElectronicDevice\bin\ElectronicDevice.dll.config
+D:\Desktop\BTL2\ElectronicDevice\bin\ElectronicDevice.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\ElectronicDevice.pdb
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\csc.exe
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\csc.exe.config
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\csc.rsp
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\csi.exe
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\csi.exe.config
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\csi.rsp
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.AppContext.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Collections.Immutable.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Console.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Globalization.Calendars.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.IO.Compression.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.IO.FileSystem.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Net.Http.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Net.Sockets.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Reflection.Metadata.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.ValueTuple.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Xml.XPath.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\vbc.exe
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\vbc.exe.config
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\vbc.rsp
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\VBCSCompiler.exe
+D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\VBCSCompiler.exe.config
+D:\Desktop\BTL2\ElectronicDevice\bin\Antlr3.Runtime.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\EntityFramework.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\EntityFramework.SqlServer.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\Microsoft.Web.Infrastructure.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\Newtonsoft.Json.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\PagedList.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\PagedList.Mvc.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Helpers.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Mvc.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Optimization.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Razor.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.WebPages.Deployment.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.WebPages.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.WebPages.Razor.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\WebGrease.dll
+D:\Desktop\BTL2\ElectronicDevice\bin\EntityFramework.xml
+D:\Desktop\BTL2\ElectronicDevice\bin\EntityFramework.SqlServer.xml
+D:\Desktop\BTL2\ElectronicDevice\bin\PagedList.xml
+D:\Desktop\BTL2\ElectronicDevice\bin\PagedList.Mvc.xml
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Helpers.xml
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Mvc.xml
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Optimization.xml
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Razor.xml
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.WebPages.xml
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.WebPages.Deployment.xml
+D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.WebPages.Razor.xml
+D:\Desktop\BTL2\ElectronicDevice\bin\Newtonsoft.Json.xml
+D:\Desktop\BTL2\ElectronicDevice\bin\Antlr3.Runtime.pdb
+D:\Desktop\BTL2\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Desktop\BTL2\ElectronicDevice\obj\Debug\ElectronicDevice.csprojAssemblyReference.cache
+D:\Desktop\BTL2\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CoreCompileInputs.cache
+D:\Desktop\BTL2\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
+D:\Desktop\BTL2\ElectronicDevice\obj\Debug\ElectronicDevice.dll
+D:\Desktop\BTL2\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
+>>>>>>> ef20055bda721616ea8d43a41639e69abc1fd0e1
+C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csprojAssemblyReference.cache

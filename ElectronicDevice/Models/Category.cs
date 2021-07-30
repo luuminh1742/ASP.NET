@@ -1,4 +1,4 @@
-namespace ElectronicDevice.Models
+﻿namespace ElectronicDevice.Models
 {
     using System;
     using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace ElectronicDevice.Models
         [Key]
         public int ID_Category { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Tên danh mục không được để trống")]
         [StringLength(255)]
         public string Name { get; set; }
 
