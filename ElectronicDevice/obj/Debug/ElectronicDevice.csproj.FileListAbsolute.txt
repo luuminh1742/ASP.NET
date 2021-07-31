@@ -1,786 +1,87 @@
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll.config
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.pdb
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.exe
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.exe.config
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.rsp
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.exe
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.exe.config
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.rsp
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Managed.Core.targets
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.AppContext.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Collections.Immutable.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Console.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Globalization.Calendars.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.Compression.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.FileSystem.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Net.Http.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Net.Sockets.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Reflection.Metadata.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.ValueTuple.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XmlDocument.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XPath.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.exe
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.exe.config
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.rsp
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\VBCSCompiler.exe
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\roslyn\VBCSCompiler.exe.config
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\Antlr3.Runtime.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\Microsoft.Web.Infrastructure.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\Newtonsoft.Json.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.Helpers.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.Mvc.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.Optimization.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.Razor.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Deployment.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Razor.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\WebGrease.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.Helpers.xml
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.Mvc.xml
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.Optimization.xml
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.Razor.xml
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.xml
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Deployment.xml
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Razor.xml
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\Newtonsoft.Json.xml
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\Antlr3.Runtime.pdb
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.AssemblyReference.cache
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CoreCompileInputs.cache
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\EntityFramework.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\PagedList.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.dll
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\EntityFramework.xml
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.xml
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\PagedList.xml
-D:\Sources\CSharp\ASP.NET\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll.config
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.pdb
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.exe
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.exe.config
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.rsp
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.exe
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.exe.config
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.rsp
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.AppContext.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Console.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.Compression.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Net.Http.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Net.Sockets.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.ValueTuple.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XPath.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.exe
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.exe.config
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.rsp
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\VBCSCompiler.exe
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\Antlr3.Runtime.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\EntityFramework.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\Newtonsoft.Json.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\PagedList.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Helpers.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Mvc.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Optimization.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Razor.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Deployment.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Razor.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\WebGrease.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\EntityFramework.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\PagedList.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Helpers.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Mvc.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Optimization.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Razor.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Deployment.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Razor.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\Newtonsoft.Json.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\Antlr3.Runtime.pdb
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CoreCompileInputs.cache
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.dll
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\ElectronicDevice.dll.config
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\ElectronicDevice.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\ElectronicDevice.pdb
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\csc.exe
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\csc.exe.config
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\csc.rsp
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\csi.exe
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\csi.exe.config
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\csi.rsp
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\Microsoft.Managed.Core.targets
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.AppContext.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Collections.Immutable.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Console.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Globalization.Calendars.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.IO.Compression.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.IO.FileSystem.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Net.Http.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Net.Sockets.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Reflection.Metadata.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.ValueTuple.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Xml.XmlDocument.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Xml.XPath.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\vbc.exe
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\vbc.exe.config
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\vbc.rsp
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\VBCSCompiler.exe
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\roslyn\VBCSCompiler.exe.config
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\Antlr3.Runtime.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\EntityFramework.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\EntityFramework.SqlServer.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\Microsoft.Web.Infrastructure.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\Newtonsoft.Json.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\PagedList.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\PagedList.Mvc.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.Helpers.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.Mvc.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.Optimization.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.Razor.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.WebPages.Deployment.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.WebPages.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.WebPages.Razor.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\WebGrease.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\EntityFramework.xml
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\EntityFramework.SqlServer.xml
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\PagedList.xml
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\PagedList.Mvc.xml
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.Helpers.xml
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.Mvc.xml
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.Optimization.xml
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.Razor.xml
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.WebPages.xml
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.WebPages.Deployment.xml
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\System.Web.WebPages.Razor.xml
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\Newtonsoft.Json.xml
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\Antlr3.Runtime.pdb
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\obj\Debug\ElectronicDevice.csprojAssemblyReference.cache
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CoreCompileInputs.cache
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\obj\Debug\ElectronicDevice.dll
-D:\Desktop\.ASP.Nhom6\BTL\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll.config
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.pdb
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.exe
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.exe.config
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.rsp
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.exe
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.exe.config
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.rsp
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Managed.Core.targets
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.AppContext.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Collections.Immutable.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Console.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Globalization.Calendars.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.Compression.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.FileSystem.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Net.Http.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Net.Sockets.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Reflection.Metadata.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.ValueTuple.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XmlDocument.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XPath.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.exe
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.exe.config
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.rsp
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\VBCSCompiler.exe
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\roslyn\VBCSCompiler.exe.config
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\Antlr3.Runtime.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\EntityFramework.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\Microsoft.Web.Infrastructure.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\Newtonsoft.Json.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\PagedList.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.Helpers.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.Mvc.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.Optimization.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.Razor.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Deployment.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Razor.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\WebGrease.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\EntityFramework.xml
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.xml
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\PagedList.xml
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.xml
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.Helpers.xml
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.Mvc.xml
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.Optimization.xml
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.Razor.xml
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.xml
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Deployment.xml
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Razor.xml
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\Newtonsoft.Json.xml
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\Antlr3.Runtime.pdb
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.AssemblyReference.cache
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CoreCompileInputs.cache
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.dll
-D:\Sources\CSharp\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\ElectronicDevice.dll.config
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\ElectronicDevice.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\ElectronicDevice.pdb
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\csc.exe
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\csc.exe.config
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\csc.rsp
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\csi.exe
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\csi.exe.config
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\csi.rsp
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.AppContext.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Console.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.IO.Compression.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Net.Http.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Net.Sockets.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.ValueTuple.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Xml.XPath.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\vbc.exe
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\vbc.exe.config
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\vbc.rsp
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\VBCSCompiler.exe
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\Antlr3.Runtime.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\EntityFramework.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\EntityFramework.SqlServer.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\Newtonsoft.Json.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\PagedList.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\PagedList.Mvc.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.Helpers.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.Mvc.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.Optimization.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.Razor.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.WebPages.Deployment.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.WebPages.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.WebPages.Razor.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\WebGrease.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\EntityFramework.xml
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\EntityFramework.SqlServer.xml
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\PagedList.xml
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\PagedList.Mvc.xml
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.Helpers.xml
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.Mvc.xml
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.Optimization.xml
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.Razor.xml
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.WebPages.xml
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.WebPages.Deployment.xml
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\System.Web.WebPages.Razor.xml
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\Newtonsoft.Json.xml
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\Antlr3.Runtime.pdb
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.AssemblyReference.cache
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CoreCompileInputs.cache
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\obj\Debug\ElectronicDevice.dll
-C:\Users\hoang\Desktop\ASP.NET\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
-E:\Electronic\ElectronicDevice\bin\ElectronicDevice.dll.config
-E:\Electronic\ElectronicDevice\bin\ElectronicDevice.dll
-E:\Electronic\ElectronicDevice\bin\ElectronicDevice.pdb
-E:\Electronic\ElectronicDevice\bin\roslyn\csc.exe
-E:\Electronic\ElectronicDevice\bin\roslyn\csc.exe.config
-E:\Electronic\ElectronicDevice\bin\roslyn\csc.rsp
-E:\Electronic\ElectronicDevice\bin\roslyn\csi.exe
-E:\Electronic\ElectronicDevice\bin\roslyn\csi.exe.config
-E:\Electronic\ElectronicDevice\bin\roslyn\csi.rsp
-E:\Electronic\ElectronicDevice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\Microsoft.CSharp.Core.targets
-E:\Electronic\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\Microsoft.Managed.Core.targets
-E:\Electronic\ElectronicDevice\bin\roslyn\Microsoft.VisualBasic.Core.targets
-E:\Electronic\ElectronicDevice\bin\roslyn\Microsoft.Win32.Primitives.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.AppContext.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Collections.Immutable.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Console.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Diagnostics.StackTrace.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Globalization.Calendars.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.IO.Compression.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.IO.Compression.ZipFile.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.IO.FileSystem.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.IO.FileSystem.Primitives.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Net.Http.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Net.Sockets.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Reflection.Metadata.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Encoding.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Primitives.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Text.Encoding.CodePages.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Threading.Tasks.Extensions.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.ValueTuple.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Xml.ReaderWriter.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Xml.XmlDocument.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Xml.XPath.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\System.Xml.XPath.XDocument.dll
-E:\Electronic\ElectronicDevice\bin\roslyn\vbc.exe
-E:\Electronic\ElectronicDevice\bin\roslyn\vbc.exe.config
-E:\Electronic\ElectronicDevice\bin\roslyn\vbc.rsp
-E:\Electronic\ElectronicDevice\bin\roslyn\VBCSCompiler.exe
-E:\Electronic\ElectronicDevice\bin\roslyn\VBCSCompiler.exe.config
-E:\Electronic\ElectronicDevice\bin\Antlr3.Runtime.dll
-E:\Electronic\ElectronicDevice\bin\EntityFramework.dll
-E:\Electronic\ElectronicDevice\bin\EntityFramework.SqlServer.dll
-E:\Electronic\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-E:\Electronic\ElectronicDevice\bin\Microsoft.Web.Infrastructure.dll
-E:\Electronic\ElectronicDevice\bin\Newtonsoft.Json.dll
-E:\Electronic\ElectronicDevice\bin\PagedList.dll
-E:\Electronic\ElectronicDevice\bin\PagedList.Mvc.dll
-E:\Electronic\ElectronicDevice\bin\System.Web.Helpers.dll
-E:\Electronic\ElectronicDevice\bin\System.Web.Mvc.dll
-E:\Electronic\ElectronicDevice\bin\System.Web.Optimization.dll
-E:\Electronic\ElectronicDevice\bin\System.Web.Razor.dll
-E:\Electronic\ElectronicDevice\bin\System.Web.WebPages.Deployment.dll
-E:\Electronic\ElectronicDevice\bin\System.Web.WebPages.dll
-E:\Electronic\ElectronicDevice\bin\System.Web.WebPages.Razor.dll
-E:\Electronic\ElectronicDevice\bin\WebGrease.dll
-E:\Electronic\ElectronicDevice\bin\EntityFramework.xml
-E:\Electronic\ElectronicDevice\bin\EntityFramework.SqlServer.xml
-E:\Electronic\ElectronicDevice\bin\PagedList.xml
-E:\Electronic\ElectronicDevice\bin\PagedList.Mvc.xml
-E:\Electronic\ElectronicDevice\bin\System.Web.Helpers.xml
-E:\Electronic\ElectronicDevice\bin\System.Web.Mvc.xml
-E:\Electronic\ElectronicDevice\bin\System.Web.Optimization.xml
-E:\Electronic\ElectronicDevice\bin\System.Web.Razor.xml
-E:\Electronic\ElectronicDevice\bin\System.Web.WebPages.xml
-E:\Electronic\ElectronicDevice\bin\System.Web.WebPages.Deployment.xml
-E:\Electronic\ElectronicDevice\bin\System.Web.WebPages.Razor.xml
-E:\Electronic\ElectronicDevice\bin\Newtonsoft.Json.xml
-E:\Electronic\ElectronicDevice\bin\Antlr3.Runtime.pdb
-E:\Electronic\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Electronic\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.AssemblyReference.cache
-E:\Electronic\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CoreCompileInputs.cache
-E:\Electronic\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
-E:\Electronic\ElectronicDevice\obj\Debug\ElectronicDevice.dll
-E:\Electronic\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
-<<<<<<< HEAD
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll.config
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.pdb
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.exe
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.exe.config
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.rsp
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.exe
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.exe.config
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.rsp
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.AppContext.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Console.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.Compression.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Net.Http.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Net.Sockets.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.ValueTuple.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XPath.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.exe
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.exe.config
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.rsp
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\VBCSCompiler.exe
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\Antlr3.Runtime.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\EntityFramework.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\Newtonsoft.Json.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\PagedList.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.Helpers.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.Mvc.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.Optimization.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.Razor.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Deployment.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Razor.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\WebGrease.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\EntityFramework.xml
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.xml
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\PagedList.xml
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.xml
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.Helpers.xml
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.Mvc.xml
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.Optimization.xml
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.Razor.xml
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.xml
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Deployment.xml
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Razor.xml
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\Newtonsoft.Json.xml
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\Antlr3.Runtime.pdb
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CoreCompileInputs.cache
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.dll
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
-C:\Users\pc\Desktop\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csprojAssemblyReference.cache
-=======
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll.config
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\ElectronicDevice.pdb
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.exe
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.exe.config
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csc.rsp
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.exe
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.exe.config
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\csi.rsp
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.AppContext.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Console.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.Compression.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Net.Http.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Net.Sockets.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.ValueTuple.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XPath.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.exe
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.exe.config
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\vbc.rsp
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\VBCSCompiler.exe
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Antlr3.Runtime.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\EntityFramework.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Newtonsoft.Json.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\PagedList.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Helpers.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Mvc.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Optimization.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Razor.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Deployment.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Razor.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\WebGrease.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\EntityFramework.xml
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\EntityFramework.SqlServer.xml
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\PagedList.xml
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\PagedList.Mvc.xml
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Helpers.xml
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Mvc.xml
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Optimization.xml
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.Razor.xml
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.xml
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Deployment.xml
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\System.Web.WebPages.Razor.xml
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Newtonsoft.Json.xml
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Antlr3.Runtime.pdb
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csprojAssemblyReference.cache
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CoreCompileInputs.cache
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.dll
-C:\Users\khanh\OneDrive\Máy tính\File\ASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
-D:\Desktop\BTL2\ElectronicDevice\bin\ElectronicDevice.dll.config
-D:\Desktop\BTL2\ElectronicDevice\bin\ElectronicDevice.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\ElectronicDevice.pdb
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\csc.exe
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\csc.exe.config
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\csc.rsp
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\csi.exe
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\csi.exe.config
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\csi.rsp
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.Managed.Core.targets
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.AppContext.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Collections.Immutable.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Console.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Globalization.Calendars.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.IO.Compression.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.IO.FileSystem.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Net.Http.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Net.Sockets.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Reflection.Metadata.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.ValueTuple.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Xml.XmlDocument.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Xml.XPath.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\vbc.exe
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\vbc.exe.config
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\vbc.rsp
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\VBCSCompiler.exe
-D:\Desktop\BTL2\ElectronicDevice\bin\roslyn\VBCSCompiler.exe.config
-D:\Desktop\BTL2\ElectronicDevice\bin\Antlr3.Runtime.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\EntityFramework.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\EntityFramework.SqlServer.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\Microsoft.Web.Infrastructure.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\Newtonsoft.Json.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\PagedList.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\PagedList.Mvc.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Helpers.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Mvc.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Optimization.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Razor.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.WebPages.Deployment.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.WebPages.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.WebPages.Razor.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\WebGrease.dll
-D:\Desktop\BTL2\ElectronicDevice\bin\EntityFramework.xml
-D:\Desktop\BTL2\ElectronicDevice\bin\EntityFramework.SqlServer.xml
-D:\Desktop\BTL2\ElectronicDevice\bin\PagedList.xml
-D:\Desktop\BTL2\ElectronicDevice\bin\PagedList.Mvc.xml
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Helpers.xml
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Mvc.xml
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Optimization.xml
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.Razor.xml
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.WebPages.xml
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.WebPages.Deployment.xml
-D:\Desktop\BTL2\ElectronicDevice\bin\System.Web.WebPages.Razor.xml
-D:\Desktop\BTL2\ElectronicDevice\bin\Newtonsoft.Json.xml
-D:\Desktop\BTL2\ElectronicDevice\bin\Antlr3.Runtime.pdb
-D:\Desktop\BTL2\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Desktop\BTL2\ElectronicDevice\obj\Debug\ElectronicDevice.csprojAssemblyReference.cache
-D:\Desktop\BTL2\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CoreCompileInputs.cache
-D:\Desktop\BTL2\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
-D:\Desktop\BTL2\ElectronicDevice\obj\Debug\ElectronicDevice.dll
-D:\Desktop\BTL2\ElectronicDevice\obj\Debug\ElectronicDevice.pdb
->>>>>>> ef20055bda721616ea8d43a41639e69abc1fd0e1
-C:\Users\pc\Desktop\btlASP\ElectronicDevice\ElectronicDevice\obj\Debug\ElectronicDevice.csprojAssemblyReference.cache
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\ElectronicDevice.dll.config
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\ElectronicDevice.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\ElectronicDevice.pdb
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\csc.exe
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\csc.exe.config
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\csc.rsp
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\csi.exe
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\csi.exe.config
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\csi.rsp
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\Microsoft.Managed.Core.targets
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.AppContext.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Collections.Immutable.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Console.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Globalization.Calendars.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.IO.Compression.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.IO.FileSystem.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Net.Http.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Net.Sockets.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Reflection.Metadata.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.ValueTuple.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Xml.XmlDocument.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Xml.XPath.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\vbc.exe
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\vbc.exe.config
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\vbc.rsp
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\VBCSCompiler.exe
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\roslyn\VBCSCompiler.exe.config
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\Antlr3.Runtime.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\EntityFramework.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\EntityFramework.SqlServer.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\Microsoft.Web.Infrastructure.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\Newtonsoft.Json.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\PagedList.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\PagedList.Mvc.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.Helpers.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.Mvc.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.Optimization.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.Razor.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.WebPages.Deployment.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.WebPages.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.WebPages.Razor.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\WebGrease.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\EntityFramework.xml
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\EntityFramework.SqlServer.xml
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\PagedList.xml
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\PagedList.Mvc.xml
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.Helpers.xml
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.Mvc.xml
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.Optimization.xml
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.Razor.xml
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.WebPages.xml
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.WebPages.Deployment.xml
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\System.Web.WebPages.Razor.xml
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\Newtonsoft.Json.xml
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\Antlr3.Runtime.pdb
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.AssemblyReference.cache
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CoreCompileInputs.cache
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\obj\Debug\ElectronicDevice.csproj.CopyComplete
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\obj\Debug\ElectronicDevice.dll
+E:\BTL_ASP_NET\ElectronicDeviceGroup\ElectronicDevice\obj\Debug\ElectronicDevice.pdb

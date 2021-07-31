@@ -1039,6 +1039,7 @@
     <Content Include="wwwroot\imageUpload\quat-tran-5-canh-mitsubishi-c56rw5-sf-xam-nhat-unaBcO.png" />
     <Content Include="wwwroot\imageUpload\quat-treo-tuong-coex-cw7210-17XRkL.png" />
     <Content Include="wwwroot\imageUpload\quat-treo-tuong-midea-fw406h-9calXg.jpg" />
+    <Content Include="wwwroot\imageUpload\shopping_cart.png" />
     <Content Include="wwwroot\imageUpload\tu-lanh-aqua-143l-aqrt150fabs-Om67OR.png" />
     <Content Include="wwwroot\imageUpload\tu-lanh-hitachi-fg450pgv8-gbk-339l-inverter-T668l5.jpg" />
     <Content Include="wwwroot\imageUpload\tu-lanh-hitachi-fg480pgv8-gbw-366l-inverter-Nkc54n.jpg" />
@@ -1507,7 +1508,7 @@
     <Content Include="wwwroot\webfonts\fa-solid-900.woff" />
     <Content Include="wwwroot\webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\Shared\_BestSell.cshtml" />
+    <Content Include="Views\Shared\_NewProduct.cshtml" />
     <Content Include="Views\Home\Introduce.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />

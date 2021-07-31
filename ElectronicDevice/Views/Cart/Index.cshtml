@@ -1,7 +1,14 @@
-﻿
+﻿@model IEnumerable<ElectronicDevice.Models.Cart>
 @{
     ViewBag.Title = "Giỏ hàng";
+    //var idAccount = ViewBag.id_account;
 }
+
+@using System.Globalization;
+@{
+    CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+}
+
 
 <!--================Home Banner Area =================-->
 <!-- breadcrumb start-->
@@ -32,119 +39,341 @@
     <div class="container bg-white p-4">
         <div class="cart_inner">
             <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Sản phẩm</th>
-                            <th scope="col">Giá</th>
-                            <th scope="col">Số lượng</th>
-                            <th scope="col">Tổng</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img src="https://cdn.mediamart.vn/Product/thumb_-9ZWE58.jpg" alt="" />
-                                    </div>
-                                    <div class="media-body">
-                                        <p>Điều Hòa Gree 1 Chiều 9000BTU GWC09KB-K6N0C4</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <h5>5.290.000đ</h5>
-                            </td>
-                            <td>
-                                <div class="product_count">
-                                    <span class="input-number-decrement"> <i class="ti-angle-down"></i></span>
-                                    <input class="input-number" type="text" value="1" min="0" max="10">
-                                    <span class="input-number-increment"> <i class="ti-angle-up"></i></span>
-                                </div>
-                            </td>
-                            <td>
-                                <h5>5.290.000đ</h5>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img src="https://cdn.mediamart.vn/Product/thumb_-28yESO.png" alt="" />
-                                    </div>
-                                    <div class="media-body">
-                                        <p>Máy Giặt Lồng Ngang Samsung Inverter 9Kg WW90T634DLE/SV</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <h5>9.990.000đ</h5>
-                            </td>
-                            <td>
-                                <div class="product_count">
-                                    <!-- <input type="text" value="1" min="0" max="10" title="Quantity:"
-                                      class="input-text qty input-number" />
-                                    <button
-                                      class="increase input-number-increment items-count" type="button">
-                                      <i class="ti-angle-up"></i>
-                                    </button>
-                                    <button
-                                      class="reduced input-number-decrement items-count" type="button">
-                                      <i class="ti-angle-down"></i>
-                                    </button> -->
-                                    <span class="input-number-decrement"> <i class="ti-angle-down"></i></span>
-                                    <input class="input-number" type="text" value="1" min="0" max="10">
-                                    <span class="input-number-increment"> <i class="ti-angle-up"></i></span>
-                                </div>
-                            </td>
-                            <td>
-                                <h5>9.990.000đ</h5>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img src="https://cdn.mediamart.vn/Product/thumb_-QKs992.png" alt="" />
-                                    </div>
-                                    <div class="media-body">
-                                        <p>Tủ Lạnh Sharp SJ-X281E-SL - 271 Lít (Bạc Thép Không Gỉ)</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <h5>6.090.000đ</h5>
-                            </td>
-                            <td>
-                                <div class="product_count">
-                                    <span class="input-number-decrement"> <i class="ti-angle-down"></i></span>
-                                    <input class="input-number" type="text" value="1" min="0" max="10">
-                                    <span class="input-number-increment"> <i class="ti-angle-up"></i></span>
-                                </div>
-                            </td>
-                            <td>
-                                <h5>6.090.000đ</h5>
-                            </td>
-                        </tr>
+                @if (Model.Count() <= 0)
+                {
 
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <h5>Tổng tiền</h5>
-                            </td>
-                            <td>
-                                <h5>21.370.000đ</h5>
-                            </td>
-                        </tr>
+                    <div style="text-align:center">
+                        <img src="~/wwwroot/imageUpload/shopping_cart.png" alt="Chưa có sản phẩm nào trong giỏ!" style="width:200px;height:auto" />
+                        <p style="margin: 15px 0px 30px; ">Không có sản phẩm nào trong giỏ hàng của bạn.</p>
+                        <a class="btn_1" href="@Url.Action("Index","Product")">Tiếp tục mua hàng</a>
+                    </div>
+                }
+                else
+                {
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"><input type="checkbox" id="selectAll" onclick="selectAllRecord()"></th>
+                                <th scope="col">Sản phẩm</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col">Số lượng</th>
+                                <th scope="col" width="150px">Thành tiền</th>
+                                <th scope="col"><i class="fas fa-trash-alt"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-container">
+                            @foreach (var item in Model)
+                            {
+                                <tr class="data-table" id="@item.ID_Product" onload="totalMoney(@item.ID_Product)">
+                                    <td scope="col"><input type="checkbox" onclick="changeStatus(@item.ID_Product)"></td>
+                                    <td>
+                                        <div class="media">
+                                            <div class="d-flex">
+                                                <img src="@Url.Content("~/wwwroot/imageUpload/"+item.Product.Image)" alt="" width="150" />
+                                            </div>
+                                            <div class="media-body">
+                                                <p>@item.Product.Name</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h5 id="price">
+                                            <!--Price of product item-->
+                                            @String.Format(cul, "{0:N0}", item.Product.Price)&#8363;
+                                        </h5>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-row">
+                                            <div class="up-down decrease" onclick="alterProductOrder('decrease', @item.Product.Amount,@item.ID_Product,@item.ID_Account)">
+                                                <i class="fas fa-minus"></i>
+                                            </div>
+                                            <div class="number_product_order">
+                                                <input class="text-center" id="number_order" onkeypress="return isNumberKey(event)" onfocusout="focusOut(@item.ID_Product)" onfocus="getOldValue(@item.ID_Product)" onkeyup="checkValid(@item.Product.Amount,@item.ID_Product,@item.ID_Account)" onchange="totalMoney(@item.ID_Product)" type="text" value="@item.Amount">
+                                            </div>
+                                            <div class="up-down increment" onclick="alterProductOrder('increment', @item.Product.Amount,@item.ID_Product,@item.ID_Account)">
+                                                <i class="fas fa-plus"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h5 id="totalProductItem">
+                                            <!--total money to pay product item-->
+                                        </h5>
+                                    </td>
+                                    <td onclick="deleteRecord(@item.ID_Product,@item.ID_Account)"><i class="fas fa-trash-alt"></i></td>
+                                </tr>
+                            }
 
-                    </tbody>
-                </table>
-                <div class="checkout_btn_inner float-right">
-                    <a class="btn_1" href="@Url.Action("Index","Product")">Tiếp tục mua hàng</a>
-                    <a class="btn_1 checkout_btn_1" href="@Url.Action("Buy","Bill")">Thanh toán</a>
-                </div>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <h5>Tổng tiền</h5>
+                                </td>
+                                <td>
+                                    <h5 id="totalPay">
+                                        <!--total pay-->
+                                    </h5>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="checkout_btn_inner float-right">
+                        <a class="btn_1" href="@Url.Action("Index","Product")">Tiếp tục mua hàng</a>
+                        <a class="btn_1 checkout_btn_1" href="@Url.Action("Buy","Bill")">Thanh toán</a>
+                    </div>
+                }
             </div>
         </div>
+    </div>
 </section>
+
+
+<!--modal confirm delete product-->
+<!-- Modal -->
+<div class="modal fade" id="modalConfirmOder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body " id="modalConfirmOderContent" style="font-size:22px ">
+                <!--content-->
+            </div>
+            <div class="modal-footer mx-auto" style="border:unset">
+                <button type="button" id="btn_close" class="btn btn-secondary" data-dismiss="modal">
+                    <!--Button Close-->
+                </button>
+                <button type="button" id="btn_save" onclick="deleteRecordConfirmed()" class="btn btn-primary">
+                    <!--Button Save-->
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section script{
+    <script>
+
+        $(document).ready(function () {
+            $('#totalPay').text((0).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
+            $('tr').each(function () {
+                totalMoney($(this).attr('id'));
+            });
+
+        });
+
+        function deleteRecord(id_product, id_account) {
+            $('#modalConfirmOderContent').text("Bạn muốn xóa sản phẩm này?");
+            $('#btn_close').text("Không");
+            $('#btn_save').show();
+            $('#btn_save').text("Xóa");
+            $('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" })
+            $('#btn_save').css({ "background-color": "rgb(255, 66, 78)", "border": "1px solid rgb(255, 66, 78)", "width": "200px" });
+            $('#btn_save').data('id_product', id_product);
+            $('#btn_save').data('id_account', id_account);
+            $('#modalConfirmOder').modal("show");
+        }
+
+        function deleteRecordConfirmed() {
+            let id_product = $('#btn_save').data('id_product');
+            let id_account = $('#btn_save').data('id_account');
+            $.ajax({
+                url: "/Cart/DeleteCart?id_product=" + id_product +"&&id_account="+id_account,
+                type: "POST",
+               /* data: { id_product: id_product, id_account: id_account},*/
+                dataType: "json",
+                contentType: "application/json;charset=utf-8",
+                success: function (result) {
+                    $('#modalConfirmOderContent').text(result.data);
+                    $('#btn_close').text("OK");
+                    $('#btn_save').hide();
+                    $('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" })
+                    $('#modalConfirmOder').modal("show");
+
+                    $('#' + id_product).remove();
+                },
+                error: (error) => {
+                    $('#modalConfirmOderContent').text("Xóa thất bại!");
+                    $('#btn_close').text("OK");
+                    $('#btn_save').hide();
+                    $('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" })
+                    $('#modalConfirmOder').modal("show");
+                }
+            });
+        }
+
+        function focusOut(id) {
+
+            if ($('#' + id).find('#number_order').val() == '' || $('#' + id).find('#number_order').val() == null) {
+
+                $('#modalConfirmOderContent').text("Số lượng mua không được trống!");
+                $('#btn_close').text("Đồng ý");
+                $('#btn_save').hide();
+                $('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" })
+                $('#modalConfirmOder').modal("show");
+
+                $('#' + id).find('#number_order').val(1);
+                totalMoney(id);
+
+                var element = $('#' + id).find('input[type="checkbox"]');
+                if (element.prop("checked")) {
+                    var numberOrder = parseInt($('#' + id).find('#number_order').val());
+                    var oldMoney = parseFloat($('#totalPay').text().trim().replace(/([,.€])+/g, '').split(' ')[0]);
+                    var price = parseFloat($('#' + id).find('#price').text().trim().replace(/([,.€])+/g, '').split(' ')[0]);
+                    $('#totalPay').text(new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'VND' }).format(oldMoney + price * numberOrder));
+                }
+                $('#' + id).find('#number_order').data('val', $('#' + id).find('#number_order').val());
+            }
+        }
+
+        @* function to change status selected of record when click ckeck box for all record *@
+        function selectAllRecord() {
+            if ($('#selectAll').prop("checked")) {
+                $('#totalPay').text((0).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
+                $('tr[class="data-table"]').each(function () {
+                    $(this).find('input[type="checkbox"]').prop("checked", true);
+                    changeStatus($(this).attr('id'));
+                });
+            } else {
+                $('#totalPay').text((0).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
+                $('tr[class="data-table"]').each(function () {
+                    $(this).find('input[type="checkbox"]').prop("checked", false);
+                });
+            }
+        }
+
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+
+            return true;
+        }
+
+        function getOldValue(id) {
+            var element = $('#' + id).find('#number_order');
+            element.data('val', element.val());
+        }
+
+        @*function to check value order number when typping*@
+        function checkValid(maxOrder, id,id_account) {
+
+            var oldNumberOrder = $('#' + id).find('#number_order').data('val');
+            var numberOrder = parseInt($('#' + id).find('#number_order').val());
+            var element = $('#' + id).find('input[type="checkbox"]');
+            var price = parseFloat($('#' + id).find('#price').text().trim().replace(/([,.€])+/g, '').split(' ')[0]);
+            var oldMoney = parseFloat($('#totalPay').text().trim().replace(/([,.€])+/g, '').split(' ')[0]);
+
+
+            if ($('#' + id).find('#number_order').val() == '' ||  $('#' + id).find('#number_order').val() == null) {
+                if (element.prop("checked") && parseInt($('#' + id).find('#totalProductItem').text().trim().replace(/([,.€])+/g, '').split(' ')[0])!=0) {
+                    $('#totalPay').text(new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'VND' }).format(oldMoney - price * oldNumberOrder));
+                }
+                $('#' + id).find('#totalProductItem').text(new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(0));
+                $('#' + id).find('#number_order').data('val', 0);
+                return;
+            }
+
+            if (numberOrder > maxOrder) {
+                $('#modalConfirmOderContent').text("Số lượng mua tối đa cho sản phẩm này là " + maxOrder);
+                $('#btn_close').text("Đồng ý");
+                $('#btn_save').hide();
+                $('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" })
+                $('#modalConfirmOder').modal("show");
+                $('#' + id).find('#number_order').val(maxOrder);
+            } else if (numberOrder < 1) {
+                $('#modalConfirmOderContent').text("Bạn muốn xóa sản phẩm này?");
+                $('#btn_close').text("Không");
+                $('#btn_save').show();
+                $('#btn_save').text("Xóa");
+                $('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" })
+                $('#btn_save').css({ "background-color": "rgb(255, 66, 78)", "border": "1px solid rgb(255, 66, 78)", "width": "200px" });
+
+                $('#btn_save').data('id_product', id);
+                $('#btn_save').data('id_account', id_account);
+
+                $('#modalConfirmOder').modal("show");
+                $('#' + id).find('#number_order').val(1);
+            }
+            numberOrder = parseInt($('#' + id).find('#number_order').val());
+            totalMoney(id);
+            if (element.prop("checked")) {
+                console.log(oldNumberOrder);
+                $('#totalPay').text(new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'VND' }).format(oldMoney + price * (numberOrder - oldNumberOrder)));
+            }
+            $('#' + id).find('#number_order').data('val', $('#' + id).find('#number_order').val());
+        }
+
+        @* function to alter value order number when click up or down*@
+        function alterProductOrder(status, maxOrder, id, id_account) {
+            var numberOrder = parseInt($('#' + id).find('#number_order').val());
+            var oldMoney = parseFloat($('#totalPay').text().trim().replace(/([,.€])+/g, '').split(' ')[0]);
+            var price = parseFloat($('#' + id).find('#price').text().trim().replace(/([,.€])+/g, '').split(' ')[0]);
+            var element = $('#' + id).find('input[type="checkbox"]');
+            if (status == 'decrease') {
+                if (numberOrder > 1) {
+                    $('#' + id).find('#number_order').val(numberOrder - 1);
+                    if (element.prop("checked")) {
+                        $('#totalPay').text(new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'VND' }).format(oldMoney - price));
+                    }
+                }
+                else {
+                    $('#modalConfirmOderContent').text("Bạn muốn xóa sản phẩm này?");
+                    $('#btn_close').text("Không");
+                    $('#btn_save').show();
+                    $('#btn_save').text("Xóa");
+                    $('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" })
+                    $('#btn_save').css({ "background-color": "rgb(255, 66, 78)", "border": "1px solid rgb(255, 66, 78)", "width": "200px" });
+
+                    $('#btn_save').data('id_product', id);
+                    $('#btn_save').data('id_account', id_account);
+
+                    $('#modalConfirmOder').modal("show");
+                    $('#' + id).find('#number_order').val(1);
+
+                }
+            } else {
+                if (numberOrder < maxOrder) {
+                    $('#' + id).find('#number_order').val(numberOrder + 1);
+                    if (element.prop("checked")) {
+                        $('#totalPay').text(new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'VND' }).format(oldMoney + price));
+                    }
+                }
+                else {
+                    $('#modalConfirmOderContent').text("Số lượng mua tối đa cho sản phẩm này là " + maxOrder);
+                    $('#btn_close').text("Đồng ý");
+                    $('#btn_save').hide();
+                    $('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" })
+                    $('#modalConfirmOder').modal("show");
+                    $('#' + id).find('#number_order').val(maxOrder);
+                }
+            }
+            totalMoney(id);
+        }
+
+        @* function to change status selected of record when click ckeck box *@
+        function changeStatus(id) {
+            var element = $('#' + id).find('input[type="checkbox"]');
+            var oldMoney = parseFloat($('#totalPay').text().trim().replace(/([,.€])+/g, '').split(' ')[0]);
+            var elementMoney = parseFloat($('#' + id).find('#totalProductItem').text().trim().replace(/([,.€])+/g, '').split(' ')[0]);
+            if (element.prop("checked")) {
+                $('#totalPay').text(new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'VND' }).format(oldMoney + elementMoney));
+            } else {
+                $('#selectAll').prop("checked", false);
+                $('#totalPay').text(new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'VND' }).format(oldMoney - elementMoney));
+            }
+        }
+
+        @* function to set value of total price of a record *@
+        function totalMoney(id) {
+            var numberOrder = parseInt($('#' + id).find('#number_order').val());
+            var price = parseFloat($('#' + id).find('#price').text().trim().replace(/([,.€])+/g, '').split(' ')[0]);
+            //$('#' + id).find('#totalProductItem').text((numberOrder * price).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
+            $('#' + id).find('#totalProductItem').text(new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(numberOrder * price));
+        }
+
+    </script>
+}

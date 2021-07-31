@@ -140,9 +140,9 @@ go
 
 SET IDENTITY_INSERT [dbo].[Category] ON 
 INSERT [dbo].[Category] ([ID_Category], [Name], [Icon], [Status]) VALUES (3, N'Điều hòa nhiệt độ', N'icon_dieu_hoa.png', 1)
-INSERT [dbo].[Category] ([ID_Category], [Name], [Icon], [Status]) VALUES (4, N'Tivi, Loa - Am thanh', N'icon-tivi-loa-am-thanh.png', 1)
-INSERT [dbo].[Category] ([ID_Category], [Name], [Icon], [Status]) VALUES (5, N'Máy giặt, Máy sấy quần áo', N'icon-may-giat-may-say.png', 1)
-INSERT [dbo].[Category] ([ID_Category], [Name], [Icon], [Status]) VALUES (6, N'Tủ lạnh, Tủ đông, Tủ mát', N'icon-tu-lanh-tu-dong-tu-mat.png', 1)
+INSERT [dbo].[Category] ([ID_Category], [Name], [Icon], [Status]) VALUES (4, N'Tivi, loa - âm thanh', N'icon-tivi-loa-am-thanh.png', 1)
+INSERT [dbo].[Category] ([ID_Category], [Name], [Icon], [Status]) VALUES (5, N'Máy giặt, máy sấy quần áo', N'icon-may-giat-may-say.png', 1)
+INSERT [dbo].[Category] ([ID_Category], [Name], [Icon], [Status]) VALUES (6, N'Tủ lạnh, tủ đông, tủ mát', N'icon-tu-lanh-tu-dong-tu-mat.png', 1)
 INSERT [dbo].[Category] ([ID_Category], [Name], [Icon], [Status]) VALUES (8, N'Quạt mát các loại', N'icon-quat-mat-cac-loai.png', 1)
 SET IDENTITY_INSERT [dbo].[Category] OFF
 GO
@@ -267,8 +267,15 @@ SET IDENTITY_INSERT [dbo].[Account] ON
 
 INSERT [dbo].[Account] ([ID_Account], [ID_Role], [UserName], [Password], [FullName], [Phone], [Address], [Email], [Status], [Avatar]) VALUES (1, 2, N'admin', N'admin', N'Nguoi Quan Tri', N'0999888776          ', N'Dai hoc cong nghiep Ha Noi', N'nhom6.cntt01.k13@gmail.com', 1, NULL)
 INSERT [dbo].[Account] ([ID_Account], [ID_Role], [UserName], [Password], [FullName], [Phone], [Address], [Email], [Status], [Avatar]) VALUES (2, 1, N'nhom6', N'nhom6', N'Nguyen Van An', N'0987654321          ', N'Cau Giay - Ha Noi', N'an123@gmail.com', 1, NULL)
+INSERT [dbo].[Account] ([ID_Account], [ID_Role], [UserName], [Password], [FullName], [Phone], [Address], [Email], [Status], [Avatar]) VALUES (3, 1, N'user1', N'nhom6', N'Tưởng Giới Thạch', N'0989654321          ', N'Ba Đình - Hà Nội', N'tgt123@gmail.com', 1, NULL)
+INSERT [dbo].[Account] ([ID_Account], [ID_Role], [UserName], [Password], [FullName], [Phone], [Address], [Email], [Status], [Avatar]) VALUES (4, 1, N'user2', N'nhom6', N'Nguyễn Minh Thảo', N'0989656688          ', N'Thanh Xuân - Hà Nội', N'thaoCute112@gmail.com', 1, NULL)
 SET IDENTITY_INSERT [dbo].[Account] OFF
 GO
+
+INSERT INTO Cart(ID_Account,ID_Product,Amount) VALUES
+(3,1,1),
+(3,20,2),
+(3,50,1)
 
 
 select * from Product
@@ -277,6 +284,5 @@ select * from Category
 select * from Bill
 select * from BillDetail
 select * from Cart
-select * from Category
 select * from [Role]
 

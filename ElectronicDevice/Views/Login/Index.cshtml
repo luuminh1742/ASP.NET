@@ -1,6 +1,7 @@
 ﻿@model ElectronicDevice.Models.Account
 @{
     ViewBag.Title = "Đăng nhập";
+    var statusRequest = ViewBag.statusRequest;
 }
 
 <!-- breadcrumb start-->
@@ -48,10 +49,16 @@
                                 @ViewBag.LoginError
                             </div>
                         }
+
                         <h3>Đăng nhập</h3>
-                        @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                        @if (!String.IsNullOrEmpty(statusRequest))
+                        {
+                            <p style="color: #007bff; font-weight:bold;margin-bottom: 16px">Vui lòng đăng nhập để truy cập vào giỏ hàng!</p>
+                        }
+                        @using (Html.BeginForm("Login", "Login", new { statusRequest = statusRequest }, FormMethod.Post))
                         {
                             @Html.AntiForgeryToken();
+
                             <div class="col-md-12 form-group p_star">
                                 @*@Html.LabelFor(m => m.UserName)*@
                                 @Html.TextBoxFor(m => m.UserName, "", new { @class = "form-control", @placeholder = "Tên đăng nhập" })
@@ -80,9 +87,3 @@
     </div>
 </section>
 <!--================login_part end =================-->
-@if (TempData["Success"] != null)
-{
-<script>
-        alert('@Html.Raw(@TempData["Success"])');
-</script>
-}

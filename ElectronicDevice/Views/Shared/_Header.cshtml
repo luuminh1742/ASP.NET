@@ -3,7 +3,8 @@
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                    @*đổi controller*@
+                    <a class="navbar-brand" href="@Url.Action("Index","Product")">
                         <img class="logo" src="~/wwwroot/img/my-logo/logo-asp.net.png" alt="logo"
                              width="150">
                     </a>
@@ -47,16 +48,27 @@
                     <div class="hearer_icon d-flex">
                         @*<a class="align-self-center" id="search_1" href="javascript:void(0)"><i class="align-self-center ti-search"></i></a>*@
 
-
-
+                        @*Thêm id*@
+                        @*Phân quyền*@
                         @if (Session["UserName"] != null)
                         {
-                            <div class="align-self-center cart">
-                                <a class="text-center" href="@Url.Action("Index","Cart")">
+                            <div class="align-self-center cart" id="cart" onclick="location.href = '@Url.Action("Index","Cart",new {id_account=Session["ID"] })'">
+                                <a class="text-center" href="@Url.Action("Index","Cart",new {id_account=Session["ID"] })">
                                     <i class="fas fa-cart-plus"></i>
                                 </a>
                             </div>
+                        }
+                        else
+                        {
+                            <div class="align-self-center cart" id="cart" onclick="location.href='@Url.Action("Index","Login",new { statusRequest="LoginToCart"})'">
+                                <a class="text-center" href="@Url.Action("Index","Login",new { statusRequest="LoginToCart"})">
+                                    <i class="fas fa-cart-plus"></i>
+                                </a>
+                            </div>
+                        }
 
+                        @if (Session["UserName"] != null)
+                        {
                             <div class="dropdown ml-4">
                                 <a class="dropdown-toggle" href="" id="navbarDropdown3" role="button"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -93,18 +105,9 @@
                         }
                         else
                         {
-                            <div class="align-self-center cart">
-                                <a class="text-center" onclick="clickCart()">
-                                    <i class="fas fa-cart-plus"></i>
-                                </a>
-                            </div>
-                            <script>
-                                function clickCart() {
-                                    alert("Bạn cần đăng nhập để xem giỏ hàng!");
-                                }
-                            </script>
 
-                            <div style="margin-left: 30px; background: #ff443a; border-radius: 30px; padding: 10px;">
+                            //thêm sự kiện
+                            <div id="login-item" style="margin-left: 30px; background: #ff443a; border-radius: 30px; padding: 10px;" onclick="location.href='@Url.Action("Index", "Login")'">
                                 <a style=" color: #fff;" href="@Url.Action("Index", "Login")">
                                     Đăng nhập
                                 </a>
@@ -116,6 +119,13 @@
             </div>
         </div>
     </div>
+    @*<div class="search_input" id="search_input_box">
+            <div class="container ">
+                <form class="d-flex justify-content-between search-inner">
+                    <input type="text" class="form-control" id="search_input" placeholder="Tìm kiếm sản phẩm">
+                    <button type="submit" class="btn"></button>
+                    <span class="ti-close" id="close_search" title="Close Search"></span>
+                </form>
+            </div>
+        </div>*@
 </header>
-
-

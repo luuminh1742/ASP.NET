@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ElectronicDevice.Models.Product>
+@using System.Globalization;
+@{
+    CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+    var id_account = Session["ID"];
+}
+
+
+<section class="product_list best_seller mt-3">
+    <div class="container bg-white p-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="section_tittle text-center">
+                    <h2>Sản phẩm mới</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-lg-12">
+                <div class="best_product_slider owl-carousel">
+                    @foreach (var item in Model)
+                    {
+                        <div class="single_product_item" onclick="detealProduct('@Url.Action("Detail", "Product", new { id_product = item.ID_Product })')">
+                            <img class="img-product" src="@Url.Content("~/wwwroot/imageUpload/" + item.Image)" alt="@item.Name">
+                            <div class="single_product_text">
+                                <h4>@item.Name</h4>
+                                <h3>@String.Format(cul, "{0:N0}", item.Price) VND</h3>
+                                <div class="my-cart border rounded-circle" title="Thêm sản phẩm vào giỏ" onclick="event.stopPropagation();addProductToCart(@item.ID_Product,@id_account)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function detealProduct(url) {
+            window.location = url;
+        }</script>
+</section>

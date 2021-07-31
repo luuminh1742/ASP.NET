@@ -12,19 +12,20 @@ namespace ElectronicDevice.Controllers
     {
         private ElectronicDeviceDbContext db = new ElectronicDeviceDbContext();
         // GET: Login
-        public ActionResult Index()
+        public ActionResult Index(string statusRequest)
         {
+            ViewBag.statusRequest = statusRequest;
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(string UserName, string Password)
+        public ActionResult Login(string UserName, string Password, string statusRequest)
         {
             if (ModelState.IsValid)
             {
                 Account user = db.Accounts.Where(u => u.UserName.Equals(UserName)
-                                                        && u.Password.Equals(Password) 
+                                                        && u.Password.Equals(Password)
                                                         && u.Status).SingleOrDefault();
                 if (user != null)
                 {
@@ -32,6 +33,7 @@ namespace ElectronicDevice.Controllers
                     Session["UserName"] = user.UserName;
                     Session["Email"] = user.Email;
                     Session["Avatar"] = user.Avatar;
+                    Session["ID"] = user.ID_Account;
                     FormsAuthentication.SetAuthCookie(user.UserName, false);
                     //if (!Roles.RoleExists(user.Role.Code))
                     //{
@@ -45,7 +47,17 @@ namespace ElectronicDevice.Controllers
                     {
                         return RedirectToAction("Index", "Home", new { area = "Admin" });
                     }
-                    return RedirectToAction("Index", "Product", new { });
+                    else
+                    {
+                        if (statusRequest != null)
+                        {
+                            return RedirectToAction("Index", "Cart", new { id_account = user.ID_Account });
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index", "Product", new { });
+                        }
+                    }
                 }
             }
             ViewBag.LoginError = "Đăng nhập thất bại!";
