@@ -17,8 +17,10 @@ namespace ElectronicDevice.DTO
         public string Note { get; set; }
         public string PayType { get; set; }
         public int Status { get; set; }
-        public DateTime? CreatedDate { get; set; }
-        public DateTime? ModifiedDate { get; set; }
+        public String CreatedDate { get; set; }
+        public String ModifiedDate { get; set; }
+        //public DateTime? CreatedDate { get; set; }
+        //public DateTime? ModifiedDate { get; set; }
         public int ID_Product { get; set; }
         public int Amount { get; set; }
         public decimal CurrentlyPrice { get; set; }

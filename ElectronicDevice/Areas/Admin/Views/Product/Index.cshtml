@@ -7,6 +7,10 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
     <script src="~/Areas/Admin/Assets/ckeditor/ckeditor.js"></script>
 }
+@using System.Globalization;
+@{
+    CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+}
 
 <!-- DATA TABLE -->
 <h3 class="title-5 m-b-35">danh sách sản phẩm</h3>
@@ -78,7 +82,7 @@
                         </span>
                     </td>
                     <td>
-                        <span class="text-primary font-weight-bold">@item.Price&#8363;</span>
+                        <span class="text-primary font-weight-bold"> @String.Format(cul, "{0:N0}", item.Price)&#8363;</span>
                     </td>
                     <td>
                         <span class="text-primary font-weight-bold">@item.Discount&#37;</span>

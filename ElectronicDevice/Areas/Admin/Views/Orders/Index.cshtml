@@ -1,19 +1,22 @@
 ﻿@model IEnumerable<ElectronicDevice.DTO.BillDTO>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Đơn hàng";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+
+
 <!-- DATA TABLE -->
 <h3 class="title-5 m-b-35">Danh sách đơn hàng</h3>
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
-        <a class="nav-link active" id="new-orders-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Đơn hàng mới</a>
+        <a class="nav-link active" id="new-orders-tab" data-toggle="pill" onclick="LoadNewBill()" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Đơn hàng mới</a>
     </li>
     <li class="nav-item" role="presentation">
-        <a class="nav-link" id="pills-processing-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Đơn hàng đang xử lý</a>
+        <a class="nav-link" id="pills-processing-tab" data-toggle="pill" onclick="LoadBillProcess()" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Đơn hàng đang xử lý</a>
     </li>
     <li class="nav-item" role="presentation">
-        <a class="nav-link" id="pills-successful-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Đơn hàng gửi thành công</a>
+        <a class="nav-link" id="pills-successful-tab" data-toggle="pill" onclick="LoadBillReceived()" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Đơn hàng gửi thành công</a>
     </li>
 </ul>
 <div class="tab-content" id="pills-tabContent">
@@ -32,72 +35,32 @@
                         <th>Hành động</th>
                     </tr>
                 </thead>
-                <tbody>
-                    @{ 
-                        int stt1 = 0;
-                    }
-                    @foreach (var item in Model)
-                    {
-                        if (item.Status == 0)//đơng hàng mới.
-                        {
-                        stt1++;
-                        <tr class="tr-shadow">
-                            <td class="number_order">@stt1</td>
-                            <td>
-                                <span class="block-name">@item.ID_Bill</span>
-                            </td>
-                            <td>
-                                <span>@item.ReceiverName</span>
-                            </td>
-                            <td>
-                                <span>@item.ReceiverAddress</span>
-                            </td>
-                            <td>
-                                <span class="block-name-product">@item.SumPrice VNĐ</span>
-                            </td>
-                            @*<td>
-                                <span class="block-name-product">@item.Amount</span>
-                            </td>*@
-                            <td>
-                                <span class="block-name-product">@item.CreatedDate</span>
-                            </td>
-                            <td>
-
-                                <input type="button" class="btn btn-outline-info" onclick="viewOrders()" value="Xem" data-toggle="modal" data-target="#modal-confirm-orders">
-
-                                <input type="button" class="btn btn-outline-success" value="Nhận đơn">
-                                <input type="button" class="btn btn-outline-danger" value="Hủy đơn">
-                            </td>
-
-                        </tr>
-                        <tr class="spacer"></tr>
-                        }
-                    }
+                <tbody id="newBill">
                 </tbody>
             </table>
 
         </div>
         <!-- END DATA TABLE -->
         <div class="my-3">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            @*<nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>*@
         </div>
     </div>
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-processing-tab">
@@ -117,66 +80,7 @@
                         <th>Hành động</th>
                     </tr>
                 </thead>
-                <tbody>
-                    @{ 
-                        int stt2 = 0;
-                    }
-                    @foreach (var item in Model)
-                    {
-                        if (item.Status == 1)//đã nhận đơn
-                        {
-                            stt2++;
-                            <tr class="tr-shadow">
-                                <td class="number_order">@stt2</td>
-                                <td>
-                                    <span class="block-name">@item.ID_Bill</span>
-                                </td>
-                                <td>
-                                    <span>@item.ReceiverName</span>
-                                </td>
-                                <td>
-                                    <span>@item.ReceiverAddress</span>
-                                </td>
-                                <td>
-                                    <span class="block-name-product">@item.SumPrice VNĐ</span>
-                                </td>
-                                @*<td>
-                                    <span class="block-name-product">@item.Amount</span>
-                                </td>*@
-                                <td>
-                                    <span class="block-name-product">@item.CreatedDate</span>
-                                </td>
-                                <td>
-                                    <span class="block-name-product">@item.ModifiedDate</span>
-                                </td>
-                                <td>
-                                    <div class="rs-select2--light rs-select2--md ">
-                                        <select class="js-select2 " name="status">
-                                            <option selected="selected">Đã nhận đơn</option>
-                                            <option value="">Đã giao cho ĐVVC</option>
-                                            <option value="">Đơn hàng đã nhận</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <!-- <input type="button" class="btn btn-outline-info"
-                    value="Xem"  data-toggle="modal" data-target="#modal-confirm-orders"
-                    onclick="clickProcessOrders('Shop đã tiếp nhận đơn hàng','1/7/2021 - 10:20;12');"> -->
-
-                                    <div class="table-data-feature">
-                                        <button class="item" title="Xem thông tin đơn hàng" data-toggle="modal" data-target="#modal-confirm-orders" onclick="clickProcessOrders('Shop đã tiếp nhận đơn hàng','1/7/2021 - 10:20;12');">
-                                            <i class="	fas fa-eye"></i>
-                                        </button>
-
-                                    </div>
-
-                                </td>
-
-                            </tr>
-                            <tr class="spacer"></tr>
-                        }
-                    }
+                <tbody id="billProcess">
                 </tbody>
             </table>
 
@@ -219,84 +123,13 @@
                         <th>Họ tên người nhận</th>
                         <th>Địa chỉ</th>
                         <th>Tổng tiền</th>
-                        <th>Số lượng sản phẩm</th>
+                        @*<th>Số lượng sản phẩm</th>*@
                         <th>Ngày đặt</th>
                         <th>Ngày cập nhật</th>
                         <th>Hành động</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="tr-shadow">
-                        <td class="number_order">1</td>
-                        <td>
-                            <span class="block-name">5</span>
-                        </td>
-                        <td>
-                            <span>Nguyễn Văn E</span>
-                        </td>
-                        <td>
-                            <span>Đại học công nghiệp hà nội</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">14.000.000 VNĐ</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">2</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">1/6/2021 - 11:12:10</span>
-                        </td>
-                        <td>
-
-                            <div class="table-data-feature">
-                                <button class="item" title="Xem thông tin đơn hàng" data-toggle="modal" data-target="#modal-confirm-orders" onclick="clickSuccessfulOrders('Giao hàng thành công','1/7/2021 - 10:20;12');">
-                                    <i class="	fas fa-eye"></i>
-                                </button>
-
-                            </div>
-                        </td>
-
-                    </tr>
-                    <tr class="spacer"></tr>
-                    <tr class="tr-shadow">
-                        <td class="number_order">2</td>
-                        <td>
-                            <span class="block-name">6</span>
-                        </td>
-                        <td>
-                            <span>Nguyễn Văn F</span>
-                        </td>
-                        <td>
-                            <span>Đại học công nghiệp hà nội</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">4.000.000 VNĐ</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">6</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">30/5/2021 - 11:12:10</span>
-                        </td>
-                        <td>
-                            <span class="block-name-product">30/5/2021 - 11:12:10</span>
-                        </td>
-                        <td>
-                            <div class="table-data-feature">
-                                <button class="item" title="Xem thông tin đơn hàng" data-toggle="modal" data-target="#modal-confirm-orders" onclick="clickSuccessfulOrders('Giao hàng thành công','1/7/2021 - 10:20;12');">
-                                    <i class="	fas fa-eye"></i>
-                                </button>
-
-                            </div>
-                        </td>
-
-                    </tr>
-
-                    <tr class="spacer"></tr>
-
+                <tbody id="billReceived">
                 </tbody>
             </table>
 
@@ -327,13 +160,21 @@
     </div>
 </div>
 @section modal{
+
+    @*@Html.Partial("Notice");*@
     @Html.Partial("Orders");
+
 }
+
+
 @section Script{
     <script>
+        //bắt đầu khi load trang
+        $(document).ready(function () { LoadNewBill() });
+
         $("#infor-time").hide();
 
-        function clickProcessOrders(status, time) {
+        function clickProcessOrders(status, time, ID_Bill, FullName, Email, Phone, Address, PayType, SumPrice) {
             $('#status-orders').text(status + ' _ ' + time);
             $('#status-orders').css("color", "green");
             $("#infor-time").show();
@@ -341,14 +182,15 @@
                 '<h4 style="margin-left: -25px;">Trạng thái đơn hàng</h4><br>' +
                 '<ul>' +
                 '<li class="text-success"> ' + time + ' ' + status + '</li>' +
-                '<li> 1/1/2021 10:10:10 Người gửi chuẩn bị hàng</li>' +
+                '<li>' + time + ' Người gửi chuẩn bị hàng</li>' +
                 '</ul>' +
                 '<hr>'
 
             );
+            ShowBill(ID_Bill, FullName, Email, Phone, Address, PayType, SumPrice);
         }
 
-        function clickSuccessfulOrders(status, time) {
+        function clickSuccessfulOrders(status, time, ID_Bill, FullName, Email, Phone, Address, PayType, SumPrice) {
             $('#status-orders').text(status + ' _ ' + time);
             $('#status-orders').css("color", "green");
             $("#infor-time").show();
@@ -360,14 +202,282 @@
                 '<li> 1/1/2021 10:10:10 Người gửi chuẩn bị hàng</li>' +
                 '</ul>' +
                 '<hr>'
-
             );
+            ShowBill(ID_Bill, FullName, Email, Phone, Address, PayType, SumPrice);
         }
 
-        function viewOrders() {
+        function viewOrders(ID_Bill, FullName, Email, Phone, Address, PayType, SumPrice) {
             $('#status-orders').text("Chưa xác nhận");
             $('#status-orders').css("color", "red");
             $("#infor-time").hide();
+            ShowBill(ID_Bill, FullName, Email, Phone, Address, PayType, SumPrice);
+        }
+
+        function ShowBill(ID_Bill, FullName, Email, Phone, Address, PayType, SumPrice) {
+            $("#FullName").text(FullName);
+            $("#Email").text(Email);
+            $("#Phone").text(Phone);
+            $("#Address").text(Address);
+            $("#PayType").text(PayType);
+            $("#SumPrice").text(SumPrice.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
+            $.ajax({
+                url: '/Admin/Orders/OrdersDetail',
+                data: { ID_Bill: ID_Bill },
+                type: "POST",
+                success: function (result) {
+                    Load_Product_Bill(result);
+                }
+            });
+        }
+
+        //status = 0: các đơn hàng mới
+        //status = 1: các đơn hàng đã tiếp nhận
+        //status = 2: các đơn hàng đã giao cho ĐVVC
+        //status = 3: các đơn hàng đã nhận.
+        //status = 4: xóa đơn hàng.
+
+
+        //Hàm load các sản phẩm trong hóa đơn.
+        function Load_Product_Bill(result) {
+
+            $('.sp').remove();
+            $.each(result, function (i, item) {
+                $('#bill-product').append(
+                    '<div class="sp">' +
+                    '<br>' +
+                    '<div class="d-flex flex-row">' +
+                    '<img class="border" src="/wwwroot/imageUpload/' + item.Image + '" alt="" width="100" height="100">' +
+                    '<div class="ml-2">' +
+                    '<h5>' + item.Name + '</h5>' +
+                    '<p>Giá: ' + item.Price.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) + '</p>' +
+                    '<p>Số lượng: ' + item.Amount + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>'
+                );
+            });
+        }
+
+        //load NewBill() - load đơn hàng mới
+        function LoadNewBill() {
+            var kt = 0;
+            $.ajax({
+                url: '/Admin/Orders/NewBill',
+                data: { kt: kt },
+                type: "POST",
+                success: function (result) {
+                    $('.tr-shadow').remove();
+                    $('.spacer').remove();
+                    var dem = 0;
+                    $.each(result, function (i, item) {
+                        //var date = new Date(parseInt(item.CreatedDate.substr(6)));
+                        dem++;
+                        $('#newBill').append(
+                            '<tr id="' + item.ID_Bill + '" class="tr-shadow">' +
+                            '<td class="number_order">' + dem + '</td>' +
+                            '<td>' +
+                            '<span class="block-name">' + item.ID_Bill + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span>' + item.ReceiverName + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span>' + item.ReceiverAddress + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span class="block-name-product">' + item.SumPrice.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span class="block-name-product">' + item.CreatedDate + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<input type="button" class="btn btn-outline-info" onclick="viewOrders(' + item.ID_Bill + ',\'' + item.ReceiverName + '\',\'' + item.ReceiverEmail + '\',\'' + item.ReceiverPhone + '\',\'' + item.ReceiverAddress + '\',\'' + item.PayType + '\',' + item.SumPrice + ')" value="Xem" data-toggle="modal" data-target="#modal-confirm-orders">' +
+                            '<input type="button" onclick="ReceiveBill(' + item.ID_Bill + ')" class="btn btn-outline-success" value="Nhận đơn">' +
+                            '<input type="button" class="btn btn-outline-danger" value="Hủy đơn">' +
+                            '</td>' +
+                            '</tr>' +
+                            '<tr id="space" class="spacer"></tr>'
+                        );
+                    });
+                }
+            });
+        }
+
+        //Load LoadBillProcess() - đơn hàng đang xử lý
+        function LoadBillProcess() {
+            var kt = 1;
+            $.ajax({
+                url: '/Admin/Orders/NewBill',
+                data: { kt: kt },
+                type: "POST",
+                success: function (result) {
+                    $('.tr-shadow').remove();
+                    $('.spacer').remove();
+                    var dem = 0;
+                    $.each(result, function (i, item) {
+                        dem++;
+                        $('#billProcess').append(
+                            '<tr class="tr-shadow">' +
+                            '<td class="number_order">' + dem + '</td>' +
+                            '<td>' +
+                            '<span class="block-name">' + item.ID_Bill + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span>' + item.ReceiverName + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span>' + item.ReceiverAddress + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span class="block-name-product">' + item.SumPrice.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span class="block-name-product">' + item.CreatedDate + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span class="block-name-product">' + item.ModifiedDate + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<div class="rs-select2--light rs-select2--md">' +
+                            '<select id="' + item.ID_Bill + '" onchange="StatusBillChanged(this,' + item.ID_Bill + ')" style="font-size: 14px;color: #808080;width: 177px" class="form-control " name="status">' +
+                            '<option value="s1">Đã nhận đơn</option>' +
+                            '<option value="s2">Đã giao cho ĐVVC</option>' +
+                            '<option value="s3">Đơn hàng đã nhận</option>' +
+                            '</select>' +
+                            '<div class="dropDownSelect2"></div>' +
+                            '</div>' +
+                            '</td>' +
+                            '<td>' +
+                            '<div class="table-data-feature">' +
+                            '<button class="item" title="xem thông tin đơn hàng" data-toggle="modal" data-target="#modal-confirm-orders" onclick="clickProcessOrders(\'' + 'shop đã tiếp nhận đơn hàng' + '\',\'' + item.ModifiedDate + '\',' + item.ID_Bill + ',\'' + item.ReceiverName + '\',\'' + item.ReceiverEmail + '\',\'' + item.ReceiverPhone + '\',\'' + item.ReceiverAddress + '\',\'' + item.PayType + '\',' + item.SumPrice + ')">' +
+                            '<i class="	fas fa-eye"></i>' +
+                            '</button>' +
+                            '</div>' +
+                            '</td>' +
+                            '</tr>' +
+                            '<tr class="spacer"></tr>'
+                        );
+                        if (item.Status == 1)
+                            $('#' + item.ID_Bill)[0].selectedIndex = 0;
+                        else if (item.Status == 2)
+                            $('#' + item.ID_Bill)[0].selectedIndex = 1;
+                        else
+                            $('#' + item.ID_Bill)[0].selectedIndex = 2;
+                    });
+
+                }
+            });
+        }
+
+        //load đơn hàng đã nhận
+        function LoadBillReceived() {
+            var kt = 3;
+            $.ajax({
+                url: '/Admin/Orders/NewBill',
+                data: { kt: kt },
+                type: "POST",
+                success: function (result) {
+                    $('.tr-shadow').remove();
+                    $('.spacer').remove();
+                    var dem = 0;
+                    $.each(result, function (i, item) {
+
+                        dem++;
+                        $('#billReceived').append(
+                            '<tr class="tr-shadow">' +
+                            '<td class="number_order">' + dem + '</td>' +
+                            '<td>' +
+                            '<span class="block-name">' + item.ID_Bill + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span>' + item.ReceiverName + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span>' + item.ReceiverAddress + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span class="block-name-product">' + item.SumPrice.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span class="block-name-product">' + item.CreatedDate + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<span class="block-name-product">' + item.ModifiedDate + '</span>' +
+                            '</td>' +
+                            '<td>' +
+                            '<div class="table-data-feature">' +
+                            '<button class="item" title="Xem thông tin đơn hàng" data-toggle="modal" data-target="#modal-confirm-orders" onclick="clickSuccessfulOrders(\'' + 'Giao hàng thanh công' + '\',\'' + item.ModifiedDate + '\',' + item.ID_Bill + ',\'' + item.ReceiverName + '\',\'' + item.ReceiverEmail + '\',\'' + item.ReceiverPhone + '\',\'' + item.ReceiverAddress + '\',\'' + item.PayType + '\',' + item.SumPrice + ')">' +
+                            '<i class="	fas fa-eye"></i>' +
+                            '</button>' +
+                            '</div>' +
+                            '</td>' +
+                            '</tr>' +
+                            '<tr class="spacer"></tr>'
+                        );
+                    });
+                }
+            });
+        }
+
+        //Hàm nhận đơn hàng (Chuyển status bill 0->1)
+        function ReceiveBill(ID_Bill) {
+            var kt = 1;
+            $.ajax({
+                url: '/Admin/Orders/Receive_Bill',
+                //ModifiDate
+                data: { ID_Bill: ID_Bill, kt: kt },
+                type: "POST",
+                success: function (result) {
+                    alert("Đã tiếp nhận đơn hàng có mã: " + ID_Bill);
+                    //$('#modalNoticeContent').text('Đã tiếp nhận đơn hàng có mã: ' + ID_Bill);
+                    //$('#btn_close').text("ok");
+                    //$('#btn_save').hide();
+                    //$('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" });
+                    //$('#modalNotice').modal("show");
+                    LoadNewBill()
+                },
+                error: (error) => {
+                    alert("Tiếp nhận đơn hàng có mã " + ID_Bill + " thất bại!");
+                    //$('#modalNoticeContent').text("Tiếp nhận đơn hàng thất bại!");
+                    //$('#btn_close').text("ok");
+                    //$('#btn_save').hide();
+                    //$('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" });
+                    //$('#modalNotice').modal("show");
+                }
+            });
+        }
+        //Chuyển trạng thái đơn hàng(Đơn hàng đang xử lý) StatusBillChanged(this)
+        function StatusBillChanged(obj, ID_Bill) {
+            var status = obj.value;
+            var kt = 1;
+            if (status === 's2')
+                kt = 2;
+            if (status === 's3')
+                kt = 3;
+            $.ajax({
+                url: '/Admin/Orders/Receive_Bill',
+                data: { ID_Bill: ID_Bill, kt: kt },
+                type: "POST",
+                success: function (result) {
+                    //$('#modalNoticeContent').text("Cập nhật trạng thái đơn hàng mã " + ID_Bill + " thành công!");
+                    //$('#btn_close').text("ok");
+                    //$('#btn_save').hide();
+                    //$('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" });
+                    //$('#modalNotice').modal("show");
+
+                    alert("Cập nhật trạng thái đơn hàng mã " + ID_Bill + " thành công!");
+                    LoadBillProcess();
+
+                },
+                error: (error) => {
+                    //$('#modalNoticeContent').text("Cập nhật trạng thái đơn hàng mã " + ID_Bill + " thất bại!");
+                    //$('#btn_close').text("ok");
+                    //$('#btn_save').hide();
+                    //$('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" });
+                    //$('#modalNotice').modal("show");
+                    alert("Cập nhật trạng thái đơn hàng mã " + ID_Bill + " thất bại!");
+                }
+            });
         }
     </script>
 }
