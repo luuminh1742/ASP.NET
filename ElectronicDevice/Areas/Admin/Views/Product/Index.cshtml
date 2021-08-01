@@ -113,8 +113,6 @@
                 <tr class="spacer" id="@item.ID_Product"></tr>
                 index++;
             }
-
-
         </tbody>
     </table>
 
@@ -122,7 +120,7 @@
 <!-- END DATA TABLE -->
 <br />
 Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
-@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
 
 @*@section modal{
     @Html.Partial("Create");

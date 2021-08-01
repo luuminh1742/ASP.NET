@@ -243,13 +243,291 @@ INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [
 INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [Amount], [Guarantee], [Origin], [Discount], [ShortDescription], [Detail], [Image], [CreatedDate], [Status], [CreatedBy], [ModifiedDate], [ModifiedBy]) VALUES (93, 5, N'Máy sấy Whirlpool 15Kg 3LWED4705FW', 9900000.0000, N'FM1UAHUA', 13, 1, N'Việt Nam', 23, N'13 chương trình sấy vô cùng hiện đại và tiện dụng', N'Có 13 chương trình sấy vô cùng hiện đại và tiện dụng', N'may-say-whirlpool-15kg-3lwed4705fw-L9R280.png', CAST(N'2021-07-26' AS Date), 1, N'Nguoi Nguoi Quan Tri 1', NULL, NULL)
 INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [Amount], [Guarantee], [Origin], [Discount], [ShortDescription], [Detail], [Image], [CreatedDate], [Status], [CreatedBy], [ModifiedDate], [ModifiedBy]) VALUES (94, 5, N'Máy sấy Samsung AI Heatpump 9Kg DV90T7240BH/SV', 9990000.0000, N'FM1208N7', 45, 1, N'Trung Quốc', 23, N'Bộ 3 Cảm Biến Optimal Dry sấy khô đều, bền sợi vải', N'Công nghệ sấy Bơm Nhiệt Heatpump trang bị máy nén sử dụng ga trong môi trường áp suất cao, làm nóng luồng không khí giúp sấy khô áo quần hiệu quả và tiết kiệm tới 50% điện năng*. Sản phẩm đạt chuẩn tiết kiệm năng lượng tốt nhất Châu Âu +++.', N'may-say-samsung-ai-heatpump-9kg-dv90t7240bhsv-tx9xLJ.png', CAST(N'2021-07-26' AS Date), 1, N'Nguoi Nguoi Quan Tri 1', NULL, NULL)
 INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [Amount], [Guarantee], [Origin], [Discount], [ShortDescription], [Detail], [Image], [CreatedDate], [Status], [CreatedBy], [ModifiedDate], [ModifiedBy]) VALUES (95, 5, N'Máy sấy Heat Pump Electrolux 8Kg EDH803BEWA', 8990000.0000, N'FM1208N8', 34, 1, N'Việt Nam', 23, N'Công nghệ cảm biến thông minh Smart Sensor điều chỉnh thời gian sấy khô để đảm bảo khả năng sấy khô chính xác', N'Các thiết bị cảm biến độ ẩm được kích hoạt 3 lần trong mỗi chu kỳ sấy để tránh tình trạng sấy khô quá mức có thể gây hư hại tới quần áo.', N'-W1l6Z8.png', CAST(N'2021-07-26' AS Date), 1, N'Nguoi Nguoi Quan Tri 1', NULL, NULL)
-INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [Amount], [Guarantee], [Origin], [Discount], [ShortDescription], [Detail], [Image], [CreatedDate], [Status], [CreatedBy], [ModifiedDate], [ModifiedBy]) VALUES (96, 5, N'Máy sấy Heat Pump Electrolux 9Kg EDH903BEWA', 9990000.0000, N'FM1208N9', 25, 1, N'Trung Quốc', 23, N'Nhiệt độ sấy: 75 độ C', N' Len được giữ phẳng trên bề mặt  và lụa được sấy khô nhẹ nhàng. Chất lượng quần áo của bạn được bảo quản để bảo vệ lâu hơn chống co ngót và mất hình dạng.', N'-cSTvhl.png', CAST(N'2021-07-26' AS Date), 1, N'Nguoi Nguoi Quan Tri 1', NULL, NULL)
-INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [Amount], [Guarantee], [Origin], [Discount], [ShortDescription], [Detail], [Image], [CreatedDate], [Status], [CreatedBy], [ModifiedDate], [ModifiedBy]) VALUES (97, 5, N'Tủ giặt hấp sấy LG Styler S3WF Linen White (Trắng)', 13000000.0000, N'FMUHS08N6', 22, 1, N'Việt Nam', 23, N'Chăm sóc quần áo với công nghệ hơi nước độc quyền TrureSteam làm giảm nếp nhăn và mùi, làm mới quần áo trong sự thoải mái của nhà bạn', N'Làm khô quần áo nhẹ nhàng mà không phải lo lắng về sự co rút vải hoặc hư hỏng quần áo', N'-901KGH.png', CAST(N'2021-07-26' AS Date), 1, N'Nguoi Nguoi Quan Tri 1', NULL, NULL)
-INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [Amount], [Guarantee], [Origin], [Discount], [ShortDescription], [Detail], [Image], [CreatedDate], [Status], [CreatedBy], [ModifiedDate], [ModifiedBy]) VALUES (98, 5, N'Máy sấy quần áo 7Kg Electrolux EDV705HQWA', 7900000.0000, N'CUAYA12J', 11, 1, N'Việt Nam', 23, N'Kích thước: Rộng 600 mm - Cao 845 mm - Sâu 600 mm', N'Máy sấy Electrolux 7 Kg EDV705HQWA sở hữu thiết kế nhỏ gọn, chắc chắn cùng đường nét tinh tế, gam màu trắng trang nhã giúp tô điểm cho không gian nội thất hiện đại của gia đình bạn.', N'may-say-quan-ao-electrolux-edv705hqwa-7kg-4bbLK1 (1).png', CAST(N'2021-07-26' AS Date), 1, N'Nguoi Nguoi Quan Tri 1', NULL, NULL)
-INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [Amount], [Guarantee], [Origin], [Discount], [ShortDescription], [Detail], [Image], [CreatedDate], [Status], [CreatedBy], [ModifiedDate], [ModifiedBy]) VALUES (99, 5, N'Máy sấy quần áo 8Kg Electrolux EDV805JQWA', 10990000.0000, N'ASOIUSA45', 14, 1, N'Thái Lan', 23, N'Máy sấy thông hơi 8kg sấy khô nhanh, tiết kiệm điện, Động cơ: Dây cua roa', N'Máy sấy Electrolux 8 Kg EDV805JQWA mang kiểu dáng cửa trước hiện đại, sắc trắng thanh lịch sẽ làm hài lòng bất kì vị gia chủ khó tính nào.', N'may-say-quan-ao-electrolux-edv805jqwa8kg-NYw4HC (1).png', CAST(N'2021-07-26' AS Date), 1, N'Nguoi Nguoi Quan Tri 1', NULL, NULL)
-GO
-INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [Amount], [Guarantee], [Origin], [Discount], [ShortDescription], [Detail], [Image], [CreatedDate], [Status], [CreatedBy], [ModifiedDate], [ModifiedBy]) VALUES (100, 5, N'Tủ giặt hấp sấy LG Styler S3RF Espresso (Cà phê)', 34990000.0000, N'S654FS5F5', 45, 1, N'Việt Nam', 23, N'Chăm sóc quần áo với công nghệ hơi nước độc quyền TrureSteam làm giảm nếp nhăn và mù', N'Cách xử lý quần áo an toàn! Công nghệ hơi nước TrueSteam 100% từ nước sạch, không chứa hóa chất độc hại, giúp loại bỏ đến 99,9% vi khuẩn và các tác nhân gây dị ứng. Dễ dàng vệ sinh vải vóc và các đồ dùng khó giặt hoặc không thể giặt.', N'-4ve2e9.jpg', CAST(N'2021-07-26' AS Date), 1, N'Nguoi Nguoi Quan Tri 1', NULL, NULL)
+INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [Amount], [Guarantee], [Origin], [Discount], [ShortDescription], [Detail], [Image], [CreatedDate], [Status], [CreatedBy], [ModifiedDate], [ModifiedBy]) VALUES (96, 5, N'Máy sấy Heat Pump Electrolux 9Kg EDH903BEWA', 9990000.0000, N'FM1208N9', 25, 1, N'Trung Quốc', 23, N'Nhiệt độ sấy: 75 độ C', N'<p>GIỚI THIỆU SẢN PHẨM&nbsp;- M&Aacute;Y SẤY HEAT PUMP ELECTROLUX 9KG EDH903BEWA</p>
 
+<h2>Kh&ocirc;ng bị co r&uacute;t, kh&ocirc;ng mất h&igrave;nh dạng của quần &aacute;o</h2>
+
+<p>Hệ thống DelicateCare của d&ograve;ng sản phẩm&nbsp;m&aacute;y sấy nhiệt quần &aacute;o nhiệt ph&acirc;n Electrolux EDH903BEWA&nbsp;gi&uacute;p chu tr&igrave;nh sấy len v&agrave; lụa được kiểm so&aacute;t cẩn thận nhiệt độ v&agrave; c&agrave;i đặt chuyển động để mỗi chu kỳ được điều chỉnh theo c&aacute;c đặc t&iacute;nh độc đ&aacute;o của c&aacute;c loại vải mỏng n&agrave;y.&nbsp;Len được giữ phẳng tr&ecirc;n bề mặt&nbsp; v&agrave; lụa được sấy kh&ocirc; nhẹ nh&agrave;ng.&nbsp;Chất lượng quần &aacute;o của bạn được bảo quản để bảo vệ l&acirc;u hơn chống co ng&oacute;t v&agrave; mất h&igrave;nh dạng.</p>
+
+<p><img src="https://mediamart.vn/Lib/Plugins/LazyLoad/lazy-bg.png" />&nbsp;</p>
+
+<h2>Wifi kết nối để được tư vấn chăm s&oacute;c, theo y&ecirc;u cầu</h2>
+
+<p>Với Ứng dụng Electrolux Life, bạn ho&agrave;n to&agrave;n c&oacute; thể tin rằng quần &aacute;o của bạn sẽ được chăm s&oacute;c đ&uacute;ng c&aacute;ch.&nbsp;Cố vấn chăm s&oacute;c cung cấp sẽ đưa ra hướng dẫn trực quan để hỗ trợ bạn trong việc l&agrave;m sạch tới hơn 48 loại vải v&agrave; 40 loại vết bẩn phổ biến nhất.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/download/2019-10-News/gdhEIWf34g2RW7I.jpg" /></p>
+
+<h2>Giữ g&igrave;n độ bền quần &aacute;o&nbsp;của bạn l&acirc;u hơn</h2>
+
+<p>Hệ thống SensiCare sử dụng c&aacute;c cảm biến nhiệt độ v&agrave; độ ẩm để đảm bảo giữ được độ bền của quần &aacute;o&nbsp;l&acirc;u hơn.&nbsp;Bằng c&aacute;ch điều chỉnh mức ti&ecirc;u thụ năng lượng v&agrave; thời gian chu kỳ theo k&iacute;ch cỡ v&agrave; loại vải, SensiCare gi&uacute;p l&agrave;m giảm hao m&ograve;n bằng c&aacute;ch bảo vệ quần &aacute;o của bạn tr&aacute;nh khỏi việc quần &aacute;o bị qu&aacute; kh&ocirc;.</p>
+
+<p>&nbsp;<img src="https://cdn.mediamart.vn/Upload/download/2019-10-News/0n38Xqav0t7TXeQ.jpg" /></p>
+
+<h2>Giảm đến 32% nếp nhăn&nbsp;</h2>
+
+<p>Việc di chuyển xen kẽ theo chiều kim đồng hồ v&agrave; ngược chiều kim đồng hồ của&nbsp;m&aacute;y sấy quần &aacute;o Electrolux&nbsp;sẽ ngăn kh&ocirc;ng cho quần &aacute;o bị rối, l&agrave;m giảm nếp nhăn &iacute;t hơn tới 32% so với c&aacute;c d&ograve;ng m&aacute;y sấy kh&ocirc;ng kh&iacute; .&nbsp;&Iacute;t nếp gấp hơn c&oacute; nghĩa l&agrave; &iacute;t cần ủi ở nhiệt độ cao, do đ&oacute;, vải sẽ tr&ocirc;ng mới l&acirc;u hơn.</p>
+
+<p>&nbsp;<img src="https://mediamart.vn/Lib/Plugins/LazyLoad/lazy-bg.png" /></p>
+
+<h2>L&agrave;m phai m&agrave;u &iacute;t hơn 80%&nbsp;</h2>
+
+<p>Giữ m&agrave;u vải cho quần &aacute;o của bạn l&acirc;u hơn bằng c&aacute;ch&nbsp;sử dụng&nbsp;m&aacute;y sấy Electrolux UltimateCare.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Chương tr&igrave;nh Sấy Kh&ocirc; Nhẹ Nh&agrave;ng ( Delicate Drying )</strong></p>
+
+<p>Chương tr&igrave;nh Sấy&nbsp;Kh&ocirc; Nhẹ Nh&agrave;ng&nbsp;tự động giảm nhiệt độ để quần &aacute;o của bạn được sấy kh&ocirc; nhẹ nh&agrave;ng, bảo vệ tối đa độ bền vải quần &aacute;o của bạn.</p>
+
+<p><img src="https://mediamart.vn/Lib/Plugins/LazyLoad/lazy-bg.png" /></p>
+
+<p><strong>Y&ecirc;n tĩnh, bền bỉ, hiệu quả v&agrave; tiết kiệm năng lượng hơn</strong></p>
+
+<p>Động cơ biến tần l&agrave;m giảm độ rung của m&aacute;y sấy để mang lại hiệu quả l&agrave;m kh&ocirc; &ecirc;m &aacute;i, hiệu quả v&agrave; tiết kiệm năng lượng hơn.</p>
+
+<p><img src="https://mediamart.vn/Lib/Plugins/LazyLoad/lazy-bg.png" /></p>
+
+<h2>Bảo quản vải&nbsp;len một c&aacute;ch dễ d&agrave;ng hơn</h2>
+
+<p>M&aacute;y sấy Electrolux UltimateCare EDH903BEWA&nbsp;l&agrave;m kh&ocirc; an to&agrave;n quần &aacute;o len của bạn trong chu tr&igrave;nh được ph&ecirc; duyệt Woolmark của Electrolux.&nbsp;Chương tr&igrave;nh n&agrave;y đ&atilde; được chứng minh l&agrave; chăm s&oacute;c m&aacute;y sấy quần &aacute;o an to&agrave;n&nbsp;với chế độ sấy sạch tối ưu v&agrave; l&oacute;t nỉ tối thiểu.</p>
+
+<p><img src="https://mediamart.vn/Lib/Plugins/LazyLoad/lazy-bg.png" /></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h2>Gi&aacute; phơi kh&ocirc; tiện dụng</h2>
+
+<p>Từ nay đồ len, gi&agrave;y v&agrave; đồ chơi b&ocirc;ng kh&ocirc;ng c&ograve;n lo về chỗ phơi đồ v&igrave; m&aacute;y đ&atilde; sẵn gi&aacute; phơi đồ chuy&ecirc;n dụng, tr&aacute;nh khỏi&nbsp;sự lộn xộn mội khi cần t&igrave;m chỗ phơi. Đồ&nbsp;của bạn được l&agrave;m kh&ocirc; đều m&agrave; kh&ocirc;ng c&oacute; thiệt hại về h&igrave;nh dạng hoặc kết cấu.</p>
+', N'-cSTvhl.png', CAST(N'2021-07-26' AS Date), 1, N'Nguoi Nguoi Quan Tri 1', NULL, NULL)
+INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [Amount], [Guarantee], [Origin], [Discount], [ShortDescription], [Detail], [Image], [CreatedDate], [Status], [CreatedBy], [ModifiedDate], [ModifiedBy]) VALUES (97, 5, N'Tủ giặt hấp sấy LG Styler S3WF Linen White (Trắng)', 13000000.0000, N'FMUHS08N6', 22, 1, N'Việt Nam', 23, N'Chăm sóc quần áo với công nghệ hơi nước độc quyền TrureSteam làm giảm nếp nhăn và mùi, làm mới quần áo trong sự thoải mái của nhà bạn', N'<p>GIỚI THIỆU SẢN PHẨM&nbsp;- TỦ GIẶT HẤP SẤY LG STYLER S3WF LINEN WHITE (TRẮNG)</p>
+
+<p><iframe frameborder="0" height="420" scrolling="no" src="https://www.youtube.com/embed/G3G1MsPfuXY?rel=0&amp;autoplay=0" width="745"></iframe></p>
+
+<h3>Loại bỏ nếp nhăn v&agrave; m&ugrave;i kh&oacute; chịu</h3>
+
+<p>Những bộ vest, v&aacute;y, &aacute;o len v&agrave; nhiều loại quần &aacute;o cao cấp kh&aacute;c được chăm s&oacute;c tỉ mỉ chỉ bằng một n&uacute;t bấm. Tr&ocirc;ng bạn sẽ lu&ocirc;n tinh tươm v&agrave; ho&agrave;n hảo nhất. H&atilde;y loại bỏ mọi m&ugrave;i kh&oacute; chịu để quần &aacute;o l&uacute;c n&agrave;o cũng<br />
+tươi mới v&agrave; thơm phức!</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/1(1019).JPG" /></p>
+
+<h3>Khử tr&ugrave;ng hiệu quả</h3>
+
+<p>C&aacute;ch xử l&yacute; quần &aacute;o an to&agrave;n! C&ocirc;ng nghệ hơi nước TrueSteam 100% từ nước sạch, kh&ocirc;ng chứa h&oacute;a chất độc hại, gi&uacute;p loại bỏ đến 99,9% vi khuẩn v&agrave; c&aacute;c t&aacute;c nh&acirc;n g&acirc;y dị ứng. Dễ d&agrave;ng vệ sinh vải v&oacute;c v&agrave; c&aacute;c đồ d&ugrave;ng kh&oacute; giặt hoặc kh&ocirc;ng thể giặt.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/2(886).JPG" /></p>
+
+<h3>Chăm s&oacute;c quần &aacute;o bằng hơi nước TrueSteam&trade;</h3>
+
+<p>C&ocirc;ng nghệ TrueSteam&trade; của LG Styler c&ugrave;ng với chuyển động ngang của m&oacute;c treo di chuyển gi&uacute;p hơi nước thẩm thấu s&acirc;u v&agrave;o quần &aacute;o gi&uacute;p l&agrave;m giảm c&aacute;c chất g&acirc;y dị ứng, m&ugrave;i kh&oacute; chịu v&agrave; nếp nhăn. Cơ chế l&agrave;m kh&ocirc; nhiệt độ thấp gi&uacute;p l&agrave;m kh&ocirc; quần &aacute;o nhanh hơn so với phơi quần &aacute;o th&ocirc;ng thường, đồng thời ngăn ngừa sự co r&uacute;t v&agrave; hư hỏng do nhiệt.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/3(735).JPG" /></p>
+
+<h3>Tạo nếp ly quần ho&agrave;n hảo</h3>
+
+<p>Giữ ly quần sắc n&eacute;t đồng thời giảm nếp nhăn.<br />
+Việc chăm s&oacute;c v&agrave; giữ nếp quần &acirc;u trở n&ecirc;n<br />
+nhanh ch&oacute;ng v&agrave; dễ d&agrave;ng.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/4(15).gif" /></p>
+
+<h3>Ngăn ngừa co r&uacute;t v&agrave; hư hỏng quần &aacute;o</h3>
+
+<p>L&agrave;m kh&ocirc; quần &aacute;o nhẹ nh&agrave;ng m&agrave; kh&ocirc;ng phải lo lắng về sự co r&uacute;t vải hoặc hư hỏng quần &aacute;o. Kh&ocirc;ng c&ograve;n ẩm ướt v&agrave; c&aacute;c thiệt hại kh&aacute;c - m&agrave; chỉ c&ograve;n sự tươi mới như ch&uacute;ng ta lu&ocirc;n mong đợi!</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/5(495).JPG" /></p>
+
+<h3>L&agrave;m tươi mới cả kh&ocirc;ng gian nh&agrave; bạn</h3>
+
+<p>Kh&ocirc;ng chỉ giữ cho quần &aacute;o lu&ocirc;n tinh tươm,<br />
+LG Styler c&ograve;n gi&uacute;p kh&ocirc;ng gian nh&agrave; bạn<br />
+lu&ocirc;n tươi mới v&agrave; sạch sẽ</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/6(358).JPG" /></p>
+
+<h3>Kết Nối Th&ocirc;ng Minh với WiFi</h3>
+
+<p>C&ocirc;ng nghệ SmartThinQ&trade; cho ph&eacute;p bạn điều khiển hoặc kiểm so&aacute;t hoạt động của m&aacute;y mọi l&uacute;c mọi nơi. Bạn c&oacute; thể kiểm so&aacute;t mức ti&ecirc;u thụ năng lượng hoặc c&oacute; thể tải th&ecirc;m c&aacute;c chu tr&igrave;nh chăm s&oacute;c quần &aacute;o kh&aacute;c tr&ecirc;n hệ thống.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/7(272).JPG" /></p>
+
+<h3>LG Styler &ndash; Cho cuộc sống khỏe mạnh hơn</h3>
+
+<p>Trong suốt ng&agrave;y d&agrave;i, quần &aacute;o bạn đang mặc rất dễ b&aacute;m bụi, vi khuẩn v&agrave; c&aacute;c chất g&acirc;y dị ứng.<br />
+Việc l&agrave;m sạch quần &aacute;o cũng quan trọng như việc bạn rửa tay mỗi ng&agrave;y.<br />
+H&atilde;y giữ quần &aacute;o của bạn lu&ocirc;n sạch tinh tươm với LG Styler.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/8(191).JPG" /></p>
+', N'-901KGH.png', CAST(N'2021-07-26' AS Date), 1, N'Nguoi Nguoi Quan Tri 1', NULL, NULL)
+INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [Amount], [Guarantee], [Origin], [Discount], [ShortDescription], [Detail], [Image], [CreatedDate], [Status], [CreatedBy], [ModifiedDate], [ModifiedBy]) VALUES (98, 5, N'Máy sấy quần áo 7Kg Electrolux EDV705HQWA', 7900000.0000, N'CUAYA12J', 11, 1, N'Việt Nam', 23, N'Kích thước: Rộng 600 mm - Cao 845 mm - Sâu 600 mm', N'<p>GIỚI THIỆU SẢN PHẨM&nbsp;- M&Aacute;Y SẤY QUẦN &Aacute;O 7KG ELECTROLUX EDV705HQWA</p>
+
+<p><strong>Thiết kế nhỏ gọn, hiện đại</strong><br />
+M&aacute;y sấy Electrolux 7 Kg EDV705HQWA sở hữu thiết kế nhỏ gọn, chắc chắn c&ugrave;ng đường n&eacute;t tinh tế, gam m&agrave;u trắng trang nh&atilde; gi&uacute;p t&ocirc; điểm cho kh&ocirc;ng gian nội thất hiện đại của gia đ&igrave;nh bạn.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/download/2019-10/hj-3M75r9.jpg" /></p>
+
+<p>Khối lượng sấy 7 kg ph&ugrave; hợp với những gia đ&igrave;nh &iacute;t th&agrave;nh vi&ecirc;n hoặc chỉ sử dụng mấy sấy cho số lượng &iacute;t quần &aacute;o</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/download/2019-10/hj-Yc4U8T.jpg" /></p>
+
+<p><strong>C&ocirc;ng nghệ sấy th&ocirc;ng hơi sấy kh&ocirc; nhanh, tiết kiệm điện</strong><br />
+Với c&ocirc;ng nghệ n&agrave;y, m&aacute;y sấy th&ocirc;ng hơi c&oacute; thể sấy kh&ocirc; quần &aacute;o nhanh ch&oacute;ng, tiết kiệm chi ph&iacute; điện. Ph&ugrave; hợp cho gia đ&igrave;nh c&oacute; cửa sổ hoặc kh&ocirc;ng gian rộng r&atilde;i, ống th&ocirc;ng hơi c&oacute; thể lắp trước hoặc sau m&aacute;y tiện lợi.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/download/2019-10/hj-U3M849.jpg" /></p>
+
+<p><strong>C&ocirc;ng nghệ sấy đảo chiều gi&uacute;p quần &aacute;o kh&ocirc; đều hơn, giảm nhăn tối ưu</strong><br />
+C&ocirc;ng nghệ sấy đảo chiều th&ocirc;ng minh tr&ecirc;n m&aacute;y sấy quần &aacute;o Electrolux&nbsp; kh&ocirc;ng l&agrave;m quần &aacute;o bị xoắn v&agrave;o nhau, c&ocirc;ng nghệ n&agrave;y giữ cho nhiệt lượng ổn định gi&uacute;p sợi vải mềm mại v&agrave; kh&ocirc;ng l&agrave;m hư hại đến m&agrave;u sắc của quần &aacute;o.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/download/2019-10/hj-ETKGEY.jpg" /></p>
+
+<p><strong>Cảm biến th&ocirc;ng minh cho ph&eacute;p tự động điều chỉnh thời gian sấy kh&ocirc; quần &aacute;o</strong><br />
+Cảm biến th&ocirc;ng minh cho ph&eacute;p tự động điều chỉnh thời gian sấy kh&ocirc; quần &aacute;o để hạn chế những t&aacute;c động xấu đến trang phục, bảo vệ chất vải, m&agrave;u sắc v&agrave; thiết kế. Kh&ocirc;ng chỉ tr&aacute;nh việc sấy kh&ocirc; qu&aacute; mức g&acirc;y hư tổn đến quần &aacute;o, c&ocirc;ng nghệ n&agrave;y c&ograve;n gi&uacute;p người d&ugrave;ng tiết kiệm thời gian v&agrave; chi ph&iacute; đ&aacute;ng kể.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/download/2019-10/hj-2Iu7RY.jpg" /></p>
+
+<p><strong>&Iacute;t nhăn</strong><br />
+Chuyển động theo chiều kim đồng hồ v&agrave; ngược chiều kim đồng hồ lu&acirc;n phi&ecirc;n giảm t&igrave;nh trạng rối v&agrave; g&acirc;y nhăn quần &aacute;o &iacute;t hơn 32%*. Điều n&agrave;y gi&uacute;p quần &aacute;o kh&ocirc;ng cần ủi nhiều, do vậy, quần &aacute;o sẽ mới l&acirc;u hơn. * Giảm nhăn 32% so với sấy kh&ocirc; trải phẳng - đ&atilde; được thử nghiệm v&agrave; chứng nhận bởi THTI</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/4(59).png" /><br />
+<br />
+<strong>Chăm s&oacute;c m&agrave;u sắc vượt trội</strong><br />
+M&aacute;y sấy Electrolux sẽ sấy kh&ocirc; quần &aacute;o của bạn đồng thời chăm s&oacute;c m&agrave;u sắc tốt hơn 80% sau 52 lần giặt*, do vậy, quần &aacute;o của bạn sẽ giữ được vẻ rực rỡ v&agrave; c&oacute; thời gian sử dụng l&acirc;u hơn. * Giảm phai m&agrave;u tới 80% so với phơi dưới &aacute;nh nắng mặt trời - đ&atilde; được thử nghiệm v&agrave; chứng nhận bởi UL.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/5(55).png" /><br />
+<br />
+<strong>Bảo vệ chất lượng sợi vải, kh&ocirc;ng sấy qu&aacute; kh&ocirc;</strong><br />
+Cảm biến th&ocirc;ng minh điều chỉnh thời gian sấy ch&iacute;nh x&aacute;c. Cảm biến về độ ẩm sẽ đảm bảo quần &aacute;o kh&ocirc;ng bị sấy qu&aacute; kh&ocirc;, khiến chất lượng sợi vải lu&ocirc;n được bảo vệ</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/6(47).png" /><br />
+<br />
+<strong>Sấy tinh tế, tiết kiệm năng lượng</strong><br />
+Trải nghiệm hiệu suất tối ưu ngay cả khi ở nhiệt độ thấp. Kh&ocirc;ng chỉ tiết kiệm tới 6% mức năng lượng đang sử dụng, quần &aacute;o của bạn c&ograve;n được bảo vệ. *Tiết kiệm 6% năng lượng so với mẫu sản phẩm trước đ&oacute;.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/7(37).png" /><br />
+<br />
+<strong>Gh&eacute;p đ&ocirc;i ho&agrave;n hảo tổng qu&aacute;t</strong><br />
+Bạn c&oacute; thể lắp đặt chiếc m&aacute;y sấy ở bất cứ đ&acirc;u bạn muốn, b&ecirc;n cạnh hay ở tr&ecirc;n m&aacute;y giặt của bạn, khi sử dụng bộ xếp chồng. Chiếc m&aacute;y sấy n&agrave;y kết hợp với chiếc m&aacute;y giặt cửa trước Electrolux UltimateCare&trade; 500 sẽ đem đến cho bạn một tổng thể ho&agrave;n hảo.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/9(23).png" /></p>
+', N'may-say-quan-ao-electrolux-edv705hqwa-7kg-4bbLK1 (1).png', CAST(N'2021-07-26' AS Date), 1, N'Nguoi Nguoi Quan Tri 1', NULL, NULL)
+INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [Amount], [Guarantee], [Origin], [Discount], [ShortDescription], [Detail], [Image], [CreatedDate], [Status], [CreatedBy], [ModifiedDate], [ModifiedBy]) VALUES (99, 5, N'Máy sấy quần áo 8Kg Electrolux EDV805JQWA', 10990000.0000, N'ASOIUSA45', 14, 1, N'Thái Lan', 23, N'Máy sấy thông hơi 8kg sấy khô nhanh, tiết kiệm điện, Động cơ: Dây cua roa', N'<h1><span style="color:#e74c3c"><strong>GIỚI THIỆU SẢN PHẨM&nbsp;- M&Aacute;Y SẤY QUẦN &Aacute;O 8KG ELECTROLUX EDV805JQWA</strong></span></h1>
+
+<p><strong>Thiết kế sang trọng, hiện đại</strong><br />
+M&aacute;y sấy Electrolux 8 Kg EDV805JQWA mang kiểu d&aacute;ng cửa trước hiện đại, sắc trắng thanh lịch sẽ l&agrave;m h&agrave;i l&ograve;ng bất k&igrave; vị gia chủ kh&oacute; t&iacute;nh n&agrave;o. B&ecirc;n cạnh đ&oacute;, kiểu lồng sấy&nbsp;ngang của m&aacute;y gi&uacute;p bạn kh&ocirc;ng phải khom lưng qu&aacute; nhiều để bỏ v&agrave;o hoặc lấy quần &aacute;o ra, ngăn chặn nguy cơ đau cột sống cho bạn.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/download/2019-10/gh-3z0Vr6.jpg" /></p>
+
+<p><strong>M&aacute;y sấy Electrolux 8 kg</strong><br />
+Tuy c&oacute; vẻ ngo&agrave;i kh&aacute; nhỏ gọn nhưng chiếc m&aacute;y sấy Electrolux n&agrave;y lại được trang bị khối lượng sấy l&ecirc;n đến 9 kg, cho ph&eacute;p bạn dễ d&agrave;ng sấy được nhiều quần &aacute;o trong một lần.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/download/2019-10/gh-a56mdT.jpg" /></p>
+
+<p><strong>M&aacute;y sấy th&ocirc;ng hơi tiết kiệm điện, gi&aacute; th&agrave;nh phải chăng</strong><br />
+Sử dụng c&ocirc;ng nghệ sấy th&ocirc;ng hơi trong vận h&agrave;nh, m&aacute;y sấy Electrolux kh&ocirc;ng chỉ gi&uacute;p quần &aacute;o nhanh ch&oacute;ng được hong kh&ocirc; chỉ trong t&iacute;ch tắc m&agrave; n&oacute; c&ograve;n tiết kiệm đ&aacute;ng kể chi ph&iacute; điện h&agrave;ng th&aacute;ng cũng như bạn kh&ocirc;ng phải tốn nhiều &quot;hầu bao&quot; để lựa chọn cho m&igrave;nh một chiếc m&aacute;y sấy th&ocirc;ng hơi.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/download/2019-10/gh-cuurjk.jpg" /></p>
+
+<p><strong>C&ocirc;ng nghệ Smart Sensor tự điều chỉnh thời gian sấy một c&aacute;ch th&ocirc;ng minh</strong><br />
+Nhờ khả năng tự điều chỉnh thời gian sấy th&ocirc;ng minh dựa tr&ecirc;n khối lượng cũng như độ ẩm của quần &aacute;o, m&aacute;y sấy Electrolux sẽ gi&uacute;p bạn kh&ocirc;ng phải tốn nhiều thời gian để điều chỉnh m&aacute;y, đồng thời gi&uacute;p quần &aacute;o được sấy kh&ocirc; ở mức l&yacute; tưởng, hạn chế hư hỏng.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/download/2019-10/gh-NO8Okk.jpg" /></p>
+
+<p><strong>Sấy xoay tr&ograve;n đảo chiều gi&uacute;p quần &aacute;o kh&ocirc; đều v&agrave; chống xoắn rối</strong><br />
+Sử dụng kỹ thuật sấy đảo chiều, m&aacute;y sấy gi&uacute;p quần &aacute;o được ph&acirc;n bổ đều trong lồng sấy, cho quần &aacute;o được sấy kh&ocirc; đồng đều m&agrave; kh&ocirc;ng lo chỗ c&ograve;n ẩm, chỗ bị sấy qu&aacute; nhiệt g&acirc;y hư hỏng. Đồng thời kỹ thuật n&agrave;y c&ograve;n gi&uacute;p quần &aacute;o được tơi ra, kh&ocirc;ng xoắn rối v&agrave;o nhau g&acirc;y nhăn nh&uacute;m, tốn thời gian l&agrave; ủi.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/download/2019-10/gh-x25q39.jpg" /></p>
+
+<p><strong>Sấy nhanh quần &aacute;o trong 40 ph&uacute;t</strong><br />
+Đừng lo lắng, m&aacute;y sấy Electrolux với t&iacute;nh năng sấy nhanh 40&nbsp;ph&uacute;t sẽ nhanh ch&oacute;ng l&agrave;m kh&ocirc; ch&uacute;ng chỉ trong t&iacute;ch tắc, kịp thời cho bạn v&agrave; người th&acirc;n c&oacute; trang phục để đi l&agrave;m, đi học.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/download/2019-10/gh-o4ulNj.jpg" /></p>
+
+<p><strong>&Iacute;t nhăn</strong><br />
+Chuyển động theo chiều kim đồng hồ v&agrave; ngược chiều kim đồng hồ lu&acirc;n phi&ecirc;n giảm t&igrave;nh trạng rối v&agrave; g&acirc;y nhăn quần &aacute;o &iacute;t hơn 32%*. Điều n&agrave;y gi&uacute;p quần &aacute;o kh&ocirc;ng cần ủi nhiều, do vậy, quần &aacute;o sẽ mới l&acirc;u hơn. * Giảm nhăn 32% so với sấy kh&ocirc; trải phẳng - đ&atilde; được thử nghiệm v&agrave; chứng nhận bởi THTI</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/4(59).png" /><br />
+<br />
+<strong>Chăm s&oacute;c m&agrave;u sắc vượt trội</strong><br />
+M&aacute;y sấy Electrolux sẽ sấy kh&ocirc; quần &aacute;o của bạn đồng thời chăm s&oacute;c m&agrave;u sắc tốt hơn 80% sau 52 lần giặt*, do vậy, quần &aacute;o của bạn sẽ giữ được vẻ rực rỡ v&agrave; c&oacute; thời gian sử dụng l&acirc;u hơn. * Giảm phai m&agrave;u tới 80% so với phơi dưới &aacute;nh nắng mặt trời - đ&atilde; được thử nghiệm v&agrave; chứng nhận bởi UL.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/5(55).png" /><br />
+<br />
+<strong>Bảo vệ chất lượng sợi vải, kh&ocirc;ng sấy qu&aacute; kh&ocirc;</strong><br />
+Cảm biến th&ocirc;ng minh điều chỉnh thời gian sấy ch&iacute;nh x&aacute;c. Cảm biến về độ ẩm sẽ đảm bảo quần &aacute;o kh&ocirc;ng bị sấy qu&aacute; kh&ocirc;, khiến chất lượng sợi vải lu&ocirc;n được bảo vệ</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/6(47).png" /><br />
+<br />
+<strong>Sấy tinh tế, tiết kiệm năng lượng</strong><br />
+Trải nghiệm hiệu suất tối ưu ngay cả khi ở nhiệt độ thấp. Kh&ocirc;ng chỉ tiết kiệm tới 6% mức năng lượng đang sử dụng, quần &aacute;o của bạn c&ograve;n được bảo vệ. *Tiết kiệm 6% năng lượng so với mẫu sản phẩm trước đ&oacute;.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/7(37).png" /><br />
+<br />
+<strong>Gh&eacute;p đ&ocirc;i ho&agrave;n hảo tổng qu&aacute;t</strong><br />
+Bạn c&oacute; thể lắp đặt chiếc m&aacute;y sấy ở bất cứ đ&acirc;u bạn muốn, b&ecirc;n cạnh hay ở tr&ecirc;n m&aacute;y giặt của bạn, khi sử dụng bộ xếp chồng. Chiếc m&aacute;y sấy n&agrave;y kết hợp với chiếc m&aacute;y giặt cửa trước Electrolux UltimateCare&trade; 500 sẽ đem đến cho bạn một tổng thể ho&agrave;n hảo.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/9(23).png" /></p>
+', N'may-say-quan-ao-electrolux-edv805jqwa8kg-NYw4HC (1).png', CAST(N'2021-07-26' AS Date), 1, N'Nguoi Nguoi Quan Tri 1', NULL, NULL)
+GO
+INSERT [dbo].[Product] ([ID_Product], [ID_Category], [Name], [Price], [Model], [Amount], [Guarantee], [Origin], [Discount], [ShortDescription], [Detail], [Image], [CreatedDate], [Status], [CreatedBy], [ModifiedDate], [ModifiedBy]) VALUES (100, 5, N'Tủ giặt hấp sấy LG Styler S3RF Espresso (Cà phê)', 34990000.0000, N'S654FS5F5', 45, 1, N'Việt Nam', 23, N'Chăm sóc quần áo với công nghệ hơi nước độc quyền TrureSteam làm giảm nếp nhăn và mù', N'<h1><span style="color:#c0392b"><strong><span style="font-size:24px">GIỚI THIỆU SẢN PHẨM&nbsp;- TỦ GIẶT HẤP SẤY LG STYLER S3RF ESPRESSO (C&Agrave; PH&Ecirc;)</span></strong></span></h1>
+
+<h3><iframe frameborder="0" height="420" scrolling="no" src="https://www.youtube.com/embed/G3G1MsPfuXY?rel=0&amp;autoplay=0" width="745"></iframe></h3>
+
+<h3>Loại bỏ nếp nhăn v&agrave; m&ugrave;i kh&oacute; chịu</h3>
+
+<p>Những bộ vest, v&aacute;y, &aacute;o len v&agrave; nhiều loại quần &aacute;o cao cấp kh&aacute;c được chăm s&oacute;c tỉ mỉ chỉ bằng một n&uacute;t bấm. Tr&ocirc;ng bạn sẽ lu&ocirc;n tinh tươm v&agrave; ho&agrave;n hảo nhất. H&atilde;y loại bỏ mọi m&ugrave;i kh&oacute; chịu để quần &aacute;o l&uacute;c n&agrave;o cũng<br />
+tươi mới v&agrave; thơm phức!</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/1(1019).JPG" /></p>
+
+<h3>Khử tr&ugrave;ng hiệu quả</h3>
+
+<p>C&aacute;ch xử l&yacute; quần &aacute;o an to&agrave;n! C&ocirc;ng nghệ hơi nước TrueSteam 100% từ nước sạch, kh&ocirc;ng chứa h&oacute;a chất độc hại, gi&uacute;p loại bỏ đến 99,9% vi khuẩn v&agrave; c&aacute;c t&aacute;c nh&acirc;n g&acirc;y dị ứng. Dễ d&agrave;ng vệ sinh vải v&oacute;c v&agrave; c&aacute;c đồ d&ugrave;ng kh&oacute; giặt hoặc kh&ocirc;ng thể giặt.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/2(886).JPG" /></p>
+
+<h3>Chăm s&oacute;c quần &aacute;o bằng hơi nước TrueSteam&trade;</h3>
+
+<p>C&ocirc;ng nghệ TrueSteam&trade; của LG Styler c&ugrave;ng với chuyển động ngang của m&oacute;c treo di chuyển gi&uacute;p hơi nước thẩm thấu s&acirc;u v&agrave;o quần &aacute;o gi&uacute;p l&agrave;m giảm c&aacute;c chất g&acirc;y dị ứng, m&ugrave;i kh&oacute; chịu v&agrave; nếp nhăn. Cơ chế l&agrave;m kh&ocirc; nhiệt độ thấp gi&uacute;p l&agrave;m kh&ocirc; quần &aacute;o nhanh hơn so với phơi quần &aacute;o th&ocirc;ng thường, đồng thời ngăn ngừa sự co r&uacute;t v&agrave; hư hỏng do nhiệt.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/3(735).JPG" /></p>
+
+<h3>Tạo nếp ly quần ho&agrave;n hảo</h3>
+
+<p>Giữ ly quần sắc n&eacute;t đồng thời giảm nếp nhăn.<br />
+Việc chăm s&oacute;c v&agrave; giữ nếp quần &acirc;u trở n&ecirc;n<br />
+nhanh ch&oacute;ng v&agrave; dễ d&agrave;ng.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/4(15).gif" /></p>
+
+<h3>Ngăn ngừa co r&uacute;t v&agrave; hư hỏng quần &aacute;o</h3>
+
+<p>L&agrave;m kh&ocirc; quần &aacute;o nhẹ nh&agrave;ng m&agrave; kh&ocirc;ng phải lo lắng về sự co r&uacute;t vải hoặc hư hỏng quần &aacute;o. Kh&ocirc;ng c&ograve;n ẩm ướt v&agrave; c&aacute;c thiệt hại kh&aacute;c - m&agrave; chỉ c&ograve;n sự tươi mới như ch&uacute;ng ta lu&ocirc;n mong đợi!</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/5(495).JPG" /></p>
+
+<h3>L&agrave;m tươi mới cả kh&ocirc;ng gian nh&agrave; bạn</h3>
+
+<p>Kh&ocirc;ng chỉ giữ cho quần &aacute;o lu&ocirc;n tinh tươm,<br />
+LG Styler c&ograve;n gi&uacute;p kh&ocirc;ng gian nh&agrave; bạn<br />
+lu&ocirc;n tươi mới v&agrave; sạch sẽ</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/6(358).JPG" /></p>
+
+<h3>Kết Nối Th&ocirc;ng Minh với WiFi</h3>
+
+<p>C&ocirc;ng nghệ SmartThinQ&trade; cho ph&eacute;p bạn điều khiển hoặc kiểm so&aacute;t hoạt động của m&aacute;y mọi l&uacute;c mọi nơi. Bạn c&oacute; thể kiểm so&aacute;t mức ti&ecirc;u thụ năng lượng hoặc c&oacute; thể tải th&ecirc;m c&aacute;c chu tr&igrave;nh chăm s&oacute;c quần &aacute;o kh&aacute;c tr&ecirc;n hệ thống.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/7(272).JPG" /></p>
+
+<h3>LG Styler &ndash; Cho cuộc sống khỏe mạnh hơn</h3>
+
+<p>Trong suốt ng&agrave;y d&agrave;i, quần &aacute;o bạn đang mặc rất dễ b&aacute;m bụi, vi khuẩn v&agrave; c&aacute;c chất g&acirc;y dị ứng.<br />
+Việc l&agrave;m sạch quần &aacute;o cũng quan trọng như việc bạn rửa tay mỗi ng&agrave;y.<br />
+H&atilde;y giữ quần &aacute;o của bạn lu&ocirc;n sạch tinh tươm với LG Styler.</p>
+
+<p><img src="https://cdn.mediamart.vn/Upload/images/8(191).JPG" /></p>
+', N'-F8JE4l.png', CAST(N'2021-07-26' AS Date), 1, N'Nguoi Nguoi Quan Tri 1', CAST(N'2021-08-01' AS Date), N'Nguoi Quan Tri')
 SET IDENTITY_INSERT [dbo].[Product] OFF
 GO
 

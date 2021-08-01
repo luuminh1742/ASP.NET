@@ -36,7 +36,7 @@ namespace ElectronicDevice.Controllers
         public JsonResult GetAll(String searchStr, int? page, int? id_category)
         {
             db.Configuration.ProxyCreationEnabled = false;
-            var listProduct = db.Products.Where(p => p.Status == true).ToList();
+            var listProduct = db.Products.Where(p => p.Status == true).OrderByDescending(p=>p.ID_Product).ToList();
             if (!String.IsNullOrEmpty(searchStr))
             {
                 ViewBag.searchStr = searchStr;
@@ -52,7 +52,7 @@ namespace ElectronicDevice.Controllers
             ViewBag.totalPage = totalPage;
             ViewBag.totalProduct = listProduct.Count;
 
-            listProduct = listProduct.OrderByDescending(p => p.Name).Skip(startRecord).Take(pageSize).ToList();
+            listProduct = listProduct.OrderByDescending(p => p.ID_Product).Skip(startRecord).Take(pageSize).ToList();
 
             return Json(new { data = listProduct, currentPage = page, totalPage = totalPage }, JsonRequestBehavior.AllowGet);
         }

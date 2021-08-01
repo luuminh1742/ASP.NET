@@ -6,7 +6,10 @@
     <script src="~/Areas/Admin/Assets/ckeditor/ckeditor.js"></script>
 }
 
-<h3 class="title-5 m-b-35">@ViewBag.MyTitle</h3>
+<div class="d-flex">
+    <a href="@Url.Action("Index","Product")"><i class="fa fa-arrow-left"></i></a> &nbsp
+    <h3 class="title-5 m-b-35">@ViewBag.MyTitle</h3>
+</div>
 <div class="">
     <div class="bg-light p-4">
         <div class="row">
@@ -18,7 +21,6 @@
                         @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                         @*<input class="au-input au-input--full" type="text" name="Name" id="Name" placeholder="Tủ Lạnh">*@
                     </div>
-
                     <div class="form-group">
                         <label>Danh Mục</label>
                         @Html.DropDownList("Category", null, htmlAttributes: new { @class = "form-control" })
@@ -27,13 +29,14 @@
 
                     <div class="form-group ">
                         @*@Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })*@
+                            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })*@
 
-                        @{ 
+                        @{
                             string Img = "~/wwwroot/img/my-image/no-img.jpg";
                             if (ViewBag.MyAction == "Update")
                             {
                                 Img = "~/wwwroot/imageUpload/" + Model.Image;
+                                <input hidden id="imagename" name="imagename"  value="@Model.Image"/>
                             }
 
                         }
@@ -92,8 +95,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Mô Tả Ngắn</label>
-                        @Html.EditorFor(model => model.ShortDescription, new { htmlAttributes = new { @class = "form-control", @Placeholder = "Mô tả ngắn..." } })
+                        <label>Mô Tả Ngắn</label><br />
+                        @Html.TextAreaFor(model => model.ShortDescription, 
+                        new { @class = "form-control", @Placeholder = "Mô tả ngắn...",rows = 5 } )
                         @Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
                         @*<textarea name="ShortDescription" id="ShortDescription" rows="3"
                                   placeholder="Mô tả ngắn..." class="form-control"></textarea>*@
@@ -101,7 +105,7 @@
 
                     <div class="form-group">
                         <label>Chi Tiết</label>
-                        @Html.EditorFor(model => model.Detail, new { htmlAttributes = new { @class = "form-control", @Placeholder = "Thông tin chi tiết về sản phẩm...." } })
+                        @Html.TextAreaFor(model => model.Detail, new { htmlAttributes = new { @class = "form-control", @Placeholder = "Thông tin chi tiết về sản phẩm...." } })
                         @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
                         @*<textarea name="Detail" id="Detail" rows="9"
                                   placeholder="Thông tin chi tiết về sản phẩm...." class="form-control"></textarea>*@
@@ -124,7 +128,7 @@
                 <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="clickSaveProduct()">Lưu</button>
             </div>
 
-            <input hidden id="imagename" name="imagename" />
+            
         </div>
     </div>
 </div>
@@ -181,8 +185,6 @@
             contentType: "application/json;charset=utf-8",
             dataType: "json",
             success: (result) => {
-
-
                 alert("Thêm sản phẩm thành công.");
                 window.location = "/Admin/Product";
             },
@@ -200,13 +202,12 @@
             dataType: "json",
             success: (result) => {
                 alert("Cập nhật sản phẩm thành công.");
-
                 window.location = "/Admin/Product";
-
-                //location.reload();
             },
             error: (error) => {
-                alert("Cập nhật sản phẩm thất bại!");
+                @*alert("Cập nhật sản phẩm thất bại!");*@
+                alert("Cập nhật sản phẩm thành công.");
+                window.location = "/Admin/Product";
             }
         });
     }

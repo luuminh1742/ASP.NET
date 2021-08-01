@@ -13,7 +13,7 @@ using PagedList;
 
 namespace ElectronicDevice.Areas.Admin.Controllers
 {
-    //[Authorize(Roles = "ADMIN")]
+    [Authorize(Roles = "ADMIN")]
     public class ProductController : Controller
     {
         private ElectronicDeviceDbContext db = new ElectronicDeviceDbContext();
@@ -22,7 +22,7 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         public ActionResult Index(int? page)
         {
             var listProduct = db.Products.Select(p => p);
-            listProduct = listProduct.OrderBy(p => p.ID_Product);
+            listProduct = listProduct.OrderByDescending(p => p.ID_Product);
 
             ViewBag.Category = new SelectList(db.Categories, "ID_Category", "Name");
 
@@ -53,8 +53,8 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult AddProducts(ProductDTO product)
         {
-            Product pro = new Product();
 
+            Product pro = new Product();
             if (product.Base64 != null)
             {
                 string path = HttpContext.Server.MapPath("~/wwwroot/imageUpload/");
@@ -64,38 +64,43 @@ namespace ElectronicDevice.Areas.Admin.Controllers
                     return null;
                 }
             }
-            pro.ID_Category = product.ID_Category;
-            pro.Name = product.Name;
-            pro.Image = product.Image;
-            pro.Price = product.Price;
-            pro.Model = product.Model;
-            pro.Amount = product.Amount;
-            pro.Guarantee = product.Guarantee;
-            pro.Origin = product.Origin;
-            pro.Discount = product.Discount;
-            pro.ShortDescription = product.ShortDescription;
-            pro.Detail = product.Detail;
-            pro.Status = product.Status;
-
-            //pro.CreatedDate = product.CreatedDate;
-            //pro.CreatedBy = product.CreatedBy;
-            //pro.ModifiedDate = product.ModifiedDate;
-            //pro.ModifiedBy = product.ModifiedBy;
+            
             if (product.ID_Product == 0)
             {
-                product.CreatedDate = DateTime.Now;
+                mapDataProduct(product, pro);
+                pro.CreatedDate = DateTime.Now;
+                pro.CreatedBy = Session["FullName"].ToString();
                 db.Products.Add(pro);
             }
             else
             {
-                pro.ID_Product = product.ID_Product;
+                pro = db.Products.Where(p => p.ID_Product == product.ID_Product).SingleOrDefault();
+                mapDataProduct(product, pro);
+                pro.ModifiedDate = DateTime.Now;
+                pro.ModifiedBy = Session["FullName"].ToString();
                 db.Entry(pro).State = EntityState.Modified;
             }
-
             db.SaveChanges();
 
             return Json(pro, JsonRequestBehavior.AllowGet);
         }
+
+        private void mapDataProduct(ProductDTO productDTO,Product product)
+        {
+            product.ID_Category = productDTO.ID_Category;
+            product.Name = productDTO.Name;
+            product.Image = productDTO.Image;
+            product.Price = productDTO.Price;
+            product.Model = productDTO.Model;
+            product.Amount = productDTO.Amount;
+            product.Guarantee = productDTO.Guarantee;
+            product.Origin = productDTO.Origin;
+            product.Discount = productDTO.Discount;
+            product.ShortDescription = productDTO.ShortDescription;
+            product.Detail = productDTO.Detail;
+            product.Status = productDTO.Status;
+        }
+
         public ActionResult DeleteProduct(int id)
         {
             Product product = db.Products.Find(id);

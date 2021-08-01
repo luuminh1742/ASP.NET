@@ -9,7 +9,10 @@
         <div class="widgets_inner" style="padding-right:5px;padding-left:5px">
             <table class="table-categoty">
                 <tr style="height:50px" class="rounded-5 row-left-sidebar" id="">
-                    <td width="50px"><img src="" alt="" /></td>
+                    <td width="50px">
+                        <img src="" alt="" />
+                        <img src="~/wwwroot/img/icon/all-logo-8A29A0C132-seeklogo.com.png" style="width: 20px;height: 20px;"/>
+                    </td>
                     <td>Tất cả các sản phẩm</td>
                     <td><span></span></td>
                 </tr>
@@ -17,7 +20,7 @@
 
                 {
                     <tr style="height:50px" class="rounded-5 row-left-sidebar" id="@item.ID_Category">
-                        <td width="50px"><img src="@Url.Content("~/wwwroot/imageUpload/"+item.Icon)" alt="@item.Name" /></td>
+                        <td width="50px"><img src="@Url.Content("~/wwwroot/imageUpload/"+item.Icon)" alt="@item.Name"  style="width: 20px;height: 20px;"/></td>
                         <td>@item.Name</td>
                         <td><span>(@item.Products.Count())</span></td>
                     </tr>
