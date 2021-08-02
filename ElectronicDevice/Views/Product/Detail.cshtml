@@ -1,6 +1,6 @@
 ﻿@model ElectronicDevice.Models.Product
 @{
-    ViewBag.Title = "Chi tiết sản phẩm";
+    ViewBag.Title = "";
     var id_product = Request.QueryString["id_product"];
     var id_account = Session["ID"];
 }
@@ -84,7 +84,7 @@
                         <div class="my-cart border rounded-circle" title="Thêm sản phẩm vào giỏ" onclick="addProductToCart(@id_product,@Session["ID"])">
                             <i class="fas fa-shopping-cart"></i>
                         </div>
-                        <a href="@Url.Action("Buy","Bill")" class="btn_3">Mua ngay</a>
+                        <div class="btn_3" id="buy-now" onclick="buyNow(@id_product,@Session["ID"])">Mua ngay</div>
                     </div>
                 </div>
             </div>
@@ -112,23 +112,12 @@
     </div>
 </section>
 
-<!--modal notice-->
-<!-- Modal -->
-<div class="modal fade" id="modalNotice" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body " id="modalNoticeContent" style="font-size:22px ">
-                <!--content-->
-            </div>
-            <div class="modal-footer mx-auto" style="border:unset">
-                <button type="button" id="btn_close" class="btn btn-secondary" data-dismiss="modal">
-                    <!--Button Close-->
-                </button>
-                <button type="button" id="btn_save" onclick="deleteRecordConfirmed()" class="btn btn-primary">
-                    <!--Button Save-->
-                </button>
-            </div>
-        </div>
+<!--alert message-->
+<div class="alert hide" id="alert_message">
+    <div id="icon-alert-message"><i class="fas fa-exclamation-circle"></i></div>
+    <span class="msg">Warning: This is a warning alert!</span>
+    <div class="close-btn-alert">
+        <span class="fas fa-times"></span>
     </div>
 </div>
 <!--================End Product Description Area =================-->
@@ -141,6 +130,12 @@
 @section script{
     <script>
         $(document).ready(function () {
+
+            $('.close-btn-alert').click(function () {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+
             var id_product = window.location.href.split("=")[1];
             var load = function (id_product) {
                 $.ajax({
@@ -182,21 +177,71 @@
                     datatype: "json",
                     contenttype: "application/json;charset=utf-8",
                     success: function (result) {
-                        $('#modalNoticeContent').text(result.data);
-                        $('#btn_close').text("ok");
-                        $('#btn_save').hide();
-                        $('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" });
-                        $('#modalNotice').modal("show");
+                        showAlertMessage(result.data, true);
                     },
                     error: (error) => {
-                        $('#modalNoticeContent').text("thêm vào giỏ hàng thất bại!");
-                        $('#btn_close').text("ok");
-                        $('#btn_save').hide();
-                        $('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" });
-                        $('#modalNotice').modal("show");
+                        showAlertMessage("Không thể thêm vào giỏ hàng sản phẩm này!", false);
                     }
                 });
             }
         }
+
+        function showAlertMessage(message, messageState) {
+            if (messageState) {
+                $('#alert_message').css({ "background": "#C5F3D7", "border-left": "8px solid #2BD971" });
+                $("#icon-alert-message").html('<i class="fas fa-check-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#2BD971" });
+                $(".msg").css({ "color": "#24AD5F" });
+                $(".close-btn-alert").css({ "background": "#2BD971", "color": "#24AD5F" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#24AD5F" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#38F5A3" : "#2BD971")
+                })
+            } else {
+                $('#alert_message').css({ "background": "#FFE1E3", "border-left": "8px solid #FF4456" });
+                $("#icon-alert-message").html('<i class="fas fa-exclamation-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#FE4950" });
+                $(".msg").css({ "color": "#F694A9" });
+                $(".close-btn-alert").css({ "background": "#FF9CA4", "color": "#FD4653" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#FD4653" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#FFBDC2" : "#FF9CA4")
+                })
+            }
+
+            $('.msg').text(message);
+            $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+            setTimeout(function () {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            }, 3000);
+        };
+
+        function buyNow(id_product, id_account) {
+            if (id_account == null) {
+                var url = '@Url.Action("Index","Login",new { statusRequest= "LoginToCart" })';
+                window.location.href = url;
+            } else {
+                var amount = $("#numberProductOrder").val();
+                $.ajax({
+                    url: "/cart/addcart",
+                    type: "post",
+                    data: { id_product: id_product, id_account: id_account,amount:amount },
+                    datatype: "json",
+                    contenttype: "application/json;charset=utf-8",
+                    success: function (result) {
+                        showAlertMessage(result.data, true);
+                        var url = '/Bill/Buy?id_product='+id_product+'&&id_account='+id_account;
+                        window.location.href = url;
+                    },
+                    error: (error) => {
+                        showAlertMessage("Không thể mua sản phẩm này!", false);
+                    }
+                });
+            }
+        }
+
     </script>
 }

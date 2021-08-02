@@ -56,7 +56,8 @@
     }
     <!--::footer_part end::-->
     <!-- jquery plugins here-->
-    <script src="~/wwwroot/js/jquery-1.12.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    @*<script src="~/wwwroot/js/jquery-1.12.1.min.js"></script>*@
     <!-- popper js -->
     <script src="~/wwwroot/js/popper.min.js"></script>
     <!-- bootstrap js -->
@@ -73,7 +74,7 @@
     <!-- slick js -->
     <script src="~/wwwroot/js/slick.min.js"></script>
     <script src="~/wwwroot/js/jquery.counterup.min.js"></script>
-    <script src="~/wwwroot/js/waypoints.min.js"></script>
+    @*<script src="~/wwwroot/js/waypoints.min.js"></script>*@
     <script src="~/wwwroot/js/contact.js"></script>
     <script src="~/wwwroot/js/jquery.ajaxchimp.min.js"></script>
     <script src="~/wwwroot/js/jquery.form.js"></script>
@@ -88,7 +89,7 @@
         }
     </script>
     <script src="~/wwwroot/js/custom-header.js"></script>
-    @RenderSection("script",required:false)
+    @RenderSection("script", required: false)
 </body>
 
 </html>

@@ -555,6 +555,34 @@ INSERT INTO Cart(ID_Account,ID_Product,Amount) VALUES
 (3,20,2),
 (3,50,1)
 
+GO
+insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate) values(3,N'Phạm Thị A',N'Bắc Ninh',N'trandobn@gmail.com','0385993661',N'Gửi nhanh',N'Chuyển khoản',0,N'2021-01-01')
+insert into BillDetail values(3,1,5,50000);
+insert into BillDetail values(4,1,5,50000);
+
+insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate) values(2,N'Nguyễn văn',N'Bắc Ninh',N'trandobn@gmail.com','0385993661',N'Gửi nhanh',N'Chuyển khoản',0,N'2021-01-01')
+insert into BillDetail values(6,2,5,50000);
+insert into BillDetail values(5,2,5,10000);
+
+insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate,ModifiedDate) values(3,N'Trần Thị Hoa',N'Bắc Ninh',N'trandobn@gmail.com','0385993661',N'Gửi nhanh',N'Chuyển khoản',1,N'2021-01-01',N'2021-11-04')
+insert into BillDetail values(6,3,5,50000);
+insert into BillDetail values(5,3,5,50000);
+
+insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate,ModifiedDate) values(4,N'Hoàng Văn Ba',N'Hà Nội',N'tradfndobn@gmail.com','0978458751',N'Gửi chậm',N'Thanh toán khi nhận hàng',2,N'2021-01-01',N'2021-11-04')
+insert into BillDetail values(6,4,5,100000);
+insert into BillDetail values(5,4,5,50000);
+
+insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate,ModifiedDate) values(3,N'Hoàng Văn Ba',N'Hà Nội',N'tradfndobn@gmail.com','0978458751',N'Gửi chậm',N'Thanh toán khi nhận hàng',0,N'2021-01-01',N'2021-11-04')
+insert into BillDetail values(6,5,5,100000);
+insert into BillDetail values(5,5,5,50000);
+
+insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate,ModifiedDate) values(4,N'Hoàng Văn Ba',N'Hà Nội',N'tradfndobn@gmail.com','0978458751',N'Gửi chậm',N'Thanh toán khi nhận hàng',0,N'2021-01-01',N'2021-11-04')
+insert into BillDetail values(6,6,5,100000);
+insert into BillDetail values(5,6,5,50000);
+
+insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate,ModifiedDate) values(4,N'Hoàng Văn Ba',N'Hà Nội',N'tradfndobn@gmail.com','0978458751',N'Gửi chậm',N'Thanh toán khi nhận hàng',0,N'2021-01-01',N'2021-11-04')
+insert into BillDetail values(6,7,5,100000);
+insert into BillDetail values(5,7,5,50000);
 
 select * from Product
 select * from Account
@@ -563,35 +591,6 @@ select * from Bill
 select * from BillDetail
 select * from Cart
 select * from [Role]
-
-insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate) values(18,N'Phạm Thị A',N'Bắc Ninh',N'trandobn@gmail.com','0385993661',N'Gửi nhanh',N'Chuyển khoản',0,N'2021-01-01')
-insert into BillDetail values(3,10,5,50000);
-insert into BillDetail values(4,10,5,50000);
-
-insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate) values(2,N'Nguyễn văn',N'Bắc Ninh',N'trandobn@gmail.com','0385993661',N'Gửi nhanh',N'Chuyển khoản',0,N'2021-01-01')
-insert into BillDetail values(6,11,5,50000);
-insert into BillDetail values(5,11,5,10000);
-
-insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate,ModifiedDate) values(19,N'Trần Thị Hoa',N'Bắc Ninh',N'trandobn@gmail.com','0385993661',N'Gửi nhanh',N'Chuyển khoản',1,N'2021-01-01',N'2021-11-04')
-insert into BillDetail values(6,13,5,50000);
-insert into BillDetail values(5,13,5,50000);
-
-insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate,ModifiedDate) values(21,N'Hoàng Văn Ba',N'Hà Nội',N'tradfndobn@gmail.com','0978458751',N'Gửi chậm',N'Thanh toán khi nhận hàng',2,N'2021-01-01',N'2021-11-04')
-insert into BillDetail values(6,16,5,100000);
-insert into BillDetail values(5,16,5,50000);
-
-insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate,ModifiedDate) values(21,N'Hoàng Văn Ba',N'Hà Nội',N'tradfndobn@gmail.com','0978458751',N'Gửi chậm',N'Thanh toán khi nhận hàng',0,N'2021-01-01',N'2021-11-04')
-insert into BillDetail values(6,19,5,100000);
-insert into BillDetail values(5,19,5,50000);
-
-insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate,ModifiedDate) values(21,N'Hoàng Văn Ba',N'Hà Nội',N'tradfndobn@gmail.com','0978458751',N'Gửi chậm',N'Thanh toán khi nhận hàng',0,N'2021-01-01',N'2021-11-04')
-insert into BillDetail values(6,20,5,100000);
-insert into BillDetail values(5,20,5,50000);
-
-insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate,ModifiedDate) values(21,N'Hoàng Văn Ba',N'Hà Nội',N'tradfndobn@gmail.com','0978458751',N'Gửi chậm',N'Thanh toán khi nhận hàng',0,N'2021-01-01',N'2021-11-04')
-insert into BillDetail values(6,21,5,100000);
-insert into BillDetail values(5,21,5,50000);
-
 
 
 --delete from BillDetail
