@@ -32,6 +32,12 @@ namespace ElectronicDevice.Areas.Admin.Controllers
             return View(listProduct.ToPagedList(pageNumber, pageSize));
         }
 
+        public ActionResult ProductDetail(int id)
+        {
+            var product = db.Products.Select(p => p).Where(p=>p.ID_Product == id).SingleOrDefault();
+            return View(product);
+        }
+
         public ActionResult Edit(int? ProductId)
         {
             
