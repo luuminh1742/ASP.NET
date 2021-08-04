@@ -584,6 +584,14 @@ insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverP
 insert into BillDetail values(6,7,5,100000);
 insert into BillDetail values(5,7,5,50000);
 
+insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate,ModifiedDate) values(4,N'Hoàng Văn Ba',N'Hà Nội',N'tradfndobn@gmail.com','0978458751',N'Gửi chậm',N'Thanh toán khi nhận hàng',0,N'2021-01-01',N'2021-11-04')
+insert into BillDetail values(6,8,5,100000);
+insert into BillDetail values(5,8,5,50000);
+
+insert into Bill(ID_Account,ReceiverName,ReceiverAddress,ReceiverEmail,ReceiverPhone,Note,PayType,Status,CreatedDate,ModifiedDate) values(4,N'Hoàng Văn Ba',N'Hà Nội',N'tradfndobn@gmail.com','0978458751',N'Gửi chậm',N'Thanh toán khi nhận hàng',0,N'2021-01-01',N'2021-11-04')
+insert into BillDetail values(6,9,5,100000);
+insert into BillDetail values(5,9,5,50000);
+
 select * from Product
 select * from Account
 select * from Category

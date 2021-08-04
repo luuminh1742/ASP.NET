@@ -1,20 +1,19 @@
-﻿<!--modal notice-->
+﻿<!--modal confirm delete product-->
 <!-- Modal -->
-<div class="modal fade" id="modalNotice" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalConfirmOder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-body " id="modalNoticeContent" style="font-size:22px ">
+            <div class="modal-body " id="modalConfirmOderContent" style="font-size:22px ">
                 <!--content-->
             </div>
             <div class="modal-footer mx-auto" style="border:unset">
-                <button type="button" id="btn_close" class="btn btn-secondary" data-dismiss="modal">
-                    <!--Button Close-->
+                <button type="button" id="btn_close" onclick="hideModal()" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
+                    Không
                 </button>
-                <button type="button" id="btn_save" class="btn btn-primary">
+                <button type="button" id="btn_save" onclick="" class="btn btn-primary">
                     <!--Button Save-->
                 </button>
             </div>
         </div>
     </div>
 </div>
-

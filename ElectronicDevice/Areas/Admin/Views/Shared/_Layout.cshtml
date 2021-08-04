@@ -33,8 +33,7 @@
 
     <!-- Main CSS-->
     <link href="~/Areas/Admin/Assets/css/theme.css" rel="stylesheet" media="all">
-    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    
 </head>
 
 <body class="">
@@ -76,7 +75,7 @@
         </div>
 
     </div>
-    @RenderSection("modal",required:false)
+    @RenderSection("modal", required: false)
     <!-- Jquery JS-->
     <script src="~/Areas/Admin/Assets/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
@@ -97,6 +96,9 @@
 
     <!-- Main JS-->
     <script src="~/Areas/Admin/Assets/js/main.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.twbsPagination.min.js"></script>
     @RenderSection("Script", required: false);
 </body>
 

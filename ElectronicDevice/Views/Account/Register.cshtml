@@ -41,10 +41,10 @@
             <div class="col-lg-6 col-md-6">
                 <div class="login_part_form">
                     <div class="login_part_form_iner">
-                        @if (ViewBag.Error != null)
+                        @if (ViewBag.Error1 != null)
                         {
                             <div class="alert alert-danger" role="alert">
-                                @ViewBag.Error
+                                @ViewBag.Error1
                             </div>
                         }
                         <h3>Tạo tài khoản mới</h3>
@@ -54,28 +54,28 @@
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             <form id="form_register" class="row contact_form" action="/Account/Register" method="post" novalidate="novalidate">
                                 <div class="col-md-12 form-group p_star">
-                                   
+
                                     @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Tên đăng nhập" } })
                                     @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                   
+
                                     @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
                                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                   
+
                                     @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Họ tên" } })
                                     @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    
+
                                     @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @class = "form-control", @placeholder = "Mật khẩu" } })
                                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
 
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    
+
                                     @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @type = "password", @class = "form-control", @placeholder = "Nhập lại mật khẩu" } })
                                     @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
 
@@ -95,7 +95,60 @@
         </div>
     </div>
 </section>
+<input type="hidden" id="Error" value="@ViewBag.ErrorRegis" />
+
+<div class="alert hide" id="alert_message">
+    <div id="icon-alert-message"><i class="fas fa-exclamation-circle"></i></div>
+    <span class="msg">Warning: This is a warning alert!</span>
+    <div class="close-btn-alert">
+        <span class="fas fa-times"></span>
+    </div>
+</div>
 <!--================login_part end =================-->
 @section script {
+    <script>
+        $(document).ready(function () {
+            $('.close-btn-alert').click(function () {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+        });
+        var error = document.getElementById("Error").value;
+        if (error != "") {
+            showAlertMessage(error, false);
+        }
+        function showAlertMessage(message, messageState) {
+            if (messageState) {
+                $('#alert_message').css({ "background": "#C5F3D7", "border-left": "8px solid #2BD971" });
+                $("#icon-alert-message").html('<i class="fas fa-check-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#2BD971" });
+                $(".msg").css({ "color": "#24AD5F" });
+                $(".close-btn-alert").css({ "background": "#2BD971", "color": "#24AD5F" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#24AD5F" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#38F5A3" : "#2BD971")
+                })
+            } else {
+                $('#alert_message').css({ "background": "#FFE1E3", "border-left": "8px solid #FF4456" });
+                $("#icon-alert-message").html('<i class="fas fa-exclamation-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#FE4950" });
+                $(".msg").css({ "color": "#F694A9" });
+                $(".close-btn-alert").css({ "background": "#FF9CA4", "color": "#FD4653" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#FD4653" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#FFBDC2" : "#FF9CA4")
+                })
+            }
+
+            $('.msg').text(message);
+            $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+            setTimeout(function () {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            }, 3000);
+        };
+    </script>
     @Scripts.Render("~/bundles/jqueryval")
 }
