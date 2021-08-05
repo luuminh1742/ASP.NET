@@ -14,7 +14,7 @@
                 <div class="form-group">
                     <label>Tên Danh Mục</label>
                     <input class="au-input au-input--full" type="text" name="Name" id="Name" placeholder="Tủ Lạnh">
-                    
+                    <span class="hide text-danger" id="error_name"></span>
                 </div>
 
                 <div class="form-group ">
@@ -26,7 +26,7 @@
                            style="background-color: rgb(41, 167, 248);"><span style="color:white">Chọn Ảnh</span></label>
                     <input type="file" id="inputFile" path="inputFile" multiple="multiple"
                            name="Icon" class="form-control" style="display:none" accept="image/*" />
-
+                    <span class="hide text-danger" id="error_image"></span>
                 </div>
                 <div class="form-group">
                     <label>Trạng Thái :</label>&ensp;
@@ -41,7 +41,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="clickSaveCategory()">Lưu</button>
+                    <button type="button" class="btn btn-primary" onclick="clickSaveCategory()">Lưu</button>
                 </div>
 
                 <input hidden id="id" name="id" />
@@ -56,16 +56,25 @@
 
 <script>
     function clickSaveCategory() {
-        var data = {};
+        let data = {};
+        let checkError = false;
         data["Name"] = $('#Name').val();
+        if (data["Name"] == "") {
+            $('#error_name').show();
+            $('#error_name').text("Tên danh mục không được bỏ trống");
+            checkError = true;
+        }
         data["Status"] = $("#show").is(":checked") ? true : false;
         data["ID_Category"] = 0;
         data["ID_Category"] = Number($('#id').val());
-        if ($('#Name').val() == "") {
-            alert("Tên danh mục không được để trống!");
-            return;
+        let file = $('#inputFile')[0].files[0];
+        if (data["ID_Category"] && file == null) {
+            $('#error_image').show();
+            $('#error_image').text("Ảnh danh mục không được để trống");
+            checkError = true;
         }
-        var file = $('#inputFile')[0].files[0];
+
+        if (checkError) return;
         if (file != undefined) {
             var reader = new FileReader();
             reader.onload = function (e) {
@@ -87,7 +96,7 @@
             }
         }
 
-
+        $('#modal-create').modal('toggle');
     }
 
     function addData(data) {

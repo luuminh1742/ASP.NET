@@ -41,13 +41,28 @@
     </div>
     <div class="table-data__tool-right">
         @*<button class="au-btn au-btn-icon au-btn--green au-btn--small"
-                data-toggle="modal" data-target="#modal-create">
-            <i class="fas fa-plus"></i>Thêm mới
-        </button>*@
-        <a class="au-btn au-btn-icon au-btn--green au-btn--small"
-           href="@Url.Action("Edit","Product")">
-            <i class="fas fa-plus"></i>Thêm mới
-        </a>
+                    data-toggle="modal" data-target="#modal-create">
+                <i class="fas fa-plus"></i>Thêm mới
+            </button>*@
+        @if (ViewBag.CREATE)
+        {
+            <a class="au-btn au-btn-icon au-btn--green au-btn--small"
+               href="@Url.Action("Edit","Product")">
+                <i class="fas fa-plus"></i>Thêm mới
+            </a>
+        }
+        else
+        {
+            <a class="au-btn au-btn-icon au-btn--green au-btn--small" onclick="clickPerCreate()">
+                <i class="fas fa-plus"></i>Thêm mới
+            </a>
+            <script>
+                const clickPerCreate = () => {
+                    alert("Bạn không có quyền truy cập tính năng này!");
+                }
+            </script>
+        }
+
     </div>
 </div>
 <div class="table-responsive table-data">
@@ -55,7 +70,7 @@
         <thead>
             <tr>
                 @*<th>#</th>
-                <th>ID</th>*@
+                    <th>ID</th>*@
                 <th>Ảnh</th>
                 <th>Tên</th>
                 <th>Giá</th>
@@ -70,9 +85,9 @@
             {
                 <tr class="tr-shadow" id="@item.ID_Product">
                     @*<td class="number_order">@(index + (Model.PageNumber - 1) * 8)</td>
-                    <td>
-                        <span class="block-name">@item.ID_Product</span>
-                    </td>*@
+                        <td>
+                            <span class="block-name">@item.ID_Product</span>
+                        </td>*@
                     <td class="block-image">
                         <img src="@Url.Content("~/wwwroot/imageUpload/" + item.Image)" alt="Image" style="max-width: 100px; max-height: 100px;" />
                     </td>
@@ -104,13 +119,42 @@
                             <a class="item" title="Xóa" href="@Url.Action("ProductDetail","Product",new { id=item.ID_Product})">
                                 <i class="fas fa-eye"></i>
                             </a>
-                            <a class="item" title="Sửa" href="@Url.Action("Edit", "Product", new {ProductId=item.ID_Product })">
-                                <i class="fas fa-pencil-alt"></i>
-                            </a>
-                            <button class="item" title="Xóa" onclick="deleteProduct(@item.ID_Product)">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
-                            
+                            @if (ViewBag.EDIT)
+                            {
+                                <a class="item" title="Sửa thông tin sản phẩm" href="@Url.Action("Edit", "Product", new {ProductId=item.ID_Product })">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a class="item" title="Sửa thông tin sản phẩm" onclick="clickPerEdit()">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                                <script>
+                                    const clickPerEdit = () => {
+                                        alert("Bạn không có quyền truy cập tính năng này!");
+                                    }
+                                </script>
+                            }
+                            @if (ViewBag.EDIT)
+                            {
+                                <button class="item" title="Xóa sản phẩm" onclick="deleteProduct(@item.ID_Product)">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            }
+                            else
+                            {
+                                <button class="item" title="Xóa sản phẩm" onclick="clickPerDelete()">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                                <script>
+                                    const clickPerDelete = () => {
+                                        alert("Bạn không có quyền truy cập tính năng này!");
+                                    }
+                                </script>
+                            }
+
+
                         </div>
                     </td>
                 </tr>
@@ -127,8 +171,8 @@ Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
 
 @*@section modal{
-    @Html.Partial("Create");
-}*@
+        @Html.Partial("Create");
+    }*@
 @section Script {
     <script>
         function deleteProduct(id) {

@@ -6,29 +6,26 @@ namespace ElectronicDevice.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Category")]
-    public partial class Category
+    [Table("Permission")]
+    public partial class Permission
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Category()
+        public Permission()
         {
-            Products = new HashSet<Product>();
+            PermissionDetails = new HashSet<PermissionDetail>();
         }
 
         [Key]
-        public int ID_Category { get; set; }
+        public int Id_Permission { get; set; }
 
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
 
-        [Required]
-        [StringLength(255)]
-        public string Icon { get; set; }
-
-        public bool Status { get; set; }
+        [StringLength(100)]
+        public string Code { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<PermissionDetail> PermissionDetails { get; set; }
     }
 }

@@ -20,6 +20,21 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         // GET: Admin/Category
         public ActionResult Index()
         {
+            // Phân quyền cho quản lý sản phẩm
+            var idAccount = (int)Session["ID"];
+            PermissionDetail permissionDetail = db.PermissionDetails.Where(pd => pd.ID_Account == idAccount 
+            && pd.Permission.Code.Equals(SystemConstants.PERMISSION_CATEGORIES)).SingleOrDefault();
+
+            if ((bool)!permissionDetail.View)
+            {
+                ViewBag.PermissionError = "Bạn không có quyền truy cập vào tính năng này";
+                return RedirectToAction("Index","Home");
+            }
+            ViewBag.CREATE = (bool) permissionDetail.Create;
+            ViewBag.EDIT = (bool)permissionDetail.Edit;
+            ViewBag.DELETE = (bool)permissionDetail.Delete;
+            //---------------------------------------------------
+
             var listCategory = db.Categories.Select(c => c);
             return View(listCategory);
         }
@@ -64,6 +79,7 @@ namespace ElectronicDevice.Areas.Admin.Controllers
             db.SaveChanges();
             return Json(true, JsonRequestBehavior.AllowGet);
         }
+
 
 
     }

@@ -1,0 +1,305 @@
+﻿@model ElectronicDevice.Models.Account
+@{
+    ViewBag.Title = "Chỉnh sửa thông tin nhân viên";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+    var ImagePath = "~/wwwroot/imageUpload/" + Model.Avatar;
+    
+}
+<style>
+    .item-check-center {
+        text-align: center;
+    }
+</style>
+<div class="d-flex">
+    <a href="@Url.Action("Index","Account")"><i class="fa fa-arrow-left"></i></a> &nbsp
+    <h3 class="title-5 m-b-35">Chỉnh sửa thông tin nhân viên</h3>
+</div>
+<div class="">
+    <div class="bg-light p-4">
+        <div class="row">
+            <div class="col-md-12">
+                @using (Html.BeginForm("EditEmployee", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="row">
+                        <div class="col-md-9">
+
+                            <div class="form-group row">
+                                @*<label for="fullname" class="col-md-3">Tên đăng nhập</label>*@
+                                @Html.HiddenFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control col-md-9", @placeholder = "Tên đăng nhập" } })
+
+                            </div>
+                            <div class="form-group row">
+                                <label for="fullname" class="col-md-3">Họ tên</label>
+                                @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control col-md-9", @placeholder = "Họ tên" } })
+                                @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group row">
+                                <label for="email" class="col-md-3">Email</label>
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control col-md-9", @placeholder = "Email" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group row">
+                                <label for="phone" class="col-md-3">Số điện thoại</label>
+
+                                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control col-md-9", @placeholder = "Số điện thoại" } })
+                                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group row">
+                                <label for="password" class="col-md-3">Mật khẩu</label>
+
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @class = "form-control col-md-9", @placeholder = "Mật khẩu" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group row">
+                                <label for="address" class="col-md-3">Địa chỉ</label>
+
+                                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control col-md-9", @placeholder = "Địa chỉ" } })
+                                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                            </div>
+
+                            <br>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-light border" value="Lưu thông tin">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group row">
+                                <div class="col-md-12">
+
+                                    <div class="d-flex justify-content-center">
+
+                                        @if (Model.Avatar != null)
+                                        {
+                                            <img id="output" src="@Url.Content(@ImagePath)" alt="Ảnh" class="rounded-circle border" 
+                                                 style="width:150px !important; height:150px !important">
+                                        }
+                                        @if (Model.Avatar == null)
+                                        {
+                                            <img id="output" src="http://m.myclip.vn/images/avatar.gif" alt="Ảnh" class="rounded-circle border" 
+                                                 style="width:150px !important; height:150px !important">
+                                        }
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <input hidden type="file" name="ImageFile" id="ufile" onchange="loadFile(event)">
+                                        <label for="ufile" class="label bg-light border p-2 m-3">Chọn ảnh</label>
+                                    </div>
+                                </div>
+
+                                @Html.HiddenFor(model => model.Avatar, new { htmlAttributes = new { @class = "form-control" } })
+
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<hr />
+<h3 class="title-5 m-b-35">Quản lý quyền truy cập</h3>
+<div class="">
+    <div class="bg-light p-4">
+        <div class="row">
+            <div class="col-md-12">
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="text-align:center;">Tên quyền</th>
+                            <th colspan="4" style="text-align:center;">Hành động</th>
+                        </tr>
+                        <tr>
+                            <th>Xem</th>
+                            <th>Thêm</th>
+                            <th>Sửa</th>
+                            <th>Xóa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @*<tr>
+                            <td>Toàn quyền</td>
+                            <td colspan="4" class="item-check-center">
+                                <input onclick="checkFullControll(this, @Model.ID_Account)"
+                                       type="checkbox"
+                                       id="fullcontrol"
+                                       style="transform: scale(2);" />
+                            </td>
+                        </tr>*@
+                        @foreach (var item in Model.PermissionDetails)
+                        {
+                            if (item.ID_Account == Model.ID_Account)
+                            {
+                                
+                                <tr>
+                                    <td>@item.Permission.Name</td>
+                                    <td class="item-check-center">
+                                        @{
+                                            var id = item.Code + "_VIEW";
+                                            if (item.View == true)
+                                            {
+                                                <input class="permission"
+                                                       type="checkbox"
+                                                       id="@id"
+                                                       name="@item.Code"
+                                                       style="transform: scale(2);" checked 
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'VIEW')"/>
+                                            }
+                                            else
+                                            {
+                                                <input class="permission"
+                                                       type="checkbox"
+                                                       id="@id"
+                                                       name="@item.Code"
+                                                       style="transform: scale(2);" 
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'VIEW')"/>
+                                            }
+                                        }
+
+                                    </td>
+                                    <td class="item-check-center">
+                                        @{
+                                            id = item.Code + "_CREATE";
+                                            if (item.Create == true)
+                                            {
+                                                <input class="permission"
+                                                       type="checkbox"
+                                                       id="@id"
+                                                       name="@item.Code"
+                                                       style="transform: scale(2);" checked 
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'CREATE')"/>
+                                            }
+                                            else
+                                            {
+                                                <input class="permission"
+                                                       type="checkbox"
+                                                       id="@id"
+                                                       name="@item.Code"
+                                                       style="transform: scale(2);" 
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'CREATE')"/>
+                                            }
+                                        }
+                                        @*<input class="permission" type="checkbox" id="category_create" name="category" style="transform: scale(2);" />*@
+                                    </td>
+                                    <td class="item-check-center">
+                                        @{
+                                            id = item.Code + "_EDIT";
+                                            if (item.Edit == true)
+                                            {
+                                                <input class="permission"
+                                                       type="checkbox"
+                                                       id="@id"
+                                                       name="@item.Code"
+                                                       style="transform: scale(2);" checked 
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'EDIT')"/>
+                                            }
+                                            else
+                                            {
+                                                <input class="permission"
+                                                       type="checkbox"
+                                                       id="@id"
+                                                       name="@item.Code"
+                                                       style="transform: scale(2);" 
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'EDIT')"/>
+                                            }
+                                        }
+                                        @*<input class="permission" type="checkbox" id="category_edit" name="category" style="transform: scale(2);" />*@
+                                    </td>
+                                    <td class="item-check-center">
+                                        @{
+                                            id = item.Code + "_DELETE";
+                                            if (item.Delete == true)
+                                            {
+                                                <input class="permission"
+                                                       type="checkbox"
+                                                       id="@id"
+                                                       name="@item.Code"
+                                                       style="transform: scale(2);" checked 
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'DELETE')"/>
+                                            }
+                                            else
+                                            {
+                                                <input class="permission"
+                                                       type="checkbox"
+                                                       id="@id"
+                                                       name="@item.Code"
+                                                       style="transform: scale(2);" 
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'DELETE')"/>
+                                            }
+                                        }
+                                        @*<input class="permission" type="checkbox" id="category_delete" name="category" style="transform: scale(2);" />*@
+                                    </td>
+
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    @*const checkFullControll = (full,id_account) => {
+        let full_control = $(full).is(':checked');
+        if (full_control) {
+            $('.permission').prop('checked', true);
+        } else {
+            $('.permission').prop('checked', false);
+        }
+        let data = {};
+        data["ID_Account"] = id_account;
+        data["Type"] = "FULL";
+        data["Status"] = full_control;
+
+        updateStatusPermission(data);
+    }*@
+    const loadFile = (event) => {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+    // quan ly quyen
+
+
+   
+
+    const setStatus = (status, id_per, id_acc, type) => {
+        let check = $(status).is(':checked');
+        let data = {};
+        data["Id_Permission"] = id_per;
+        data["ID_Account"] = id_acc;
+        data["Type"] = type;
+        data["Status"] = $(status).is(':checked');
+        
+        updateStatusPermission(data);
+
+    }
+
+
+    const updateStatusPermission = (data) => {
+        $.ajax({
+            url: '/Admin/Account/UpdatePermission',
+            data: JSON.stringify(data),
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: (result) => {
+
+                //alert("Thêm danh mục thành công.");
+            },
+            error: (error) => {
+                //alert("Thêm danh mục thất bại!");
+            }
+        });
+    }
+</script>
+
+

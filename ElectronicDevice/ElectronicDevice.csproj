@@ -151,6 +151,7 @@
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\BillDTO.cs" />
     <Compile Include="DTO\CategoryDTO.cs" />
+    <Compile Include="DTO\PermissionDetailDTO.cs" />
     <Compile Include="DTO\ProductBillDTO.cs" />
     <Compile Include="DTO\ProductDTO.cs" />
     <Compile Include="Global.asax.cs">
@@ -161,11 +162,13 @@
     <Compile Include="Models\BillDetail.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\CategoryProduct.cs" />
     <Compile Include="Models\ElectronicDeviceDbContext.cs" />
+    <Compile Include="Models\Permission.cs" />
+    <Compile Include="Models\PermissionDetail.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\SystemConstants.cs" />
     <Compile Include="Utilities\UploadFileUtil.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -995,6 +998,7 @@
     <Content Include="wwwroot\imageUpload\-ZAZs8u.png" />
     <Content Include="wwwroot\imageUpload\-zD9Y1J.png" />
     <Content Include="wwwroot\imageUpload\0b953563-f747-4e27-a3a5-d602bab16b89_may-say-8kg-lg-dr-80bw.jpg" />
+    <Content Include="wwwroot\imageUpload\default-avatar.png" />
     <Content Include="wwwroot\imageUpload\dieu-hoa-1-chieu-inverter-12000btu-panasonic-cspu12wkh8m-Z1di8P.png" />
     <Content Include="wwwroot\imageUpload\dieu-hoa-asanzo-1-chieu-12000btu-s12n66-nX3zy6.png" />
     <Content Include="wwwroot\imageUpload\dieu-hoa-daikin-1-chieu-inverter-11900btu-ftka35vmvmv-ZIWTv2.png" />
@@ -1457,6 +1461,9 @@
     <Content Include="Areas\Admin\Views\Account\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Orders\Notice.cshtml" />
     <Content Include="Areas\Admin\Views\Product\ProductDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\CreateEmployee.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\PermissionEdit.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\EditEmployee.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<ElectronicDevice.Models.Account>
 @{
     ViewBag.Title = "Tài khoản";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -7,16 +7,18 @@
 <h3 class="title-5 m-b-35">Tài khoản của tôi</h3>
 
 <div class="row p-2">
-    <div class="col-md-4 bg-white p-4">
-        <aside class="profile-nav alt">
-            <section class="card">
-                <div class="card-header user-header alt bg-dark">
+    <div class="col-md-4 bg-white p-4 border-right">
+        <aside class="profile-nav alt ">
+            <section class="">
+                <div class=" user-header alt">
                     <div class="" style="align-items:center;">
                         <div style="text-align:center; ">
-                            <img class="align-self-center rounded-circle mr-3" style="width:150px; height:150px;" alt="" src="~/Areas/Admin/Assets/images/icon/avatar-01.jpg">
+                            <img class="align-self-center rounded-circle mr-3 border"
+                                 style="width:150px; height:150px;" alt=""
+                                 src="@Url.Content("~/wwwroot/imageUpload/"+@Model.First().Avatar)">
                         </div>
                         <div style="text-align:center; ">
-                            <h2 class="text-light display-6">JimDoe123</h2>
+                            <h2 class="text-dark display-6">@Model.First().UserName</h2>
                             <p>Quản trị viên</p>
                         </div>
                     </div>
@@ -56,7 +58,7 @@
                                 Họ tên
                             </td>
                             <td>
-                                Jim Doe
+                                @Model.First().FullName.Trim()
                             </td>
                         </tr>
                         <tr>
@@ -67,7 +69,7 @@
                                 Số điện thoại
                             </td>
                             <td>
-                                0999888776
+                                @Model.First().Phone.Trim()
                             </td>
                         </tr>
                         <tr>
@@ -78,7 +80,7 @@
                                 Địa chỉ
                             </td>
                             <td>
-                                Thanh Xuân - Hà Nội
+                                @Model.First().Address.Trim()
                             </td>
                         </tr>
                         <tr>
@@ -89,7 +91,7 @@
                                 Email
                             </td>
                             <td>
-                                xuan.van.techshop@example.com
+                                @Model.First().Email.Trim()
                             </td>
                         </tr>
                     </table>
@@ -98,40 +100,87 @@
                 <!-- /.tab-pane -->
 
                 <div class="tab-pane" id="update-infor">
-
-                    <form class="form-horizontal" action="" method="post">
+                    @using (Html.BeginForm("UpdateInfoAccount", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @* <form class="form-horizontal" action="" method="post">*@
                         <div class="space-10"></div>
-                        <div class="form-group">
-                            <label>Tên Đăng Nhập</label>
-                            <input class="au-input au-input--full" type="text" name="username" placeholder="user123">
+
+                        <div class="form-group row">
+                            <div class="col-md-12">
+
+                                <div class="d-flex justify-content-center">
+
+                                    @if (Model.First().Avatar != null)
+                                    {
+                                        <img id="output" src="@Url.Content("~/wwwroot/imageUpload/" + @Model.First().Avatar)"
+                                             alt="Ảnh" class="rounded-circle" width="100" height="100">
+                                    }
+                                    @if (Model.First().Avatar == null)
+                                    {
+                                        <img id="output" src="http://m.myclip.vn/images/avatar.gif" alt="Ảnh" class="rounded-circle" width="100" height="100">
+                                    }
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <input hidden type="file" name="ImageFile" id="ufile" onchange="loadFile(event)">
+                                    <label for="ufile" class="label bg-light border p-2 m-3">Chọn ảnh</label>
+                                </div>
+                            </div>
+
+                            <input hidden value="@Model.First().Avatar" name="Avatar" id="Avatar" />
+
                         </div>
+                        <input class="au-input au-input--full"
+                               type="text" name="UserName" placeholder="Tên đăng nhập"
+                               value="@Model.First().UserName" hidden>
+
                         <div class="form-group">
                             <label>Họ & Tên</label>
-                            <input class="au-input au-input--full" type="text" name="fullname" placeholder="Nguyễn Văn A">
+                            @*<input class="au-input au-input--full"
+                                type="text" name="fullname" placeholder="Họ tên"
+                                value="@Model.First().FullName.Trim()">*@
+                            @Html.EditorFor(model => model.First().FullName, new { htmlAttributes = new { @class = "au-input au-input--full", @placeholder = "Họ tên" } })
+                            @Html.ValidationMessageFor(model => model.First().FullName, "", new { @class = "text-danger" })
+                            <span class="text-danger hide" id="error_full_name"></span>
                         </div>
                         <div class="form-group">
                             <label>Địa chỉ</label>
-                            <input class="au-input au-input--full" type="text" name="address" placeholder="Hà Nội">
+                            @*<input class="au-input au-input--full"
+                                type="text" name="address" placeholder="Địa chỉ"
+                                value="@Model.First().Address.Trim()">*@
+                            @Html.EditorFor(model => model.First().Address, new { htmlAttributes = new { @class = "au-input au-input--full", @placeholder = "Địa chỉ" } })
+                            @*@Html.ValidationMessageFor(model => model.First().Address, "", new { @class = "text-danger" })*@
+                            <span class="text-danger hide" id="error_address"></span>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input class="au-input au-input--full" type="text" name="email" placeholder="abc@gmail.com">
+                            @*<input class="au-input au-input--full"
+                                type="text" name="email" placeholder="Email"
+                                value="@Model.First().Email.Trim()">*@
+                            @Html.EditorFor(model => model.First().Email, new { htmlAttributes = new { @class = "au-input au-input--full", @placeholder = "Email" } })
+                            @*@Html.ValidationMessageFor(model => model.First().Email, "", new { @class = "text-danger" })*@
+                            <span class="text-danger hide" id="error_email"></span>
                         </div>
                         <div class="form-group">
                             <label>Số Điện Thoại</label>
-                            <input class="au-input au-input--full" type="text" name="phone" placeholder="0123456789">
+                            <input id="Phone" name="Phone" value="@Model.First().Phone.Trim()" class="au-input au-input--full" placeholder="Số điện thoại" />
+                            @* @Html.EditorFor(model => model.First().Phone, new { htmlAttributes = new { @class = "au-input au-input--full", @placeholder = "Địa chỉ" } })*@
+                            @*@Html.ValidationMessageFor(model => model.First().Phone, "", new { @class = "text-danger" })*@
+                            <span class="text-danger hide" id="error_phone"></span>
                         </div>
+                        <input hidden id="Pasword" name="Password" value="@Model.First().Password" />
                         <div class="form-group">
-                            <button type="button" class="btn btn-outline-secondary">Đặt lại</button>
-                            <button type="button" class="btn btn-outline-primary">Cập Nhật</button>
+                            <button type="reset" class="btn btn-outline-secondary">Đặt lại</button>
+                            <button type="submit" class="btn btn-outline-primary" onclick="clickUpdateInfo()">Cập Nhật</button>
                         </div>
-                        
-                    </form>
+                        @*</form>*@
+                    }
                 </div>
                 <!-- /.tab-pane -->
                 <!-- Cập nhật mật khẩu -->
                 <div class="tab-pane" id="change-password">
-                    <form class="form-horizontal" id="formUpdatePassword">
+                    @using (Html.BeginForm("", "Account", FormMethod.Post))
+                    {
                         <div class="space-10"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right"
@@ -139,8 +188,9 @@
 
                             <div class="col-sm-9">
                                 <div class="input-group">
-                                    <input class="form-control" type="password" id="oldPassword" />
+                                    <input class="form-control" type="password" id="OldPassword" name="OldPassword" />
                                 </div>
+                                <span id="error_old_password" class="text-danger hide"></span>
                             </div>
                         </div>
                         <div class="form-group">
@@ -149,8 +199,10 @@
 
                             <div class="col-sm-9">
                                 <div class="input-group">
-                                    <input class="form-control" type="password" id="password" />
+                                    <input class="form-control" type="password" id="NewPassword" name="NewPassword" />
+
                                 </div>
+                                <span id="error_new_password" class="text-danger hide"></span>
                             </div>
                         </div>
 
@@ -162,14 +214,16 @@
                             <div class="col-sm-9">
                                 <div class="input-group">
                                     <input class="form-control" type="password"
-                                           id="confirmPassword" />
+                                           id="ConfirmPassword" name="ConfirmPassword" />
                                 </div>
+                                <span class="hide text-danger" id="error_confirm_password"></span>
                             </div>
                         </div>
 
+
                         <div class="clearfix form-actions">
                             <div class="col-md-offset-3 col-md-9">
-                                <button class="btn btn-outline-primary" type="submit">
+                                <button class="btn btn-outline-primary" type="submit" onclick="clickChangePassword(@Model.First().ID_Account)">
                                     <i class="ace-icon fa fa-check bigger-110"></i> Cập nhật
                                 </button>
                                 &nbsp; &nbsp;
@@ -178,7 +232,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    }
                 </div>
                 <!-- /.tab-pane -->
             </div>
@@ -186,249 +240,168 @@
         </div>
     </div>
 </div>
+
 <br />
-<hr />
 
-<!-- DATA TABLE -->
-<h3 class="title-5 m-b-35">danh sách nhân viên</h3>
-<div class="table-data__tool">
-    <div class="table-data__tool-left">
-        <div class="rs-select2--light rs-select2--md">
-            <select class="js-select2" name="property">
-                <option selected="selected">Tất cả</option>
-                <option value="">Admin</option>
-                <option value="">Thành viên</option>
-            </select>
-            <div class="dropDownSelect2"></div>
+@if (Model.First().IsManager == true)
+{
+    <hr />
+
+    <div class="table-data__tool">
+        <div class="table-data__tool-left">
+            <h3 class="title-5 m-b-35">danh sách nhân viên</h3>
         </div>
-        <div class="rs-select2--light rs-select2--md">
-            <select class="js-select2" name="status">
-                <option selected="selected">Hoạt động</option>
-                <option value="">Vô hiệu hóa</option>
-            </select>
-            <div class="dropDownSelect2"></div>
+        <div class="table-data__tool-right">
+            <a class="au-btn au-btn-icon au-btn--green au-btn--small" href="@Url.Action("CreateEmployee","Account")">
+                <i class="fas fa-plus"></i>Thêm mới
+            </a>
         </div>
-        <button class="au-btn-filter">
-            <i class="zmdi zmdi-filter-list"></i>Lọc
-        </button>
     </div>
-    <div class="table-data__tool-right">
-        <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#modal-create">
-            <i class="fas fa-plus"></i>Thêm mới
-        </button>
+    <div class="table-responsive table-data">
+        <table class="table table-data2">
+            <thead>
+                <tr>
+                    <th>Tên đăng nhập</th>
+                    <th>Ảnh</th>
+                    <th>họ tên</th>
+                    <th>Điện thoại</th>
+                    <th>email</th>
+                    <th>hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (!item.UserName.Equals(Session["UserName"]))
+                    {
+                        <tr class="tr-shadow">
+                            <td>
+                                <span class="block-name">@item.UserName</span>
+                            </td>
+                            <td class="block-image">
+                                <img src="@Url.Content("~/wwwroot/imageUpload/"+item.Avatar)" width="100" height="100" />
+                                @* <img src="~/Areas/Admin/Assets/images/avatar/avatar-01.png" alt="Ảnh đại diện" />*@
+                            </td>
+                            <td>
+                                <span class="block-fullname">@item.FullName</span>
+                            </td>
+                            <td>
+                                <span>@item.Phone</span>
+                            </td>
+                            <td><span>@item.Email</span></td>
+
+                            <td>
+                                <div class="table-data-feature">
+                                    <a class="item" title="Xóa">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                    <a class="item" title="Sửa" href="@Url.Action("EditEmployee","Account",new { id = item.ID_Account })">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="spacer"></tr>
+                    }
+
+                }
+
+
+            </tbody>
+        </table>
+
     </div>
-</div>
-<div class="table-responsive table-data">
-    <table class="table table-data2">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Tài khoản</th>
-                <th>Ảnh</th>
-                <th>họ tên</th>
-                <th>Điện thoại</th>
-                <th>email</th>
-                <th>trạng thái</th>
-                <th>vai trò</th>
-                <th>hành động</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="tr-shadow">
-                <td class="number_order">1</td>
-                <td>
-                    <span class="block-name">Admin123</span>
-                </td>
-                <td class="block-image">
-                    <img src="~/Areas/Admin/Assets/images/avatar/avatar0.png" alt="Ảnh đại diện" />
-                </td>
-                <td>
-                    <span class="block-fullname">Nguyễn Quỳnh Huỳnh Nga</span>
 
-                </td>
-                <td>
-                    <span>038456789</span>
-                </td>
-                <td><span>quynhNga@gmail.com</span></td>
-                <td>
-                    <span class="status--process">Hoạt động</span>
-                </td>
-                <td>
-                    <span>Admin</span>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="spacer"></tr>
-            <tr class="tr-shadow">
-                <td class="number_order">2</td>
-                <td>
-                    <span class="block-name">Admin123</span>
-                </td>
-                <td class="block-image">
-                    <img src="~/Areas/Admin/Assets/images/avatar/avatar1.png" alt="Ảnh đại diện" />
-                </td>
-                <td>
-                    <span class="block-fullname">Nguyễn Quỳnh Huỳnh Nga</span>
-
-                </td>
-                <td>
-                    <span>038456789</span>
-                </td>
-                <td><span>quynhNga@gmail.com</span></td>
-                <td>
-                    <span class="status--process">Hoạt động</span>
-                </td>
-                <td>
-                    <span>Admin</span>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="spacer"></tr>
-            <tr class="tr-shadow">
-                <td class="number_order">3</td>
-                <td>
-                    <span class="block-name">Admin123</span>
-                </td>
-                <td class="block-image">
-                    <img src="~/Areas/Admin/Assets/images/avatar/avatar2.png" alt="Ảnh đại diện" />
-                </td>
-                <td>
-                    <span class="block-fullname">Nguyễn Quỳnh Huỳnh Nga</span>
-
-                </td>
-                <td>
-                    <span>038456789</span>
-                </td>
-                <td><span>quynhNga@gmail.com</span></td>
-                <td>
-                    <span class="status--denied">Vô hiệu hóa</span>
-                </td>
-                <td>
-                    <span>Admin</span>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="spacer"></tr>
-            <tr class="tr-shadow">
-                <td class="number_order">4</td>
-                <td>
-                    <span class="block-name">Admin123</span>
-                </td>
-                <td class="block-image">
-                    <img src="~/Areas/Admin/Assets/images/avatar/avatar3.png" alt="Ảnh đại diện" />
-                </td>
-                <td>
-                    <span class="block-fullname">Nguyễn Quỳnh Huỳnh Nga</span>
-
-                </td>
-                <td>
-                    <span>038456789</span>
-                </td>
-                <td><span>quynhNga@gmail.com</span></td>
-                <td>
-                    <span class="status--process">Hoạt động</span>
-                </td>
-                <td>
-                    <span>Admin</span>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="spacer"></tr>
-            <tr class="tr-shadow">
-                <td class="number_order">5</td>
-                <td>
-                    <span class="block-name">Admin123</span>
-                </td>
-                <td class="block-image">
-                    <img src="~/Areas/Admin/Assets/images/avatar/avatar3.png" alt="Ảnh đại diện" />
-                </td>
-                <td>
-                    <span class="block-fullname">Nguyễn Quỳnh Huỳnh Nga</span>
-
-                </td>
-                <td>
-                    <span>038456789</span>
-                </td>
-                <td><span>quynhNga@gmail.com</span></td>
-                <td>
-                    <span class="status--process">Hoạt động</span>
-                </td>
-                <td>
-                    <span>Admin</span>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item" title="Xóa" data-toggle="modal" data-target="#modal-delete">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                        <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-edit">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-</div>
-<!-- END DATA TABLE -->
-<div class="my-3">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</div>
-@section modal{
-    @Html.Partial("Create");
 }
+
+
+<script>
+    const loadFile = (event) => {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+    let regexPassword = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@@#\$%\^&\*_])(?=.{6,12}$)");
+
+    const clickChangePassword = (id_account) => {
+        event.preventDefault();
+        let newPassowrd = $('#NewPassword').val();
+        let oldPassowrd = $('#OldPassword').val();
+        let checkError = false;
+        if (oldPassowrd == '') {
+            $('#error_old_password').show();
+            $('#error_old_password').text("Mật khẩu cũ không được để trống");
+            checkError = true;
+        }
+        if (!regexPassword.test(newPassowrd)) {
+            $('#error_new_password').show();
+            $('#error_new_password').text("Mật khẩu ít nhất 6 ký tự và gồm các chữ cái hoa, thường, chữ số và ký tự đặc biệt!");
+            checkError = true;
+        }
+        if ($('#NewPassword').val() != $('#ConfirmPassword').val()) {
+            $('#error_confirm_password').show();
+            $('#error_confirm_password').text("Nhập lại mật khẩu mới không trùng khớp!");
+            checkError = true;
+        }
+
+        if (checkError) return;
+
+        $.ajax({
+            url: '/Admin/Account/UpdatePassword',
+            data: {
+                OldPassword: oldPassowrd,
+                NewPassword: newPassowrd,
+                ID_Account: id_account
+            },
+            type: "GET",
+            success: (result) => {
+                if (result) {
+                    alert("Cập nhật mật khẩu thành công.");
+                    location.reload();
+                } else {
+                    $('#error_old_password').show();
+                    $('#error_old_password').text("Mật khẩu cũ không đúng!");
+                    $('#error_new_password').hide();
+                    $('#error_confirm_password').hide();
+                }
+
+            },
+            error: (error) => {
+                alert("Cập nhật mật khẩu thất bại!");
+            }
+        });
+    }
+
+    const clickUpdateInfo = () => {
+        
+        let fullName = $('#FullName').val();
+        let address = $('#Address').val();
+        let email = $('#Email').val();
+        let phone = $('#Phone').val();
+        let checkError = false;
+        var emailPattern = /^[a-zA-Z0-9._-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        let phoneFormat = /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/;
+        if (fullName == '') {
+            $('#error_full_name').show();
+            $('#error_full_name').text('Họ tên không được để trống');
+            checkError = true;
+        }
+        if (address == '') {
+            $('#error_address').show();
+            $('#error_address').text('Địa chỉ không được để trống');
+            checkError = true;
+        }
+        if (!emailPattern.test(email)) {
+            $('#error_email').show();
+            $('#error_email').text('Lỗi định dạng email');
+            checkError = true;
+        }
+        if (!phoneFormat.test(phone)) {
+            $('#error_phone').show();
+            $('#error_phone').text('Số điện thoại nhập không đúng định dạng');
+            checkError = true;
+        }
+        if (checkError) event.preventDefault();
+
+    }
+</script>

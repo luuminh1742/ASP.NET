@@ -4,10 +4,10 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <!-- DATA TABLE -->
-<h3 class="title-5 m-b-35">danh sách danh mục</h3>
+@*<h3 class="title-5 m-b-35">danh sách danh mục</h3>*@
 <div class="table-data__tool">
     <div class="table-data__tool-left">
-        <div class="rs-select2--light rs-select2--md">
+        @*<div class="rs-select2--light rs-select2--md">
             <select class="js-select2" name="status">
                 <option selected="selected">Tất Cả</option>
                 <option value="">Hiển Thị</option>
@@ -17,13 +17,35 @@
         </div>
         <button class="au-btn-filter">
             <i class="zmdi zmdi-filter-list"></i>Lọc
-        </button>
+        </button>*@
+        <h3 class="title-5 m-b-35">danh sách danh mục</h3>
     </div>
     <div class="table-data__tool-right">
-        <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#modal-create"
-                onclick="clickAddCategory()">
-            <i class="fas fa-plus"></i>Thêm mới
-        </button>
+        @{
+            if (ViewBag.CREATE)
+            {
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#modal-create"
+                        onclick="clickAddCategory()">
+                    <i class="fas fa-plus"></i>Thêm mới
+                </button>
+            }
+            else
+            {
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small"
+                        onclick="clickPerCreate()">
+                    <i class="fas fa-plus"></i>Thêm mới
+                </button>
+                <script>
+                    const clickPerCreate = () => {
+                        alert('Bạn không có quyền truy cập vào tính năng này');
+                    }
+                </script>
+            }
+        }
+        @*<button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#modal-create"
+                    onclick="clickAddCategory()">
+                <i class="fas fa-plus"></i>Thêm mới
+            </button>*@
     </div>
 </div>
 <div class="table-responsive table-data">
@@ -62,13 +84,50 @@
                     </td>
                     <td>
                         <div class="table-data-feature">
-                            <button class="item" title="Sửa" data-toggle="modal" data-target="#modal-create"
+                            @if (ViewBag.EDIT)
+                            {
+                                <button class="item" title="Sửa thông tin danh mục" data-toggle="modal" data-target="#modal-create"
+                                        onclick="clickEditCategory(@item.ID_Category, '@item.Name', '@item.Icon',@item.Status)">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                            }
+                            else
+                            {
+                                <button class="item" title="Sửa thông tin danh mục" onclick="clickPerEdit()">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <script>
+                                    const clickPerEdit = () => {
+                                        alert('Bạn không có quyền truy cập vào tính năng này!');
+                                    }
+                                </script>
+                            }
+                            @if (ViewBag.DELETE)
+                            {
+                                <button class="item" title="Xóa danh mục" onclick="deleteCategory(@item.ID_Category)">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            }
+                            else
+                            {
+                                <button class="item" title="Xóa danh mục" onclick="clickPerDelete()">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                                <script>
+                                    const clickPerDelete = () => {
+                                        alert('Bạn không có quyền truy cập vào tính năng này!');
+                                    }
+                                </script>
+
+                            }
+
+                            @*<button class="item" title="Sửa" data-toggle="modal" data-target="#modal-create"
                                     onclick="clickEditCategory(@item.ID_Category, '@item.Name', '@item.Icon',@item.Status)">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
                             <button class="item" title="Xóa" onclick="deleteCategory(@item.ID_Category)">
                                 <i class="fas fa-trash-alt"></i>
-                            </button>
+                            </button>*@
                         </div>
                     </td>
                 </tr>
@@ -81,12 +140,14 @@
 
 <script>
     function clickAddCategory() {
+        $('#error_name').hide();
         $('#mediumModalLabel').text("Thêm mới danh mục");
         $('#id').val(0);
         $('#preview').attr("src", "http://nhadephue.vn/wp-content/uploads/2021/01/icon_6.png");
         $('#Name').val("");
     }
     function clickEditCategory(idCategory, name, icon, status) {
+        $('#error_name').hide();
         $('#mediumModalLabel').text("Cập nhật danh mục");
         $('#Name').val(name);
 
@@ -102,7 +163,7 @@
 
 
     function deleteCategory(id) {
-        
+
         let checkDelete = confirm("Xác nhận xóa danh mục này!");
         if (checkDelete == false)
             return;

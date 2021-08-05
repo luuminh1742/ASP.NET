@@ -17,6 +17,8 @@ namespace ElectronicDevice.Models
         public virtual DbSet<BillDetail> BillDetails { get; set; }
         public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Permission> Permissions { get; set; }
+        public virtual DbSet<PermissionDetail> PermissionDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
 
@@ -32,7 +34,6 @@ namespace ElectronicDevice.Models
 
             modelBuilder.Entity<Account>()
                 .Property(e => e.Phone)
-                .IsFixedLength()
                 .IsUnicode(false);
 
             modelBuilder.Entity<Account>()
@@ -46,6 +47,11 @@ namespace ElectronicDevice.Models
 
             modelBuilder.Entity<Account>()
                 .HasMany(e => e.Carts)
+                .WithRequired(e => e.Account)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.PermissionDetails)
                 .WithRequired(e => e.Account)
                 .WillCascadeOnDelete(false);
 
@@ -71,6 +77,19 @@ namespace ElectronicDevice.Models
                 .HasMany(e => e.Products)
                 .WithRequired(e => e.Category)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Permission>()
+                .Property(e => e.Code)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Permission>()
+                .HasMany(e => e.PermissionDetails)
+                .WithRequired(e => e.Permission)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PermissionDetail>()
+                .Property(e => e.Code)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Product>()
                 .Property(e => e.Price)

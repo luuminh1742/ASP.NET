@@ -1,5 +1,6 @@
 ﻿using ElectronicDevice.DTO;
 using ElectronicDevice.Models;
+using ElectronicDevice.Utilities;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,59 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         // GET: Admin/Orders
         public ActionResult Index()
         {
+<<<<<<< Updated upstream
             return View();
+=======
+
+            // Phân quyền cho quản lý sản phẩm
+            var idAccount = (int)Session["ID"];
+            PermissionDetail permissionDetail = db.PermissionDetails.Where(pd => pd.ID_Account == idAccount
+            && pd.Permission.Code.Equals(SystemConstants.PERMISSION_ORDERS)).SingleOrDefault();
+
+            if ((bool)!permissionDetail.View)
+            {
+                ViewBag.PermissionError = "Bạn không có quyền truy cập vào tính năng này";
+                return RedirectToAction("Index", "Home");
+            }
+            ViewBag.CREATE = (bool)permissionDetail.Create;
+            ViewBag.EDIT = (bool)permissionDetail.Edit;
+            ViewBag.DELETE = (bool)permissionDetail.Delete;
+            //---------------------------------------------------
+
+
+            var listBill = db.Bills.Join(db.BillDetails, a => a.ID_Bill, b => b.ID_Bill, (a, b) => new { a, b })
+                .GroupBy(x => new
+                {
+                    x.a.ID_Bill,
+                    //x.a.ID_Account,
+                    x.a.ReceiverName,
+                    x.a.ReceiverAddress,
+                    x.a.ReceiverEmail,
+                    x.a.ReceiverPhone,
+                    //x.a.Note,
+                    x.a.PayType,
+                    x.a.Status,
+                    x.a.CreatedDate,
+                    x.a.ModifiedDate
+                })
+                .Select(g => new BillDTO
+                {
+                    ID_Bill = g.Key.ID_Bill,
+                    //ID_Account = g.Key.ID_Account,
+                    ReceiverName = g.Key.ReceiverName,
+                    ReceiverAddress = g.Key.ReceiverAddress,
+                    ReceiverEmail = g.Key.ReceiverEmail,
+                    ReceiverPhone = g.Key.ReceiverPhone,
+                    //Note = g.Key.Note,
+                    PayType = g.Key.PayType,
+                    Status = g.Key.Status,
+                    CreatedDate = g.Key.CreatedDate.ToString(),
+                    ModifiedDate = g.Key.ModifiedDate.ToString(),
+                    SumPrice = g.Sum(z => z.b.CurrentlyPrice)
+                });
+            listBill = listBill.OrderBy(b => b.ID_Bill);
+            return View(listBill);
+>>>>>>> Stashed changes
         }
 
         [HttpGet]
