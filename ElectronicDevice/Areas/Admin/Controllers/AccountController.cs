@@ -1,6 +1,7 @@
 ﻿using ElectronicDevice.DTO;
 using ElectronicDevice.Models;
 using ElectronicDevice.Utilities;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,7 +17,7 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         private ElectronicDeviceDbContext db = new ElectronicDeviceDbContext();
 
         // GET: Admin/Account
-        public ActionResult Index()
+        public ActionResult Index(string status = "none")
         {
             // Lấy thông tin tài khoản đăng nhập
             var username = Session["UserName"].ToString();
@@ -31,18 +32,37 @@ namespace ElectronicDevice.Areas.Admin.Controllers
                 // Nhân viên có vai trò là "ADMIN"
                 // Và nhân viên có trạng thái đang hoạt động Status = true
                 accounts.AddRange(db.Accounts.Where(a => a.Status && a.ID_Account != acc.ID_Account &&
-                                                         a.Role.Code.Equals(SystemConstants.ROLE_ADMIN)).ToList());
+                                                         a.Role.Code.Equals(SystemConstants.ROLE_ADMIN)).OrderBy(a=>a.UserName).ToList());
             }
             //
+            if (status.Equals("update_success"))
+            {
+                ViewBag.Success = true;
+            }
+            else if (status.Equals("update_fail"))
+            {
+                ViewBag.Error = true;
+            }
+
             return View(accounts);
         }
 
+
         public ActionResult CreateEmployee()
         {
+            ViewBag.UserNameInvalid = false;
             return View();
         }
-        public ActionResult EditEmployee(int id)
+        public ActionResult EditEmployee(int id, string status = "none")
         {
+            if (status.Equals("add_success"))
+            {
+                ViewBag.AddSuccess = true;
+            }
+            else if (status.Equals("update_fail"))
+            {
+                ViewBag.Error = true;
+            }
             Account account = db.Accounts.Where(a => a.ID_Account == id).SingleOrDefault();
             return View(account);
         }
@@ -53,6 +73,15 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Kiểm tra tên đăng nhập có tồn tại trong database không
+                var count = db.Accounts.Count(a => a.UserName.Equals(account.UserName));
+                if (count != 0)
+                {
+                    ViewBag.UserNameInvalid = true;
+                    return View();
+                }
+
+
                 account.Avatar = "default-avatar.png";
                 var f = Request.Files["ImageFile"];
                 if (f != null && f.ContentLength > 0)
@@ -79,11 +108,12 @@ namespace ElectronicDevice.Areas.Admin.Controllers
                 Account newAccount = db.Accounts.Where(a => a.UserName.Equals(account.UserName)).SingleOrDefault();
                 createPermission(newAccount.ID_Account);
                 // Sau khi thêm quyền thành công thì chuyển đến trang chỉnh sửa thông tin nhân viên để phân quyền truy cập
-                return RedirectToAction("EditEmployee", new { id = newAccount.ID_Account });
+                return RedirectToAction("EditEmployee", new { id = newAccount.ID_Account, status = "add_success" });
             }
-            return View(account);
+            ViewBag.UserNameInvalid = false;
+            return View();
         }
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditEmployee([Bind(Include = "UserName,Password,FullName,Phone,Address,Email,Avatar")] Account account)
@@ -111,9 +141,9 @@ namespace ElectronicDevice.Areas.Admin.Controllers
                 acc.Phone = account.Phone;
                 db.Entry(acc).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { status = "update_success" });
             }
-            return View();
+            return View(new { status = "update_success" });
         }
 
 
@@ -148,6 +178,12 @@ namespace ElectronicDevice.Areas.Admin.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Cập nhật trạng thái permission của user
+        /// 
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult UpdatePermission(PermissionDetailDTO dto)
         {
@@ -173,7 +209,7 @@ namespace ElectronicDevice.Areas.Admin.Controllers
             return Json(true, JsonRequestBehavior.AllowGet);
         }
 
-       
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult UpdateInfoAccount([Bind(Include = "UserName,Password,FullName,Phone,Address,Email,Avatar")] Account account)
@@ -203,13 +239,13 @@ namespace ElectronicDevice.Areas.Admin.Controllers
                 Session["FullName"] = acc.FullName;
                 Session["Email"] = acc.Email;
                 Session["Avatar"] = acc.Avatar;
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { status = "update_success" });
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { status = "update_fail" });
         }
 
-        
-        public ActionResult UpdatePassword(string OldPassword,string NewPassword,int Id_Account)
+
+        public ActionResult UpdatePassword(string OldPassword, string NewPassword, int Id_Account)
         {
             Account acc = db.Accounts.Where(a => a.ID_Account == Id_Account).SingleOrDefault();
             if (acc.Password.Equals(OldPassword))
@@ -222,6 +258,45 @@ namespace ElectronicDevice.Areas.Admin.Controllers
             return Json(false, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult Trash(int? page)
+        {
+            var accounts = db.Accounts.Where(a => a.Role.Code.Equals(SystemConstants.ROLE_ADMIN) && !a.Status).ToList();
+            int pageSize = 8;  //Kích  thước  trang 
+            int pageNumber = (page ?? 1);
+            return View(accounts.ToPagedList(pageNumber, pageSize));
+        }
 
+        public ActionResult ChangeStatusAccount(int id_account, bool status)
+        {
+            Account acc = db.Accounts.Where(a => a.ID_Account == id_account).SingleOrDefault();
+            acc.Status = status;
+            db.Entry(acc).State = EntityState.Modified;
+            db.SaveChanges();
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult RemoveAccountEmployee(List<int> ids)
+        {
+            foreach (int id in ids)
+            {
+                RemovePermission(id);
+                Account account = db.Accounts.Where(a => a.ID_Account == id).SingleOrDefault();
+                db.Accounts.Remove(account);
+            }
+            db.SaveChanges();
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
+
+        private void RemovePermission(int id)
+        {
+            //ElectronicDeviceDbContext electronicDeviceDbContext = new ElectronicDeviceDbContext();
+            var perDetails = db.PermissionDetails.Where(p => p.ID_Account == id).ToList();
+            foreach (PermissionDetail permissionDetail in perDetails)
+            {
+                db.PermissionDetails.Remove(permissionDetail);
+            }
+            //electronicDeviceDbContext.SaveChanges();
+        }
     }
 }

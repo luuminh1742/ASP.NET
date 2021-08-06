@@ -1,8 +1,6 @@
 ﻿
-@{
-    ViewBag.Title = "Đơn hàng";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-}
+@{ ViewBag.Title = "Đơn hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
 
 
 <!-- DATA TABLE -->
@@ -132,7 +130,7 @@
     </div>
 </div>
 @section modal{
-    
+
     @Html.Partial("Notice");
     @Html.Partial("Orders");
 
@@ -140,6 +138,33 @@
 
 
 @section Script{
+    @if (ViewBag.DELETE)
+    {
+<script>
+    function cancelBill(id_bill) {
+        $('#btn_save').attr("onclick", "DeleteBill(" + id_bill + ")");
+        $('#modalConfirmOderContent').text("Bạn chắc chắn muốn hủy đơn hàng này ?");
+        //$('#btn_close').text("Không");
+        $('#btn_save').show();
+        $('#btn_save').text("Có");
+        $('#btn_close').css({ "background-color": "#007bff", "border": "1px solid #007bff", "width": "200px" })
+        $('#btn_save').css({ "background-color": "rgb(255, 66, 78)", "border": "1px solid rgb(255, 66, 78)", "width": "200px" });
+        //jQuery.noConflict();
+        $('#modalConfirmOder').modal('show');
+    };
+</script>
+ }
+else
+{
+
+<script>
+    function cancelBill(id_bill) {
+        showAlertMessage('Bạn không có quyền truy cập tính năng này!', false);
+        //alert('Bạn không có quyền truy cập chức năng này!');
+    };
+</script>
+}
+
     <script>
         //bắt đầu khi load trang
         var page1 = 1;
@@ -174,7 +199,7 @@
                 $('#status-orders').text('Đang xử lý');
                 kt_status = '<li style="list-style-type:none; margin-left:16px">Đang giao hàng</li>'
             }
-
+            $('#id-bill').text(ID_Bill);
             $('#status-orders').css("color", "green");
             $("#infor-time").show();
             $("#infor-time").html(
@@ -191,6 +216,7 @@
         }
 
         function clickSuccessfulOrders(status, time, ID_Bill, FullName, Email, Phone, Address, PayType, SumPrice) {
+            $('#id-bill').text(ID_Bill);
             $('#status-orders').text(status + ' ngày:  ' + convertDate(time));
             $('#status-orders').css("color", "green");
             $("#infor-time").show();
@@ -208,6 +234,7 @@
         }
 
         function viewOrders(ID_Bill, FullName, Email, Phone, Address, PayType, SumPrice) {
+            $('#id-bill').text(ID_Bill);
             $('#status-orders').text("Chưa xác nhận");
             $('#status-orders').css("color", "red");
             $("#infor-time").hide();
@@ -215,6 +242,7 @@
             ShowBill(ID_Bill, FullName, Email, Phone, Address, PayType, SumPrice);
         }
         function viewDelete(ID_Bill, FullName, Email, Phone, Address, PayType, SumPrice) {
+            $('#id-bill').text(ID_Bill);
             $('#status-orders').text("Đã hủy đơn");
             $('#status-orders').css("color", "red");
             $("#infor-time").hide();
@@ -268,7 +296,7 @@
 
 
         //load NewBill() - load đơn hàng mới
-       
+
         function LoadNewBill() {
             var kt = 0;
             $.ajax({
@@ -278,6 +306,7 @@
                 dataType: "json",
                 contentType: "application/json;charset=utf-8",
                 success: function (result) {
+
                     if (document.getElementById('page2')) {
                         $('#page2').remove();
                     }
@@ -311,7 +340,10 @@
                             '<span class="block-name-product">' + convertDate(item.CreatedDate) + '</span>' +
                             '</td>' +
                             '<td>' +
-                            '<input type="button" class="btn btn-outline-info" onclick="viewOrders(' + item.ID_Bill + ',\'' + item.ReceiverName + '\',\'' + item.ReceiverEmail + '\',\'' + item.ReceiverPhone + '\',\'' + item.ReceiverAddress + '\',\'' + item.PayType + '\',' + item.SumPrice + ')" value="Xem" data-toggle="modal" data-target="#modal-confirm-orders">' +
+                            '<input type="button" class="btn btn-outline-info" onclick="viewOrders(' + item.ID_Bill
+                            + ',\'' + item.ReceiverName + '\',\'' + item.ReceiverEmail + '\',\'' + item.ReceiverPhone + '\',\''
+                            + item.ReceiverAddress + '\',\'' + item.PayType + '\',' + item.SumPrice
+                            + ')" value="Xem" data-toggle="modal" data-target="#modal-confirm-orders">' +
                             '<input type="button" onclick="ReceiveBill(' + item.ID_Bill + ')" class="btn btn-outline-success" value="Nhận đơn">' +
                             '<input type="button" onclick="cancelBill(' + item.ID_Bill + ')" class="btn btn-outline-danger" value="Hủy đơn">' +
                             '</td>' +
@@ -357,6 +389,8 @@
                 dataType: "json",
                 contentType: "application/json;charset=utf-8",
                 success: function (result) {
+
+
                     if (document.getElementById('page1')) {
                         $('#page1').remove();
                     }
@@ -413,12 +447,14 @@
                             '<tr class="spacer"></tr>'
                         );
 
-                        if (item.Status == 1)
+                        if (item.Status == 1) {
                             $('#' + item.ID_Bill)[0].selectedIndex = 0;
-                        else if (item.Status == 2)
+                            $('#' + item.ID_Bill + ' option[value=s3]').remove();
+                        }
+                        else if (item.Status == 2) {
                             $('#' + item.ID_Bill)[0].selectedIndex = 1;
-                        else
-                            $('#' + item.ID_Bill)[0].selectedIndex = 2;
+                            $('#' + item.ID_Bill + ' option[value=s1]').remove();
+                        }
                     });
                     $('#pills-profile').append(
                         '<div id="page2" class="pagination"></div>'
@@ -536,6 +572,11 @@
                 dataType: "json",
                 contentType: "application/json;charset=utf-8",
                 success: function (result) {
+                    if (!result) {
+                        alert("Bạn không có quyền truy cập tính năn này!");
+                        return;
+                    }
+                    //--------------------------------------------------
                     $('.tr-shadow').remove();
                     $('.spacer').remove();
                     var dem = result.stt;
@@ -638,6 +679,12 @@
                 data: { ID_Bill: ID_Bill, kt: kt },
                 type: "POST",
                 success: function (result) {
+                    if (!result) {
+                        //alert("Bạn không có quyền truy cập tính năn này!");
+                        showAlertMessage('Bạn không có quyền truy cập tính năng này!', false);
+                        return;
+                    }
+                    //--------------------------------------------------
                     showAlertMessage("Tiếp nhận đơn hàng thành công !", true);
                     //xóa phân trang hiện tại
                     CheckPage(page1, 0);
@@ -660,6 +707,12 @@
                 data: { ID_Bill: ID_Bill, kt: kt },
                 type: "POST",
                 success: function (result) {
+                    if (!result) {
+                        //alert("Bạn không có quyền truy cập tính năn này!");
+                        showAlertMessage('Bạn không có quyền truy cập tính năng này!', false);
+                        return;
+                    }
+                    //--------------------------------------------------
                     //alert("Đã hủy đơn hàng có mã: " + ID_Bill);
                     $('#modalConfirmOder').modal('hide');
                     showAlertMessage('Hủy đơn hàng thành công !', true);
@@ -687,6 +740,12 @@
                 data: { ID_Bill: ID_Bill, kt: kt },
                 type: "POST",
                 success: function (result) {
+                    if (!result) {
+                        showAlertMessage('Bạn không có quyền truy cập tính năng này!', false);
+                        //alert("Bạn không có quyền truy cập tính năn này!");
+                        return;
+                    }
+                    //--------------------------------------------------
                     showAlertMessage("Cập nhật trạng thái đơn hàng thành công !", true);
                     CheckPage(page2, 1);
                     $('#page2').remove();
@@ -734,7 +793,12 @@
             }, 1500);
         };
 
-        function cancelBill(id_bill) {
+
+        @*function cancelBill(id_bill) {
+
+
+
+
             $('#btn_save').attr("onclick", "DeleteBill(" + id_bill + ")");
             $('#modalConfirmOderContent').text("Bạn chắc chắn muốn hủy đơn hàng này ?");
             //$('#btn_close').text("Không");
@@ -744,7 +808,7 @@
             $('#btn_save').css({ "background-color": "rgb(255, 66, 78)", "border": "1px solid rgb(255, 66, 78)", "width": "200px" });
             //jQuery.noConflict();
             $('#modalConfirmOder').modal('show');
-        };
+        };*@
 
         function hideModal() {
             $('#modalConfirmOder').modal('hide');

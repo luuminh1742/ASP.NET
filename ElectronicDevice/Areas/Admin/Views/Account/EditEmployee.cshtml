@@ -4,7 +4,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 
     var ImagePath = "~/wwwroot/imageUpload/" + Model.Avatar;
-    
+
 }
 <style>
     .item-check-center {
@@ -28,36 +28,48 @@
 
                             <div class="form-group row">
                                 @*<label for="fullname" class="col-md-3">Tên đăng nhập</label>*@
-                                @Html.HiddenFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control col-md-9", @placeholder = "Tên đăng nhập" } })
+                                @Html.HiddenFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control col-md-9", @placeholder = "thanhnt" } })
 
                             </div>
                             <div class="form-group row">
-                                <label for="fullname" class="col-md-3">Họ tên</label>
-                                @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control col-md-9", @placeholder = "Họ tên" } })
-                                @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="form-group row">
-                                <label for="email" class="col-md-3">Email</label>
-                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control col-md-9", @placeholder = "Email" } })
-                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="form-group row">
-                                <label for="phone" class="col-md-3">Số điện thoại</label>
+                                <label for="fullname" class="col-md-2">Họ tên</label>
+                                <div class=" col-md-10">
+                                    @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nguyễn Trung Thành" } })
+                                    @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                                </div>
 
-                                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control col-md-9", @placeholder = "Số điện thoại" } })
-                                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-group row">
-                                <label for="password" class="col-md-3">Mật khẩu</label>
+                                <label for="email" class="col-md-2">Email</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @type = "email", @class = "form-control", @placeholder = "abc123@gmail.com" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
 
-                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @class = "form-control col-md-9", @placeholder = "Mật khẩu" } })
-                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-group row">
-                                <label for="address" class="col-md-3">Địa chỉ</label>
+                                <label for="phone" class="col-md-2">Số điện thoại</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", @placeholder = "0988776654" } })
+                                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                </div>
 
-                                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control col-md-9", @placeholder = "Địa chỉ" } })
-                                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group row">
+                                <label for="password" class="col-md-2">Mật khẩu</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @class = "form-control", @placeholder = "Admin@1234" } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                            <div class="form-group row">
+                                <label for="address" class="col-md-2">Địa chỉ</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "Cầu Giấy - Hà Nội" } })
+                                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                </div>
+
                             </div>
 
                             <br>
@@ -73,12 +85,12 @@
 
                                         @if (Model.Avatar != null)
                                         {
-                                            <img id="output" src="@Url.Content(@ImagePath)" alt="Ảnh" class="rounded-circle border" 
+                                            <img id="output" src="@Url.Content(@ImagePath)" alt="Ảnh" class="rounded-circle border"
                                                  style="width:150px !important; height:150px !important">
                                         }
                                         @if (Model.Avatar == null)
                                         {
-                                            <img id="output" src="http://m.myclip.vn/images/avatar.gif" alt="Ảnh" class="rounded-circle border" 
+                                            <img id="output" src="http://m.myclip.vn/images/avatar.gif" alt="Ảnh" class="rounded-circle border"
                                                  style="width:150px !important; height:150px !important">
                                         }
                                     </div>
@@ -122,19 +134,19 @@
                     </thead>
                     <tbody>
                         @*<tr>
-                            <td>Toàn quyền</td>
-                            <td colspan="4" class="item-check-center">
-                                <input onclick="checkFullControll(this, @Model.ID_Account)"
-                                       type="checkbox"
-                                       id="fullcontrol"
-                                       style="transform: scale(2);" />
-                            </td>
-                        </tr>*@
+                                <td>Toàn quyền</td>
+                                <td colspan="4" class="item-check-center">
+                                    <input onclick="checkFullControll(this, @Model.ID_Account)"
+                                           type="checkbox"
+                                           id="fullcontrol"
+                                           style="transform: scale(2);" />
+                                </td>
+                            </tr>*@
                         @foreach (var item in Model.PermissionDetails)
                         {
                             if (item.ID_Account == Model.ID_Account)
                             {
-                                
+
                                 <tr>
                                     <td>@item.Permission.Name</td>
                                     <td class="item-check-center">
@@ -146,8 +158,8 @@
                                                        type="checkbox"
                                                        id="@id"
                                                        name="@item.Code"
-                                                       style="transform: scale(2);" checked 
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'VIEW')"/>
+                                                       style="transform: scale(2);" checked
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'VIEW')" />
                                             }
                                             else
                                             {
@@ -155,8 +167,8 @@
                                                        type="checkbox"
                                                        id="@id"
                                                        name="@item.Code"
-                                                       style="transform: scale(2);" 
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'VIEW')"/>
+                                                       style="transform: scale(2);"
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'VIEW')" />
                                             }
                                         }
 
@@ -170,8 +182,8 @@
                                                        type="checkbox"
                                                        id="@id"
                                                        name="@item.Code"
-                                                       style="transform: scale(2);" checked 
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'CREATE')"/>
+                                                       style="transform: scale(2);" checked
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'CREATE')" />
                                             }
                                             else
                                             {
@@ -179,8 +191,8 @@
                                                        type="checkbox"
                                                        id="@id"
                                                        name="@item.Code"
-                                                       style="transform: scale(2);" 
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'CREATE')"/>
+                                                       style="transform: scale(2);"
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'CREATE')" />
                                             }
                                         }
                                         @*<input class="permission" type="checkbox" id="category_create" name="category" style="transform: scale(2);" />*@
@@ -194,8 +206,8 @@
                                                        type="checkbox"
                                                        id="@id"
                                                        name="@item.Code"
-                                                       style="transform: scale(2);" checked 
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'EDIT')"/>
+                                                       style="transform: scale(2);" checked
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'EDIT')" />
                                             }
                                             else
                                             {
@@ -203,8 +215,8 @@
                                                        type="checkbox"
                                                        id="@id"
                                                        name="@item.Code"
-                                                       style="transform: scale(2);" 
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'EDIT')"/>
+                                                       style="transform: scale(2);"
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'EDIT')" />
                                             }
                                         }
                                         @*<input class="permission" type="checkbox" id="category_edit" name="category" style="transform: scale(2);" />*@
@@ -218,8 +230,8 @@
                                                        type="checkbox"
                                                        id="@id"
                                                        name="@item.Code"
-                                                       style="transform: scale(2);" checked 
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'DELETE')"/>
+                                                       style="transform: scale(2);" checked
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'DELETE')" />
                                             }
                                             else
                                             {
@@ -227,8 +239,8 @@
                                                        type="checkbox"
                                                        id="@id"
                                                        name="@item.Code"
-                                                       style="transform: scale(2);" 
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'DELETE')"/>
+                                                       style="transform: scale(2);"
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'DELETE')" />
                                             }
                                         }
                                         @*<input class="permission" type="checkbox" id="category_delete" name="category" style="transform: scale(2);" />*@
@@ -239,67 +251,106 @@
                         }
                     </tbody>
                 </table>
-            
+
             </div>
         </div>
     </div>
 </div>
+<div class="alert hide" id="alert_message">
+    <div id="icon-alert-message"><i class="fas fa-exclamation-circle"></i></div>
+    <span class="msg">Warning: This is a warning alert!</span>
+    <div class="close-btn-alert">
+        <span class="fas fa-times"></span>
+    </div>
+</div>
+
+@section Script{
+    <script>
+        const loadFile = (event) => {
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+
+        // quan ly quyen
 
 
-<script>
-    @*const checkFullControll = (full,id_account) => {
-        let full_control = $(full).is(':checked');
-        if (full_control) {
-            $('.permission').prop('checked', true);
-        } else {
-            $('.permission').prop('checked', false);
+
+
+        const setStatus = (status, id_per, id_acc, type) => {
+            let check = $(status).is(':checked');
+            let data = {};
+            data["Id_Permission"] = id_per;
+            data["ID_Account"] = id_acc;
+            data["Type"] = type;
+            data["Status"] = $(status).is(':checked');
+
+            updateStatusPermission(data);
+
         }
-        let data = {};
-        data["ID_Account"] = id_account;
-        data["Type"] = "FULL";
-        data["Status"] = full_control;
-
-        updateStatusPermission(data);
-    }*@
-    const loadFile = (event) => {
-        var image = document.getElementById('output');
-        image.src = URL.createObjectURL(event.target.files[0]);
-    };
-
-    // quan ly quyen
 
 
-   
+        const updateStatusPermission = (data) => {
+            $.ajax({
+                url: '/Admin/Account/UpdatePermission',
+                data: JSON.stringify(data),
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: (result) => {
 
-    const setStatus = (status, id_per, id_acc, type) => {
-        let check = $(status).is(':checked');
-        let data = {};
-        data["Id_Permission"] = id_per;
-        data["ID_Account"] = id_acc;
-        data["Type"] = type;
-        data["Status"] = $(status).is(':checked');
-        
-        updateStatusPermission(data);
+                    //alert("Thêm danh mục thành công.");
+                },
+                error: (error) => {
+                    //alert("Thêm danh mục thất bại!");
+                }
+            });
+        }
 
-    }
-
-
-    const updateStatusPermission = (data) => {
-        $.ajax({
-            url: '/Admin/Account/UpdatePermission',
-            data: JSON.stringify(data),
-            type: "POST",
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: (result) => {
-
-                //alert("Thêm danh mục thành công.");
-            },
-            error: (error) => {
-                //alert("Thêm danh mục thất bại!");
+        function showAlertMessage(message, messageState) {
+            if (messageState) {
+                $('#alert_message').css({ "background": "#C5F3D7", "border-left": "8px solid #2BD971" });
+                $("#icon-alert-message").html('<i class="fas fa-check-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#2BD971" });
+                $(".msg").css({ "color": "#24AD5F" });
+                $(".close-btn-alert").css({ "background": "#2BD971", "color": "#24AD5F" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#24AD5F" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#38F5A3" : "#2BD971")
+                })
+            } else {
+                $('#alert_message').css({ "background": "#FFE1E3", "border-left": "8px solid #FF4456" });
+                $("#icon-alert-message").html('<i class="fas fa-exclamation-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#FE4950" });
+                $(".msg").css({ "color": "#F694A9" });
+                $(".close-btn-alert").css({ "background": "#FF9CA4", "color": "#FD4653" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#FD4653" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#FFBDC2" : "#FF9CA4")
+                })
             }
-        });
+
+            $('.msg').text(message);
+            $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+            setTimeout(() => {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            }, 3000);
+        };
+    </script>
+
+    @if (ViewBag.Error != null)
+    {
+        <script>
+            showAlertMessage("Cập nhật thất bại !", false);
+        </script>
     }
-</script>
+    @if (ViewBag.AddSuccess != null)
+    {
+        <script>
+            showAlertMessage("Thêm nhân viên thành công !", true);
+        </script>
+    }
 
-
+}

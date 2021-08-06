@@ -8,16 +8,16 @@
 <div class="table-data__tool">
     <div class="table-data__tool-left">
         @*<div class="rs-select2--light rs-select2--md">
-            <select class="js-select2" name="status">
-                <option selected="selected">Tất Cả</option>
-                <option value="">Hiển Thị</option>
-                <option value="">Ẩn</option>
-            </select>
-            <div class="dropDownSelect2"></div>
-        </div>
-        <button class="au-btn-filter">
-            <i class="zmdi zmdi-filter-list"></i>Lọc
-        </button>*@
+                <select class="js-select2" name="status">
+                    <option selected="selected">Tất Cả</option>
+                    <option value="">Hiển Thị</option>
+                    <option value="">Ẩn</option>
+                </select>
+                <div class="dropDownSelect2"></div>
+            </div>
+            <button class="au-btn-filter">
+                <i class="zmdi zmdi-filter-list"></i>Lọc
+            </button>*@
         <h3 class="title-5 m-b-35">danh sách danh mục</h3>
     </div>
     <div class="table-data__tool-right">
@@ -32,14 +32,9 @@
             else
             {
                 <button class="au-btn au-btn-icon au-btn--green au-btn--small"
-                        onclick="clickPerCreate()">
+                        onclick="clickPer()">
                     <i class="fas fa-plus"></i>Thêm mới
                 </button>
-                <script>
-                    const clickPerCreate = () => {
-                        alert('Bạn không có quyền truy cập vào tính năng này');
-                    }
-                </script>
             }
         }
         @*<button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#modal-create"
@@ -65,7 +60,7 @@
                 <tr class="tr-shadow" id="@item.ID_Category">
 
                     <td class="block-icon">
-                        <img src="@Url.Content("~/wwwroot/imageUpload/" + item.Icon)" alt="Icon" style="max-width: 50px; max-height: 50px;" />
+                        <img src="@Url.Content("~/wwwroot/imageUpload/" + item.Icon)" alt="Icon" style="max-width: 25px; max-height: 25px;" />
                     </td>
                     <td>
                         <span class="block-name-product" id="name-product">@item.Name</span>
@@ -93,14 +88,9 @@
                             }
                             else
                             {
-                                <button class="item" title="Sửa thông tin danh mục" onclick="clickPerEdit()">
+                                <button class="item" title="Sửa thông tin danh mục" onclick="clickPer()">
                                     <i class="fas fa-pencil-alt"></i>
                                 </button>
-                                <script>
-                                    const clickPerEdit = () => {
-                                        alert('Bạn không có quyền truy cập vào tính năng này!');
-                                    }
-                                </script>
                             }
                             @if (ViewBag.DELETE)
                             {
@@ -110,24 +100,19 @@
                             }
                             else
                             {
-                                <button class="item" title="Xóa danh mục" onclick="clickPerDelete()">
+                                <button class="item" title="Xóa danh mục" onclick="clickPer()">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
-                                <script>
-                                    const clickPerDelete = () => {
-                                        alert('Bạn không có quyền truy cập vào tính năng này!');
-                                    }
-                                </script>
 
                             }
 
                             @*<button class="item" title="Sửa" data-toggle="modal" data-target="#modal-create"
-                                    onclick="clickEditCategory(@item.ID_Category, '@item.Name', '@item.Icon',@item.Status)">
-                                <i class="fas fa-pencil-alt"></i>
-                            </button>
-                            <button class="item" title="Xóa" onclick="deleteCategory(@item.ID_Category)">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>*@
+                                        onclick="clickEditCategory(@item.ID_Category, '@item.Name', '@item.Icon',@item.Status)">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button class="item" title="Xóa" onclick="deleteCategory(@item.ID_Category)">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>*@
                         </div>
                     </td>
                 </tr>
@@ -137,55 +122,110 @@
     </table>
 
 </div>
-
-<script>
-    function clickAddCategory() {
-        $('#error_name').hide();
-        $('#mediumModalLabel').text("Thêm mới danh mục");
-        $('#id').val(0);
-        $('#preview').attr("src", "http://nhadephue.vn/wp-content/uploads/2021/01/icon_6.png");
-        $('#Name').val("");
-    }
-    function clickEditCategory(idCategory, name, icon, status) {
-        $('#error_name').hide();
-        $('#mediumModalLabel').text("Cập nhật danh mục");
-        $('#Name').val(name);
-
-        $('#preview').attr("src", "/wwwroot/imageUpload/" + icon);
-        if (status) {
-            $("#show").prop("checked", true);
-        } else {
-            $("#hide").prop("checked", true);
-        }
-        $('#id').val(idCategory);
-        $('#imagename').val(icon);
-    }
-
-
-    function deleteCategory(id) {
-
-        let checkDelete = confirm("Xác nhận xóa danh mục này!");
-        if (checkDelete == false)
-            return;
-
-        $.ajax({
-            url: '/Admin/Category/DeleteProductCategory',
-            data: { id: id },
-            type: "GET",
-            success: (result) => {
-                alert("Xóa danh mục thành công.");
-                //location.reload();
-                $('#' + id).remove();
-                $('#spacer-' + id).remove();
-            },
-            error: (error) => {
-                alert("Xóa danh mục thất bại!");
-            }
-        });
-    }
-</script>
+<div class="alert hide" id="alert_message">
+    <div id="icon-alert-message"><i class="fas fa-exclamation-circle"></i></div>
+    <span class="msg">Warning: This is a warning alert!</span>
+    <div class="close-btn-alert">
+        <span class="fas fa-times"></span>
+    </div>
+</div>
 
 
 @section modal{
-    @Html.Partial("Create");
+    @Html.Partial("Create")
+}
+
+@section Script{
+    <script>
+        
+        function clickPer() {
+            showAlertMessage('Bạn không có quyền truy cập vào tính năng này!', false);
+        }
+        function clickAddCategory() {
+            
+            $('#error_name').hide();
+            $('#mediumModalLabel').text("Thêm mới danh mục");
+            $('#id').val(0);
+            $('#preview').attr("src", "http://nhadephue.vn/wp-content/uploads/2021/01/icon_6.png");
+            $('#Name').val("");
+        }
+        function clickEditCategory(idCategory, name, icon, status) {
+            if (!per_edit) {
+                clickPer();
+                return;
+            }
+            $('#error_name').hide();
+            $('#mediumModalLabel').text("Cập nhật danh mục");
+            $('#Name').val(name);
+
+            $('#preview').attr("src", "/wwwroot/imageUpload/" + icon);
+            if (status) {
+                $("#show").prop("checked", true);
+            } else {
+                $("#hide").prop("checked", true);
+            }
+            $('#id').val(idCategory);
+            $('#imagename').val(icon);
+        }
+
+
+        function deleteCategory(id) {
+
+            let checkDelete = confirm("Xác nhận xóa danh mục này!");
+            if (checkDelete == false)
+                return;
+
+            $.ajax({
+                url: '/Admin/Category/DeleteProductCategory',
+                data: { id: id },
+                type: "GET",
+                success: (result) => {
+                    //alert("Xóa danh mục thành công.");
+                    showAlertMessage('Xóa danh mục thành công!', true);
+                    //location.reload();
+                    $('#' + id).remove();
+                    $('#spacer-' + id).remove();
+                },
+                error: (error) => {
+                    alert("Xóa danh mục thất bại!");
+                }
+            });
+        }
+
+
+
+        function showAlertMessage(message, messageState){
+            if (messageState) {
+                $('#alert_message').css({ "background": "#C5F3D7", "border-left": "8px solid #2BD971" });
+                $("#icon-alert-message").html('<i class="fas fa-check-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#2BD971" });
+                $(".msg").css({ "color": "#24AD5F" });
+                $(".close-btn-alert").css({ "background": "#2BD971", "color": "#24AD5F" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#24AD5F" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#38F5A3" : "#2BD971")
+                })
+            } else {
+                $('#alert_message').css({ "background": "#FFE1E3", "border-left": "8px solid #FF4456" });
+                $("#icon-alert-message").html('<i class="fas fa-exclamation-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#FE4950" });
+                $(".msg").css({ "color": "#F694A9" });
+                $(".close-btn-alert").css({ "background": "#FF9CA4", "color": "#FD4653" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#FD4653" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#FFBDC2" : "#FF9CA4")
+                })
+            }
+
+            $('.msg').text(message);
+            $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+            setTimeout(() => {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            }, 3000);
+        };
+
+    </script>
 }

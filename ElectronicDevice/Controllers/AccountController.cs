@@ -67,14 +67,9 @@ namespace ElectronicDevice.Controllers
         {
             var userName = Session["UserName"];
             Account acc = db.Accounts.Where(u => u.UserName.Equals((string)userName)).FirstOrDefault();
-            var dem=0;
-            if(account.Email!=null)
-            {
-                var email1 = account.Email.Trim();
-                var email = db.Accounts.Where(u => u.Email.Equals(email1) && !u.UserName.Equals((string)userName)).ToList();
-                dem = email.Count();
-            }    
-            if (dem > 0)
+            var email1 = account.Email.Trim();
+            var email = db.Accounts.Where(u => u.Email.Equals(email1) && !u.UserName.Equals((string)userName)).ToList();
+            if (email.Count() > 0)
             {
                 ViewBag.ErrorUpdate = "Email đã tồn tại !";
             }

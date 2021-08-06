@@ -1,7 +1,8 @@
-namespace ElectronicDevice.Models
+﻿namespace ElectronicDevice.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -18,7 +19,8 @@ namespace ElectronicDevice.Models
         [Key]
         public int ID_Category { get; set; }
 
-        [Required]
+        [DisplayName("Tên danh mục")]
+        [Required(ErrorMessage = "Tên danh mục không được để trống")]
         [StringLength(255)]
         public string Name { get; set; }
 

@@ -104,7 +104,7 @@
                     {
                         @Html.AntiForgeryToken()
                         @* <form class="form-horizontal" action="" method="post">*@
-                        <div class="space-10"></div>
+                        <div class="mt-2"></div>
 
                         <div class="form-group row">
                             <div class="col-md-12">
@@ -114,11 +114,13 @@
                                     @if (Model.First().Avatar != null)
                                     {
                                         <img id="output" src="@Url.Content("~/wwwroot/imageUpload/" + @Model.First().Avatar)"
-                                             alt="Ảnh" class="rounded-circle" width="100" height="100">
+                                             alt="Ảnh" class="rounded-circle border"
+                                             style="width:100px !important; height:100px !important">
                                     }
                                     @if (Model.First().Avatar == null)
                                     {
-                                        <img id="output" src="http://m.myclip.vn/images/avatar.gif" alt="Ảnh" class="rounded-circle" width="100" height="100">
+                                        <img id="output" src="http://m.myclip.vn/images/avatar.gif" alt="Ảnh" class="rounded-circle border"
+                                             style="width:100px !important; height:100px !important">
                                     }
                                 </div>
                                 <div class="d-flex justify-content-center">
@@ -170,8 +172,12 @@
                         </div>
                         <input hidden id="Pasword" name="Password" value="@Model.First().Password" />
                         <div class="form-group">
-                            <button type="reset" class="btn btn-outline-secondary">Đặt lại</button>
-                            <button type="submit" class="btn btn-outline-primary" onclick="clickUpdateInfo()">Cập Nhật</button>
+                            <button type="submit" class="btn btn-outline-primary" onclick="clickUpdateInfo()">
+                                <i class="ace-icon fa fa-check bigger-110"></i> Cập Nhật
+                            </button>
+                            <button type="reset" class="btn btn-outline-secondary">
+                                <i class="ace-icon fa fa-undo bigger-110"></i> Đặt lại
+                            </button>
                         </div>
                         @*</form>*@
                     }
@@ -255,6 +261,9 @@
             <a class="au-btn au-btn-icon au-btn--green au-btn--small" href="@Url.Action("CreateEmployee","Account")">
                 <i class="fas fa-plus"></i>Thêm mới
             </a>
+            <a class="btn btn-danger text-light" href="@Url.Action("Trash","Account")">
+                <i class="fas fa-trash-alt"></i> Thùng rác
+            </a>
         </div>
     </div>
     <div class="table-responsive table-data">
@@ -266,6 +275,7 @@
                     <th>họ tên</th>
                     <th>Điện thoại</th>
                     <th>email</th>
+                    <th>Địa chỉ</th>
                     <th>hành động</th>
                 </tr>
             </thead>
@@ -274,7 +284,7 @@
                 {
                     if (!item.UserName.Equals(Session["UserName"]))
                     {
-                        <tr class="tr-shadow">
+                        <tr class="tr-shadow" id="@item.ID_Account">
                             <td>
                                 <span class="block-name">@item.UserName</span>
                             </td>
@@ -289,10 +299,10 @@
                                 <span>@item.Phone</span>
                             </td>
                             <td><span>@item.Email</span></td>
-
+                            <td><span>@item.Address</span></td>
                             <td>
                                 <div class="table-data-feature">
-                                    <a class="item" title="Xóa">
+                                    <a class="item" title="Xóa" onclick="clickMoveEmployeeToTrash(@item.ID_Account)">
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                     <a class="item" title="Sửa" href="@Url.Action("EditEmployee","Account",new { id = item.ID_Account })">
@@ -303,10 +313,7 @@
                         </tr>
                         <tr class="spacer"></tr>
                     }
-
                 }
-
-
             </tbody>
         </table>
 
@@ -314,94 +321,29 @@
 
 }
 
+<div class="alert hide" id="alert_message">
+    <div id="icon-alert-message"><i class="fas fa-exclamation-circle"></i></div>
+    <span class="msg">Warning: This is a warning alert!</span>
+    <div class="close-btn-alert">
+        <span class="fas fa-times"></span>
+    </div>
+</div>
 
-<script>
-    const loadFile = (event) => {
-        var image = document.getElementById('output');
-        image.src = URL.createObjectURL(event.target.files[0]);
-    };
 
-    let regexPassword = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@@#\$%\^&\*_])(?=.{6,12}$)");
 
-    const clickChangePassword = (id_account) => {
-        event.preventDefault();
-        let newPassowrd = $('#NewPassword').val();
-        let oldPassowrd = $('#OldPassword').val();
-        let checkError = false;
-        if (oldPassowrd == '') {
-            $('#error_old_password').show();
-            $('#error_old_password').text("Mật khẩu cũ không được để trống");
-            checkError = true;
-        }
-        if (!regexPassword.test(newPassowrd)) {
-            $('#error_new_password').show();
-            $('#error_new_password').text("Mật khẩu ít nhất 6 ký tự và gồm các chữ cái hoa, thường, chữ số và ký tự đặc biệt!");
-            checkError = true;
-        }
-        if ($('#NewPassword').val() != $('#ConfirmPassword').val()) {
-            $('#error_confirm_password').show();
-            $('#error_confirm_password').text("Nhập lại mật khẩu mới không trùng khớp!");
-            checkError = true;
-        }
+@section Script{
 
-        if (checkError) return;
-
-        $.ajax({
-            url: '/Admin/Account/UpdatePassword',
-            data: {
-                OldPassword: oldPassowrd,
-                NewPassword: newPassowrd,
-                ID_Account: id_account
-            },
-            type: "GET",
-            success: (result) => {
-                if (result) {
-                    alert("Cập nhật mật khẩu thành công.");
-                    location.reload();
-                } else {
-                    $('#error_old_password').show();
-                    $('#error_old_password').text("Mật khẩu cũ không đúng!");
-                    $('#error_new_password').hide();
-                    $('#error_confirm_password').hide();
-                }
-
-            },
-            error: (error) => {
-                alert("Cập nhật mật khẩu thất bại!");
-            }
-        });
+    <script src="~/Areas/Admin/Assets/js/manage-account.js"></script>
+    @if (ViewBag.Error != null)
+    {
+        <script>
+            showAlertMessage("Cập nhật thất bại !", false);
+        </script>
     }
-
-    const clickUpdateInfo = () => {
-        
-        let fullName = $('#FullName').val();
-        let address = $('#Address').val();
-        let email = $('#Email').val();
-        let phone = $('#Phone').val();
-        let checkError = false;
-        var emailPattern = /^[a-zA-Z0-9._-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        let phoneFormat = /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/;
-        if (fullName == '') {
-            $('#error_full_name').show();
-            $('#error_full_name').text('Họ tên không được để trống');
-            checkError = true;
-        }
-        if (address == '') {
-            $('#error_address').show();
-            $('#error_address').text('Địa chỉ không được để trống');
-            checkError = true;
-        }
-        if (!emailPattern.test(email)) {
-            $('#error_email').show();
-            $('#error_email').text('Lỗi định dạng email');
-            checkError = true;
-        }
-        if (!phoneFormat.test(phone)) {
-            $('#error_phone').show();
-            $('#error_phone').text('Số điện thoại nhập không đúng định dạng');
-            checkError = true;
-        }
-        if (checkError) event.preventDefault();
-
+    @if (ViewBag.Success != null)
+    {
+        <script>
+            showAlertMessage("Cập nhật thành công !", true);
+        </script>
     }
-</script>
+}

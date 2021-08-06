@@ -28,8 +28,7 @@ namespace ElectronicDevice.Areas.Admin.Controllers
 
             if ((bool)!permissionDetail.View)
             {
-                ViewBag.PermissionError = "Bạn không có quyền truy cập vào tính năng này";
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home",new { access_permission = false });
             }
             ViewBag.CREATE = (bool)permissionDetail.Create;
             ViewBag.EDIT = (bool)permissionDetail.Edit;

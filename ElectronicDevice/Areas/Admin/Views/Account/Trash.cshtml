@@ -1,0 +1,92 @@
+﻿@model PagedList.IPagedList<ElectronicDevice.Models.Account>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Thùng rác";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+}
+
+@*<h3 class="title-5 m-b-35">Danh sách nhân viên</h3>*@
+<div class="table-data__tool">
+    <div class="table-data__tool-left">
+        <div class="d-flex">
+            <a href="@Url.Action("Index","Account")"><i class="fa fa-arrow-left"></i></a> &nbsp
+            <h3 class="title-5 m-b-35">Danh sách nhân viên đã xóa</h3>
+        </div>
+    </div>
+    <div class="table-data__tool-right">
+        <button class="btn btn-danger text-light" id="btnDelete">
+            <i class="fas fa-trash-alt"></i> Xóa vĩ viễn tài khoản
+        </button>
+    </div>
+</div>
+<div class="row bg-light p-4">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="checkAll">
+                    </th>
+                    <th>Tên đăng nhập</th>
+                    <th>Họ tên</th>
+                    <th>Ảnh đại diện</th>
+                    <th>Số điện thoại</th>
+                    <th>Email</th>
+                    <th>Địa chỉ</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var account in Model)
+                {
+                    <tr id="@account.ID_Account">
+                        <td>
+                            <input type="checkbox" id="checkbox_@account.ID_Account"
+                                   value="@account.ID_Account" class="checkAllItem">
+                        </td>
+                        <td>
+                            @account.UserName
+                        </td>
+                        <td>
+                            @account.FullName
+                        </td>
+                        <td>
+                            <img class="img-thumbnail" src="@Url.Content("~/wwwroot/imageUpload/"+account.Avatar)"
+                                 style=" width: 200px; height: 200px;" />
+                        </td>
+                        <td>
+                            @account.Phone
+                        </td>
+                        <td>
+                            @account.Email
+                        </td>
+                        <td>
+                            @account.Address
+                        </td>
+                        <td>
+                            <input class="btn btn-success" type="button" value="Khôi phục" onclick="clickRestoreAccount(@account.ID_Account)" />
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        <br />
+        Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+        @Html.PagedListPager(Model, page => Url.Action("Trash", new { page }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+    </div>
+</div>
+
+<!--Notification-->
+<div class="alert hide" id="alert_message">
+    <div id="icon-alert-message"><i class="fas fa-exclamation-circle"></i></div>
+    <span class="msg">Warning: This is a warning alert!</span>
+    <div class="close-btn-alert">
+        <span class="fas fa-times"></span>
+    </div>
+</div>
+
+@section Script {
+    <script src="~/Areas/Admin/Assets/js/trash-account.js"></script>
+}

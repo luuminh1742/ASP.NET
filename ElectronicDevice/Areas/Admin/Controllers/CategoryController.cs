@@ -22,15 +22,14 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         {
             // Phân quyền cho quản lý sản phẩm
             var idAccount = (int)Session["ID"];
-            PermissionDetail permissionDetail = db.PermissionDetails.Where(pd => pd.ID_Account == idAccount 
+            PermissionDetail permissionDetail = db.PermissionDetails.Where(pd => pd.ID_Account == idAccount
             && pd.Permission.Code.Equals(SystemConstants.PERMISSION_CATEGORIES)).SingleOrDefault();
 
             if ((bool)!permissionDetail.View)
             {
-                ViewBag.PermissionError = "Bạn không có quyền truy cập vào tính năng này";
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index", "Home", new { access_permission = false });
             }
-            ViewBag.CREATE = (bool) permissionDetail.Create;
+            ViewBag.CREATE = (bool)permissionDetail.Create;
             ViewBag.EDIT = (bool)permissionDetail.Edit;
             ViewBag.DELETE = (bool)permissionDetail.Delete;
             //---------------------------------------------------
@@ -39,17 +38,17 @@ namespace ElectronicDevice.Areas.Admin.Controllers
             return View(listCategory);
         }
 
-        
 
         [HttpPost]
         public ActionResult AddProductCategory(CategoryDTO category)
         {
-            
+
             Category cate = new Category();
-            if (category.Base64 != null) {
+            if (category.Base64 != null)
+            {
                 string path = HttpContext.Server.MapPath("~/wwwroot/imageUpload/");
                 //string filename = DateTime.Now.ToString("yyyyMMddTHHmmss") + ".jpg";
-                if(!UploadFileUtil.SaveFile(category.Base64, category.Icon, path))
+                if (!UploadFileUtil.SaveFile(category.Base64, category.Icon, path))
                 {
                     return null;
                 }
@@ -66,10 +65,11 @@ namespace ElectronicDevice.Areas.Admin.Controllers
                 cate.ID_Category = category.ID_Category;
                 db.Entry(cate).State = EntityState.Modified;
             }
-            
+
             db.SaveChanges();
 
             return Json(cate, JsonRequestBehavior.AllowGet);
+
         }
 
         public ActionResult DeleteProductCategory(int id)

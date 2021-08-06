@@ -11,7 +11,6 @@ using System.Web.Mvc;
 namespace ElectronicDevice.Areas.Admin.Controllers
 {
     [Authorize(Roles = "ADMIN")]
-
     public class OrdersController : Controller
     {
         private ElectronicDeviceDbContext db = new ElectronicDeviceDbContext();
@@ -20,10 +19,6 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         // GET: Admin/Orders
         public ActionResult Index()
         {
-<<<<<<< Updated upstream
-            return View();
-=======
-
             // Phân quyền cho quản lý sản phẩm
             var idAccount = (int)Session["ID"];
             PermissionDetail permissionDetail = db.PermissionDetails.Where(pd => pd.ID_Account == idAccount
@@ -31,54 +26,20 @@ namespace ElectronicDevice.Areas.Admin.Controllers
 
             if ((bool)!permissionDetail.View)
             {
-                ViewBag.PermissionError = "Bạn không có quyền truy cập vào tính năng này";
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home", new { access_permission = false });
             }
             ViewBag.CREATE = (bool)permissionDetail.Create;
             ViewBag.EDIT = (bool)permissionDetail.Edit;
             ViewBag.DELETE = (bool)permissionDetail.Delete;
             //---------------------------------------------------
 
-
-            var listBill = db.Bills.Join(db.BillDetails, a => a.ID_Bill, b => b.ID_Bill, (a, b) => new { a, b })
-                .GroupBy(x => new
-                {
-                    x.a.ID_Bill,
-                    //x.a.ID_Account,
-                    x.a.ReceiverName,
-                    x.a.ReceiverAddress,
-                    x.a.ReceiverEmail,
-                    x.a.ReceiverPhone,
-                    //x.a.Note,
-                    x.a.PayType,
-                    x.a.Status,
-                    x.a.CreatedDate,
-                    x.a.ModifiedDate
-                })
-                .Select(g => new BillDTO
-                {
-                    ID_Bill = g.Key.ID_Bill,
-                    //ID_Account = g.Key.ID_Account,
-                    ReceiverName = g.Key.ReceiverName,
-                    ReceiverAddress = g.Key.ReceiverAddress,
-                    ReceiverEmail = g.Key.ReceiverEmail,
-                    ReceiverPhone = g.Key.ReceiverPhone,
-                    //Note = g.Key.Note,
-                    PayType = g.Key.PayType,
-                    Status = g.Key.Status,
-                    CreatedDate = g.Key.CreatedDate.ToString(),
-                    ModifiedDate = g.Key.ModifiedDate.ToString(),
-                    SumPrice = g.Sum(z => z.b.CurrentlyPrice)
-                });
-            listBill = listBill.OrderBy(b => b.ID_Bill);
-            return View(listBill);
->>>>>>> Stashed changes
+            return View();
         }
 
         [HttpGet]
         public JsonResult NewBill(int kt, int page)//danh sách đơn hàng theo status
         {
-            var pageSize = 2;//Số đơn hàng trong một trang
+            var pageSize = 8;//Số đơn hàng trong một trang
             var stt1 = (page - 1) * pageSize;
             var listBill = db.Bills.Join(db.BillDetails, a => a.ID_Bill, b => b.ID_Bill, (a, b) => new { a, b })
                 .GroupBy(x => new
@@ -175,6 +136,23 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Receive_Bill(int ID_Bill, int kt)//Thay đổi trạng thái đơn hàng (Nhận đơn hàng, hủy đơn hàng)
         {
+
+            // Phân quyền cho quản lý sản phẩm
+            var idAccount = (int)Session["ID"];
+            PermissionDetail permissionDetail = db.PermissionDetails.Where(pd => pd.ID_Account == idAccount
+            && pd.Permission.Code.Equals(SystemConstants.PERMISSION_ORDERS)).SingleOrDefault();
+
+            if ((bool)!permissionDetail.View)
+            {
+                return RedirectToAction("Index", "Home", new { access_permission = false });
+            }
+            //----------------------
+
+            if(!(bool)permissionDetail.Edit || !(bool)permissionDetail.Delete)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+
             Bill bill = db.Bills.Where(b => b.ID_Bill == ID_Bill).FirstOrDefault();
             bill.ModifiedDate = DateTime.Now;
             if (kt == 1)

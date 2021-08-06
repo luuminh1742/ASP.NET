@@ -11,8 +11,16 @@ namespace ElectronicDevice.Areas.Admin.Controllers
     public class HomeController : Controller
     {
         // GET: Admin/Home
-        public ActionResult Index()
+        public ActionResult Index(bool? access_permission = true)
         {
+            if((bool)!access_permission)
+            {
+                ViewBag.ERROR_ACCESS = true;
+            }
+            else
+            {
+                ViewBag.ERROR_ACCESS = false;
+            }
             return View();
         }
 

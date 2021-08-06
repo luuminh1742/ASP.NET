@@ -1,7 +1,6 @@
-﻿
-<!-- modal create -->
+﻿<!-- modal create -->
 <div class="modal fade" id="modal-create" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="mediumModalLabel">Thêm Mới Thành Viên</h5>
@@ -54,153 +53,17 @@
 </div>
 <!-- end modal create -->
 
+
 <script>
-    function clickSaveCategory() {
-        let data = {};
-        let checkError = false;
-        data["Name"] = $('#Name').val();
-        if (data["Name"] == "") {
-            $('#error_name').show();
-            $('#error_name').text("Tên danh mục không được bỏ trống");
-            checkError = true;
-        }
-        data["Status"] = $("#show").is(":checked") ? true : false;
-        data["ID_Category"] = 0;
-        data["ID_Category"] = Number($('#id').val());
-        let file = $('#inputFile')[0].files[0];
-        if (data["ID_Category"] && file == null) {
-            $('#error_image').show();
-            $('#error_image').text("Ảnh danh mục không được để trống");
-            checkError = true;
-        }
-
-        if (checkError) return;
-        if (file != undefined) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                data["Base64"] = e.target.result;
-                data["Icon"] = file.name;
-                if (data["ID_Category"] == 0) {
-                    addData(data);
-                } else {
-                    editData(data);
-                }
-            };
-            reader.readAsDataURL(file);
-        } else {
-            data["Icon"] = $('#imagename').val();
-            if (data["ID_Category"] == 0) {
-                addData(data);
-            } else {
-                editData(data);
-            }
-        }
-
-        $('#modal-create').modal('toggle');
+    let edit = '@ViewBag.EDIT';
+    let del = '@ViewBag.DELETE';
+    let per_edit = false;
+    let per_del = false;
+    if (edit == 'True') {
+        per_edit = true;
     }
-
-    function addData(data) {
-        $.ajax({
-            url: '/Admin/Category/AddProductCategory',
-            data: JSON.stringify(data),
-            type: "POST",
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: (result) => {
-
-                setDataCategory(
-                    result["ID_Category"],
-                    result["Name"],
-                    result["Icon"],
-                    result["Status"]
-                );
-                alert("Thêm danh mục thành công.");
-            },
-            error: (error) => {
-                alert("Thêm danh mục thất bại!");
-            }
-        });
+    if (del == 'True') {
+        per_del = true;
     }
-    function editData(data) {
-        $.ajax({
-            url: '/Admin/Category/AddProductCategory',
-            data: JSON.stringify(data),
-            type: "POST",
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: (result) => {
-                alert("Cập nhật danh mục thành công.");
-
-                editCategory(
-                    result["ID_Category"],
-                    result["Name"],
-                    result["Icon"],
-                    result["Status"]
-                );
-                //location.reload();
-            },
-            error: (error) => {
-                alert("Cập nhật danh mục thất bại!");
-            }
-        });
-    }
-
-    function setDataCategory(id, name, icon, status) {
-        var showStatus = status ? "Hiển thị" : "Ẩn";
-        $('#data-category').append(
-            '<tr class="tr-shadow" id="' + id + '">' +
-            '<td class="block-icon">' +
-            '<img src="/wwwroot/imageUpload/' + icon +
-            '" alt="Icon" style="max-width: 50px; max-height: 50px;"/>' +
-            '</td>' +
-            '<td>' +
-            '<span class="block-name-product" id="name-product">' + name + '</span>' +
-            '</td>' +
-            '<td>' +
-            '<span class="status--process" id="show-status">' + showStatus + '</span>' +
-            '</td>' +
-            '<td>' +
-            '<div class="table-data-feature">' +
-            '<button class="item" title="Sửa" data-toggle="modal" data-target="#modal-create"' +
-            'onclick="clickEditCategory(' + id + ',\'' + name + '\',\'' + icon + '\',' + status + ')">' +
-            '<i class="fas fa-pencil-alt"></i>' +
-            '</button>' +
-            '<button class="item" title="Xóa" onclick="deleteCategory(' + id + ')">' +
-            '<i class="fas fa-trash-alt"></i>' +
-            '</button>' +
-            '</div>' +
-            ' </td>' +
-            '</tr>' +
-            ' <tr class="spacer" id="spacer-' + id + '"></tr>'
-        );
-    }
-
-    function editCategory(id, name, icon, status) {
-        var showStatus = status ? "Hiển thị" : "Ẩn";
-        $('#' + id).html(
-            '<td class="block-icon">' +
-            '<img src="/wwwroot/imageUpload/' + icon +
-            '" alt="Icon" style="max-width: 50px; max-height: 50px;"/>' +
-            '</td>' +
-            '<td>' +
-            '<span class="block-name-product" id="name-product">' + name + '</span>' +
-            '</td>' +
-            '<td>' +
-            '<span class="status--process" id="show-status">' + showStatus + '</span>' +
-            '</td>' +
-            '<td>' +
-            '<div class="table-data-feature">' +
-            '<button class="item" title="Sửa" data-toggle="modal" data-target="#modal-create"' +
-            'onclick="clickEditCategory(' + id + ',\'' + name + '\',\'' + icon + '\',' + status + ')">' +
-            '<i class="fas fa-pencil-alt"></i>' +
-            '</button>' +
-            '<button class="item" title="Xóa" onclick="deleteCategory(' + id + ')">' +
-            '<i class="fas fa-trash-alt"></i>' +
-            '</button>' +
-            '</div>' +
-            ' </td>'
-        );
-    }
-
 </script>
-
+<script src="~/Areas/Admin/Assets/js/create-category-product.js"></script>

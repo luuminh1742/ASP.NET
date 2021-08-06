@@ -58,7 +58,8 @@
             </a>
             <script>
                 const clickPerCreate = () => {
-                    alert("Bạn không có quyền truy cập tính năng này!");
+                    //alert("Bạn không có quyền truy cập tính năng này!");
+                    showAlertMessage('Bạn không có quyền truy cập tính năng này!', false);
                 }
             </script>
         }
@@ -132,7 +133,8 @@
                                 </a>
                                 <script>
                                     const clickPerEdit = () => {
-                                        alert("Bạn không có quyền truy cập tính năng này!");
+                                        //alert("Bạn không có quyền truy cập tính năng này!");
+                                        showAlertMessage('Bạn không có quyền truy cập tính năng này!', false);
                                     }
                                 </script>
                             }
@@ -149,7 +151,8 @@
                                 </button>
                                 <script>
                                     const clickPerDelete = () => {
-                                        alert("Bạn không có quyền truy cập tính năng này!");
+                                        //alert("Bạn không có quyền truy cập tính năng này!");
+                                        showAlertMessage('Bạn không có quyền truy cập tính năng này!',false);
                                     }
                                 </script>
                             }
@@ -165,7 +168,18 @@
     </table>
 
 </div>
-<!-- END DATA TABLE -->
+
+<!--Notification-->
+<div class="alert hide" id="alert_message">
+    <div id="icon-alert-message"><i class="fas fa-exclamation-circle"></i></div>
+    <span class="msg">Warning: This is a warning alert!</span>
+    <div class="close-btn-alert">
+        <span class="fas fa-times"></span>
+    </div>
+</div>
+
+
+
 <br />
 Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
@@ -186,15 +200,50 @@ Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
                 data: { id: id },
                 type: "GET",
                 success: (result) => {
-                    alert("Xóa sản phẩm thành công.");
+                    //alert("Xóa sản phẩm thành công.");
+                    showAlertMessage('Xóa sản phẩm thành công!', true);
                     $('#' + id).remove();
                     $('#spacer-' + id).remove();
                 },
                 error: (error) => {
-                    alert("Xóa sản phẩm thất bại!");
+                    //alert("Xóa sản phẩm thất bại!");
+                    showAlertMessage('Xóa sản phẩm thất bại!',false);
                 }
             });
         }
+
+        const showAlertMessage = (message, messageState) => {
+            if (messageState) {
+                $('#alert_message').css({ "background": "#C5F3D7", "border-left": "8px solid #2BD971" });
+                $("#icon-alert-message").html('<i class="fas fa-check-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#2BD971" });
+                $(".msg").css({ "color": "#24AD5F" });
+                $(".close-btn-alert").css({ "background": "#2BD971", "color": "#24AD5F" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#24AD5F" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#38F5A3" : "#2BD971")
+                })
+            } else {
+                $('#alert_message').css({ "background": "#FFE1E3", "border-left": "8px solid #FF4456" });
+                $("#icon-alert-message").html('<i class="fas fa-exclamation-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#FE4950" });
+                $(".msg").css({ "color": "#F694A9" });
+                $(".close-btn-alert").css({ "background": "#FF9CA4", "color": "#FD4653" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#FD4653" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#FFBDC2" : "#FF9CA4")
+                })
+            }
+
+            $('.msg').text(message);
+            $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+            setTimeout(() => {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            }, 3000);
+        };
     </script>
 }
 
