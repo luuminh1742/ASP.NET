@@ -11,7 +11,7 @@
     <div class="table-data__tool-left">
         <div class="d-flex">
             <a href="@Url.Action("Index","Account")"><i class="fa fa-arrow-left"></i></a> &nbsp
-            <h3 class="title-5 m-b-35">Danh sách nhân viên đã xóa</h3>
+            <h3 class="title-5 m-b-35">Danh sách nhân viên đã vô hiệu hóa</h3>
         </div>
     </div>
     <div class="table-data__tool-right">
@@ -34,40 +34,47 @@
                     <th>Số điện thoại</th>
                     <th>Email</th>
                     <th>Địa chỉ</th>
+                    <th>Trạng thái</th>
                     <th>Hành động</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var account in Model)
                 {
-                    <tr id="@account.ID_Account">
-                        <td>
-                            <input type="checkbox" id="checkbox_@account.ID_Account"
-                                   value="@account.ID_Account" class="checkAllItem">
-                        </td>
-                        <td>
-                            @account.UserName
-                        </td>
-                        <td>
-                            @account.FullName
-                        </td>
-                        <td>
-                            <img class="img-thumbnail" src="@Url.Content("~/wwwroot/imageUpload/"+account.Avatar)"
-                                 style=" width: 200px; height: 200px;" />
-                        </td>
-                        <td>
-                            @account.Phone
-                        </td>
-                        <td>
-                            @account.Email
-                        </td>
-                        <td>
-                            @account.Address
-                        </td>
-                        <td>
-                            <input class="btn btn-success" type="button" value="Khôi phục" onclick="clickRestoreAccount(@account.ID_Account)" />
-                        </td>
-                    </tr>
+                <tr id="@account.ID_Account">
+                    <td>
+                        <input type="checkbox" id="checkbox_@account.ID_Account"
+                               value="@account.ID_Account" class="checkAllItem">
+                    </td>
+                    <td>
+                        @account.UserName
+                    </td>
+                    <td>
+                        @account.FullName
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="@Url.Content("~/wwwroot/imageUpload/"+account.Avatar)"
+                             style=" width: 200px; height: 200px;" />
+                    </td>
+                    <td>
+                        @account.Phone
+                    </td>
+                    <td>
+                        @account.Email
+                    </td>
+                    <td>
+                        @account.Address
+                    </td>
+                    <td>
+                        <span class="text-danger">Vô hiệu hóa</span>
+                    </td>
+                    <td>
+                        <button class="btn btn-success" type="button" onclick="clickRestoreAccount(@account.ID_Account)">
+
+                            <i class="fas fa-lock-open"></i> Khôi phục tài khoản
+                        </button>
+                    </td>
+                </tr>
                 }
 
             </tbody>

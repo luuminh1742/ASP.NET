@@ -17,7 +17,7 @@ namespace ElectronicDevice.Controllers
         public ActionResult Index(string statusRequest)
         {
             ViewBag.statusRequest = statusRequest;
-            return View();
+            return View(new Account());
         }
 
         [HttpPost]
@@ -63,7 +63,7 @@ namespace ElectronicDevice.Controllers
                 }
             }
             ViewBag.LoginError = "Đăng nhập thất bại!";
-            return View("Index");
+            return View("Index",new Account());
         }
 
         public ActionResult ForgetPass()

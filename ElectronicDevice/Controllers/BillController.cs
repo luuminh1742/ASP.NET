@@ -128,7 +128,7 @@ namespace ElectronicDevice.Controllers
                 listCart.Add(cart);
             }
             ViewBag.listCart = listCart.ToList();
-            return View();
+            return View(new Bill());
         }
     }
 }

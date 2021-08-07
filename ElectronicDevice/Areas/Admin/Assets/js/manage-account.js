@@ -1,5 +1,5 @@
 ﻿const clickMoveEmployeeToTrash = (id_account) => {
-    let checkDelete = confirm("Xác nhận xóa tài khoản này!");
+    let checkDelete = confirm("Xác nhận vô hiệu hóa tài khoản này!");
     if (checkDelete == false)
         return;
 

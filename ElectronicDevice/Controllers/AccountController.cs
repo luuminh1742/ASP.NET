@@ -14,21 +14,23 @@ namespace ElectronicDevice.Controllers
         //Đăng ký thành viên
         public ActionResult Register()
         {
-            return View();
+            return View(new AccountDTO());
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Register(AccountDTO account)
         {
-            Account userName = db.Accounts.Where(u => u.UserName.Equals(account.UserName.Trim())).SingleOrDefault();
-            var email = db.Accounts.Where(u => u.Email.Equals(account.Email.Trim())).ToList();
+            /*Account userName = db.Accounts.Where(u => u.UserName.Equals(account.UserName.Trim())).SingleOrDefault();
+            var email = db.Accounts.Where(u => u.Email.Equals(account.Email.Trim())).ToList();*/
+            int countUsername = db.Accounts.Count(a => a.UserName.Equals(account.UserName));
+            int countEmail = db.Accounts.Count(a => a.Email.Equals(account.Email));
             if (ModelState.IsValid)
             {
-                if (userName!=null)
+                if (countUsername>0)
                 {
                     ViewBag.ErrorRegis = "Tên đăng nhập đã tồn tại !";
                 }
-                else if (account.Email != null && email.Count() > 0)
+                else if (countEmail > 0)
                 {
                     ViewBag.ErrorRegis = "Email đã tồn tại !";
                 }
