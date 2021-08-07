@@ -52,18 +52,22 @@
                         @*Phân quyền*@
                         @if (Session["UserName"] != null)
                         {
-                            <div class="align-self-center cart" id="cart" onclick="location.href = '@Url.Action("Index","Cart",new {id_account=Session["ID"] })'">
+                            var idAccount = Session["ID"];
+                            <div class="align-self-center cart" id="icon-cart-header" data-id-login="@idAccount" onclick="location.href = '@Url.Action("Index","Cart",new {id_account=Session["ID"] })'">
                                 <a class="text-center" href="@Url.Action("Index","Cart",new {id_account=Session["ID"] })">
-                                    <i class="fas fa-cart-plus"></i>
+                                    <i class="fas fa-cart-plus">
+                                    </i>
                                 </a>
+                                <div id="amount_cart"></div>
                             </div>
                         }
                         else
                         {
-                            <div class="align-self-center cart" id="cart" onclick="location.href='@Url.Action("Index","Login",new { statusRequest="LoginToCart"})'">
+                            <div class="align-self-center cart" id="icon-cart-header" data-id-login="notLogin" onclick="location.href='@Url.Action("Index","Login",new { statusRequest="LoginToCart"})'">
                                 <a class="text-center" href="@Url.Action("Index","Login",new { statusRequest="LoginToCart"})">
                                     <i class="fas fa-cart-plus"></i>
                                 </a>
+                                <div id="amount_cart"></div>
                             </div>
                         }
 

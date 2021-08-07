@@ -33,16 +33,25 @@ namespace ElectronicDevice.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetAll(String searchStr, int? page, int? id_category)
+        public JsonResult GetAll(String searchStr, int? page, int? id_category, int? typeOrder)
         {
             db.Configuration.ProxyCreationEnabled = false;
-            var listProduct = db.Products.Where(p => p.Status == true).OrderByDescending(p=>p.ID_Product).ToList();
+            var listProduct = new List<Product>();
             if (!String.IsNullOrEmpty(searchStr))
             {
                 ViewBag.searchStr = searchStr;
-                listProduct = listProduct.Where(p => p.Name.Contains(searchStr)).ToList();
+                listProduct = db.Products.Where(p => p.Name.Contains(searchStr) && p.Status).ToList();
             }
-            listProduct = id_category != null ? listProduct.Where(p => p.ID_Category == id_category).ToList() : listProduct;
+            else
+            {
+                listProduct = db.Products.Where(p => p.Status == true).ToList();
+            }
+
+            if (id_category!=null)
+            {
+                listProduct = listProduct.Where(p => p.ID_Category == id_category).ToList();
+            }
+
             page = page > 0 ? page : 1;
 
             int startRecord = (int)(page - 1) * pageSize;
@@ -50,9 +59,24 @@ namespace ElectronicDevice.Controllers
 
             ViewBag.currentPage = page;
             ViewBag.totalPage = totalPage;
-            ViewBag.totalProduct = listProduct.Count;
+            ViewBag.id_category = id_category;
 
-            listProduct = listProduct.OrderByDescending(p => p.ID_Product).Skip(startRecord).Take(pageSize).ToList();
+            if (typeOrder == null)
+            {
+                listProduct = listProduct.OrderByDescending(p => p.ID_Product).Skip(startRecord).Take(pageSize).ToList();
+            }
+            else if (typeOrder == 1)
+            {
+                listProduct = listProduct.OrderBy(p => p.Price).Skip(startRecord).Take(pageSize).ToList();
+            }
+            else if (typeOrder == 2)
+            {
+                listProduct = listProduct.OrderByDescending(p => p.Price).Skip(startRecord).Take(pageSize).ToList();
+            }
+            else
+            {
+                listProduct = listProduct.OrderByDescending(p => p.ID_Product).Skip(startRecord).Take(pageSize).ToList();
+            }
 
             return Json(new { data = listProduct, currentPage = page, totalPage = totalPage }, JsonRequestBehavior.AllowGet);
         }

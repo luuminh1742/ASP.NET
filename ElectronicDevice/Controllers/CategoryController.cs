@@ -14,10 +14,10 @@ namespace ElectronicDevice.Controllers
         [ChildActionOnly]
         public ActionResult _LeftSidebar()
         {
-            var listCategory = db.Categories.Select(c => c);
+            var listCategory = db.Categories.Where(c => c.Status == true);
             return PartialView(listCategory);
         }
-        
+
 
     }
 }

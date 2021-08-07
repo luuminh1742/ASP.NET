@@ -1,4 +1,4 @@
-﻿@model ElectronicDevice.Models.Cart
+﻿@model ElectronicDevice.Models.Bill
 
 
 @using System.Globalization;
@@ -11,7 +11,22 @@
     ViewBag.Title = "Thanh toán";
     ViewBag.id_account = Session["ID"];
     var cart = ViewBag.cart as ElectronicDevice.Models.Cart;
-    var status = ViewBag.status;
+    var listCart = ViewBag.listCart as List<ElectronicDevice.Models.Cart>;
+    //var listCartBuy = new List<ElectronicDevice.Models.Cart>();
+    var status = "";
+    status = ViewBag.status;
+    var totalMoney = 0.0;
+    if (listCart != null)
+    {
+        foreach (var item in listCart)
+        {
+            totalMoney += (Double)item.Product.Price * item.Amount;
+        }
+    }
+    //else
+    //{
+    //    listCartBuy.Add(cart);
+    //}
 }
 
 
@@ -46,91 +61,130 @@
             <br>
             @if (status == "BuyNow")
             {
-                <form>
+                var listCartStr = cart.ID_Product + "&" + cart.ID_Account + ";";
+                using (Html.BeginForm("Index", "Bill", new { listCart = listCartStr }, FormMethod.Post))
+                {
                     <div class="form-group row">
                         <label for="fullname" class="col-md-3">Họ tên người nhận</label>
-                        <input type="text" class="form-control col-md-9" id="fullname" placeholder="Họ tên"
-                               value="@cart.Account.FullName.Trim()">
+                        @Html.EditorFor(model => model.ReceiverName, new { htmlAttributes = new { @class = "form-control col-md-9", @Value = @cart.Account.FullName.Trim(), @id = "ReceiverName" } })
+                        @Html.ValidationMessageFor(model => model.ReceiverName, "", new { @class = "text-danger col-md-9" })
+                        <label class="text-danger message_error" style="display:none;width:100%" id="ReceiverNameMessage">
+                            <label for="message-content" class="col-md-3"></label>
+                            <span class="col-md-9 message-content"></span>
+                        </label>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-md-3">Email</label>
-                        <input type="email" class="form-control col-md-9" id="email" placeholder="Họ tên"
-                               value="@cart.Account.Email.Trim()">
+                        @Html.EditorFor(model => model.ReceiverEmail, new { htmlAttributes = new { @class = "form-control col-md-9", @Value = @cart.Account.Email.Trim(), @id = "ReceiverEmail" } })
+                        @Html.ValidationMessageFor(model => model.ReceiverEmail, "", new { @class = "text-danger col-md-9" })
+                        <label class="text-danger message_error" style="display:none;width:100%" id="ReceiverEmailMessage">
+                            <label for="message-content" class="col-md-3"></label>
+                            <span class="col-md-9 message-content"></span>
+                        </label>
                     </div>
                     <div class="form-group row">
                         <label for="phone" class="col-md-3">Số điện thoại</label>
-                        <input type="text" class="form-control col-md-9" id="phone" placeholder="Số điện thoại"
-                               value="@cart.Account.Phone.Trim()">
+                        @Html.EditorFor(model => model.ReceiverPhone, new { htmlAttributes = new { @class = "form-control col-md-9", @Value = @cart.Account.Phone.Trim(), @id = "ReceiverPhone" } })
+                        @Html.ValidationMessageFor(model => model.ReceiverPhone, "", new { @class = "text-danger col-md-9" })
+                        <label class="text-danger message_error" style="display:none;width:100%" id="ReceiverPhoneMessage">
+                            <label for="message-content" class="col-md-3"></label>
+                            <span class="col-md-9 message-content"></span>
+                        </label>
                     </div>
                     <div class="form-group row">
                         <label for="address" class="col-md-3">Địa chỉ</label>
-                        <input type="text" class="form-control col-md-9" id="address" placeholder="Địa chỉ"
-                               value="@cart.Account.Address.Trim()">
+                        @Html.EditorFor(model => model.ReceiverAddress, new { htmlAttributes = new { @class = "form-control col-md-9", @Value = @cart.Account.Address.Trim(), @id = "ReceiverAddress" } })
+                        @Html.ValidationMessageFor(model => model.ReceiverAddress, "", new { @class = "text-danger col-md-9" })
+                        <label class="text-danger message_error" style="display:none;width:100%" id="ReceiverAddressMessage">
+                            <label for="message-content" class="col-md-3"></label>
+                            <span class="col-md-9 message-content"></span>
+                        </label>
                     </div>
                     <div class="form-group row">
                         <label for="note" class="col-md-3">Ghi chú</label>
-                        <textarea name="note" id="note" rows="5" placeholder="Ghi chú" class="form-control col-md-9"></textarea>
+                        @Html.EditorFor(model => model.Note, new { htmlAttributes = new { @class = "form-control col-md-9", @Value = "Ghi chú" } })
+                        @Html.ValidationMessageFor(model => model.Note, "", new { @class = "text-danger col-md-9" })
                     </div>
-                    <br>
                     <hr>
                     <h3>Hình thức thanh toán</h3>
-                    <input type="radio" name="pay-type" id="1" checked>
-                    <label for="1">Thanh toán khi nhận hàng</label>
-                    <br>
-                    <input type="radio" name="pay-type" id="2">
-                    <label for="2">Thanh toán online qua thẻ ngân hàng</label>
+                    <lable> @Html.RadioButtonFor(m => m.PayType, "Thanh toán khi nhận hàng", new { @checked = true }) Thanh toán khi nhận hàng</lable>
+                    <br />
+                    <label>@Html.RadioButtonFor(m => m.PayType, "Thanh toán online qua thẻ ngân hàng") Thanh toán online qua thẻ ngân hàng</label>
 
+                    @Html.ValidationMessageFor(model => model.PayType, "", new { @class = "text-danger col-md-9" })
                     <hr>
-                    <h3 id="totalPay">Tổng tiền phải trả:   <span style="color: #ff3368">@String.Format(cul, "{0:N0}", @cart.Product.Price * @cart.Amount) VND </span></h3>
+                    <h3 id="totalPay">Tổng tiền phải trả:   <span style="color: #ff3368">@String.Format(cul, "{0:N0}", cart.Product.Price * cart.Amount) VND </span></h3>
                     <hr>
                     <div class="form-group">
-                        <a href="@Url.Action("Index","Bill")" class="genric-btn danger circle">Thanh toán</a>
+                        <button type="submit" id="btn_submit" value="submit" class="genric-btn danger circle">ĐẶT MUA</button>
                     </div>
-                </form>
+                }
             }
-            else
+
+            @if (status == "BuyFromCart")
             {
-                <form>
+                var listCartStr = "";
+                foreach (var item in listCart)
+                {
+                    listCartStr += item.ID_Product + "&" + item.ID_Account + ";";
+                }
+                using (Html.BeginForm("Index", "Bill", new { listCart = listCartStr }, FormMethod.Post))
+                {
                     <div class="form-group row">
                         <label for="fullname" class="col-md-3">Họ tên người nhận</label>
-                        <input type="text" class="form-control col-md-9" id="fullname" placeholder="Họ tên"
-                               value="@cart.Account.FullName.Trim()">
+                        @Html.EditorFor(model => model.ReceiverName, new { htmlAttributes = new { @class = "form-control col-md-9", @Value = listCart.FirstOrDefault().Account.FullName.Trim(), @id = "ReceiverName" } })
+                        @Html.ValidationMessageFor(model => model.ReceiverName, "", new { @class = "text-danger col-md-9" })
+                        <label class="text-danger message_error" style="display:none;width:100%" id="ReceiverNameMessage">
+                            <label for="message-content" class="col-md-3"></label>
+                            <span class="col-md-9 message-content"></span>
+                        </label>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-md-3">Email</label>
-                        <input type="email" class="form-control col-md-9" id="email" placeholder="Họ tên"
-                               value="@cart.Account.Email.Trim()">
+                        @Html.EditorFor(model => model.ReceiverEmail, new { htmlAttributes = new { @class = "form-control col-md-9", @Value = listCart.FirstOrDefault().Account.Email.Trim(), @id = "ReceiverEmail" } })
+                        @Html.ValidationMessageFor(model => model.ReceiverEmail, "", new { @class = "text-danger col-md-9" })
+                        <label class="text-danger message_error" style="display:none;width:100%" id="ReceiverEmailMessage">
+                            <label for="message-content" class="col-md-3"></label>
+                            <span class="col-md-9 message-content"></span>
+                        </label>
                     </div>
                     <div class="form-group row">
                         <label for="phone" class="col-md-3">Số điện thoại</label>
-                        <input type="text" class="form-control col-md-9" id="phone" placeholder="Số điện thoại"
-                               value="@cart.Account.Phone.Trim()">
+                        @Html.EditorFor(model => model.ReceiverPhone, new { htmlAttributes = new { @class = "form-control col-md-9", @Value = listCart.FirstOrDefault().Account.Phone.Trim(), @id = "ReceiverPhone" } })
+                        @Html.ValidationMessageFor(model => model.ReceiverPhone, "", new { @class = "text-danger col-md-9" })
+                        <label class="text-danger message_error" style="display:none;width:100%" id="ReceiverPhoneMessage">
+                            <label for="message-content" class="col-md-3"></label>
+                            <span class="col-md-9 message-content"></span>
+                        </label>
                     </div>
                     <div class="form-group row">
                         <label for="address" class="col-md-3">Địa chỉ</label>
-                        <input type="text" class="form-control col-md-9" id="address" placeholder="Địa chỉ"
-                               value="@cart.Account.Address.Trim()">
+                        @Html.EditorFor(model => model.ReceiverAddress, new { htmlAttributes = new { @class = "form-control col-md-9", @Value = listCart.FirstOrDefault().Account.Address.Trim(), @id = "ReceiverAddress" } })
+                        @Html.ValidationMessageFor(model => model.ReceiverAddress, "", new { @class = "text-danger col-md-9" })
+                        <label class="text-danger message_error" style="display:none;width:100%" id="ReceiverAddressMessage">
+                            <label for="message-content" class="col-md-3"></label>
+                            <span class="col-md-9 message-content"></span>
+                        </label>
                     </div>
                     <div class="form-group row">
                         <label for="note" class="col-md-3">Ghi chú</label>
-                        <textarea name="note" id="note" rows="5" placeholder="Ghi chú" class="form-control col-md-9"></textarea>
+                        @Html.EditorFor(model => model.Note, new { htmlAttributes = new { @class = "form-control col-md-9", @Value = "Ghi chú" } })
+                        @Html.ValidationMessageFor(model => model.Note, "", new { @class = "text-danger col-md-9" })
                     </div>
-                    <br>
                     <hr>
                     <h3>Hình thức thanh toán</h3>
-                    <input type="radio" name="pay-type" id="1" checked>
-                    <label for="1">Thanh toán khi nhận hàng</label>
-                    <br>
-                    <input type="radio" name="pay-type" id="2">
-                    <label for="2">Thanh toán online qua thẻ ngân hàng</label>
+                    <lable> @Html.RadioButtonFor(m => m.PayType, "Thanh toán khi nhận hàng", new { @checked = true }) Thanh toán khi nhận hàng</lable>
+                    <br />
+                    <label>@Html.RadioButtonFor(m => m.PayType, "Thanh toán online qua thẻ ngân hàng") Thanh toán online qua thẻ ngân hàng</label>
 
+                    @Html.ValidationMessageFor(model => model.PayType, "", new { @class = "text-danger col-md-9" })
                     <hr>
-                    <h3 id="totalPay">Tổng tiền phải trả:   <span style="color: #ff3368">@String.Format(cul, "{0:N0}", @cart.Product.Price * @cart.Amount) VND </span></h3>
+                    <h3 id="totalPay">Tổng tiền phải trả:   <span style="color: #ff3368">@String.Format(cul, "{0:N0}", totalMoney) VND </span></h3>
                     <hr>
                     <div class="form-group">
-                        <a href="@Url.Action("Index","Bill")" class="genric-btn danger circle">Thanh toán</a>
+                        <button type="submit" id="btn_submit" value="submit" class="genric-btn danger circle">ĐẶT MUA</button>
                     </div>
-                </form>
+                }
             }
 
         </div>
@@ -150,26 +204,21 @@
                 </div>
                 <hr />
             }
-            else
+            @if (status == "BuyFromCart")
             {
-                <div class="d-flex flex-row">
-                    <img src="https://cdn.mediamart.vn/Product/thumb_-9ZWE58.jpg" alt="" width="100" height="100">
-                    <div class="ml-2">
-                        <h5>Điều Hòa Gree 1 Chiều 9000BTU GWC09KB-K6N0C4</h5>
-                        <p>Giá: 10.000.000đ</p>
-                        <p>Số lượng: 1</p>
-                    </div>
+                foreach (var item in listCart)
+                {
+                    <div class="d-flex flex-row">
+                        <img src="@Url.Content("~/wwwroot/imageUpload/"+item.Product.Image)" alt="" width="100" height="100">
+                        <div class="ml-2">
+                            <h5>@item.Product.Name</h5>
+                            <p>Giá: <span style="color: #ff3368">@String.Format(cul, "{0:N0}", @item.Product.Price) VND </span></p>
+                            <p>Số lượng: <span style="color: #ff3368">@item.Amount cái</span></p>
+                        </div>
 
-                </div>
-                <hr>
-                <div class="d-flex flex-row">
-                    <img src="https://cdn.mediamart.vn/Product/thumb_-QKs992.png" alt="" width="100" height="100">
-                    <div class="ml-2">
-                        <h5>Tủ Lạnh Sharp SJ-X281E-SL - 271 Lít (Bạc Thép Không Gỉ)</h5>
-                        <p>Giá: 4.000.000đ</p>
-                        <p>Số lượng: 1</p>
                     </div>
-                </div>
+                    <hr>
+                }
             }
         </div>
 
@@ -177,12 +226,22 @@
 </div>
 
 
+<!--alert message-->
+<div class="alert hide" id="alert_message">
+    <div id="icon-alert-message"><i class="fas fa-exclamation-circle"></i></div>
+    <span class="msg">Warning: This is a warning alert!</span>
+    <div class="close-btn-alert">
+        <span class="fas fa-times"></span>
+    </div>
+</div>
+
 @section script{
     <script>
-
         $(document).ready(function () {
-
+            if ('@ViewBag.message' != "") {
+                showAlertMessage("Đặt hàng thất bại!", false);
+            }
         });
-
     </script>
+    <script src="~/wwwroot/scriptDefined/buyScript.js"></script>
 }

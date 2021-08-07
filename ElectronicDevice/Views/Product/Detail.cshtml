@@ -77,11 +77,13 @@
                     </p>
                     <div class="card_area d-flex justify-content-between align-items-center">
                         <div class="product_count">
-                            <span class="inumber-decrement"> <i class="ti-minus"></i></span>
-                            <input class="input-number" id="numberProductOrder" type="text" value="1" min="1" max="10">
-                            <span class="number-increment"> <i class="ti-plus"></i></span>
+                            <span class="detail-order" onclick="checkValidAmount('decrease')"><i class="ti-minus"></i></span>
+                            <input class="input-number" onkeyup="checkValidAmountInput()" onkeypress="return isNumberKey(event)"
+                                   id="numberProductOrder" data-id-product="" data-amount-product=""
+                                   type="text" value="1" min="1" max="">
+                            <span class="detail-order" onclick="checkValidAmount('increase')"> <i class="ti-plus"></i></span>
                         </div>
-                        <div class="my-cart border rounded-circle" title="Thêm sản phẩm vào giỏ" onclick="addProductToCart(@id_product,@Session["ID"])">
+                        <div class="my-cart border rounded-circle detail-order" title="Thêm sản phẩm vào giỏ" onclick="addProductToCart(@id_product,@Session["ID"])">
                             <i class="fas fa-shopping-cart"></i>
                         </div>
                         <div class="btn_3" id="buy-now" onclick="buyNow(@id_product,@Session["ID"])">Mua ngay</div>
@@ -128,120 +130,5 @@
 
 
 @section script{
-    <script>
-        $(document).ready(function () {
-
-            $('.close-btn-alert').click(function () {
-                $('.alert').removeClass("show");
-                $('.alert').addClass("hide");
-            });
-
-            var id_product = window.location.href.split("=")[1];
-            var load = function (id_product) {
-                $.ajax({
-                    url: "/Product/GetDetail?id_product=" + id_product,
-                    type: "GET",
-                    data: { id_product: id_product },
-                    dataType: "json",
-                    contentType: "application/json;charset=utf-8",
-                    success: function (result) {
-                        var imgPath = '/wwwroot/imageUpload/' + result.data.Image;
-                        $("#image-product").attr("src", imgPath);
-                        $("#name-product").html(result.data.Name);
-                        $("#price-product").html(result.data.Price.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
-                        $("#model-product").html( result.data.Model);
-                        $("#guarantee-product").html(result.data.Guarantee + ' tháng');
-                        $("#origin-product").html(result.data.Origin);
-                        var status = result.data.Status > 0 ? "Còn hàng" : "Hết hàng";
-                        $("#status-product").html(status);
-                        $("#short-description-product").html(result.data.ShortDescription);
-                        $("#detail-product").html(result.data.Detail);
-
-                    }
-                });
-            }
-            load(id_product);
-        });
-
-        function addProductToCart(id_product, id_account) {
-
-            if (id_account == null) {
-                var url = '@Url.Action("Index","Login",new { statusRequest="LoginToCart"})';
-                window.location.href = url;
-            } else {
-                var amount = $("#numberProductOrder").val();
-                $.ajax({
-                    url: "/cart/addcart",
-                    type: "post",
-                    data: { id_product: id_product, id_account: id_account,amount:amount },
-                    datatype: "json",
-                    contenttype: "application/json;charset=utf-8",
-                    success: function (result) {
-                        showAlertMessage(result.data, true);
-                    },
-                    error: (error) => {
-                        showAlertMessage("Không thể thêm vào giỏ hàng sản phẩm này!", false);
-                    }
-                });
-            }
-        }
-
-        function showAlertMessage(message, messageState) {
-            if (messageState) {
-                $('#alert_message').css({ "background": "#C5F3D7", "border-left": "8px solid #2BD971" });
-                $("#icon-alert-message").html('<i class="fas fa-check-circle"></i>');
-                $("#icon-alert-message").find('i').css({ "color": "#2BD971" });
-                $(".msg").css({ "color": "#24AD5F" });
-                $(".close-btn-alert").css({ "background": "#2BD971", "color": "#24AD5F" });
-                $(".close-btn-alert").find('.fas').css({ "color": "#24AD5F" });
-                $(".close-btn-alert").hover(function (e) {
-                    $(this).css("background-color", e.type === "mouseenter" ? "#38F5A3" : "#2BD971")
-                })
-            } else {
-                $('#alert_message').css({ "background": "#FFE1E3", "border-left": "8px solid #FF4456" });
-                $("#icon-alert-message").html('<i class="fas fa-exclamation-circle"></i>');
-                $("#icon-alert-message").find('i').css({ "color": "#FE4950" });
-                $(".msg").css({ "color": "#F694A9" });
-                $(".close-btn-alert").css({ "background": "#FF9CA4", "color": "#FD4653" });
-                $(".close-btn-alert").find('.fas').css({ "color": "#FD4653" });
-                $(".close-btn-alert").hover(function (e) {
-                    $(this).css("background-color", e.type === "mouseenter" ? "#FFBDC2" : "#FF9CA4")
-                })
-            }
-
-            $('.msg').text(message);
-            $('.alert').addClass("show");
-            $('.alert').removeClass("hide");
-            $('.alert').addClass("showAlert");
-            setTimeout(function () {
-                $('.alert').removeClass("show");
-                $('.alert').addClass("hide");
-            }, 3000);
-        };
-
-        function buyNow(id_product, id_account) {
-            if (id_account == null) {
-                var url = '@Url.Action("Index","Login",new { statusRequest= "LoginToCart" })';
-                window.location.href = url;
-            } else {
-                var amount = $("#numberProductOrder").val();
-                $.ajax({
-                    url: "/cart/addcart",
-                    type: "post",
-                    data: { id_product: id_product, id_account: id_account,amount:amount },
-                    datatype: "json",
-                    contenttype: "application/json;charset=utf-8",
-                    success: function (result) {
-                        showAlertMessage(result.data, true);
-                        var url = '/Bill/Buy?id_product='+id_product+'&&id_account='+id_account;
-                        window.location.href = url;
-                    },
-                    error: (error) => {
-                        showAlertMessage("Không thể mua sản phẩm này!", false);
-                    }
-                });
-            }
-        }
-
-    </script>
+    <script src="~/wwwroot/scriptDefined/detailProductScript.js"></script>
 }

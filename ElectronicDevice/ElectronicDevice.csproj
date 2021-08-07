@@ -1037,6 +1037,7 @@
     <Content Include="wwwroot\imageUpload\may-say-samsung-ai-heatpump-9kg-dv90t7240bhsv-tx9xLJ.png" />
     <Content Include="wwwroot\imageUpload\may-say-whirlpool-15kg-3lwed4705fw-L9R280.png" />
     <Content Include="wwwroot\imageUpload\may-say-whirlpool-15kg-3lwed4815fw-RTzbY9.png" />
+    <Content Include="wwwroot\imageUpload\notFoundProduct.png" />
     <Content Include="wwwroot\imageUpload\quat-cay-cao-cap-coex-cf7115-MxIz14.png" />
     <Content Include="wwwroot\imageUpload\quat-cay-midea-fs4011v-l3j80T.jpg" />
     <Content Include="wwwroot\imageUpload\quat-cay-midea-fs4015qr-co-dieu-khien-T5nX9b.jpg" />
@@ -1138,6 +1139,10 @@
     <Content Include="wwwroot\js\swiper_custom.js" />
     <Content Include="wwwroot\js\theme.js" />
     <Content Include="wwwroot\js\waypoints.min.js" />
+    <Content Include="wwwroot\scriptDefined\buyScript.js" />
+    <Content Include="wwwroot\scriptDefined\cartScript.js" />
+    <Content Include="wwwroot\scriptDefined\detailProductScript.js" />
+    <Content Include="wwwroot\scriptDefined\scriptProduct.js" />
     <Content Include="wwwroot\vendor\animsition\animsition.min.css" />
     <Content Include="wwwroot\vendor\animsition\animsition.min.js" />
     <Content Include="wwwroot\vendor\bootstrap-4.1\bootstrap.min.css" />

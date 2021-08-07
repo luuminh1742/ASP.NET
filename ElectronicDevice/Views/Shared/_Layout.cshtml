@@ -89,6 +89,28 @@
         }
     </script>
     <script src="~/wwwroot/js/custom-header.js"></script>
+    <script>
+        $(document).ready(function () {
+            updateCartIcon();
+        });
+
+        function updateCartIcon() {
+            if ($('#icon-cart-header').attr('data-id-login') == "notLogin") {
+                $('#icon-cart-header').find($('#amount_cart')).text(0);
+            } else {
+                $.ajax({
+                    url: "/cart/countCartById?id_account=" + $('#icon-cart-header').attr('data-id-login'),
+                    type: "get",
+                    data: {},
+                    datatype: "json",
+                    contenttype: "application/json;charset=utf-8",
+                    success: function (result) {
+                        $('#icon-cart-header').find($('#amount_cart')).text(result.data);
+                    }
+                });
+            }
+        }
+    </script>
     @RenderSection("script", required: false)
 </body>
 

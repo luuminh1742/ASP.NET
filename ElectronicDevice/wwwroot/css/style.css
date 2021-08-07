@@ -2244,8 +2244,8 @@ ul {
     font-size: 15px;
 }
 
-    /* line 130, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_menu.scss */
-    .main_menu .cart i:after {
+/* line 130, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_menu.scss */
+/*.main_menu .cart i:after {
         position: absolute;
         border-radius: 50%;
         background-color: #f13d80;
@@ -2258,7 +2258,7 @@ ul {
         line-height: 15px;
         font-size: 10px;
         color: #fff;
-    }
+    }*/
 
 /* line 151, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_menu.scss */
 .menu_fixed {
@@ -3707,7 +3707,7 @@ ul {
 
 /* line 454, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product.scss */
 .product_top_bar .single_product_menu .input-group {
-    width: 150px;
+    width: 250px;
 }
 
     /* line 457, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product.scss */
@@ -3715,8 +3715,6 @@ ul {
         border: 0px solid transparent;
         border-bottom: 1px solid #ddd;
         border-radius: 0;
-        text-align: center;
-        text-transform: capitalize;
     }
 
     /* line 465, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product.scss */
@@ -4141,10 +4139,10 @@ ul {
                 color: #fbd600;
             }
 
-        /* line 870, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product.scss */
-        .product_description_area .tab-content .total_rate .rating_list .list li a i:last-child {
-            color: #eeeeee;
-        }
+                /* line 870, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product.scss */
+                .product_description_area .tab-content .total_rate .rating_list .list li a i:last-child {
+                    color: #eeeeee;
+                }
 
     /* line 881, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product.scss */
     .product_description_area .tab-content .table {
@@ -6557,8 +6555,8 @@ h6 {
 
         /* line 798, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_elements.scss */
         .primary-checkbox input:checked + label {
-            background: url(../img/elements/primary-check.png) no-repeat center ;
-            background-size:cover;
+            background: url(../img/elements/primary-check.png) no-repeat center;
+            background-size: cover;
             border: none;
         }
 
@@ -6649,7 +6647,7 @@ h6 {
 
         /* line 876, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_elements.scss */
         .disabled-checkbox input:checked + label {
-            background: url(../img/elements/disabled-check.png) no-repeat center ;
+            background: url(../img/elements/disabled-check.png) no-repeat center;
             background-size: cover;
             border: none;
         }

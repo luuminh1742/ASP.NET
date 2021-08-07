@@ -1,6 +1,20 @@
 ﻿
+
+@using System.Globalization;
+@{
+    CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+    var id_account = Session["ID"];
+}
 @{
     ViewBag.Title = "Hóa đơn";
+    var bill = ViewBag.bill as ElectronicDevice.Models.Bill;
+    var billDetails = ViewBag.billDetails as List<ElectronicDevice.Models.BillDetail>;
+    var totalMoney = 0.0;
+
+    foreach (var billDetail in billDetails)
+    {
+        totalMoney += (Double)(billDetail.Amount * billDetail.CurrentlyPrice);
+    }
 }
 
 <!-- breadcrumb start-->
@@ -10,8 +24,8 @@
             <div class="col-lg-6 text-center">
                 <div class="breadcrumb_iner">
                     <div class="breadcrumb_iner_item">
-                        <h2>Hóa đơn</h2>
-                        <p>Trang chủ <span>></span> Hóa đơn</p>
+                        <h2>Đặt hàng</h2>
+                        <p>Trang chủ <span>></span> Đăt hàng thành công</p>
                     </div>
                 </div>
             </div>
@@ -32,60 +46,113 @@
 
 
         <div class="col-md-12">
-            <h3 class="text-center">Hóa đơn sản phẩm</h3>
+            <h3 class="text-center">Thông tin đơn đặt hàng</h3>
             <hr>
             <h4>Thông tin người nhận</h4>
             <br>
             <table class="table table-bordered">
                 <tr>
-                    <td>Họ tên người nhận</td>
-                    <td>Nguyễn Văn A</td>
+                    <td style="font-weight:bold">Họ tên người nhận</td>
+                    <td style="color: #007bff">@bill.ReceiverName</td>
                 </tr>
                 <tr>
-                    <td>Email</td>
-                    <td>adf@sdf.com</td>
+                    <td style="font-weight:bold">Email</td>
+                    <td style="color: #007bff">@bill.ReceiverEmail</td>
                 </tr>
                 <tr>
-                    <td>Số điện thoại</td>
-                    <td>0988777665</td>
+                    <td style="font-weight:bold">Số điện thoại</td>
+                    <td style="color: #007bff">@bill.ReceiverPhone</td>
                 </tr>
                 <tr>
-                    <td>Địa chỉ</td>
-                    <td>Nhổn - Đại học Công Nghiệp Hà Nội</td>
+                    <td style="font-weight:bold">Địa chỉ</td>
+                    <td style="color: #007bff">@bill.ReceiverAddress</td>
                 </tr>
                 <tr>
-                    <td>Hình thức thanh toán</td>
-                    <td>Thanh toán khi nhân hàng</td>
+                    <td style="font-weight:bold">Hình thức thanh toán</td>
+                    <td style="color: #007bff">@bill.PayType</td>
                 </tr>
                 <tr>
-                    <td>Tổng tiền thanh toán</td>
-                    <td>14.000.000 VNĐ</td>
+                    <td style="font-weight:bold">Tổng tiền thanh toán</td>
+                    <td style="color: #ff3368; font-weight:bold">@String.Format(cul, "{0:N0}", totalMoney) VND</td>
                 </tr>
             </table>
             <hr>
             <h4>Chi tiết sản phẩm</h4>
             <br>
-            <div class="d-flex flex-row">
-                <img src="https://cdn.mediamart.vn/Product/thumb_-9ZWE58.jpg" alt="" width="100" height="100">
-                <div class="ml-2">
-                    <h5>Điều Hòa Gree 1 Chiều 9000BTU GWC09KB-K6N0C4</h5>
-                    <p>Giá: 10.000.000đ</p>
-                    <p>Số lượng: 1</p>
-                </div>
 
-            </div>
-            <br>
-            <div class="d-flex flex-row">
-                <img src="https://cdn.mediamart.vn/Product/thumb_-QKs992.png" alt="" width="100" height="100">
-                <div class="ml-2">
-                    <h5>Tủ Lạnh Sharp SJ-X281E-SL - 271 Lít (Bạc Thép Không Gỉ)</h5>
-                    <p>Giá: 4.000.000đ</p>
-                    <p>Số lượng: 1</p>
+            @foreach (var item in billDetails)
+            {
+                <div class="d-flex flex-row">
+                    <img src="@Url.Content("~/wwwroot/imageUpload/"+item.Product.Image)" alt="" width="100" height="100">
+                    <div class="ml-2">
+                        <h4>@item.Product.Name</h4>
+                        <p>Giá:<span style="color: #ff3368"> @String.Format(cul, "{0:N0}", item.Product.Price) VND </span></p>
+                        <p>Số lượng:<span style="color: #ff3368"> @item.Amount cái </span></p>
+                    </div>
                 </div>
-            </div>
-
+                <br>
+            }
             <hr>
-            <input type="button" value="In hóa đơn" class="genric-btn danger circle">
+            <input type="button" value="Đơn hàng của tôi" class="genric-btn danger circle">
         </div>
     </div>
 </div>
+
+<!--alert message-->
+<div class="alert hide" id="alert_message">
+    <div id="icon-alert-message"><i class="fas fa-exclamation-circle"></i></div>
+    <span class="msg">Warning: This is a warning alert!</span>
+    <div class="close-btn-alert">
+        <span class="fas fa-times"></span>
+    </div>
+</div>
+
+@section script{
+    <script>
+        $(document).ready(function () {
+
+            $('.close-btn-alert').click(function () {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+            if ('@ViewBag.message' != "") {
+                showAlertMessage('Đặt hàng thành công', true);
+            }
+
+        });
+
+        function showAlertMessage(message, messageState) {
+            if (messageState) {
+                $('#alert_message').css({ "background": "#C5F3D7", "border-left": "8px solid #2BD971" });
+                $("#icon-alert-message").html('<i class="fas fa-check-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#2BD971" });
+                $(".msg").css({ "color": "#24AD5F" });
+                $(".close-btn-alert").css({ "background": "#2BD971", "color": "#24AD5F" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#24AD5F" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#38F5A3" : "#2BD971")
+                })
+            } else {
+                $('#alert_message').css({ "background": "#FFE1E3", "border-left": "8px solid #FF4456" });
+                $("#icon-alert-message").html('<i class="fas fa-exclamation-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#FE4950" });
+                $(".msg").css({ "color": "#F694A9" });
+                $(".close-btn-alert").css({ "background": "#FF9CA4", "color": "#FD4653" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#FD4653" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#FFBDC2" : "#FF9CA4")
+                })
+            }
+
+            $('.msg').text(message);
+            $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+            setTimeout(function () {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            }, 3000);
+        };
+
+    </script>
+}
