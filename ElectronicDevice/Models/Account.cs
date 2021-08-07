@@ -22,8 +22,8 @@
 
         public int ID_Role { get; set; }
 
-        [Required(ErrorMessage ="Tên đăng nhập không được để trống")]
-        [RegularExpression("^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$",ErrorMessage = "Tên đăng nhập không đúng định dạng")]
+        [Required(ErrorMessage = "Không được để trống!")]
+        [RegularExpression("^[a-zA-Z0-9_]*$", ErrorMessage = "Tên đăng nhập không được chứa dấu cách!")]
         [StringLength(255)]
         public string UserName { get; set; }
 
@@ -55,7 +55,8 @@
         public string Avatar { get; set; }
 
         public bool? IsManager { get; set; }
-
+        public string ResetPasswordCode { get; set; }
+        public string ActivationCode { get; set; }
         public virtual Role Role { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

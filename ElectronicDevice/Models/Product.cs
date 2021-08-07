@@ -1,4 +1,4 @@
-namespace ElectronicDevice.Models
+﻿namespace ElectronicDevice.Models
 {
     using System;
     using System.Collections.Generic;
@@ -21,21 +21,25 @@ namespace ElectronicDevice.Models
 
         public int ID_Category { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Không được để trống!")]
         [StringLength(255)]
         public string Name { get; set; }
 
+        [Required(ErrorMessage = "Không được để trống!")]
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Không được để trống!")]
         [StringLength(255)]
         public string Model { get; set; }
 
+        [Required(ErrorMessage = "Không được để trống!")]
         public int Amount { get; set; }
 
+        [Required(ErrorMessage = "Không được để trống!")]
         public int Guarantee { get; set; }
 
+        [Required(ErrorMessage = "Không được để trống!")]
         [StringLength(255)]
         public string Origin { get; set; }
 
@@ -47,7 +51,7 @@ namespace ElectronicDevice.Models
         [Column(TypeName = "ntext")]
         public string Detail { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Không được để trống!")]
         [StringLength(255)]
         public string Image { get; set; }
 

@@ -19,6 +19,7 @@
                         <label>Tên Sản Phẩm</label>
                         @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @Placeholder = "Tủ Lạnh" } })
                         @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        <span id="error_name" class="text-danger hide"></span>
                         @*<input class="au-input au-input--full" type="text" name="Name" id="Name" placeholder="Tủ Lạnh">*@
                     </div>
                     <div class="form-group">
@@ -36,7 +37,7 @@
                             if (ViewBag.MyAction == "Update")
                             {
                                 Img = "~/wwwroot/imageUpload/" + Model.Image;
-                                <input hidden id="imagename" name="imagename"  value="@Model.Image"/>
+                                <input hidden id="imagename" name="imagename" value="@Model.Image" />
                             }
 
                         }
@@ -49,6 +50,7 @@
                                style="background-color: rgb(41, 167, 248);"><span style="color:white">Chọn Ảnh</span></label>
                         <input type="file" id="inputFile" path="inputFile"
                                name="Image" class="form-control" style="display:none" accept="image/*" />
+                        <span id="error_image" class="text-danger hide"></span>
                     </div>
 
 
@@ -56,6 +58,7 @@
                         <label>Đơn Giá</label>
                         @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control", @Placeholder = "đ" } })
                         @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                        <span id="error_price" class="text-danger hide"></span>
                         @*<input class="au-input au-input--full" type="text" name="Price" id="Price" placeholder="0&#8363;">*@
                     </div>
 
@@ -63,6 +66,7 @@
                         <label>Model</label>
                         @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @class = "form-control", @Placeholder = "A" } })
                         @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
+                        <span id="error_model" class="text-danger hide"></span>
                         @*<input class="au-input au-input--full" type="text" name="Model" id="Model" placeholder="A">*@
                     </div>
 
@@ -70,6 +74,7 @@
                         <label>Số Lượng</label>
                         @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control", @Placeholder = "100" } })
                         @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                        <span id="error_amount" class="text-danger hide"></span>
                         @*<input class="au-input au-input--full" type="text" name="Amount" id="Amount" placeholder="100">*@
                     </div>
 
@@ -77,6 +82,7 @@
                         <label>Bảo Hành</label>
                         @Html.EditorFor(model => model.Guarantee, new { htmlAttributes = new { @class = "form-control", @Placeholder = "Tháng" } })
                         @Html.ValidationMessageFor(model => model.Guarantee, "", new { @class = "text-danger" })
+                        <span id="error_guarantee" class="text-danger hide"></span>
                         @*<input class="au-input au-input--full" type="text" name="Guarantee" id="Guarantee" placeholder="12">*@
                     </div>
 
@@ -96,11 +102,11 @@
 
                     <div class="form-group">
                         <label>Mô Tả Ngắn</label><br />
-                        @Html.TextAreaFor(model => model.ShortDescription, 
-                        new { @class = "form-control", @Placeholder = "Mô tả ngắn...",rows = 5 } )
+                        @Html.TextAreaFor(model => model.ShortDescription,
+                        new { @class = "form-control", @Placeholder = "Mô tả ngắn...", rows = 5 })
                         @Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
                         @*<textarea name="ShortDescription" id="ShortDescription" rows="3"
-                                  placeholder="Mô tả ngắn..." class="form-control"></textarea>*@
+                            placeholder="Mô tả ngắn..." class="form-control"></textarea>*@
                     </div>
 
                     <div class="form-group">
@@ -108,7 +114,7 @@
                         @Html.TextAreaFor(model => model.Detail, new { htmlAttributes = new { @class = "form-control", @Placeholder = "Thông tin chi tiết về sản phẩm...." } })
                         @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
                         @*<textarea name="Detail" id="Detail" rows="9"
-                                  placeholder="Thông tin chi tiết về sản phẩm...." class="form-control"></textarea>*@
+                            placeholder="Thông tin chi tiết về sản phẩm...." class="form-control"></textarea>*@
                     </div>
 
                     <div class="form-group">
@@ -120,7 +126,7 @@
                         <label for="hide"> Ẩn</label>
                     </div>
                 </form>
-                @Html.EditorFor(model => model.ID_Product, new { htmlAttributes = new { @class = "form-control hide"}  })
+                @Html.EditorFor(model => model.ID_Product, new { htmlAttributes = new { @class = "form-control hide" } })
 
             </div>
             <div class="modal-footer">
@@ -128,12 +134,12 @@
                 <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="clickSaveProduct()">Lưu</button>
             </div>
 
-            
+
         </div>
     </div>
 </div>
 @section Script{
-<script>
+    <script>
     $('#ID_Product').hide();
     var detail = "";
     $(document).ready(function () {
@@ -154,6 +160,41 @@
         data["Detail"] = detail.getData();
         data["Status"] = $("#show").is(":checked") ? true : false;
         data["ID_Product"] = Number($('#ID_Product').val());
+
+        let checkError = false;
+        if (data["Name"] == '') {
+            $('#error_name').show();
+            $('#error_name').text("Tên sản phẩm không được để trống");
+            checkError = true;
+        }
+        if (data["Price"] == '' || data["Price"]<0) {
+            $('#error_price').show();
+            $('#error_price').text("Đơn giá không được để trống hoặc nhỏ hơn 0");
+            checkError = true;
+        }
+        if (data["Model"] == '') {
+            $('#error_model').show();
+            $('#error_model').text("Model không được để trống");
+            checkError = true;
+        }
+        if (data["Amount"] == '' || data["Amount"] <0 ) {
+            $('#error_amount').show();
+            $('#error_amount').text("Số lượng không được để trống hoặc nhỏ hơn 0");
+            checkError = true;
+        }
+
+        if (data["Guarantee"] == '' || data["Guarantee"]<0) {
+            $('#error_guarantee').show();
+            $('#error_guarantee').text("Bảo hành không được để trống hoặc nhỏ hơn 0");
+            checkError = true;
+        }
+        if (data["Image"] == '') {
+            $('#error_image').show();
+            $('#error_image').text("Ảnh không được để trống");
+            checkError = true;
+        }
+        if (checkError) return;
+
         var file = $('#inputFile')[0].files[0];
         if (file != undefined) {
             var reader = new FileReader();
@@ -210,7 +251,6 @@
                 window.location = "/Admin/Product";
             }
         });
-    }
-
-</script>
+        }
+    </script>
 }
