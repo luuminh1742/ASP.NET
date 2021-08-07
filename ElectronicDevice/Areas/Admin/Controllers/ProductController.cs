@@ -13,7 +13,7 @@ using PagedList;
 
 namespace ElectronicDevice.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "ADMIN")]
+    //[Authorize(Roles = "ADMIN")]
     public class ProductController : Controller
     {
         private ElectronicDeviceDbContext db = new ElectronicDeviceDbContext();

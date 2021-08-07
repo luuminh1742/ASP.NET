@@ -1,5 +1,6 @@
 ﻿using ElectronicDevice.DTO;
 using ElectronicDevice.Models;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -108,7 +109,25 @@ namespace ElectronicDevice.Controllers
             return View(acc);
 
         }
-       
+
+        public ActionResult ChangePassword(string OldPassword, string NewPassword)
+        {
+            var userName = Session["UserName"];
+            Account acc = db.Accounts.Where(u => u.UserName.Equals((string)userName)).FirstOrDefault();
+            if (ModelState.IsValid)
+            {
+                if (OldPassword == acc.Password)
+                {
+                    acc.Password = NewPassword;
+                    acc.Phone = acc.Phone.Trim();
+                    db.Entry(acc).State = EntityState.Modified;
+                    db.SaveChanges();
+                    ViewBag.Success = "Cập nhật thành công!";
+                    return Json(true, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return Json(false, JsonRequestBehavior.AllowGet);
+        }
 
 
     }

@@ -36,15 +36,15 @@ namespace ElectronicDevice.Controllers
                     Session["Email"] = user.Email;
                     Session["Avatar"] = user.Avatar;
                     Session["ID"] = user.ID_Account;
-                    FormsAuthentication.SetAuthCookie(user.UserName, false);
-                    if (!Roles.RoleExists(user.Role.Code))
-                    {
-                        Roles.CreateRole(user.Role.Code);
-                    }
-                    if (!Roles.IsUserInRole(user.UserName, user.Role.Code))
-                    {
-                        Roles.AddUserToRole(user.UserName, user.Role.Code);
-                    }
+                    //FormsAuthentication.SetAuthCookie(user.UserName, false);
+                    //if (!Roles.RoleExists(user.Role.Code))
+                    //{
+                    //    Roles.CreateRole(user.Role.Code);
+                    //}
+                    //if (!Roles.IsUserInRole(user.UserName, user.Role.Code))
+                    //{
+                    //    Roles.AddUserToRole(user.UserName, user.Role.Code);
+                    //}
                     if (user.Role.Code.Equals("ADMIN"))
                     {
                         return RedirectToAction("Index", "Home", new { area = "Admin" });

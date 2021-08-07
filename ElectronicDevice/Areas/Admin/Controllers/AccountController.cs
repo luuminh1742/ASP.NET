@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace ElectronicDevice.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "ADMIN")]
+    //[Authorize(Roles = "ADMIN")]
     public class AccountController : Controller
     {
         private ElectronicDeviceDbContext db = new ElectronicDeviceDbContext();

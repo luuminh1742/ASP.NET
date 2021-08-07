@@ -1,4 +1,5 @@
-﻿using ElectronicDevice.Models;
+﻿using ElectronicDevice.DTO;
+using ElectronicDevice.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -130,5 +131,39 @@ namespace ElectronicDevice.Controllers
             ViewBag.listCart = listCart.ToList();
             return View(new Bill());
         }
+        [HttpGet]
+        public ActionResult BillDetail(int ID_Bill)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var product = (from a in db.BillDetails
+                           from b in db.Products
+                           where a.ID_Product == b.ID_Product && a.ID_Bill == ID_Bill
+                           select new ProductBillDTO
+                           {
+                               Name = b.Name,
+                               Image = b.Image,
+                               Amount = a.Amount,
+                               CurrentlyPrice = b.Price
+                           }).ToList();
+            return Json(new { data = product }, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public ActionResult CancelBill(int ID_Bill)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            Bill bill = db.Bills.Where(b => b.ID_Bill == ID_Bill).FirstOrDefault();
+            bill.Status = 4;
+            db.SaveChanges();
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public ActionResult LoadBill(int ID_Account)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var bills = db.Bills.Where(b => b.ID_Account == ID_Account).ToList();
+
+            return Json(new { data = bills }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

@@ -7,7 +7,7 @@ using System.Web.Security;
 
 namespace ElectronicDevice.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "ADMIN")]
+    //[Authorize(Roles = "ADMIN")]
     public class HomeController : Controller
     {
         // GET: Admin/Home
@@ -28,7 +28,7 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         {
             FormsAuthentication.SignOut();
             Session.Clear();
-            return RedirectToAction("Index", "Login", new { area = "" });
+            return RedirectToAction("Index", "Login", new { area = "Admin" });
         }
     }
 }

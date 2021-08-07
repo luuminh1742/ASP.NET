@@ -1,0 +1,58 @@
+﻿<!-- modal orders -->
+<div class="modal fade" id="modal-bill-detail" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mediumModalLabel">
+                    Đơn hàng : <span id="id-orders">
+
+                    </span>  - <span id="status-orders" style="color:green;font-weight:bold">
+
+                    </span>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="bill-product">
+                    <div id="infor-time" class="p-4"></div>
+                    <h4>Thông tin người nhận</h4>
+                    <br>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Họ tên người nhận</td>
+                            <td id="FullRecieverName">@*Nguyễn Văn A</td>*@
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td id="RecieverEmail">@*adf@sdf.com</td>*@
+                        </tr>
+                        <tr>
+                            <td>Số điện thoại</td>
+                            <td id="RecieverPhone">@*0988777665</td>*@
+                        </tr>
+                        <tr>
+                            <td>Địa chỉ</td>
+                            <td id="RecieverAddress">@*Nhổn - Đại học Công Nghiệp Hà Nội</td>*@
+                        </tr>
+                        <tr>
+                            <td>Hình thức thanh toán</td>
+                            <td id="PayType">@*Thanh toán khi nhân hàng</td>*@
+                        </tr>
+                        <tr>
+                            <td>Tổng tiền thanh toán</td>
+                            <td id="SumPrice">@*14.000.000 VNĐ</td>*@
+                        </tr>
+                    </table>
+                    <hr>
+                    <h4 id="detail">Chi tiết sản phẩm</h4>
+                    <div id="list-product-detail"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-warning" onclick="ReceiveBill()">Hủy đơn hàng</button>*@
+            </div>
+        </div>
+    </div>
+</div>

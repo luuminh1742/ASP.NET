@@ -341,7 +341,7 @@ function loadTotalMustPay() {
 
     if ($('#cart-container>tr').length <= 1) {
         var html = '';
-        var href_a = '@Url.Action("Index","Product")';
+        var href_a = '/Product/Index';
         html += '<div style="text-align:center">';
         html += '<img src="wwwroot/imageUpload/shopping_cart.png" alt="Chưa có sản phẩm nào trong giỏ!" style="width:200px;height:auto" />';
         html += ' <p style="margin: 15px 0px 30px; ">Không có sản phẩm nào trong giỏ hàng của bạn.</p>';

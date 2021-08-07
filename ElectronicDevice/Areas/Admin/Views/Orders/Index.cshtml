@@ -365,7 +365,7 @@ else
                             last: '>>',
                             startPage: page1,
                             //startPage: result.currentPage,
-                            hideOnlyOnePage: true,
+                            hideOnlyOnePage: false,
                             onPageClick: function (event, page) {
                                 page1 = page;
                                 LoadNewBill(page);
@@ -469,7 +469,7 @@ else
                             next: '>',
                             last: '>>',
                             startPage: page2,
-                            hideOnlyOnePage: true,
+                            hideOnlyOnePage: false,
                             onPageClick: function (event, page) {
                                 page2 = page;
                                 LoadBillProcess(page);
@@ -550,7 +550,7 @@ else
                             next: '>',
                             last: '>>',
                             startPage: page3,
-                            hideOnlyOnePage: true,
+                            hideOnlyOnePage: false,
                             onPageClick: function (event, page) {
                                 page3 = page;
                                 LoadBillReceived(page);
@@ -637,7 +637,7 @@ else
                             next: '>',
                             last: '>>',
                             startPage: page4,
-                            hideOnlyOnePage: true,
+                            hideOnlyOnePage: false,
                             onPageClick: function (event, page) {
                                 page4 = page;
                                 LoadBillDeleted(page);
@@ -658,10 +658,10 @@ else
                 dataType: "json",
                 contentType: "application/json;charset=utf-8",
                 success: function (result) {
-                    if (kt == 0 && result.totalPageCount < checkpage) {
+                    if (kt == 0 && result.totalPageCount < checkpage && checkpage>1) {
                         page1 = page1 - 1;
                     }
-                    if (kt == 1 && result.totalPageCount < checkpage) {
+                    if (kt == 1 && result.totalPageCount < checkpage && checkpage > 1) {
                         page2 = page2 - 1;
                     }
                 }

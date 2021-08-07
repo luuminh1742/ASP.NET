@@ -8,7 +8,6 @@ using System.Web.Mvc;
 
 namespace ElectronicDevice.Controllers
 {
-    [Authorize]
     public class CartController : Controller
     {
         // GET: Cart
