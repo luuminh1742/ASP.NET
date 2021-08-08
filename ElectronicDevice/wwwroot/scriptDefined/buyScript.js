@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     $('#ReceiverName').focusout(function () {
         if ($(this).val() == "" || $(this).val() == null) {
-            $('#ReceiverNameMessage').find('.message-content').text("Tên người nhận không được rỗng!");
+            $('#ReceiverNameMessage').find('.message-content').text("Tên người nhận không được trống!");
             $('#ReceiverNameMessage').show();
             $('#btn_submit').attr("type", "button");
         } else {
@@ -41,7 +41,7 @@ $(document).ready(function () {
 
     $('#ReceiverEmail').focusout(function () {
         if ($(this).val() == "" || $(this).val() == null) {
-            $('#ReceiverEmailMessage').find('.message-content').text("Email người nhận không được rỗng!");
+            $('#ReceiverEmailMessage').find('.message-content').text("Email người nhận không được trống!");
             $('#ReceiverEmailMessage').show();
             $('#btn_submit').attr("type", "button");
         } else {
@@ -60,7 +60,7 @@ $(document).ready(function () {
 
     $('#ReceiverPhone').focusout(function () {
         if ($(this).val() == "" || $(this).val() == null) {
-            $('#ReceiverPhoneMessage').find('.message-content').text("Số điện thoại người nhận không được rỗng!");
+            $('#ReceiverPhoneMessage').find('.message-content').text("Số điện thoại người nhận không được trống!");
             $('#ReceiverPhoneMessage').show();
             $('#btn_submit').attr("type", "button");
         } else {
@@ -79,7 +79,7 @@ $(document).ready(function () {
 
     $('#ReceiverAddress').focusout(function () {
         if ($(this).val() == "" || $(this).val() == null) {
-            $('#ReceiverAddressMessage').find('.message-content').text("Địa chỉ người nhận không được rỗng!");
+            $('#ReceiverAddressMessage').find('.message-content').text("Địa chỉ người nhận không được trống!");
             $('#ReceiverAddressMessage').show();
             $('#btn_submit').attr("type", "button");
         } else {
@@ -93,7 +93,7 @@ $(document).ready(function () {
 
 function preLoad() {
     if ($('#ReceiverName').val() == "" || $('#ReceiverName').val() == null) {
-        $('#ReceiverNameMessage').find('.message-content').text("Tên người nhận không được rỗng!");
+        $('#ReceiverNameMessage').find('.message-content').text("Tên người nhận không được trống!");
         $('#ReceiverNameMessage').show();
         $('#btn_submit').attr("type", "button");
     } else {
@@ -102,7 +102,7 @@ function preLoad() {
     }
 
     if ($('#ReceiverEmail').val() == "" || $('#ReceiverEmail').val() == null) {
-        $('#ReceiverEmailMessage').find('.message-content').text("Email người nhận không được rỗng!");
+        $('#ReceiverEmailMessage').find('.message-content').text("Email người nhận không được trống!");
         $('#ReceiverEmailMessage').show();
         $('#btn_submit').attr("type", "button");
     } else {
@@ -117,26 +117,11 @@ function preLoad() {
         }
     }
 
-
     if ($('#ReceiverPhone').val() == "" || $('#ReceiverPhone').val() == null) {
-        $('#ReceiverPhoneMessage').find('.message-content').text("Số điện thoại người nhận không được rỗng!");
-        $('#ReceiverPhoneMessage').show();
         $('#btn_submit').attr("type", "button");
-    } else {
-        var val = /^[0]{1}[0-9]{9}$/;
-        if (!val.test($('#ReceiverPhone').val())) {
-            $('#ReceiverPhoneMessage').find('.message-content').text("Số điện thoại người nhận không hợp lệ!");
-            $('#ReceiverPhoneMessage').show();
-            $('#btn_submit').attr("type", "button");
-        } else {
-            $('#ReceiverPhoneMessage').hide();
-            $('#btn_submit').attr("type", "submit");
-        }
     }
 
     if ($('#ReceiverAddress').val() == "" || $('#ReceiverAddress').val() == null) {
-        $('#ReceiverAddressMessage').find('.message-content').text("Địa chỉ người nhận không được rỗng!");
-        $('#ReceiverAddressMessage').show();
         $('#btn_submit').attr("type", "button");
     } else {
         $('#ReceiverAddressMessage').hide();
@@ -144,6 +129,55 @@ function preLoad() {
     }
 }
 
+function validationAfterClick() {
+
+    var result = true;
+    if ($('#ReceiverName').val() == "" || $('#ReceiverName').val() == null) {
+        $('#ReceiverNameMessage').find('.message-content').text("Tên người nhận không được trống!");
+        $('#ReceiverNameMessage').show();
+        result = false;
+    } 
+
+    if ($('#ReceiverEmail').val() == "" || $('#ReceiverEmail').val() == null) {
+        $('#ReceiverEmailMessage').find('.message-content').text("Email người nhận không được trống!");
+        $('#ReceiverEmailMessage').show();
+        result = false;
+    } else {
+        var expr = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!expr.test($('#ReceiverEmail').val())) {
+            $('#ReceiverEmailMessage').find('.message-content').text("Email người nhận không hợp lệ!");
+            $('#ReceiverEmailMessage').show();
+            result = false;
+        }
+    }
+
+    if ($('#ReceiverPhone').val() == "" || $('#ReceiverPhone').val() == null) {
+        $('#ReceiverPhoneMessage').find('.message-content').text("Số điện thoại người nhận không được trống!");
+        $('#ReceiverPhoneMessage').show();
+        result = false;
+    } else {
+        var val = /^[0]{1}[0-9]{9}$/;
+        if (!val.test($('#ReceiverPhone').val())) {
+            $('#ReceiverPhoneMessage').find('.message-content').text("Số điện thoại người nhận không hợp lệ!");
+            $('#ReceiverPhoneMessage').show();
+            result = false;
+        }
+    }
+
+    if ($('#ReceiverAddress').val() == "" || $('#ReceiverAddress').val() == null) {
+        $('#ReceiverAddressMessage').find('.message-content').text("Địa chỉ người nhận không được trống!");
+        $('#ReceiverAddressMessage').show();
+        result = false;
+    }
+    return result;
+}
+
+
+function CallSubmit() {
+    if (validationAfterClick()) {
+        $('#form-buy-product').submit();
+    }
+}
 
 function showAlertMessage(message, messageState) {
     if (messageState) {

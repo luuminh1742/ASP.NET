@@ -104,7 +104,16 @@ namespace ElectronicDevice.Controllers
         [HttpGet]
         public ActionResult BuyNow(int? id_product, int? id_account)
         {
-            ViewBag.cart = db.Carts.Where(c => c.ID_Product == (int)id_product && c.ID_Account == (int)id_account).FirstOrDefault();
+            var cartDb= db.Carts.Where(c => c.ID_Product == (int)id_product && c.ID_Account == (int)id_account).FirstOrDefault();
+            if (cartDb.Account.Phone==null)
+            {
+                cartDb.Account.Phone = "";
+            }
+            if (cartDb.Account.Address==null)
+            {
+                cartDb.Account.Phone = "";
+            }
+            ViewBag.cart = cartDb; 
             ViewBag.status = "BuyNow";
             ViewBag.listCart = null;
             return View("Buy");
@@ -127,6 +136,21 @@ namespace ElectronicDevice.Controllers
             {
                 var cart = db.Carts.Where(c => c.ID_Product == id && c.ID_Account == id_account).FirstOrDefault();
                 listCart.Add(cart);
+            }
+            var cartDb = listCart.FirstOrDefault();
+            if (cartDb.Account.Phone == null)
+            {
+                foreach (var item in listCart)
+                {
+                    item.Account.Phone = "";
+                }
+            }
+            if (cartDb.Account.Address == null)
+            {
+                foreach (var item in listCart)
+                {
+                    item.Account.Address = "";
+                }
             }
             ViewBag.listCart = listCart.ToList();
             return View(new Bill());
