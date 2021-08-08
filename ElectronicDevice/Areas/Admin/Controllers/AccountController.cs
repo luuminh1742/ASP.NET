@@ -206,7 +206,14 @@ namespace ElectronicDevice.Areas.Admin.Controllers
             }
             db.Entry(permissionDetail).State = EntityState.Modified;
             db.SaveChanges();
-            return Json(true, JsonRequestBehavior.AllowGet);
+
+            var count = 0;
+            count += (bool)permissionDetail.Create ? 1 : count;
+            count += (bool)permissionDetail.Edit ? 1 : count;
+            count += (bool)permissionDetail.Delete ? 1 : count;
+
+            var data = new { status = true, totalPer = count ,code = permissionDetail.Code};
+            return Json( data, JsonRequestBehavior.AllowGet);
         }
 
 

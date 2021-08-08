@@ -1453,7 +1453,6 @@
     <Content Include="Areas\Admin\Views\Account\CreateEmployee.cshtml" />
     <Content Include="Areas\Admin\Views\Account\EditEmployee.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Account\PermissionEdit.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />

@@ -79,7 +79,7 @@
 
                             <br>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-light border"  onclick="clickSaveInforUser()"  value="Lưu thông tin">
+                                <input type="submit" class="btn btn-light border" onclick="clickSaveInforUser()" value="Lưu thông tin">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -164,7 +164,13 @@
                                                        id="@id"
                                                        name="@item.Code"
                                                        style="transform: scale(2);" checked
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'VIEW')" />
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'VIEW','@item.Code')" />
+                                                if (item.Edit == true || item.Create == true || item.Delete == true)
+                                                {
+                                                    <script>
+                                                    $('#@item.Code' + '_VIEW').prop('disabled', true);
+                                                    </script>
+                                                }
                                             }
                                             else
                                             {
@@ -173,7 +179,7 @@
                                                        id="@id"
                                                        name="@item.Code"
                                                        style="transform: scale(2);"
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'VIEW')" />
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'VIEW','@item.Code')" />
                                             }
                                         }
 
@@ -183,12 +189,15 @@
                                             id = item.Code + "_CREATE";
                                             if (item.Create == true)
                                             {
+                                                
                                                 <input class="permission"
                                                        type="checkbox"
                                                        id="@id"
                                                        name="@item.Code"
                                                        style="transform: scale(2);" checked
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'CREATE')" />
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'CREATE','@item.Code')"/>
+                                                
+                                                
                                             }
                                             else
                                             {
@@ -197,7 +206,7 @@
                                                        id="@id"
                                                        name="@item.Code"
                                                        style="transform: scale(2);"
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'CREATE')" />
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'CREATE','@item.Code')" />
                                             }
                                         }
                                         @*<input class="permission" type="checkbox" id="category_create" name="category" style="transform: scale(2);" />*@
@@ -212,7 +221,7 @@
                                                        id="@id"
                                                        name="@item.Code"
                                                        style="transform: scale(2);" checked
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'EDIT')" />
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'EDIT','@item.Code')" />
                                             }
                                             else
                                             {
@@ -221,7 +230,7 @@
                                                        id="@id"
                                                        name="@item.Code"
                                                        style="transform: scale(2);"
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'EDIT')" />
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'EDIT','@item.Code')" />
                                             }
                                         }
                                         @*<input class="permission" type="checkbox" id="category_edit" name="category" style="transform: scale(2);" />*@
@@ -236,7 +245,7 @@
                                                        id="@id"
                                                        name="@item.Code"
                                                        style="transform: scale(2);" checked
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'DELETE')" />
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'DELETE','@item.Code')" />
                                             }
                                             else
                                             {
@@ -245,7 +254,7 @@
                                                        id="@id"
                                                        name="@item.Code"
                                                        style="transform: scale(2);"
-                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'DELETE')" />
+                                                       onclick="setStatus(this,@item.Id_Permission,@item.ID_Account,'DELETE','@item.Code')" />
                                             }
                                         }
                                         @*<input class="permission" type="checkbox" id="category_delete" name="category" style="transform: scale(2);" />*@
@@ -282,16 +291,26 @@
 
 
 
-
-        const setStatus = (status, id_per, id_acc, type) => {
+        const setStatus = (status, id_per, id_acc, type, code) => {
             let check = $(status).is(':checked');
             let data = {};
             data["Id_Permission"] = id_per;
             data["ID_Account"] = id_acc;
             data["Type"] = type;
-            data["Status"] = $(status).is(':checked');
+            data["Status"] = check;
+
+
 
             updateStatusPermission(data);
+
+            if (type != 'VIEW' && check) {
+                let getCheckBoxView = $('#' + code + '_VIEW');
+                getCheckBoxView.prop('checked', true);
+                data["Type"] = "VIEW";
+                data["Status"] = true;
+                updateStatusPermission(data);
+                getCheckBoxView.prop('disabled', true);
+            }
 
         }
 
@@ -304,7 +323,10 @@
                 contentType: "application/json;charset=utf-8",
                 dataType: "json",
                 success: (result) => {
-
+                    let getCheckBoxView = $('#' + result.code + '_VIEW');
+                    if (result.totalPer == 0) {
+                        getCheckBoxView.prop('disabled', false);
+                    } 
                     //alert("Thêm danh mục thành công.");
                 },
                 error: (error) => {
