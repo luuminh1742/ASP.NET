@@ -19,7 +19,8 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         private ElectronicDeviceDbContext db = new ElectronicDeviceDbContext();
 
         // GET: Admin/Product
-        public ActionResult Index(int? page)
+        public ActionResult Index(string currentFilter,
+            int? page, bool? status, string search, int? id_category = -1)
         {
             // Phân quyền cho quản lý sản phẩm
             var idAccount = (int)Session["ID"];
@@ -28,18 +29,45 @@ namespace ElectronicDevice.Areas.Admin.Controllers
 
             if ((bool)!permissionDetail.View)
             {
-                return RedirectToAction("Index", "Home",new { access_permission = false });
+                return RedirectToAction("Index", "Home", new { access_permission = false });
             }
             ViewBag.CREATE = (bool)permissionDetail.Create;
             ViewBag.EDIT = (bool)permissionDetail.Edit;
             ViewBag.DELETE = (bool)permissionDetail.Delete;
 
             //-------------------------------------------------------------------------------------
-
+            // ==== Loc - start ====
+            ViewBag.Category = new SelectList(db.Categories, "ID_Category", "Name");
+            ViewBag.CurrentFilter = currentFilter;
+            ViewBag.ID_Category = id_category;
             var listProduct = db.Products.Select(p => p);
             listProduct = listProduct.OrderByDescending(p => p.ID_Product);
+            if (id_category != -1)
+            {
+                listProduct = listProduct.Where(p => p.ID_Category == id_category);
+                ViewBag.Category = new SelectList(db.Categories, "ID_Category", "Name", id_category);
+            }
+            else
+            {
+                ViewBag.Category = new SelectList(db.Categories, "ID_Category", "Name");
+            }
 
-            ViewBag.Category = new SelectList(db.Categories, "ID_Category", "Name");
+            if (status != null)
+            {
+                listProduct = listProduct.Where(p => p.Status == status);
+                ViewBag.Status = status.ToString();
+            }
+
+            // ===== Loc - End ====
+            //----------------------------------------------------------
+            // Tim kiem
+            if (search != null)
+            {
+                listProduct = listProduct.Where(p => p.Name.ToLower().Contains(search.ToLower()));
+                ViewBag.Search = search.ToLower();
+            }
+
+
 
             int pageSize = 8;  //Kích  thước  trang 
             int pageNumber = (page ?? 1);
@@ -49,20 +77,20 @@ namespace ElectronicDevice.Areas.Admin.Controllers
 
         public ActionResult ProductDetail(int id)
         {
-            var product = db.Products.Select(p => p).Where(p=>p.ID_Product == id).SingleOrDefault();
+            var product = db.Products.Select(p => p).Where(p => p.ID_Product == id).SingleOrDefault();
             return View(product);
         }
 
         public ActionResult Edit(int? ProductId)
         {
-            
+
             if (ProductId != null)
             {
                 ViewBag.MyAction = "Update";
                 ViewBag.MyTitle = "Cập nhật sản phẩm";
                 Product product = db.Products.Where(p => p.ID_Product == ProductId).SingleOrDefault();
 
-                ViewBag.Category = new SelectList(db.Categories, "ID_Category", "Name",product.ID_Category);
+                ViewBag.Category = new SelectList(db.Categories, "ID_Category", "Name", product.ID_Category);
                 return View(product);
             }
             ViewBag.Category = new SelectList(db.Categories, "ID_Category", "Name");
@@ -85,7 +113,7 @@ namespace ElectronicDevice.Areas.Admin.Controllers
                     return null;
                 }
             }
-            
+
             if (product.ID_Product == 0)
             {
                 mapDataProduct(product, pro);
@@ -106,7 +134,7 @@ namespace ElectronicDevice.Areas.Admin.Controllers
             return Json(pro, JsonRequestBehavior.AllowGet);
         }
 
-        private void mapDataProduct(ProductDTO productDTO,Product product)
+        private void mapDataProduct(ProductDTO productDTO, Product product)
         {
             product.ID_Category = productDTO.ID_Category;
             product.Name = productDTO.Name;
@@ -129,5 +157,8 @@ namespace ElectronicDevice.Areas.Admin.Controllers
             db.SaveChanges();
             return Json(true, JsonRequestBehavior.AllowGet);
         }
+
+       
+    
     }
 }

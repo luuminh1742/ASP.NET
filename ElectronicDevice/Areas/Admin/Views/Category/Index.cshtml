@@ -50,6 +50,7 @@
                 <th>Icon</th>
                 <th>Tên</th>
                 <th>trạng thái</th>
+                <th>Số lượng mặt hàng</th>
                 <th>Hành động</th>
             </tr>
         </thead>
@@ -76,6 +77,9 @@
                                 <span>Ẩn</span>
                             }
                         </span>
+                    </td>
+                    <td>
+                        @item.Products.Count()
                     </td>
                     <td>
                         <div class="table-data-feature">
@@ -106,11 +110,10 @@
 
                             }
 
-                            @*<button class="item" title="Sửa" data-toggle="modal" data-target="#modal-create"
-                                        onclick="clickEditCategory(@item.ID_Category, '@item.Name', '@item.Icon',@item.Status)">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </button>
-                                <button class="item" title="Xóa" onclick="deleteCategory(@item.ID_Category)">
+                            <a class="item" title="Xem danh sách sản phẩm" href="@Url.Action("Index","Product",new { id_category = item.ID_Category})">
+                                    <i class="fas fa-arrow-right"></i>
+                            </a>
+                                @*<button class="item" title="Xóa" onclick="deleteCategory(@item.ID_Category)">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>*@
                         </div>

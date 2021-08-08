@@ -99,6 +99,27 @@
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/Scripts/jquery.twbsPagination.min.js"></script>
+    <script>
+        // Tim Kiem
+        const clickSearch = () => {
+            event.preventDefault();
+            let search = $("#search").val().trim();
+            if (search != '')
+                window.location = "/Admin/Product?search=" + search;
+        }
+        @*$('#search').keypress(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                clickSearch();
+            }
+        }*@
+        $('#search').keyup(()=> {
+            if (event.keyCode === 13) {
+                //$('#btnSearch').click();
+                clickSearch();
+            }
+        });
+    </script>
     @RenderSection("Script", required: false)
 </body>
 

@@ -697,6 +697,7 @@
     <Content Include="Areas\Admin\Assets\images\avatar\avatar4.png" />
     <Content Include="Areas\Admin\Assets\images\bg-title-01.jpg" />
     <Content Include="Areas\Admin\Assets\images\bg-title-02.jpg" />
+    <Content Include="Areas\Admin\Assets\images\gif\load.gif" />
     <Content Include="Areas\Admin\Assets\images\IconCategory\icon-may-giat-may-say.png" />
     <Content Include="Areas\Admin\Assets\images\IconCategory\icon-quat-mat-cac-loai.png" />
     <Content Include="Areas\Admin\Assets\images\IconCategory\icon-tivi-loa-am-thanh.png" />

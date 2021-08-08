@@ -2,12 +2,15 @@
     <div class="section__content section__content--p30">
         <div class="container-fluid">
             <div class="header-wrap">
-                <form class="form-header" action="" method="POST">
-                    <input class="au-input au-input--xl" type="text" name="search" placeholder="Tìm kiếm...." />
-                    <button class="au-btn--submit" type="submit">
+                <div class="form-header" action="" method="">
+                    <input class="au-input au-input--xl" 
+                           type="text" name="search" id="search" 
+                           placeholder="Tìm kiếm sản phẩm ...." />
+                    <button class="au-btn--submit" type="button"
+                            onclick="clickSearch()" id="btnSearch">
                         <i class="zmdi zmdi-search"></i>
                     </button>
-                </form>
+                </div>
                 <div class="header-button">
                     <div class="noti-wrap">
                         <div class="noti__item js-item-menu">

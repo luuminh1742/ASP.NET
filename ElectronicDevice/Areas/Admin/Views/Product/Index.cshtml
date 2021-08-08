@@ -16,28 +16,38 @@
 <h3 class="title-5 m-b-35">danh sách sản phẩm</h3>
 <div class="table-data__tool">
     <div class="table-data__tool-left">
+        <a class="au-btn-filter" style="margin-right: 10px;"
+           href="@Url.Action("Index","Product")">
+            <i class="	fas fa-home"></i>
+        </a>
         <div class="rs-select2--light rs-select2--md">
-            <select class="js-select2" name="property">
-                <option selected="selected">Danh mục</option>
-                <option value="">Điều hòa hiệt độ</option>
-                <option value="">Tivi, Loa - Âm Thanh</option>
-                <option value="">Máy giặt</option>
-                <option value="">Tủ lạnh</option>
-                <option value="">Quạt máy</option>
-            </select>
+
+            @Html.DropDownList("Category", null, htmlAttributes: new { @class = "js-select2" })
             <div class="dropDownSelect2"></div>
         </div>
         <div class="rs-select2--light rs-select2--md">
-            <select class="js-select2" name="status">
-                <option selected="selected">Trạng Thái</option>
-                <option value="">Hiển Thị</option>
-                <option value="">Ẩn</option>
-            </select>
+            @if (ViewBag.Status == null)
+            {
+                <select class="js-select2" id="status">
+                    <option selected="selected" value="">Trạng Thái</option>
+                    <option value="true">Hiển Thị</option>
+                    <option value="false">Ẩn</option>
+                </select>
+            }
+            else
+            {
+                <select class="js-select2" id="status">
+                    <option value="">Trạng Thái</option>
+                    <option @(ViewBag.Status.ToString() == "True"?"selected":"") value="true">Hiển Thị</option>
+                    <option @(ViewBag.Status.ToString() == "False"?"selected":"") value="false">Ẩn</option>
+                </select>
+            }
+
             <div class="dropDownSelect2"></div>
         </div>
-        <button class="au-btn-filter">
-            <i class="zmdi zmdi-filter-list"></i>Lọc
-        </button>
+        @*<button class="au-btn-filter">
+                <i class="zmdi zmdi-filter-list"></i>Lọc
+            </button>*@
     </div>
     <div class="table-data__tool-right">
         @if (ViewBag.CREATE)
@@ -56,12 +66,15 @@
 
     </div>
 </div>
+
+
 <div class="table-responsive table-data">
     <table class="table table-data2">
         <thead>
             <tr>
                 @*<th>#</th>
                     <th>ID</th>*@
+                <th>Danh mục sản phẩm</th>
                 <th>Ảnh</th>
                 <th>Tên</th>
                 <th>Giá</th>
@@ -75,10 +88,9 @@
             @foreach (var item in Model)
             {
                 <tr class="tr-shadow" id="@item.ID_Product">
-                    @*<td class="number_order">@(index + (Model.PageNumber - 1) * 8)</td>
-                        <td>
-                            <span class="block-name">@item.ID_Product</span>
-                        </td>*@
+                    <td>
+                        <span class="block-name">@item.Category.Name</span>
+                    </td>
                     <td class="block-image">
                         <img src="@Url.Content("~/wwwroot/imageUpload/" + item.Image)" alt="Image" style="max-width: 100px; max-height: 100px;" />
                     </td>
@@ -143,8 +155,13 @@
                 index++;
             }
         </tbody>
-    </table>
 
+    </table>
+    @if (Model.Count == 0)
+    {
+        <img src="/wwwroot/imageUpload/notFoundProduct.png"
+             style="margin: 100px auto; display: inherit; width: 300px; " />
+    }
 </div>
 
 <!--Notification-->
@@ -160,13 +177,58 @@
 
 <br />
 Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
-@Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new
+    {
+        id_category = ViewBag.ID_Category != -1 ? ViewBag.ID_Category : null,
+        status = ViewBag.Status != null ? ViewBag.Status : null,
+        search = ViewBag.Search != null ? ViewBag.Search : null,
+        page
+    }),
+    PagedListRenderOptions.OnlyShowFivePagesAtATime)
 
-@*@section modal{
-        @Html.Partial("Create");
-    }*@
+
+<input hidden id="status_tmp" value="@(ViewBag.Status != null ? ViewBag.Status : "")" />
+<input hidden id="id_category_tmp" value="@(ViewBag.ID_Category != null ? ViewBag.ID_Category : "")" />
+<input hidden id="search_tmp" value="@(ViewBag.Search != null ? ViewBag.Search : "")" />
+
 @section Script {
+
     <script>
+
+
+        //------------------------------------------------
+        // LỌC DỮ LIỆU - START
+
+        $('#Category').change(() => {
+            let status = $('#status_tmp').val().toLowerCase();
+            let search = $('#search_tmp').val();
+            let parameter = 'id_category=' + $('#Category').val();
+            if (status != '') {
+                parameter += '&status=' + status;
+            }
+            if (search != '') {
+                parameter += '&search=' + search;
+            }
+            window.location = "/Admin/Product?" + parameter;
+        });
+
+        $('#status').change(() => {
+            let id_category = $('#id_category_tmp').val();
+            let search = $('#search_tmp').val();
+            let parameter = 'status=' + $('#status').val();
+            if (id_category != -1) {
+                parameter += '&id_category=' + id_category;
+            }
+            if (search != '') {
+                parameter += '&search=' + search;
+            }
+            window.location = "/Admin/Product?" + parameter;
+
+        });
+
+        // LỌC DỮ LIỆU - END
+        //-------------------------------------------
         const clickPer = () => {
             showAlertMessage('Bạn không có quyền truy cập tính năng này!', false);
         }
@@ -189,7 +251,7 @@ Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
                 },
                 error: (error) => {
                     //alert("Xóa sản phẩm thất bại!");
-                    showAlertMessage('Xóa sản phẩm thất bại!',false);
+                    showAlertMessage('Xóa sản phẩm thất bại!', false);
                 }
             });
         }
