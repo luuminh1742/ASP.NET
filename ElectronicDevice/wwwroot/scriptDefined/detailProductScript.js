@@ -22,7 +22,7 @@ $(document).ready(function () {
                 $("#model-product").html(result.data.Model);
                 $("#guarantee-product").html(result.data.Guarantee + ' tháng');
                 $("#origin-product").html(result.data.Origin);
-                var status = result.data.Status > 0 ? "Còn hàng" : "Hết hàng";
+                var status = result.data.Amount > 0 ? "Còn hàng" : "Hết hàng";
                 $("#status-product").html(status);
                 $("#short-description-product").html(result.data.ShortDescription);
                 $("#detail-product").html(result.data.Detail);
@@ -43,7 +43,7 @@ function addProductToCart(id_product, id_account) {
         window.location.href = '/Login/Index?statusRequest="LoginToCart"';
     } else {
         var amount = $("#numberProductOrder").val();
-        
+
         $.ajax({
             url: "/cart/addcart",
             type: "post",

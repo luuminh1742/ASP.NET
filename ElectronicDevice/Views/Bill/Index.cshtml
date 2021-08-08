@@ -93,7 +93,9 @@
                 <br>
             }
             <hr>
-            <input type="button" value="Đơn hàng của tôi" class="genric-btn danger circle">
+            @*<input type="button" value="Đơn hàng của tôi" class="genric-btn danger circle" onclick="@Url.Action("Index","Account")">*@
+            <a href="@Url.Action("Index", "Account")" class="genric-btn danger circle"><i>Đơn hàng của tôi</i></a>
+
         </div>
     </div>
 </div>

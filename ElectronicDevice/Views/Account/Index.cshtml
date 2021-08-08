@@ -190,7 +190,6 @@
                                 @*Bills_Below*@
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -200,6 +199,7 @@
 <input type="hidden" id="Error" value="@ViewBag.ErrorUpdate" />
 <input type="hidden" id="Success" value="@ViewBag.UpdateOk" />
 
+
 <div class="alert hide" id="alert_message">
     <div id="icon-alert-message"><i class="fas fa-exclamation-circle"></i></div>
     <span class="msg">Warning: This is a warning alert!</span>
@@ -207,7 +207,9 @@
         <span class="fas fa-times"></span>
     </div>
 </div>
-
+@section modal{
+    @Html.Partial("~/Views/Bill/BillDetail.cshtml");
+}
 @section script {
     <script>
         $(document).ready(function () {
@@ -218,117 +220,172 @@
         });
 
 
-            var loadFile = function (event) {
-                var image = document.getElementById('output');
-                image.src = URL.createObjectURL(event.target.files[0]);
-            };
+        var loadFile = function (event) {
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
 
-            //Thông báo
-            var error = document.getElementById("Error").value;
-            if (error != "") {
-                showAlertMessage(error, false);
-            }
-            var success = document.getElementById("Success").value;
-            if (success != "") {
-                showAlertMessage(success, true);
+        //Thông báo
+        var error = document.getElementById("Error").value;
+        if (error != "") {
+            showAlertMessage(error, false);
+        }
+        var success = document.getElementById("Success").value;
+        if (success != "") {
+            showAlertMessage(success, true);
         }
 
-            function showAlertMessage(message, messageState) {
-                if (messageState) {
-                    $('#alert_message').css({ "background": "#C5F3D7", "border-left": "8px solid #2BD971" });
-                    $("#icon-alert-message").html('<i class="fas fa-check-circle"></i>');
-                    $("#icon-alert-message").find('i').css({ "color": "#2BD971" });
-                    $(".msg").css({ "color": "#24AD5F" });
-                    $(".close-btn-alert").css({ "background": "#2BD971", "color": "#24AD5F" });
-                    $(".close-btn-alert").find('.fas').css({ "color": "#24AD5F" });
-                    $(".close-btn-alert").hover(function (e) {
-                        $(this).css("background-color", e.type === "mouseenter" ? "#38F5A3" : "#2BD971")
-                    })
-                } else {
-                    $('#alert_message').css({ "background": "#FFE1E3", "border-left": "8px solid #FF4456" });
-                    $("#icon-alert-message").html('<i class="fas fa-exclamation-circle"></i>');
-                    $("#icon-alert-message").find('i').css({ "color": "#FE4950" });
-                    $(".msg").css({ "color": "#F694A9" });
-                    $(".close-btn-alert").css({ "background": "#FF9CA4", "color": "#FD4653" });
-                    $(".close-btn-alert").find('.fas').css({ "color": "#FD4653" });
-                    $(".close-btn-alert").hover(function (e) {
-                        $(this).css("background-color", e.type === "mouseenter" ? "#FFBDC2" : "#FF9CA4")
-                    })
-                }
-
-                $('.msg').text(message);
-                $('.alert').addClass("show");
-                $('.alert').removeClass("hide");
-                $('.alert').addClass("showAlert");
-                setTimeout(function () {
-                    $('.alert').removeClass("show");
-                    $('.alert').addClass("hide");
-                }, 3000);
-            };
-
-        let regexPassword = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@@#\$%\^&\*_]).{6,}$");
-        var checkPass = function () {
-
-            $('#error_old_password').hide();
-            $('#error_new_password').hide();
-            $('#error_confirm_password').hide();
-
-            let newPassowrd = $('#NewPassword').val();
-            let oldPassowrd = $('#OldPassword').val();
-            let check = false;
-            let confirmPassword = $('#ConfirmPassword').val();
-            if (oldPassowrd == '') {
-                $('#error_old_password').show();
-                $('#error_old_password').text("Mật khẩu cũ không được để trống");
+        function showAlertMessage(message, messageState) {
+            if (messageState) {
+                $('#alert_message').css({ "background": "#C5F3D7", "border-left": "8px solid #2BD971" });
+                $("#icon-alert-message").html('<i class="fas fa-check-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#2BD971" });
+                $(".msg").css({ "color": "#24AD5F" });
+                $(".close-btn-alert").css({ "background": "#2BD971", "color": "#24AD5F" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#24AD5F" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#38F5A3" : "#2BD971")
+                })
+            } else {
+                $('#alert_message').css({ "background": "#FFE1E3", "border-left": "8px solid #FF4456" });
+                $("#icon-alert-message").html('<i class="fas fa-exclamation-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#FE4950" });
+                $(".msg").css({ "color": "#F694A9" });
+                $(".close-btn-alert").css({ "background": "#FF9CA4", "color": "#FD4653" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#FD4653" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#FFBDC2" : "#FF9CA4")
+                })
             }
-            if (!regexPassword.test(newPassowrd)) {
-                $('#error_new_password').show();
-                $('#error_new_password').text("Mật khẩu ít nhất 6 ký tự và gồm các chữ cái hoa, thường, chữ số và ký tự đặc biệt!");
-            }
-            if (newPassowrd != confirmPassword) {
-                $('#error_confirm_password').show();
-                $('#error_confirm_password').text("Nhập lại mật khẩu mới không trùng khớp!");
-            }
-            $.ajax({
-                url: '/Account/ChangePassword',
-                data: {
-                    OldPassword: oldPassowrd,
-                    NewPassword: newPassowrd
-                },
-                type: "GET",
-                success: (result) => {
-                    if (result) {
-                        check = true;
-                        alert("Cập nhật mật khẩu thành công.");
-                        location.reload();
-                    } else {
-                        check = false;
-                        $('#error_old_password').show();
-                        $('#error_old_password').text("Mật khẩu cũ không đúng!");
-                        $('#error_new_password').hide();
-                        $('#error_confirm_password').hide();
-                    }
-                },
-                error: (error) => {
-                    alert("Cập nhật mật khẩu thất bại!");
-                }
-            });
-            if (check) { }
-            else event.preventDefault();
+
+            $('.msg').text(message);
+            $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+            setTimeout(function () {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            }, 3000);
         };
+        let regexPassword = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@@#\$%\^&\*_]).{6,}$");
+let checkErrorUpdatePassword = false;
+//-------------------------------------------------------------
+// Bat loi mat khau cu
+const errorOldPassword = () => {
+    if ($('#OldPassword').val() == '') {
+        $('#error_old_password').show();
+        $('#error_old_password').text("Mật khẩu cũ không được bỏ trống");
+        checkErrorUpdatePassword = true;
+    } else {
+        $('#error_old_password').hide();
+        checkErrorUpdatePassword = false;
+    }
+}
+$('#OldPassword').keydown(() => {
+    errorOldPassword();
+});
+$('#OldPassword').keyup(() => {
+    errorOldPassword();
+});
+//------------------------------------------------------------------------
+// Bat lo mat khau moi
+const errorNewPassword = () => {
+    let newPassowrd = $('#NewPassword').val();
+    if (newPassowrd == '') {
+        $('#error_new_password').show();
+        $('#error_new_password').text("Mật khẩu mới không được bỏ trống!");
+        checkErrorUpdatePassword = true;
+    } else if (!regexPassword.test(newPassowrd)) {
+        $('#error_new_password').show();
+        $('#error_new_password').text("Mật khẩu ít nhất 6 ký tự và gồm các chữ cái hoa, thường, chữ số và ký tự đặc biệt!");
+        checkErrorUpdatePassword = true;
+    } else {
+        $('#error_new_password').hide();
+        checkErrorUpdatePassword = false;
+    }
+}
+$('#NewPassword').keydown(() => {
+    errorNewPassword();
+});
+$('#NewPassword').keyup(() => {
+    errorNewPassword();
+});
+//------------------------------------------------------------
+// Bat loi Confirm pasword
+const errorConfirmPassword = () => {
+    let newPassowrd = $('#NewPassword').val();
+    let confirmPassword = $('#ConfirmPassword').val();
+    if (confirmPassword == '') {
+        $('#error_confirm_password').show();
+        $('#error_confirm_password').text("Nhập lại mật khẩu không được bỏ trống!");
+        checkErrorUpdatePassword = true;
+    }else if (newPassowrd != confirmPassword) {
+        $('#error_confirm_password').show();
+        $('#error_confirm_password').text("Nhập lại mật khẩu mới không trùng khớp!");
+        checkErrorUpdatePassword = true;
+    } else {
+        $('#error_confirm_password').hide();
+        checkErrorUpdatePassword = false;
+    }
+}
+
+$('#ConfirmPassword').keydown(() => {
+    errorConfirmPassword();
+});
+$('#ConfirmPassword').keyup(() => {
+    errorConfirmPassword();
+});
+//========== Bat loi mat khau - End ==================
+        const checkPass = () => {
+    event.preventDefault();
+    let newPassowrd = $('#NewPassword').val();
+    let oldPassowrd = $('#OldPassword').val();
+
+    errorOldPassword();
+    errorNewPassword();
+    errorConfirmPassword();
+
+    if (checkErrorUpdatePassword) return;
+
+    $.ajax({
+        url: '/Account/ChangePassword',
+        data: {
+            OldPassword: oldPassowrd,
+            NewPassword: newPassowrd
+        },
+        type: "GET",
+        success: (result) => {
+            if (result) {
+                showAlertMessage('Cập nhật mật khẩu thành công!', true);
+                $('#OldPassword').val("");
+                $('#NewPassword').val("");
+                $('#ConfirmPassword').val("");
+
+            } else {
+                $('#error_old_password').show();
+                $('#error_old_password').text("Mật khẩu cũ không đúng!");
+                $('#error_new_password').hide();
+                $('#error_confirm_password').hide();
+            }
+
+        },
+        error: (error) => {
+            showAlertMessage('Cập nhật mật khẩu thất bại!', false);
+        }
+    });
+}
+
         //Load Bill detail
-        function LoadBill(ID_Bill, Status, FullName, Email, Phone, Address, PayType, SumPrice) {
+        function LoadBillModal(ID_Bill, Status, FullName, Email, Phone, Address, PayType) {
             $('#id-orders').text(ID_Bill);
             $('#status-orders').text(Status);
             $('#FullRecieverName').text(FullName);
-            $("#RecieverEmail").text(Email);
-            $("#RecieverPhone").text(Phone);
-            $("#RecieverAddress").text(Address);
-            $("#PayType").text(PayType);
-            $("#SumPrice").text(SumPrice.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
-            Load_Product_Bill(ID_Bill, true);
+            $('#RecieverEmail').text(Email);
+            $('#RecieverPhone').text(Phone);
+            $('#RecieverAddress').text(Address);
+            $('#PayType').text(PayType);
             ID_Bill_Modal = ID_Bill;
-
+            Load_Product_Bill(ID_Bill, true);
         };
         var totalMoney;
         function Load_Product_Bill(ID_Bill, status) {
@@ -338,44 +395,45 @@
                 type: "GET",
 
                 success: function (result) {
+                    totalMoney = 0.0;
                     if (status) {
                         $('.sp').remove();
                     }
-                    var html1 = "";
+                    var html1 = '';
                     var html2 = '';
                     $.each(result.data, function (i, item) {
 
                         if (status) {
-                            totalMoney += item.Price * item.Amount;
+                            totalMoney += item.CurrentlyPrice * item.Amount;
                             html1 += '<div class="sp">';
                             html1 += '<br>';
                             html1 += '<div class="d-flex flex-row">';
                             html1 += '<img class="border" src="/wwwroot/imageUpload/' + item.Image + '" alt="" width="100" height="100">';
                             html1 += '<div class="ml-2">';
                             html1 += '<h5>' + item.Name + '</h5>';
-                            html1 += '<p>Giá: ' + item.Price.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) + '</p>';
+                            html1 += '<p>Giá: ' + item.CurrentlyPrice.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) + '</p>';
                             html1 += '<p>Số lượng: ' + item.Amount + '</p>';
                             html1 += '</div>';
                             html1 += '</div>';
                             html1 += '</div>';
                             $('#list-product-detail').html(html1);
-
-                        } else {
-                            totalMoney = item.Price * item.Amount;
+                            $('#SumPrice').text(totalMoney.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
+                        }
+                        else {
+                            totalMoney += item.CurrentlyPrice * item.Amount;
                             html2 += '<div class="sp_bill">';
                             html2 += '<br>';
                             html2 += '<div class="d-flex flex-row">';
                             html2 += '<img class="border" src="/wwwroot/imageUpload/' + item.Image + '" alt="" width="100" height="100">';
                             html2 += '<div class="ml-2">';
                             html2 += '<h5>' + item.Name + '</h5>';
-                            html2 += '<p>Giá: ' + item.Price.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) + '</p>';
+                            html2 += '<p>Giá: ' + item.CurrentlyPrice.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) + '</p>';
                             html2 += '<p>Số lượng: ' + item.Amount + '</p>';
                             html2 += '</div>';
                             html2 += '</div>';
                             html2 += '</div>';
                             $('#' + ID_Bill).html(html2);
                             $('#totalMoney' + ID_Bill).html(totalMoney.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
-
                         }
                     });
                 }
@@ -390,12 +448,12 @@
                 success: function (result) {
 
                     var html = "";
-                    var totalMoney = 0;
+                    var totalMoney = 0.0;
                     $.each(result.data, function (i, item) {
                         html += '<span>' + item.Name + '</span>';
                         html += '<br/>';
                         html += '<br/>';
-                        totalMoney = item.Price * item.Amount;
+                        totalMoney += item.CurrentlyPrice * item.Amount;
                         $('#billBelow' + ID_Bill).html(html);
                     });
                     html = totalMoney.toLocaleString('it-IT', { style: 'currency', currency: 'VND' });
@@ -413,12 +471,14 @@
                     var html = '';
                     var html2 = '';
                     $.each(result.data, function (index, item) {
-                        if (item.Status == 1 || item.Status == 2) {
+                        if (item.Status == 1 || item.Status == 2 || item.Status==0) {
                             var status;
                             if (item.Status == 1)
                                 status = "Đã tiếp nhận";
                             else if (item.Status == 2)
                                 status = "Giao cho đơn vị vận chuyển";
+                            else if (item.Status == 0)
+                                status = "Đơn hàng mới";
 
                             html += '<div class="row' + item.ID_Bill + '">';
                             html += '<div class="col-md-12">';
@@ -438,13 +498,12 @@
                             html += '<div class=" ">';
                             html += '<div id="' + item.ID_Bill + '">   </div>'; @* detail product *@
                             html += '<div class="p-4">';
-                            Load_Product_Bill(item.ID_Bill, false);//lấy totalMoney trc khi truyền hàm
                             html += '<h4 class="text-danger float-right">Tổng tiền:<span id="totalMoney' + item.ID_Bill + '"></h4>';
                             html += '<br>';
                             html += '<hr>';
                             html += '<div class=" float-right">';
                             html += '<div class="checkout_btn_inner float-right">';
-                            html += '<button style="border:unset" type="button" class="btn_1 btn_billAccount" onclick="LoadBill(' + item.ID_Bill + ',\'' + status + '\',\'' + item.ReceiverName + '\',\'' + item.ReceiverEmail + '\',\'' + item.ReceiverPhone + '\',\'' + item.ReceiverAddress + '\',\'' + item.PayType + '\',' + 'totalMoney' + ')" value="Chi tiết" data-toggle="modal" data-target="#modal-bill-detail">Chi tiết đơn hàng</button>';
+                            html += '<button style="border:unset" type="button" class="btn_1 btn_billAccount" onclick="LoadBillModal(' + item.ID_Bill + ',\'' + status + '\',\'' + item.ReceiverName + '\',\'' + item.ReceiverEmail + '\',\'' + item.ReceiverPhone + '\',\'' + item.ReceiverAddress + '\',\'' + item.PayType + '\')" value="Chi tiết" data-toggle="modal" data-target="#modal-bill-detail">Chi tiết đơn hàng</button>';
                             html += '<button style="border:unset" type="button" class="btn_1 checkout_btn_1 btn_billAccount" id="btn_pay" onclick="CancelBill(' + item.ID_Bill + ',' + item.ID_Account + ')">Hủy đơn hàng</button>';
                             html += '</div>';
                             html += '</div>';
@@ -456,6 +515,7 @@
                             html += '</div >';
                             html += '</div ></br>';
                             $('#newBill').html(html);
+                            Load_Product_Bill(item.ID_Bill, false);//lấy totalMoney trc khi truyền hàm
 
                         }
                     });
@@ -501,11 +561,11 @@
                 success: function (result) {
                     $('.row' + ID_Bill).remove();
                     LoadBills(ID_Account);
-                    alert("Đã hủy đơn hàng có mã: " + ID_Bill);
-
+                    showAlertMessage("Đã hủy đơn hàng " + ID_Bill,+" thành công",true);
                 },
                 error: (error) => {
                     alert("Hủy đơn hàng có mã:" + ID_Bill + " thất bại!");
+                    showAlertMessage("Hủy đơn hàng có mã:" + ID_Bill + " thất bại!", false);
                 }
             });
         }

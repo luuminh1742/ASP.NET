@@ -69,21 +69,21 @@ function focusOut(id) {
     }
 }
 
- /*function to change status selected of record when click ckeck box for all record */
-    function selectAllRecord() {
-        if ($('#selectAll').prop("checked")) {
-            $('#totalPay').text((0).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
-            $('tr[class="data-table"]').each(function () {
-                $(this).find('input[type="checkbox"]').prop("checked", true);
-                changeStatus($(this).attr('id'));
-            });
-        } else {
-            $('#totalPay').text((0).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
-            $('tr[class="data-table"]').each(function () {
-                $(this).find('input[type="checkbox"]').prop("checked", false);
-            });
-        }
+/*function to change status selected of record when click ckeck box for all record */
+function selectAllRecord() {
+    if ($('#selectAll').prop("checked")) {
+        $('#totalPay').text((0).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
+        $('tr[class="data-table"]').each(function () {
+            $(this).find('input[type="checkbox"]').prop("checked", true);
+            changeStatus($(this).attr('id'));
+        });
+    } else {
+        $('#totalPay').text((0).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
+        $('tr[class="data-table"]').each(function () {
+            $(this).find('input[type="checkbox"]').prop("checked", false);
+        });
     }
+}
 
 
 function isNumberKey(evt) {
@@ -192,7 +192,7 @@ function alterProductOrder(status, maxOrder, id, id_account) {
     addProductToCart(id, id_account, parseInt($('#' + id).find('#number_order').val()));
 }
 
- /*function to change status selected of record when click ckeck box*/
+/*function to change status selected of record when click ckeck box*/
 function changeStatus(id) {
     var element = $('#' + id).find('input[type="checkbox"]');
     var oldMoney = parseFloat($('#totalPay').text().trim().replace(/([,.€])+/g, '').split(' ')[0]);
@@ -208,13 +208,13 @@ function changeStatus(id) {
     }
 }
 
- /*function to set value of total price of a record*/
-    function totalMoney(id) {
-        var numberOrder = parseInt($('#' + id).find('#number_order').val());
-        var price = parseFloat($('#' + id).find('#price').text().trim().replace(/([,.€])+/g, '').split(' ')[0]);
-        //$('#' + id).find('#totalProductItem').text((numberOrder * price).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
-        $('#' + id).find('#totalProductItem').text(new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(numberOrder * price));
-    }
+/*function to set value of total price of a record*/
+function totalMoney(id) {
+    var numberOrder = parseInt($('#' + id).find('#number_order').val());
+    var price = parseFloat($('#' + id).find('#price').text().trim().replace(/([,.€])+/g, '').split(' ')[0]);
+    //$('#' + id).find('#totalProductItem').text((numberOrder * price).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }));
+    $('#' + id).find('#totalProductItem').text(new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(numberOrder * price));
+}
 
 function showAlertMessage(message, messageState) {
     if (messageState) {
@@ -312,7 +312,7 @@ function deleteAllRecordConfirmed() {
 function addProductToCart(id_product, id_account, amount) {
     /*var amount = $("#numberProductOrder").val();*/
     $.ajax({
-        url: "/cart/addcart",
+        url: "/cart/addcartBuyNow",
         type: "post",
         data: { id_product: id_product, id_account: id_account, amount: amount },
         datatype: "json",

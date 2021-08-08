@@ -70,16 +70,28 @@
                                     <label>Mật Khẩu</label>
                                     @Html.TextBoxFor(m => m.Password, "", new { @class = "form-control", @placeholder = "Mật khẩu", Type = "password" })
                                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    <br>
                                     <label>
+
                                         <input type="checkbox" name="remember">Ghi Nhớ Mật Khẩu
                                     </label>
                                     @*<label>
-                                        <a href="forget-pass.html">Quên Mật Khẩu?</a>
-                                    </label>*@
+                                            <a href="forget-pass.html">Quên Mật Khẩu?</a>
+                                        </label>*@
 
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" value="submit">Đăng nhập</button>
                             }
+                            <input type="hidden" id="Error" value=" @ViewBag.LoginError" />
+
+
+                            <div class="alert hide" id="alert_message">
+                                <div id="icon-alert-message"><i class="fas fa-exclamation-circle"></i></div>
+                                <span class="msg">Warning: This is a warning alert!</span>
+                                <div class="close-btn-alert">
+                                    <span class="fas fa-times"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -111,6 +123,54 @@
 
     <!-- Main JS-->
     <script src="~/Areas/Admin/Assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.close-btn-alert').click(function () {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+        });
+        var error = document.getElementById("Error").value;
+        if (error != "") {
+            showAlertMessage(error, false);
+        }
+        var success = document.getElementById("Success").value;
+        if (success != "") {
+            showAlertMessage(success, true);
+        }
+        function showAlertMessage(message, messageState) {
+            if (messageState) {
+                $('#alert_message').css({ "background": "#C5F3D7", "border-left": "8px solid #2BD971" });
+                $("#icon-alert-message").html('<i class="fas fa-check-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#2BD971" });
+                $(".msg").css({ "color": "#24AD5F" });
+                $(".close-btn-alert").css({ "background": "#2BD971", "color": "#24AD5F" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#24AD5F" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#38F5A3" : "#2BD971")
+                })
+            } else {
+                $('#alert_message').css({ "background": "#FFE1E3", "border-left": "8px solid #FF4456" });
+                $("#icon-alert-message").html('<i class="fas fa-exclamation-circle"></i>');
+                $("#icon-alert-message").find('i').css({ "color": "#FE4950" });
+                $(".msg").css({ "color": "#F694A9" });
+                $(".close-btn-alert").css({ "background": "#FF9CA4", "color": "#FD4653" });
+                $(".close-btn-alert").find('.fas').css({ "color": "#FD4653" });
+                $(".close-btn-alert").hover(function (e) {
+                    $(this).css("background-color", e.type === "mouseenter" ? "#FFBDC2" : "#FF9CA4")
+                })
+            }
+
+            $('.msg').text(message);
+            $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+            setTimeout(function () {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            }, 3000);
+        };
+    </script>
 </body>
 
 </html>

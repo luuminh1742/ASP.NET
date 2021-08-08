@@ -15,7 +15,7 @@ namespace ElectronicDevice.Areas.Admin.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            return View();
+            return View(new Account());
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
