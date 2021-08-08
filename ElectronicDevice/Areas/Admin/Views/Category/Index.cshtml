@@ -142,8 +142,9 @@
             showAlertMessage('Bạn không có quyền truy cập vào tính năng này!', false);
         }
         function clickAddCategory() {
-            
+            $('#inputFile').val('');
             $('#error_name').hide();
+            $('#error_image').hide();
             $('#mediumModalLabel').text("Thêm mới danh mục");
             $('#id').val(0);
             $('#preview').attr("src", "http://nhadephue.vn/wp-content/uploads/2021/01/icon_6.png");
@@ -154,7 +155,9 @@
                 clickPer();
                 return;
             }
+            $('#inputFile').val('');
             $('#error_name').hide();
+            $('#error_image').hide();
             $('#mediumModalLabel').text("Cập nhật danh mục");
             $('#Name').val(name);
 

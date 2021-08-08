@@ -40,10 +40,6 @@
         </button>
     </div>
     <div class="table-data__tool-right">
-        @*<button class="au-btn au-btn-icon au-btn--green au-btn--small"
-                    data-toggle="modal" data-target="#modal-create">
-                <i class="fas fa-plus"></i>Thêm mới
-            </button>*@
         @if (ViewBag.CREATE)
         {
             <a class="au-btn au-btn-icon au-btn--green au-btn--small"
@@ -53,15 +49,9 @@
         }
         else
         {
-            <a class="au-btn au-btn-icon au-btn--green au-btn--small" onclick="clickPerCreate()">
+            <a class="au-btn au-btn-icon au-btn--green au-btn--small" onclick="clickPer()">
                 <i class="fas fa-plus"></i>Thêm mới
             </a>
-            <script>
-                const clickPerCreate = () => {
-                    //alert("Bạn không có quyền truy cập tính năng này!");
-                    showAlertMessage('Bạn không có quyền truy cập tính năng này!', false);
-                }
-            </script>
         }
 
     </div>
@@ -128,15 +118,9 @@
                             }
                             else
                             {
-                                <a class="item" title="Sửa thông tin sản phẩm" onclick="clickPerEdit()">
+                                <a class="item" title="Sửa thông tin sản phẩm" onclick="clickPer()">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
-                                <script>
-                                    const clickPerEdit = () => {
-                                        //alert("Bạn không có quyền truy cập tính năng này!");
-                                        showAlertMessage('Bạn không có quyền truy cập tính năng này!', false);
-                                    }
-                                </script>
                             }
                             @if (ViewBag.DELETE)
                             {
@@ -146,15 +130,9 @@
                             }
                             else
                             {
-                                <button class="item" title="Xóa sản phẩm" onclick="clickPerDelete()">
+                                <button class="item" title="Xóa sản phẩm" onclick="clickPer()">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
-                                <script>
-                                    const clickPerDelete = () => {
-                                        //alert("Bạn không có quyền truy cập tính năng này!");
-                                        showAlertMessage('Bạn không có quyền truy cập tính năng này!',false);
-                                    }
-                                </script>
                             }
 
 
@@ -189,6 +167,10 @@ Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
     }*@
 @section Script {
     <script>
+        const clickPer = () => {
+            showAlertMessage('Bạn không có quyền truy cập tính năng này!', false);
+        }
+
         function deleteProduct(id) {
 
             let checkDelete = confirm("Xác nhận xóa sản phẩm này!");

@@ -36,29 +36,13 @@ namespace ElectronicDevice.Controllers
                     Session["Email"] = user.Email;
                     Session["Avatar"] = user.Avatar;
                     Session["ID"] = user.ID_Account;
-                    //FormsAuthentication.SetAuthCookie(user.UserName, false);
-                    //if (!Roles.RoleExists(user.Role.Code))
-                    //{
-                    //    Roles.CreateRole(user.Role.Code);
-                    //}
-                    //if (!Roles.IsUserInRole(user.UserName, user.Role.Code))
-                    //{
-                    //    Roles.AddUserToRole(user.UserName, user.Role.Code);
-                    //}
-                    if (user.Role.Code.Equals("ADMIN"))
+                    if (statusRequest != null)
                     {
-                        return RedirectToAction("Index", "Home", new { area = "Admin" });
+                        return RedirectToAction("Index", "Cart", new { id_account = user.ID_Account });
                     }
                     else
                     {
-                        if (statusRequest != null)
-                        {
-                            return RedirectToAction("Index", "Cart", new { id_account = user.ID_Account });
-                        }
-                        else
-                        {
-                            return RedirectToAction("Index", "Product", new { });
-                        }
+                        return RedirectToAction("Index", "Product", new { });
                     }
                 }
             }

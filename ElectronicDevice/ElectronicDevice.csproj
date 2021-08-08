@@ -727,11 +727,12 @@
     <Content Include="Areas\Admin\Assets\images\thumbnailNews\tai-sao-nen-lua-chon-may-tinh-su-dung-cpu-amd-0VIZkb.png" />
     <Content Include="Areas\Admin\Assets\images\thumbnailNews\xem-gi-o-nha-dip-cuoi-tuan-u5AyiK.jpg" />
     <Content Include="Areas\Admin\Assets\js\bootstrap-datetimepicker.js" />
-    <Content Include="Areas\Admin\Assets\js\create-category-product.js" />
+    <Content Include="Areas\Admin\Assets\js\ct-edit-category-product.js" />
+    <Content Include="Areas\Admin\Assets\js\ct-employee.js" />
     <Content Include="Areas\Admin\Assets\js\main.js" />
-    <Content Include="Areas\Admin\Assets\js\manage-account.js" />
+    <Content Include="Areas\Admin\Assets\js\ct-manage-account.js" />
     <Content Include="Areas\Admin\Assets\js\moment.js" />
-    <Content Include="Areas\Admin\Assets\js\trash-account.js" />
+    <Content Include="Areas\Admin\Assets\js\ct-trash-account.js" />
     <Content Include="Areas\Admin\Assets\media\9606031aabebde32fa96edeff071a132.jpg" />
     <Content Include="Areas\Admin\Assets\vendor\animsition\animsition.min.css" />
     <Content Include="Areas\Admin\Assets\vendor\animsition\animsition.min.js" />
