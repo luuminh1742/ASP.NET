@@ -13,14 +13,14 @@ using PagedList;
 
 namespace ElectronicDevice.Areas.Admin.Controllers
 {
-    //[Authorize(Roles = "ADMIN")]
+    [Authorize(Roles = "ADMIN")]
     public class ProductController : Controller
     {
         private ElectronicDeviceDbContext db = new ElectronicDeviceDbContext();
 
         // GET: Admin/Product
-        public ActionResult Index(string currentFilter,
-            int? page, bool? status, string search, int? id_category = -1)
+        public ActionResult Index(string currentFilter,int? page, bool? status, 
+            string search, int? id_category = -1 , string mess = "none")
         {
             // Phân quyền cho quản lý sản phẩm
             var idAccount = (int)Session["ID"];
@@ -67,7 +67,10 @@ namespace ElectronicDevice.Areas.Admin.Controllers
                 ViewBag.Search = search.ToLower();
             }
 
-
+            if (!mess.Equals("none"))
+            {
+                ViewBag.Mess = mess;
+            }
 
             int pageSize = 8;  //Kích  thước  trang 
             int pageNumber = (page ?? 1);

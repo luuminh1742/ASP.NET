@@ -105,11 +105,13 @@ const addData = (data) => {
             $('.modal-backdrop').remove();
             //alert("Thêm danh mục thành công.");
             //$("#modal-create").modal("hide");
+
             setDataCategory(
                 result["ID_Category"],
                 result["Name"],
                 result["Icon"],
                 result["Status"],
+                result["Products"].length,
                 per_edit,
                 per_del
             );
@@ -142,6 +144,7 @@ const editData = (data) => {
                 result["Name"],
                 result["Icon"],
                 result["Status"],
+                result["Products"].length,
                 per_edit,
                 per_del
             );
@@ -157,7 +160,7 @@ const editData = (data) => {
 }
 
 
-const setDataCategory = (id, name, icon, status, per_edit, per_del) => {
+const setDataCategory = (id, name, icon, status,size_product, per_edit, per_del) => {
     let showStatus = status ? "Hiển thị" : "Ẩn";
     let f_edit = '';
     let f_del = '';
@@ -185,6 +188,9 @@ const setDataCategory = (id, name, icon, status, per_edit, per_del) => {
         '<span class="status--process" id="show-status">' + showStatus + '</span>' +
         '</td>' +
         '<td>' +
+        '<span  >' + size_product + '</span>' +
+        '</td>' +
+        '<td>' +
         '<div class="table-data-feature">' +
         '<button class="item" title="Sửa" ' + f_edit+'>' +
         '<i class="fas fa-pencil-alt"></i>' +
@@ -192,6 +198,9 @@ const setDataCategory = (id, name, icon, status, per_edit, per_del) => {
         '<button class="item" title="Xóa" ' + f_del + ' >' +
         '<i class="fas fa-trash-alt"></i>' +
         '</button>' +
+        '<a class="item" title="Xem danh sách sản phẩm" href="/Admin/Product?id_category='+id+'">'+
+        '<i class= "fas fa-arrow-right" ></i>'+
+         '</a >'+
         '</div>' +
         ' </td>' +
         '</tr>' +
@@ -199,7 +208,7 @@ const setDataCategory = (id, name, icon, status, per_edit, per_del) => {
     );
 }
 
-const editCategory = (id, name, icon, status, per_edit, per_del) => {
+const editCategory = (id, name, icon, status, size_product, per_edit, per_del) => {
     let showStatus = status ? "Hiển thị" : "Ẩn";
     let f_edit = '';
     let f_del = '';
@@ -226,6 +235,9 @@ const editCategory = (id, name, icon, status, per_edit, per_del) => {
         '<span class="status--process" id="show-status">' + showStatus + '</span>' +
         '</td>' +
         '<td>' +
+        '<span >' + size_product + '</span>' +
+        '</td>' +
+        '<td>' +
         '<div class="table-data-feature">' +
         '<button class="item" title="Sửa" ' + f_edit + '>' +
         '<i class="fas fa-pencil-alt"></i>' +
@@ -233,6 +245,9 @@ const editCategory = (id, name, icon, status, per_edit, per_del) => {
         '<button class="item" title="Xóa" ' + f_del + ' >' +
         '<i class="fas fa-trash-alt"></i>' +
         '</button>' +
+        '<a class="item" title="Xem danh sách sản phẩm" href="/Admin/Product?id_category=' + id + '">' +
+        '<i class= "fas fa-arrow-right" ></i>' +
+        '</a >' +
         '</div>' +
         ' </td>'
     );

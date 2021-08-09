@@ -49,7 +49,7 @@ namespace ElectronicDevice.Controllers
 
             if (id_category!=null)
             {
-                listProduct = listProduct.Where(p => p.ID_Category == id_category).ToList();
+                listProduct = listProduct.Where(p => p.ID_Category == id_category && p.Status).ToList();
             }
 
             page = page > 0 ? page : 1;

@@ -30,7 +30,7 @@
                     <tr style="height:50px" class="rounded-5 row-left-sidebar" id="@item.ID_Category">
                         <td width="50px"><img src="@Url.Content("~/wwwroot/imageUpload/"+item.Icon)" alt="@item.Name" style="width: 20px;height: 20px;" /></td>
                         <td>@item.Name</td>
-                        <td><span>(@item.Products.Count())</span></td>
+                        <td><span>(@item.Products.Where(p=>p.Status).Count())</span></td>
                     </tr>
                 }
             </table>

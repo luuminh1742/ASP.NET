@@ -729,7 +729,9 @@
     <Content Include="Areas\Admin\Assets\images\thumbnailNews\xem-gi-o-nha-dip-cuoi-tuan-u5AyiK.jpg" />
     <Content Include="Areas\Admin\Assets\js\bootstrap-datetimepicker.js" />
     <Content Include="Areas\Admin\Assets\js\ct-edit-category-product.js" />
+    <Content Include="Areas\Admin\Assets\js\ct-edit-product.js" />
     <Content Include="Areas\Admin\Assets\js\ct-employee.js" />
+    <Content Include="Areas\Admin\Assets\js\ct-index-product.js" />
     <Content Include="Areas\Admin\Assets\js\main.js" />
     <Content Include="Areas\Admin\Assets\js\ct-manage-account.js" />
     <Content Include="Areas\Admin\Assets\js\moment.js" />

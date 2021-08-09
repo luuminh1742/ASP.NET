@@ -33,7 +33,7 @@ namespace ElectronicDevice.Areas.Admin.Controllers
                     Session["Email"] = user.Email;
                     Session["Avatar"] = user.Avatar;
                     Session["ID"] = user.ID_Account;
-                    /*FormsAuthentication.SetAuthCookie(user.UserName, false);
+                    FormsAuthentication.SetAuthCookie(user.UserName, false);
                     if (!Roles.RoleExists(user.Role.Code))
                     {
                         Roles.CreateRole(user.Role.Code);
@@ -41,7 +41,7 @@ namespace ElectronicDevice.Areas.Admin.Controllers
                     if (!Roles.IsUserInRole(user.UserName, user.Role.Code))
                     {
                         Roles.AddUserToRole(user.UserName, user.Role.Code);
-                    }*/
+                    }
                     if (user.Role.Code.Equals("ADMIN"))
                     {
                         return RedirectToAction("Index", "Home");
